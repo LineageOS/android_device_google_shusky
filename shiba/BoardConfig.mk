@@ -52,7 +52,7 @@ include device/google/zuma/BoardConfig-common.mk
 include device/google/shusky/sepolicy/shiba-sepolicy.mk
 include device/google/shusky/wifi/BoardConfig-wifi.mk
 
-ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
 -include device/google/common/etm/5_15/BoardUserdebugModules.mk
 endif
 
