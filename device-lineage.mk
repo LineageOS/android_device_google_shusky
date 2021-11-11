@@ -18,6 +18,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     EuiccSupportPixelOverlay
 
+# Kernel
+TARGET_PREBUILT_KERNEL := device/google/shusky-kernel/Image.lz4
+
 # PowerShare
 include hardware/google/pixel/powershare/device.mk
 
