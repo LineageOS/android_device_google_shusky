@@ -55,3 +55,6 @@ include device/google/shusky/wifi/BoardConfig-wifi.mk
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 -include device/google/common/etm/5_15/BoardUserdebugModules.mk
 endif
+
+DEVICE_PATH := device/google/shusky
+include $(DEVICE_PATH)/$(TARGET_BOOTLOADER_BOARD_NAME)/BoardConfigLineage.mk
