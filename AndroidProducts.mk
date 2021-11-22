@@ -25,7 +25,9 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/aosp_shiba.mk \
     $(LOCAL_DIR)/aosp_shiba_fullmte.mk \
     $(LOCAL_DIR)/aosp_shiba_pgagnostic.mk \
-    $(LOCAL_DIR)/factory_shiba.mk
+    $(LOCAL_DIR)/factory_shiba.mk \
+    $(LOCAL_DIR)/lineage_husky.mk \
+    $(LOCAL_DIR)/lineage_shiba.mk
 
 COMMON_LUNCH_CHOICES := \
     aosp_ripcurrent-trunk_staging-userdebug \
