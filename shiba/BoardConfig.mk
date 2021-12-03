@@ -57,4 +57,5 @@ ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 endif
 
 DEVICE_PATH := device/google/shusky
+VENDOR_PATH := vendor/google/shiba
 include $(DEVICE_PATH)/$(TARGET_BOOTLOADER_BOARD_NAME)/BoardConfigLineage.mk
