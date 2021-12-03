@@ -28,3 +28,5 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="shiba-user 14 UQ1A.231205.015 11084887 release-keys"
 
 BUILD_FINGERPRINT := google/shiba/shiba:14/UQ1A.231205.015/11084887:user/release-keys
+
+$(call inherit-product, vendor/google/shiba/shiba-vendor.mk)
