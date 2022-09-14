@@ -547,26 +547,6 @@ TEST_P(EffectsTest, perform) {
     }
 }
 
-TEST_P(EffectsTest, alwaysOnEnable) {
-    // No real function now in P22+
-    auto param = GetParam();
-    auto effect = std::get<0>(param);
-    auto strength = std::get<1>(param);
-    auto scale = EFFECT_SCALE.find(param);
-    bool supported = (scale != EFFECT_SCALE.end());
-
-    if (supported) {
-        // Do nothing
-    }
-
-    ndk::ScopedAStatus status = mVibrator->alwaysOnEnable(0, effect, strength);
-    if (supported) {
-        EXPECT_EQ(EX_NONE, status.getExceptionCode());
-    } else {
-        EXPECT_EQ(EX_UNSUPPORTED_OPERATION, status.getExceptionCode());
-    }
-}
-
 const std::vector<Effect> kEffects{ndk::enum_range<Effect>().begin(),
                                    ndk::enum_range<Effect>().end()};
 const std::vector<EffectStrength> kEffectStrengths{ndk::enum_range<EffectStrength>().begin(),
@@ -692,50 +672,6 @@ const std::vector<ComposeParam> kComposeParams = {
 INSTANTIATE_TEST_CASE_P(VibratorTests, ComposeTest,
                         ValuesIn(kComposeParams.begin(), kComposeParams.end()),
                         ComposeTest::PrintParam);
-
-class AlwaysOnTest : public VibratorTest, public WithParamInterface<int32_t> {
-  public:
-    static auto PrintParam(const TestParamInfo<ParamType> &info) {
-        return std::to_string(info.param);
-    }
-};
-
-TEST_P(AlwaysOnTest, alwaysOnEnable) {
-    auto param = GetParam();
-    auto scale = EFFECT_SCALE.begin();
-
-    std::advance(scale, std::rand() % EFFECT_SCALE.size());
-
-    auto effect = std::get<0>(scale->first);
-    auto strength = std::get<1>(scale->first);
-
-    switch (param) {
-        case 0:
-        case 1:
-            // Do nothing
-            break;
-    }
-
-    ndk::ScopedAStatus status = mVibrator->alwaysOnEnable(param, effect, strength);
-    EXPECT_EQ(EX_NONE, status.getExceptionCode());
-}
-
-TEST_P(AlwaysOnTest, alwaysOnDisable) {
-    auto param = GetParam();
-
-    switch (param) {
-        case 0:
-        case 1:
-            // Do nothing
-            break;
-    }
-
-    ndk::ScopedAStatus status = mVibrator->alwaysOnDisable(param);
-    EXPECT_EQ(EX_NONE, status.getExceptionCode());
-}
-
-INSTANTIATE_TEST_CASE_P(VibratorTests, AlwaysOnTest, Range(0, 1), AlwaysOnTest::PrintParam);
-
 }  // namespace vibrator
 }  // namespace hardware
 }  // namespace android
