@@ -1,2 +1,3 @@
-aaronding@google.com
-robinpeng@google.com
+include platform/system/sepolicy:/OWNERS
+
+rurumihong@google.com
