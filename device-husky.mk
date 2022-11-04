@@ -195,3 +195,6 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # display
 DEVICE_PACKAGE_OVERLAYS += device/google/shusky/husky/overlay
+
+# config of display brightness dimming
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.0.brightness.dimming.usage?=1
