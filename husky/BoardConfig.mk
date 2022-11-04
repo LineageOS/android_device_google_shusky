@@ -53,7 +53,7 @@ include device/google/shusky/device-shusky-common.mk
 include device/google/zuma/BoardConfig-common.mk
 -include vendor/google_devices/zuma/prebuilts/BoardConfigVendor.mk
 -include vendor/google_devices/husky/proprietary/BoardConfigVendor.mk
-include device/google/shusky-sepolicy/husky-sepolicy.mk
+include device/google/shusky/sepolicy/husky-sepolicy.mk
 include device/google/shusky/wifi/BoardConfig-wifi.mk
 
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
