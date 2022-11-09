@@ -220,4 +220,28 @@
         booted.  -->
     <integer name="config_stableDeviceDisplayWidth">1080</integer>
     <integer name="config_stableDeviceDisplayHeight">2400</integer>
+
+
+    <!-- Whether the display cutout region of the main built-in display should be forced to
+        black in software (to avoid aliasing or emulate a cutout that is not physically existent).
+    -->
+    <bool name="config_fillMainBuiltInDisplayCutout">true</bool>
+
+    <!-- Display cutout configuration -->
+    <string translatable="false" name="config_mainBuiltInDisplayCutout">
+        M 502.5,66
+        a 37,37 0 0 1 74,0
+        a 37,37 0 0 1 -74,0
+        Z
+        @left
+    </string>
+
+    <string translatable="false" name="config_mainBuiltInDisplayCutoutRectApproximation">
+        M 478.5,0
+        h 122
+        v 132
+        h -122
+        Z
+        @left
+    </string>
 </resources>
