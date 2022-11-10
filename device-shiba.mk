@@ -190,6 +190,9 @@ else
 include device/google/gs101/fingerprint/udfps_factory.mk
 endif
 
+# Display
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.set_idle_timer_ms=1500
+
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.udfps.als_feed_forward_supported=true \
     persist.vendor.udfps.lhbm_controlled_in_hal_supported=true
