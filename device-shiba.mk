@@ -256,3 +256,8 @@ ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
     PRODUCT_COPY_FILES += \
         device/google/zuma/init.hardware.wlc.rc.userdebug:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.wlc.rc
 endif
+
+# Setup Wizard device-specific settings
+PRODUCT_PRODUCT_PROPERTIES += \
+    setupwizard.feature.enable_quick_start_flow=true \
+
