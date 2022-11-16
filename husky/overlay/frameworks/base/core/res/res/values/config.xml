@@ -76,6 +76,10 @@
         <item>10000</item>
         <item>14000</item>
         <item>20000</item>
+        <item>25000</item>
+        <item>31000</item>
+        <item>51000</item>
+        <item>81000</item>
     </integer-array>
 
     <!-- Array of desired screen brightness in nits corresponding to the lux values
@@ -92,30 +96,34 @@
       array. The brightness values must be non-negative and non-decreasing. This must be
       overridden in platform specific overlays -->
     <array name="config_autoBrightnessDisplayValuesNits">
-      <item>5.139055</item>       <!--  0 - 1 -->
-      <item>9.962018965</item>    <!--  1 - 2 -->
-      <item>18.34822964</item>    <!--  2 - 3 -->
-      <item>21.55068128</item>    <!--  3 - 4 -->
-      <item>24.0167788</item>     <!--  4 - 8 -->
-      <item>32.5</item>           <!--  8 - 12 -->
-      <item>46</item>             <!--  12 - 15 -->
-      <item>53.26923077</item>    <!--  15 - 20 -->
-      <item>54.61538462</item>    <!--  20 - 33 -->
-      <item>58.11538462</item>    <!--  33 - 55 -->
-      <item>62.1394</item>        <!--  55 - 90 -->
-      <item>67.13133333</item>    <!--  90 - 148 -->
-      <item>79.67614115</item>    <!--  148 - 245 -->
-      <item>98.04727274</item>    <!--  245 - 403 -->
-      <item>125.1221991</item>    <!--  403 - 665 -->
-      <item>161.6875093</item>    <!--  665 - 1097 -->
-      <item>208.4885553</item>    <!--  1097 - 1808 -->
-      <item>264.8221315</item>    <!--  1808 - 3000 -->
-      <item>328.5869521</item>    <!--  3000 - 6000 -->
-      <item>627.4315413</item>    <!--  6000 - 9000 -->
-      <item>826.8584866</item>    <!--  9000 - 10000 -->
-      <item>867.0494638</item>    <!--  10000 -14000 -->
-      <item>901.4496943</item>    <!--  14000 -20000 -->
-      <item>1600.0</item>         <!--  20000+ -->
+        <item>5.139055</item>      <!--  0 - 1 -->
+        <item>9.962018965</item>   <!--  1 - 2 -->
+        <item>18.34822964</item>   <!--  2 - 3 -->
+        <item>21.55068128</item>   <!--  3 - 4 -->
+        <item>24.0167788</item>    <!--  4 - 8 -->
+        <item>32.5</item>          <!--  8 - 12 -->
+        <item>46</item>            <!--  12 - 15 -->
+        <item>53.26923077</item>   <!--  15 - 20 -->
+        <item>54.61538462</item>   <!--  20 - 33 -->
+        <item>58.11538462</item>   <!--  33 - 55 -->
+        <item>62.1394</item>       <!--  55 - 90 -->
+        <item>67.13133333</item>   <!--  90 - 148 -->
+        <item>79.67614115</item>   <!--  148 - 245 -->
+        <item>98.04727274</item>   <!--  245 - 403 -->
+        <item>125.1221991</item>   <!--  403 - 665 -->
+        <item>161.6875093</item>   <!--  665 - 1097 -->
+        <item>208.4885553</item>   <!--  1097 - 1808 -->
+        <item>264.8221315</item>   <!--  1808 - 3000 -->
+        <item>328.5869521</item>   <!--  3000 - 6000 -->
+        <item>627.4315413</item>   <!--  6000 - 9000 -->
+        <item>826.8584866</item>   <!--  9000 - 10000 -->
+        <item>867.85582302</item>  <!-- 10000 - 14000 -->
+        <item>1041.39662279</item> <!-- 14000 - 20000 -->
+        <item>1227.52633489</item> <!-- 20000 - 25000 -->
+        <item>1331.28933608</item> <!-- 25000 - 31000 -->
+        <item>1414.57566867</item> <!-- 31000 - 51000 -->
+        <item>1553.22826182</item> <!-- 51000 - 81000 -->
+        <item>1614.01031782</item> <!-- 81000+  -->
     </array>
 
     <!-- Stability requirements in milliseconds for accepting a new brightness level.  This is used
