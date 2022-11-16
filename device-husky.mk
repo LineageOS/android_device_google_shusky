@@ -210,3 +210,10 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.0.brightness.dimming.usage?
 
 # kernel idle timer for display driver
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.support_kernel_idle_timer=true
+
+# Vibrator HAL
+ACTUATOR_MODEL := luxshare_ict_081545
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.vendor.vibrator.hal.chirp.enabled=1 \
+    ro.vendor.vibrator.hal.device.mass=0.222 \
+    ro.vendor.vibrator.hal.loc.coeff=2.8
