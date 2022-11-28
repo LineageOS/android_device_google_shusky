@@ -27,6 +27,7 @@ include device/google/shusky/audio/ripcurrent/audio-tables.mk
 include device/google/zuma/device-shipping-common.mk
 include device/google/shusky/vibrator/cs40l26/device-stereo-shusky.mk
 include device/google/gs-common/bcmbt/bluetooth.mk
+include device/google/gs-common/touch/stm/stm20.mk
 
 # go/lyric-soong-variables
 $(call soong_config_set,lyric,camera_hardware,ripcurrent)
