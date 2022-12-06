@@ -111,11 +111,6 @@ static uint16_t amplitudeToScale(float amplitude, float maximum) {
     return std::round(ratio);
 }
 
-enum class AlwaysOnId : uint32_t {
-    GPIO_RISE,
-    GPIO_FALL,
-};
-
 enum WaveformBankID : uint8_t {
     RAM_WVFRM_BANK,
     ROM_WVFRM_BANK,
@@ -412,8 +407,8 @@ ndk::ScopedAStatus Vibrator::getCapabilities(int32_t *_aidl_return) {
     ATRACE_NAME("Vibrator::getCapabilities");
 
     int32_t ret = IVibrator::CAP_ON_CALLBACK | IVibrator::CAP_PERFORM_CALLBACK |
-                  IVibrator::CAP_AMPLITUDE_CONTROL | IVibrator::CAP_ALWAYS_ON_CONTROL |
-                  IVibrator::CAP_GET_RESONANT_FREQUENCY | IVibrator::CAP_GET_Q_FACTOR;
+                  IVibrator::CAP_AMPLITUDE_CONTROL | IVibrator::CAP_GET_RESONANT_FREQUENCY |
+                  IVibrator::CAP_GET_Q_FACTOR;
     if (hasHapticAlsaDevice()) {
         ret |= IVibrator::CAP_EXTERNAL_CONTROL;
     } else {
@@ -720,47 +715,15 @@ ndk::ScopedAStatus Vibrator::setGlobalAmplitude(bool set) {
     return setEffectAmplitude(amplitude, VOLTAGE_SCALE_MAX);
 }
 
-ndk::ScopedAStatus Vibrator::getSupportedAlwaysOnEffects(std::vector<Effect> *_aidl_return) {
-    *_aidl_return = {Effect::TEXTURE_TICK, Effect::TICK, Effect::CLICK, Effect::HEAVY_CLICK};
-    return ndk::ScopedAStatus::ok();
-}
-
-ndk::ScopedAStatus Vibrator::alwaysOnEnable(int32_t id, Effect effect, EffectStrength strength) {
-    ndk::ScopedAStatus status;
-    uint32_t effectIndex;
-    uint32_t timeMs;
-    uint32_t volLevel;
-    uint16_t scale;
-    status = getSimpleDetails(effect, strength, &effectIndex, &timeMs, &volLevel);
-    if (!status.isOk()) {
-        return status;
-    }
-
-    scale = amplitudeToScale(volLevel, VOLTAGE_SCALE_MAX);
-
-    switch (static_cast<AlwaysOnId>(id)) {
-        case AlwaysOnId::GPIO_RISE:
-            // mHwApi->setGpioRiseIndex(effectIndex);
-            // mHwApi->setGpioRiseScale(scale);
-            return ndk::ScopedAStatus::ok();
-        case AlwaysOnId::GPIO_FALL:
-            // mHwApi->setGpioFallIndex(effectIndex);
-            // mHwApi->setGpioFallScale(scale);
-            return ndk::ScopedAStatus::ok();
-    }
-
+ndk::ScopedAStatus Vibrator::getSupportedAlwaysOnEffects(std::vector<Effect> * /*_aidl_return*/) {
     return ndk::ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);
 }
-ndk::ScopedAStatus Vibrator::alwaysOnDisable(int32_t id) {
-    switch (static_cast<AlwaysOnId>(id)) {
-        case AlwaysOnId::GPIO_RISE:
-            // mHwApi->setGpioRiseIndex(0);
-            return ndk::ScopedAStatus::ok();
-        case AlwaysOnId::GPIO_FALL:
-            // mHwApi->setGpioFallIndex(0);
-            return ndk::ScopedAStatus::ok();
-    }
 
+ndk::ScopedAStatus Vibrator::alwaysOnEnable(int32_t /*id*/, Effect /*effect*/,
+                                            EffectStrength /*strength*/) {
+    return ndk::ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);
+}
+ndk::ScopedAStatus Vibrator::alwaysOnDisable(int32_t /*id*/) {
     return ndk::ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);
 }
 
