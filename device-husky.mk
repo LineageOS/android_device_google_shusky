@@ -105,6 +105,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES_DEBUG += \
     hci_inject
 
+# Bluetooth OPUS codec
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.bluetooth.opus.enabled=true
+
 # Bluetooth SAR test tool
 PRODUCT_PACKAGES_DEBUG += \
     sar_test
