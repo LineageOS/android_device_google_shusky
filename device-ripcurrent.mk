@@ -88,7 +88,7 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth HAL
 PRODUCT_COPY_FILES += \
-	device/google/shusky/bluetooth/bt_vendor_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth/bt_vendor_overlay.conf
+	device/google/shusky/bluetooth/bt_vendor_overlay_ripcurrent.conf:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth/bt_vendor_overlay.conf
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.bluetooth.a2dp_offload.supported=true \
     persist.bluetooth.a2dp_offload.disabled=false \
