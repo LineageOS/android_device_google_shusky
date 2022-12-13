@@ -186,8 +186,7 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # WiFi Overlay
 PRODUCT_PACKAGES += \
-	WifiOverlay2023 \
-	PixelWifiOverlay2023
+    WifiOverlay2023
 
 # Trusty liboemcrypto.so
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts
