@@ -70,7 +70,7 @@
             "Formula":"MAXIMUM",
             "Combination":["neutral_therm", "cam_therm", "soc_therm", "north_therm"],
             "Coefficient":[1.0, 1.0, 1.0, 1.0],
-            "HotThreshold":["NAN", "NAN", "NAN", "NAN", "NAN", "NAN", 65.0],
+            "HotThreshold":["NAN", "NAN", "NAN", "NAN", "NAN", 60.0, 65.0],
             "HotHysteresis":[0.0, 1.9, 1.9, 1.9, 1.4, 1.9, 1.9],
             "Multiplier":0.001,
             "SendCallback":true,
@@ -104,7 +104,7 @@
             "Formula":"MAXIMUM",
             "Combination":["neutral_therm", "cam_therm", "soc_therm", "north_therm"],
             "Coefficient":[1.0, 1.0, 1.0, 1.0],
-            "HotThreshold":["NAN", "NAN", "NAN", "NAN", "NAN", "NAN", 65.0],
+            "HotThreshold":["NAN", "NAN", "NAN", "NAN", "NAN", 60.0, 65.0],
             "HotHysteresis":[0.0, 1.9, 1.9, 1.9, 1.4, 1.9, 1.9],
             "Multiplier":0.001,
             "PollingDelay":300000,
@@ -112,6 +112,21 @@
             "PIDInfo": {
             },
             "BindedCdevInfo": [
+                {
+                    "CdevRequest": "thermal-cpufreq-0",
+                    "CdevWeightForPID": [1, 1, 1, 1, 1, 1, 1],
+                    "LimitInfo": [0, 0, 0, 0, 0, 14, 14]
+                },
+                {
+                    "CdevRequest": "thermal-cpufreq-1",
+                    "CdevWeightForPID": [1, 1, 1, 1, 1, 1, 1],
+                    "LimitInfo": [0, 0, 0, 0, 0, 16, 16]
+                },
+                {
+                    "CdevRequest": "thermal-cpufreq-2",
+                    "CdevWeightForPID": [1, 1, 1, 1, 1, 1, 1],
+                    "LimitInfo": [0, 0, 0, 0, 0, 16, 16]
+                }
             ]
         },
         {
@@ -123,7 +138,7 @@
             "Formula":"MAXIMUM",
             "Combination":["neutral_therm", "cam_therm", "soc_therm", "north_therm"],
             "Coefficient":[1.0, 1.0, 1.0, 1.0],
-            "HotThreshold":["NAN", "NAN", "NAN", "NAN", "NAN", "NAN", 65.0],
+            "HotThreshold":["NAN", "NAN", "NAN", "NAN", "NAN", 60.0, 65.0],
             "HotHysteresis":[0.0, 1.9, 1.9, 1.9, 1.4, 1.9, 1.9],
             "Multiplier":0.001,
             "PollingDelay":300000,
@@ -131,6 +146,11 @@
             "PIDInfo": {
             },
             "BindedCdevInfo": [
+                {
+                    "CdevRequest": "thermal-gpufreq-0",
+                    "CdevWeightForPID": [1, 1, 1, 1, 1, 1, 1],
+                    "LimitInfo": [0, 0, 0, 0, 0, 11, 11]
+                }
             ]
         },
         {
