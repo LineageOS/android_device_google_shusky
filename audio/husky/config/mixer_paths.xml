@@ -240,7 +240,7 @@
     <ctl name="MIC Record Soft Gain (dB)" value="-40"/>
 
     <!-- USB setting v2 -->
-    <ctl name="USB Bus ID v2" value="2"/>
+    <ctl name="USB Bus ID v2" value="1"/>
     <ctl name="USB Dev ID v2" value="2"/>
     <ctl name="USB Playback EP ID v2" value="1"/>
     <ctl name="USB Playback FORMAT v2" value="0"/>
