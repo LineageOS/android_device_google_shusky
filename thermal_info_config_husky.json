@@ -210,6 +210,16 @@
             "Multiplier":0.001
         },
         {
+            "Name":"VIRTUAL-BTS-WINDOW-PARTIAL",
+            "Type":"UNKNOWN",
+            "VirtualSensor":true,
+            "Formula":"WEIGHTED_AVG",
+            "Combination":["cam_therm", "north_therm", "soc_therm"],
+            "Coefficient":[0.355, 0.419, -0.0322],
+            "Offset":7194,
+            "Multiplier":0.001
+        },
+        {
             "Name":"VIRTUAL-SKIN",
             "Type":"SKIN",
             "Version":"2.0",
