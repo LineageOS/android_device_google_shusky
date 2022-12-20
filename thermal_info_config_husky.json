@@ -259,11 +259,31 @@
             "PollingDelay":300000,
             "PassiveDelay":7000,
             "PIDInfo": {
-
+                "K_Po":["NAN", "NAN", 800, "NAN", "NAN", "NAN", "NAN"],
+                "K_Pu":["NAN", "NAN", 800, "NAN", "NAN", "NAN", "NAN"],
+                "K_I":["NAN", "NAN", 5, "NAN", "NAN", "NAN", "NAN"],
+                "K_D":["NAN", "NAN", 0, "NAN", "NAN", "NAN", "NAN"],
+                "I_Max":["NAN", "NAN", 800, "NAN", "NAN", "NAN", "NAN"],
+                "S_Power":["NAN", "NAN", 3600, "NAN", "NAN", "NAN", "NAN"],
+                "MinAllocPower":["NAN", "NAN", 300, "NAN", "NAN", "NAN", "NAN"],
+                "MaxAllocPower":["NAN", "NAN", 6000, "NAN", "NAN", "NAN", "NAN"],
+                "I_Cutoff":["NAN", "NAN", 2, "NAN", "NAN", "NAN", "NAN"]
             },
             "ExcludedPowerInfo": [
+                {
+                    "PowerRail": "PARTIAL_SYSTEM_POWER",
+                    "PowerWeight": [0.5, 0.5, 0.8, 1.0, 1.0, 1.0, 1.0]
+                }
             ],
             "BindedCdevInfo": [
+                {
+                    "CdevRequest": "chg_mdis",
+                    "CdevWeightForPID": [1, 1, 1, 1, 1, 1, 1],
+                    "MaxReleaseStep": 1,
+                    "MaxThrottleStep": 1,
+                    "CdevCeiling": [0, 4, 7, 8, 9, 9, 9],
+                    "LimitInfo": [0, 0, 0, 0, 0, 9, 9]
+                }
             ]
         },
         {
@@ -334,6 +354,10 @@
             "WritePath":"/dev/thermal/cdev-by-name/thermal-gpufreq-0/user_vote"
         },
         {
+            "Name":"chg_mdis",
+            "Type":"BATTERY"
+        },
+        {
             "Name":"usbc-port",
             "Type":"BATTERY"
         },
@@ -378,7 +402,7 @@
             "PowerSampleCount":1
         },
         {
-            "Name":"POWER_FOR_CHARGING_THROTTLING",
+            "Name":"PARTIAL_SYSTEM_POWER",
             "VirtualRails":true,
             "Formula":"WEIGHTED_AVG",
             "Combination":["VSYS_PWR_MODEM", "S2M_VDD_CPUCL2", "S3M_VDD_CPUCL1", "S4M_VDD_CPUCL0", "S5M_VDD_INT", "S1M_VDD_MIF", "S2S_VDD_G3D"],
