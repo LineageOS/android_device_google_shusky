@@ -29,6 +29,7 @@ include device/google/zuma/device-shipping-common.mk
 include device/google/shusky/vibrator/cs40l26/device-shusky.mk
 include device/google/gs-common/bcmbt/bluetooth.mk
 include device/google/gs-common/touch/gti/gti.mk
+include device/google/gs-common/wireless_charger/wireless_charger.mk
 
 # go/lyric-soong-variables
 $(call soong_config_set,lyric,camera_hardware,shiba)
