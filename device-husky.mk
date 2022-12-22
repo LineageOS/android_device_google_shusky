@@ -23,6 +23,9 @@ $(call inherit-product-if-exists, vendor/google_devices/zuma/proprietary/device-
 $(call inherit-product-if-exists, vendor/google_devices/shusky/proprietary/husky/device-vendor-husky.mk)
 $(call inherit-product-if-exists, vendor/qorvo/uwb/qm35-hal/Device.mk)
 
+# display
+DEVICE_PACKAGE_OVERLAYS += device/google/shusky/husky/overlay
+
 include device/google/shusky/audio/husky/audio-tables.mk
 include device/google/zuma/device-shipping-common.mk
 include device/google/shusky/vibrator/cs40l26/device-shusky.mk
@@ -226,9 +229,6 @@ endif
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.udfps.als_feed_forward_supported=true \
     persist.vendor.udfps.lhbm_controlled_in_hal_supported=true
-
-# display
-DEVICE_PACKAGE_OVERLAYS += device/google/shusky/husky/overlay
 
 # config of display brightness dimming
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.0.brightness.dimming.usage?=1
