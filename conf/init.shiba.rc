@@ -50,3 +50,7 @@ on post-fs-data
 on post-fs-data
     chown bluetooth system /proc/bluetooth/timesync
 
+# Start the twoshay touch service
+on property:vendor.device.modules.ready=1
+    start twoshay
+
