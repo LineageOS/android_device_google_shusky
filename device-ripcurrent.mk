@@ -151,6 +151,15 @@ PRODUCT_PRODUCT_PROPERTIES += \
 	bluetooth.profile.ccp.server.enabled=true \
 	bluetooth.profile.vcp.controller.enabled=true
 
+# Bluetooth LE Audio enable hardware offloading
+PRODUCT_PRODUCT_PROPERTIES += \
+	ro.bluetooth.leaudio_offload.supported=true \
+	persist.bluetooth.leaudio_offload.disabled=false
+
+# Bluetooth LE Auido offload capabilities setting
+PRODUCT_COPY_FILES += \
+	device/google/shusky/bluetooth/le_audio_codec_capabilities.xml:$(TARGET_COPY_OUT_VENDOR)/etc/le_audio_codec_capabilities.xml
+
 # Keymaster HAL
 #LOCAL_KEYMASTER_PRODUCT_PACKAGE ?= android.hardware.keymaster@4.1-service
 
