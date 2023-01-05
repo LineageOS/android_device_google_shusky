@@ -1,6 +1,7 @@
 # Haptics
-genfscon sysfs /devices/platform/10970000.hsi2c/i2c-4/i2c-cs40l26a             u:object_r:sysfs_vibrator:s0
-genfscon sysfs /devices/platform/10970000.hsi2c/i2c-4/i2c-cs40l26a-dual        u:object_r:sysfs_vibrator:s0
+genfscon sysfs /devices/platform/10c80000.hsi2c/i2c-6/6-0043            u:object_r:sysfs_vibrator:s0
+genfscon sysfs /devices/platform/10c80000.hsi2c/i2c-5/5-0043            u:object_r:sysfs_vibrator:s0
+genfscon sysfs /devices/platform/10c80000.hsi2c/i2c-4/4-0043            u:object_r:sysfs_vibrator:s0
 
 # WLC
 genfscon sysfs /devices/platform/10c90000.hsi2c/i2c-0/0-003c                            u:object_r:sysfs_wlc:s0
