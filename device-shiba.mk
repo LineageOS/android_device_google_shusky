@@ -26,7 +26,6 @@ DEVICE_PACKAGE_OVERLAYS += device/google/shusky/shiba/overlay
 
 include device/google/shusky/audio/shiba/audio-tables.mk
 include device/google/zuma/device-shipping-common.mk
-include device/google/shusky/vibrator/cs40l26/device-shusky.mk
 include device/google/gs-common/bcmbt/bluetooth.mk
 include device/google/gs-common/touch/gti/gti.mk
 
