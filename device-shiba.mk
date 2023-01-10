@@ -261,3 +261,6 @@ endif
 PRODUCT_PRODUCT_PROPERTIES += \
     setupwizard.feature.enable_quick_start_flow=true \
 
+# PKVM Memory Reclaim
+PRODUCT_VENDOR_PROPERTIES += \
+    hypervisor.memory_reclaim.supported=1

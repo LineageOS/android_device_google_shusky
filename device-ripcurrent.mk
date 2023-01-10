@@ -241,3 +241,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.vibrator.hal.chirp.enabled=1 \
     ro.vendor.vibrator.hal.device.mass=0.222 \
     ro.vendor.vibrator.hal.loc.coeff=2.8
+
+# PKVM Memory Reclaim
+PRODUCT_VENDOR_PROPERTIES += \
+    hypervisor.memory_reclaim.supported=1
