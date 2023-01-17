@@ -50,6 +50,8 @@ PRODUCT_COPY_FILES += \
 # Camera
 PRODUCT_COPY_FILES += \
 	device/google/shusky/media_profiles_shiba.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
+PRODUCT_PROPERTY_OVERRIDES += \
+        persist.vendor.camera.rls_range_supported=false
 
 # NFC
 PRODUCT_COPY_FILES += \
