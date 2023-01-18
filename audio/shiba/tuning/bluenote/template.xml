@@ -203,6 +203,13 @@
       <param default="450" id="71" name="SSC_SOFT_DECISION_MAX_FREQ" type="int32"/>
       <param default="5" id="72" name="SSC_KEEP_SAVED_PROB_SMOOTH_SIZE" type="int32"/>
       <param default="1000" id="73" name="GAIN_BOOSTING_COST" type="int32"/>
+      <param default="450" id="74" name="GAIN_SMOOTHING_FACTOR" type="int32"/>
+      <param default="150" id="75" name="FINAL_GAIN_SMOOTHING_OFFSET_FACTOR" type="int32"/>
+      <param default="1" id="76" name="MUL_CH_SPEC_DIFF_ENABLE" type="int32"/>
+      <param default="4" id="77" name="MUL_CH_SPEC_DIFF_CENTER_SPEC_SEL" type="int32"/>
+      <param default="1000" id="78" name="MUL_CH_SPEC_DIFF_WIENER_OVERDRIVE" type="int32"/>
+      <param default="2" id="79" name="MUL_CH_SPEC_DIFF_GAIN_COMB" type="int32"/>
+      <param default="900" id="80" name="MUL_CH_SPEC_DIFF_TIME_SMOOTH" type="int32"/>
     </module>
     <module id="18" name="Multi Channel IIR 1">
       <param default="0" id="0" max="3" name="opMode_" type="uint32"/>
