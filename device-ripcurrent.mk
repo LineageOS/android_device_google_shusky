@@ -34,6 +34,9 @@ $(call soong_config_set,lyric,camera_hardware,ripcurrent)
 $(call soong_config_set,lyric,tuning_product,ripcurrent)
 $(call soong_config_set,google3a_config,target_device,ripcurrent)
 
+# display
+DEVICE_PACKAGE_OVERLAYS += device/google/shusky/ripcurrent/overlay
+
 # Init files
 PRODUCT_COPY_FILES += \
 	device/google/shusky/conf/init.ripcurrent.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.ripcurrent.rc
