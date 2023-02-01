@@ -22,7 +22,6 @@ on property:vendor.mfgapi.touchpanel.permission=1
 
 # Fingerprint
 on property:ro.vendor.trusty.storage.fs_ready=1
-    chown system system /dev/goodix_fp
     exec_background - system shell -- /vendor/bin/trusty_apploader /vendor/firmware/g7.app
 
 # Overrides fingerprint antispoof if following persist sysprops are set
