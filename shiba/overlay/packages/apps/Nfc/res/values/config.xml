@@ -21,4 +21,5 @@
     <item>GZPF0</item>
     <item>GPJ41</item>
   </string-array>
+  <bool name="tag_intent_app_pref_supported">true</bool>
 </resources>
