@@ -26,6 +26,7 @@ TARGET_BOOTLOADER_BOARD_NAME := shiba
 TARGET_SCREEN_DENSITY := 420
 BOARD_USES_GENERIC_AUDIO := true
 USES_DEVICE_GOOGLE_SHUSKY := true
+BOARD_KERNEL_CMDLINE += swiotlb=noforce
 
 include device/google/zuma/BoardConfig-common.mk
 -include vendor/google_devices/zuma/prebuilts/BoardConfigVendor.mk
