@@ -25,7 +25,7 @@ $(call inherit-product-if-exists, vendor/qorvo/uwb/qm35-hal/Device.mk)
 
 include device/google/shusky/audio/ripcurrent/audio-tables.mk
 include device/google/zuma/device-shipping-common.mk
-include device/google/shusky/vibrator/cs40l26/device-stereo-shusky.mk
+include hardware/google/pixel/vibrator/cs40l26/device-stereo.mk
 include device/google/gs-common/bcmbt/bluetooth.mk
 include device/google/gs-common/touch/stm/stm20.mk
 
