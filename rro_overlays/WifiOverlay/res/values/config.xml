@@ -148,4 +148,8 @@
     <!-- Boolean indicating whether DTIM multiplier configuration is enabled. DTIM multiplier value
         is when the system is in the suspended mode -->
     <bool translatable="false" name="config_wifiDtimMultiplierConfigEnabled">true</bool>
+
+    <!-- Boolean indicating whether we should enable the STA current connected indoor channel
+     for SAP, WFD GO, Wi-Fi Aware -->
+    <bool translatable="false" name="config_wifiEnableStaIndoorChannelForPeerNetwork">true</bool>
 </resources>
