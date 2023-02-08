@@ -249,6 +249,7 @@
     <features>
         <feature name="BatteryThrottle=Type:BCL_VOLTAGE,Name:BCL_AUDIO_BAACL,Strategy:MediaSpeakerAndScreenOn"/>
         <feature name="PlaybackThermalThrottle=PollWaitMs:20000,ThermistorName:VIRTUAL-SKIN,ThermistorType:SKIN,ThrottlingSeverity:MODERATE"/>
+        <feature name="UltrasonicProxDetection"/>
     </features>
 
     <cfg_attr>
