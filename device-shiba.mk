@@ -193,7 +193,8 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # PowerStats HAL
 PRODUCT_SOONG_NAMESPACES += \
-    device/google/shusky/powerstats/shiba
+    device/google/shusky/powerstats/shiba \
+    device/google/shusky
 
 # WiFi Overlay
 PRODUCT_PACKAGES += \
@@ -265,3 +266,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # PKVM Memory Reclaim
 PRODUCT_VENDOR_PROPERTIES += \
     hypervisor.memory_reclaim.supported=1
+
+# SKU specific RROs
+PRODUCT_PACKAGES += \
+    SettingsOverlayGZPF0
