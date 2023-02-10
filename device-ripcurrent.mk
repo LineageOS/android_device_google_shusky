@@ -224,15 +224,6 @@ PRODUCT_VENDOR_PROPERTIES += \
 	vendor.zram.size=3g \
 	persist.device_config.configuration.disable_rescue_party=true
 
-# Fingerprint HAL
-GOODIX_CONFIG_BUILD_VERSION := g7_trusty
-include device/google/gs101/fingerprint/udfps_common.mk
-ifeq ($(filter factory%, $(TARGET_PRODUCT)),)
-include device/google/gs101/fingerprint/udfps_shipping.mk
-else
-include device/google/gs101/fingerprint/udfps_factory.mk
-endif
-
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.udfps.als_feed_forward_supported=true \
     persist.vendor.udfps.lhbm_controlled_in_hal_supported=true
