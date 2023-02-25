@@ -135,8 +135,13 @@
         {
             "Name":"disp_therm",
             "Type":"UNKNOWN",
+            "HotThreshold":["NAN", 30.0, "NAN", "NAN", "NAN", "NAN", "NAN"],
+            "HotHysteresis":[0.0, 0.9, 0.0, 0.0, 0.0, 0.0, 0.0],
             "TempPath":"/dev/thermal/tz-by-name/disp_therm/tz_temp",
-            "Multiplier":0.001
+            "Multiplier":0.001,
+            "Multiplier":0.001,
+            "PollingDelay":60000,
+            "PassiveDelay":7000
         },
         {
             "Name":"soc_therm",
@@ -147,12 +152,7 @@
         {
             "Name":"quiet_therm",
             "Type":"UNKNOWN",
-            "HotThreshold":["NAN", 31.0, "NAN", "NAN", "NAN", "NAN", "NAN"],
-            "HotHysteresis":[0.0, 0.9, 0.0, 0.0, 0.0, 0.0, 0.0],
-            "TempPath":"/dev/thermal/tz-by-name/quiet_therm/tz_temp",
-            "Multiplier":0.001,
-            "PollingDelay":60000,
-            "PassiveDelay":7000
+            "TempPath":"/dev/thermal/tz-by-name/quiet_therm/tz_temp"
         },
         {
             "Name":"VIRTUAL-SKIN-SUB-0",
@@ -269,7 +269,7 @@
             "Type":"SKIN",
             "Version":"1.0",
             "VirtualSensor":true,
-            "TriggerSensor":"quiet_therm",
+            "TriggerSensor":"disp_therm",
             "Formula":"MAXIMUM",
             "Combination":["VIRTUAL-SKIN-SUB-0", "VIRTUAL-SKIN-SUB-1", "VIRTUAL-SKIN-SUB-2", "VIRTUAL-SKIN-SUB-3", "VIRTUAL-SKIN-SUB-4", "VIRTUAL-SKIN-SUB-5", "VIRTUAL-SKIN-SUB-6", "VIRTUAL-SKIN-SUB-7"],
             "Coefficient":[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
@@ -295,7 +295,7 @@
             "Type":"UNKNOWN",
             "Hidden":true,
             "VirtualSensor":true,
-            "TriggerSensor":"quiet_therm",
+            "TriggerSensor":"disp_therm",
             "Formula":"MAXIMUM",
             "Combination":["VIRTUAL-SKIN"],
             "Coefficient":[1.0],
@@ -311,7 +311,7 @@
             "Type":"UNKNOWN",
             "Hidden":true,
             "VirtualSensor":true,
-            "TriggerSensor":"quiet_therm",
+            "TriggerSensor":"disp_therm",
             "Formula":"MAXIMUM",
             "Combination":["VIRTUAL-SKIN"],
             "Coefficient":[1.0],
@@ -367,7 +367,7 @@
             "Type":"UNKNOWN",
             "Hidden":true,
             "VirtualSensor":true,
-            "TriggerSensor":"quiet_therm",
+            "TriggerSensor":"disp_therm",
             "Formula":"MAXIMUM",
             "Combination":["VIRTUAL-SKIN"],
             "Coefficient":[1.0],
@@ -404,7 +404,7 @@
             "Name":"VIRTUAL-SKIN-CHARGE",
             "Type":"UNKNOWN",
             "VirtualSensor":true,
-            "TriggerSensor":"quiet_therm",
+            "TriggerSensor":"disp_therm",
             "Formula":"MAXIMUM",
             "Combination":["VIRTUAL-SKIN-CHARGE-SUB-0", "VIRTUAL-SKIN-CHARGE-SUB-1"],
             "Coefficient":[1.0, 1.0],
@@ -445,7 +445,7 @@
             "Name":"cellular-emergency",
             "Type":"POWER_AMPLIFIER",
             "VirtualSensor":true,
-            "TriggerSensor":"quiet_therm",
+            "TriggerSensor":"disp_therm",
             "Formula":"MAXIMUM",
             "Combination":["VIRTUAL-SKIN"],
             "Coefficient":[1.0],
