@@ -146,12 +146,15 @@ PRODUCT_PRODUCT_PROPERTIES += \
 	bluetooth.profile.hap.client.enabled=true \
 	bluetooth.profile.mcp.server.enabled=true \
 	bluetooth.profile.ccp.server.enabled=true \
-	bluetooth.profile.vcp.controller.enabled=true
+	bluetooth.profile.vcp.controller.enabled=true \
+	bluetooth.profile.bap.broadcast.assist.enabled=true \
+	bluetooth.profile.bap.broadcast.source.enabled=true
 
 # Bluetooth LE Audio enable hardware offloading
 PRODUCT_PRODUCT_PROPERTIES += \
 	ro.bluetooth.leaudio_offload.supported=true \
-	persist.bluetooth.leaudio_offload.disabled=false
+	persist.bluetooth.leaudio_offload.disabled=false \
+	ro.bluetooth.leaudio_broadcast_switcher.supported=true
 
 # Bluetooth LE Auido offload capabilities setting
 PRODUCT_COPY_FILES += \
