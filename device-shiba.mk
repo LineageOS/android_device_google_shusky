@@ -43,10 +43,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
         device/google/shusky/conf/init.recovery.device.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.shiba.rc
 
-# insmod files
-PRODUCT_COPY_FILES += \
-	device/google/shusky/init.insmod.shiba.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/init.insmod.shiba.cfg
-
 # Camera
 PRODUCT_COPY_FILES += \
 	device/google/shusky/media_profiles_shiba.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
