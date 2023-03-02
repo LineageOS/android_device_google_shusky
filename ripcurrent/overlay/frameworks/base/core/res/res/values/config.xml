@@ -231,4 +231,6 @@
           <item>283</item>
      </integer-array>
 
+    <!-- The max vibration strength allowed in audio haptic channels. -->
+    <item name="config_hapticChannelMaxVibrationAmplitude" format="float" type="dimen">0.335</item>
 </resources>
