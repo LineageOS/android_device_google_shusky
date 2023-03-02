@@ -250,6 +250,10 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # config of display brightness dimming
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.0.brightness.dimming.usage?=1
+PRODUCT_VENDOR_PROPERTIES += \
+    vendor.primarydisplay.op.hs_hz=120 \
+    vendor.primarydisplay.op.ns_hz=60 \
+    vendor.primarydisplay.op.ns_min_dbv=1172
 
 # kernel idle timer for display driver
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.support_kernel_idle_timer=true
