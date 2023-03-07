@@ -46,10 +46,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
         device/google/shusky/conf/init.recovery.device.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.husky.rc
 
-# insmod files
-PRODUCT_COPY_FILES += \
-	device/google/shusky/init.insmod.husky.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/init.insmod.husky.cfg
-
 # Camera
 PRODUCT_COPY_FILES += \
 	device/google/shusky/media_profiles_husky.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
