@@ -4,7 +4,7 @@
       "Name": "MemFreq",
       "Path": "/sys/devices/platform/17000010.devfreq_mif/devfreq/17000010.devfreq_mif/min_freq",
       "Values": [
-        "3172000",
+        "3744000",
         "1716000",
         "1352000",
         "1014000",
@@ -671,7 +671,7 @@
       "PowerHint": "LAUNCH",
       "Node": "MemFreq",
       "Duration": 5000,
-      "Value": "3172000"
+      "Value": "3744000"
     },
     {
       "PowerHint": "LAUNCH",
@@ -718,7 +718,7 @@
       "PowerHint": "CAMERA_LAUNCH",
       "Node": "MemFreq",
       "Duration": 1000,
-      "Value": "3172000"
+      "Value": "3744000"
     },
     {
       "PowerHint": "CAMERA_LAUNCH",
@@ -862,7 +862,7 @@
       "PowerHint": "CAMERA_SHOT",
       "Node": "MemFreq",
       "Duration": 300,
-      "Value": "3172000"
+      "Value": "3744000"
     },
     {
       "PowerHint": "CAMERA_SHOT",
@@ -892,7 +892,7 @@
       "PowerHint": "CAMERA_BACKEND_BOOST",
       "Node": "MemFreq",
       "Duration": 1000,
-      "Value": "3172000"
+      "Value": "3744000"
     },
     {
       "PowerHint": "CAMERA_BACKEND_BOOST",
