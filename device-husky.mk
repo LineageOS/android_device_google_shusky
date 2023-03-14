@@ -261,6 +261,12 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.primarydisplay.lhbm.frames_to_reach
 # Display LBE
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.lbe.supported=1
 
+# blocking zone for min idle refresh rate
+PRODUCT_VENDOR_PROPERTIES += \
+    vendor.primarydisplay.min_idle_refresh_rate.default=1 \
+    vendor.primarydisplay.min_idle_refresh_rate.blocking_zone=10 \
+    vendor.primarydisplay.min_idle_refresh_rate.blocking_zone_dbv=492
+
 # Vibrator HAL
 ACTUATOR_MODEL := luxshare_ict_081545
 PRODUCT_VENDOR_PROPERTIES += \
