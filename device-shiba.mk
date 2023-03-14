@@ -232,6 +232,10 @@ else
 include device/google/gs101/fingerprint/udfps_factory.mk
 endif
 
+# Fingerprint exposure compensation
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.udfps.auto_exposure_compensation_supported=true
+
 # Display
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.set_idle_timer_ms=1500
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.ignore_hdr_camera_layers=true
