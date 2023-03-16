@@ -5,7 +5,6 @@
       "Path": "/sys/devices/platform/17000010.devfreq_mif/devfreq/17000010.devfreq_mif/min_freq",
       "Values": [
         "3744000",
-        "1716000",
         "1352000",
         "1014000",
         "421000"
@@ -1053,19 +1052,19 @@
       "PowerHint": "CAMERA_STREAMING_EXTREME",
       "Node": "CPULittleClusterMaxFreq",
       "Duration": 0,
-      "Value": "1098000"
+      "Value": "1475000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_EXTREME",
       "Node": "CPUMidClusterMaxFreq",
       "Duration": 0,
-      "Value": "1082000"
+      "Value": "1622000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_EXTREME",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 0,
-      "Value": "893000"
+      "Value": "1852000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_EXTREME",
@@ -1077,7 +1076,7 @@
       "PowerHint": "CAMERA_STREAMING_EXTREME",
       "Node": "MemFreq",
       "Duration": 0,
-      "Value": "1716000"
+      "Value": "1014000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_EXTREME",
@@ -1197,25 +1196,25 @@
       "PowerHint": "CAMERA_STREAMING_HIGH",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 0,
-      "Value": "893000"
+      "Value": "1852000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
       "Node": "CPUMidClusterMaxFreq",
       "Duration": 0,
-      "Value": "1082000"
+      "Value": "1622000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
       "Node": "CPULittleClusterMaxFreq",
       "Duration": 0,
-      "Value": "1098000"
+      "Value": "1475000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
       "Node": "MemFreq",
       "Duration": 0,
-      "Value": "1716000"
+      "Value": "1352000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
@@ -1335,25 +1334,25 @@
       "PowerHint": "CAMERA_STREAMING_STANDARD",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 0,
-      "Value": "893000"
+      "Value": "1852000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_STANDARD",
       "Node": "CPUMidClusterMaxFreq",
       "Duration": 0,
-      "Value": "1082000"
+      "Value": "1622000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_STANDARD",
       "Node": "CPULittleClusterMaxFreq",
       "Duration": 0,
-      "Value": "1098000"
+      "Value": "1475000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_STANDARD",
       "Node": "MemFreq",
       "Duration": 0,
-      "Value": "1716000"
+      "Value": "1352000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_STANDARD",
@@ -1413,19 +1412,19 @@
       "PowerHint": "CAMERA_STREAMING_LOW",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 0,
-      "Value": "893000"
+      "Value": "1852000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_LOW",
       "Node": "CPUMidClusterMaxFreq",
       "Duration": 0,
-      "Value": "1082000"
+      "Value": "1622000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_LOW",
       "Node": "CPULittleClusterMaxFreq",
       "Duration": 0,
-      "Value": "1098000"
+      "Value": "1475000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_LOW",
