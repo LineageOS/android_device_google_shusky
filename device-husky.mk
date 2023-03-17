@@ -290,5 +290,10 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_PACKAGES += \
     SettingsOverlayGE9DP
 
+# Display RRS default Config
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += persist.vendor.display.primary.boot_config=1008x2244@120
+# TODO: b/250788756 - the property will be phased out after HWC loads user-preferred mode
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.preferred_mode=1008x2244@120
+
 # Window Extensions
 $(call inherit-product, $(SRC_TARGET_DIR)/product/window_extensions.mk)
