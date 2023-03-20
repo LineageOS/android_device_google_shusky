@@ -502,6 +502,54 @@
             "PassiveDelay":7000
         },
         {
+            "Name":"USB-MINUS-NEUTRAL",
+            "Type":"UNKNOWN",
+            "VirtualSensor":true,
+            "Formula":"WEIGHTED_AVG",
+            "Combination":["usb_pwr_therm", "neutral_therm"],
+            "Coefficient":[1.0, -1.0],
+            "Multiplier":0.001
+        },
+        {
+            "Name":"USB-MINUS-QUIET",
+            "Type":"UNKNOWN",
+            "VirtualSensor":true,
+            "Formula":"WEIGHTED_AVG",
+            "Combination":["usb_pwr_therm", "quiet_therm"],
+            "Coefficient":[1.0, -1.0],
+            "Multiplier":0.001
+        },
+        {
+            "Name":"USB_QUIET_RFFE",
+            "Type":"UNKNOWN",
+            "VirtualSensor":true,
+            "Formula":"WEIGHTED_AVG",
+            "Combination":["USB-MINUS-QUIET", "VSYS_PWR_RFFE"],
+            "CombinationType":["SENSOR", "ODPM"],
+            "Coefficient":[1, -8],
+	    "Offset":-5000,
+            "Multiplier":0.001
+        },
+        {
+            "Name":"VIRTUAL-USB-THROTTLING",
+            "Type":"USB_PORT",
+            "VirtualSensor":true,
+            "Formula":"COUNT_THRESHOLD",
+            "TriggerSensor": "usb_pwr_therm",
+            "Combination":["usb_pwr_therm", "usb_pwr_therm", "USB-MINUS-NEUTRAL", "USB_QUIET_RFFE"],
+            "Coefficient":[46000, 46000, 10000, 0],
+            "HotThreshold":["NAN", "NAN", "NAN", "NAN", "3.0", "NAN", "NAN"],
+            "BindedCdevInfo": [
+                {
+                    "CdevRequest": "usbc-port",
+                    "LimitInfo": [0, 0, 0, 0, 1, 1, 1]
+                }
+            ],
+            "Multiplier":1,
+            "PollingDelay":60000,
+            "PassiveDelay":7000
+        },
+        {
             "Name":"LITTLE",
             "Type":"CPU",
             "HotThreshold":["NAN", "NAN", "NAN", "NAN", "NAN", "NAN", "NAN"],
@@ -573,6 +621,11 @@
         }
     ],
     "PowerRails":[
+        {
+            "Name":"VSYS_PWR_RFFE",
+            "PowerSampleDelay":7000,
+            "PowerSampleCount":4
+        },
         {
             "Name":"S2M_VDD_CPUCL2",
             "PowerSampleDelay":7000,
