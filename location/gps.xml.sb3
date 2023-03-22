@@ -49,8 +49,8 @@
        LtoSyncThresholdDays="1"
 
        GnssYearOfHardware="2020"
-       CpGuardTimeSec="1"
-       CpLppGuardTimeSec="1"
+       CpGuardTimeSec="2"
+       CpLppGuardTimeSec="2"
        IgnoreInjectedSystemTime="true"
 
        AttributionAppPkgName="com.google.android.carrierlocation"
