@@ -247,6 +247,9 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.udfps.als_feed_forward_supported=true \
     persist.vendor.udfps.lhbm_controlled_in_hal_supported=true
 
+PRODUCT_COPY_FILES += \
+	device/google/shusky/shiba/display_colordata_google-bigsurf_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_colordata_google-bigsurf_cal0.pb
+
 # Display LBE
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.lbe.supported=1
 
