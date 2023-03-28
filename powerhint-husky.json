@@ -219,6 +219,7 @@
       "Values": [
         "0-3",
         "4-8",
+        "4-7",
         "0-7",
         "0-8"
       ],
@@ -1112,7 +1113,7 @@
       "PowerHint": "CAMERA_STREAMING_EXTREME",
       "Node": "CDCpuset",
       "Duration": 0,
-      "Value": "0-7"
+      "Value": "4-7"
     },
     {
       "PowerHint": "CAMERA_STREAMING_EXTREME",
@@ -1244,7 +1245,7 @@
       "PowerHint": "CAMERA_STREAMING_HIGH",
       "Node": "CDCpuset",
       "Duration": 0,
-      "Value": "0-7"
+      "Value": "4-7"
     },
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
@@ -1376,7 +1377,7 @@
       "PowerHint": "CAMERA_STREAMING_STANDARD",
       "Node": "CDCpuset",
       "Duration": 0,
-      "Value": "0-7"
+      "Value": "4-7"
     },
     {
       "PowerHint": "CAMERA_STREAMING_STANDARD",
@@ -1436,7 +1437,7 @@
       "PowerHint": "CAMERA_STREAMING_LOW",
       "Node": "CDCpuset",
       "Duration": 0,
-      "Value": "0-7"
+      "Value": "4-7"
     },
     {
       "PowerHint": "CAMERA_STREAMING_LOW",
