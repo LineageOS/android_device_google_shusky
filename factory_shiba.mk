@@ -31,4 +31,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.vendor.bluetooth.evb_bdaddr="22:22:22:33:44:55"
 
 # Factory binaries of camera
-PRODUCT_PACKAGES += fatp_hk3sb3_wide_hat_tool fatp_sb3_ultrawide_hat_tool
+PRODUCT_PACKAGES += fatp_hk3sb3_wide_hat_tool fatp_sb3_ultrawide_hat_tool factory_hk3sb3_main_cam_decompress_test
