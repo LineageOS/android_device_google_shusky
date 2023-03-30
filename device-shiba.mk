@@ -238,6 +238,11 @@ endif
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.set_idle_timer_ms=1500
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.ignore_hdr_camera_layers=true
 
+# display color data
+PRODUCT_COPY_FILES += \
+	device/google/shusky/shiba/panel_config_google-bigsurf_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/panel_config_google-bigsurf_cal0.pb \
+	device/google/shusky/shiba/panel_config_google-shoreline_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/panel_config_google-shoreline_cal0.pb
+
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.udfps.als_feed_forward_supported=true \
     persist.vendor.udfps.lhbm_controlled_in_hal_supported=true
