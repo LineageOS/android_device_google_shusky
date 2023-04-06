@@ -4,10 +4,10 @@
       "Name": "MemFreq",
       "Path": "/sys/devices/platform/17000010.devfreq_mif/devfreq/17000010.devfreq_mif/min_freq",
       "Values": [
-        "3744000",
+        "9999999",
         "1352000",
         "1014000",
-        "421000"
+        "0"
       ],
       "ResetOnInit": true
     },
@@ -15,31 +15,48 @@
       "Name": "IntFreq",
       "Path": "/sys/devices/platform/17000020.devfreq_int/devfreq/17000020.devfreq_int/min_freq",
       "Values": [
-        "533000",
-        "100000"
+        "9999999",
+        "0"
       ],
       "ResetOnInit": true
     },
     {
-      "Name": "DsuFreq",
+      "Name": "DsuMinFreq",
       "Path": "/sys/devices/platform/17000090.devfreq_dsu/devfreq/17000090.devfreq_dsu/min_freq",
       "Values": [
-        "2150000",
-        "1328000",
+        "9999999",
         "820000",
-        "324000"
+        "0"
       ],
       "ResetOnInit": true
     },
     {
-      "Name": "BCIFreq",
+      "Name": "DsuMaxFreq",
+      "Path": "/sys/devices/platform/17000090.devfreq_dsu/devfreq/17000090.devfreq_dsu/max_freq",
+      "Values": [
+        "9999999",
+        "820000"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
+      "Name": "BCIMinFreq",
       "Path": "/sys/devices/platform/170000a0.devfreq_bci/devfreq/170000a0.devfreq_bci/min_freq",
       "Values": [
-        "1850000",
-        "1205000",
-        "840000",
-        "315000"
+        "9999999",
+        "0"
       ],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "BCIMaxFreq",
+      "Path": "/sys/devices/platform/170000a0.devfreq_bci/devfreq/170000a0.devfreq_bci/max_freq",
+      "Values": [
+        "9999999",
+        "700000"
+      ],
+      "DefaultIndex": 0,
       "ResetOnInit": true
     },
     {
@@ -694,7 +711,7 @@
       "PowerHint": "LAUNCH",
       "Node": "MemFreq",
       "Duration": 5000,
-      "Value": "3744000"
+      "Value": "9999999"
     },
     {
       "PowerHint": "LAUNCH",
@@ -745,15 +762,21 @@
     },
     {
       "PowerHint": "CPU_LOAD_RESET",
-      "Node": "DsuFreq",
+      "Node": "DsuMinFreq",
       "Duration": 33,
       "Value": "820000"
+    },
+    {
+      "PowerHint": "CPU_LOAD_RESET",
+      "Node": "DsuMaxFreq",
+      "Duration": 33,
+      "Value": "9999999"
     },
     {
       "PowerHint": "CAMERA_LAUNCH",
       "Node": "MemFreq",
       "Duration": 1000,
-      "Value": "3744000"
+      "Value": "9999999"
     },
     {
       "PowerHint": "CAMERA_LAUNCH",
@@ -897,7 +920,7 @@
       "PowerHint": "CAMERA_SHOT",
       "Node": "MemFreq",
       "Duration": 300,
-      "Value": "3744000"
+      "Value": "9999999"
     },
     {
       "PowerHint": "CAMERA_SHOT",
@@ -927,13 +950,13 @@
       "PowerHint": "CAMERA_BACKEND_BOOST",
       "Node": "MemFreq",
       "Duration": 1000,
-      "Value": "3744000"
+      "Value": "9999999"
     },
     {
       "PowerHint": "CAMERA_BACKEND_BOOST",
       "Node": "IntFreq",
       "Duration": 1000,
-      "Value": "533000"
+      "Value": "9999999"
     },
     {
       "PowerHint": "CAMERA_BACKEND_BOOST",
@@ -1066,6 +1089,18 @@
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 0,
       "Value": "1852000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_EXTREME",
+      "Node": "BCIMaxFreq",
+      "Duration": 0,
+      "Value": "700000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_EXTREME",
+      "Node": "DsuMaxFreq",
+      "Duration": 0,
+      "Value": "820000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_EXTREME",
@@ -1213,6 +1248,18 @@
     },
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
+      "Node": "BCIMaxFreq",
+      "Duration": 0,
+      "Value": "700000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_HIGH",
+      "Node": "DsuMaxFreq",
+      "Duration": 0,
+      "Value": "820000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_HIGH",
       "Node": "MemFreq",
       "Duration": 0,
       "Value": "1352000"
@@ -1351,6 +1398,18 @@
     },
     {
       "PowerHint": "CAMERA_STREAMING_STANDARD",
+      "Node": "BCIMaxFreq",
+      "Duration": 0,
+      "Value": "700000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_STANDARD",
+      "Node": "DsuMaxFreq",
+      "Duration": 0,
+      "Value": "820000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_STANDARD",
       "Node": "MemFreq",
       "Duration": 0,
       "Value": "1352000"
@@ -1426,6 +1485,18 @@
       "Node": "CPULittleClusterMaxFreq",
       "Duration": 0,
       "Value": "1475000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_LOW",
+      "Node": "BCIMaxFreq",
+      "Duration": 0,
+      "Value": "700000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_LOW",
+      "Node": "DsuMaxFreq",
+      "Duration": 0,
+      "Value": "820000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_LOW",
