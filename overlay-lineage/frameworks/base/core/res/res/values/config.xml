@@ -16,4 +16,7 @@
 
 <resources>
     <integer name="config_fingerprintMaxTemplatesPerUser">4</integer>
+
+    <!-- IWLAN-->
+    <string name="config_qualified_networks_service_package">com.android.qns</string>
 </resources>
