@@ -281,6 +281,9 @@
     <!-- Type of the udfps long press sensor. Empty if long press is not supported. -->
     <string name="config_dozeUdfpsLongPressSensorType" translatable="false">com.google.sensor.long_press</string>
 
+    <!-- Type of the quick pickup sensor. Empty if quick pickup is not supported. -->
+    <string name="config_quickPickupSensorType" translatable="false">com.google.sensor.quick_pickup</string>
+
     <!-- MMS user agent string -->
     <string name="config_mms_user_agent" translatable="false">g1mnw</string>
     <!-- MMS user agent profile url -->
