@@ -30,9 +30,9 @@
     <integer-array name="config_doze_brightness_sensor_to_brightness">
         <item>-1</item> <!-- 0: OFF -->
         <item>3</item> <!-- 1: NIGHT -->
-        <item>3</item> <!-- 2: LOW -->
-        <item>13</item> <!-- 3: HIGH -->
-        <item>13</item> <!-- 4: SUN -->
+        <item>3</item> <!-- 2: LOW (3-1)/(255-1)*(1400-2)+2 = 13 nits -->
+        <item>10</item> <!-- 3: HIGH (10-1)/(255-1)*(1400-2)+2 = 51.5 nits -->
+        <item>10</item> <!-- 4: SUN -->
     </integer-array>
 
     <!-- Doze: Table that translates sensor values from the doze_brightness_sensor_type sensor
