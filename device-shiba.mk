@@ -242,6 +242,8 @@ endif
 # Display
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.set_idle_timer_ms=1500
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.ignore_hdr_camera_layers=true
+# lhbm peak brightness delay: decided by kernel
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.primarydisplay.lhbm.frames_to_reach_peak_brightness=0
 
 # display color data
 PRODUCT_COPY_FILES += \
