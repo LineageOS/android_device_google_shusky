@@ -388,7 +388,7 @@
       "Name": "BigControlTempSet",
       "Path": "/dev/thermal/tz-by-name/BIG/trip_point_2_temp",
       "Values": [
-        "100000",
+        "85000",
         "80000"
       ],
       "DefaultIndex": 0,
@@ -398,7 +398,7 @@
       "Name": "MidControlTempSet",
       "Path": "/dev/thermal/tz-by-name/MID/trip_point_2_temp",
       "Values": [
-        "100000",
+        "85000",
         "80000"
       ],
       "DefaultIndex": 0,
@@ -408,7 +408,7 @@
       "Name": "LittleControlTempSet",
       "Path": "/dev/thermal/tz-by-name/LITTLE/trip_point_2_temp",
       "Values": [
-        "100000",
+        "85000",
         "80000"
       ],
       "DefaultIndex": 0,
@@ -418,7 +418,7 @@
       "Name": "G3dControlTempSet",
       "Path": "/dev/thermal/tz-by-name/G3D/trip_point_2_temp",
       "Values": [
-        "100000",
+        "85000",
         "80000"
       ],
       "DefaultIndex": 0,
@@ -428,7 +428,7 @@
       "Name": "TpuControlTempSet",
       "Path": "/dev/thermal/tz-by-name/TPU/trip_point_2_temp",
       "Values": [
-        "100000",
+        "85000",
         "80000"
       ],
       "DefaultIndex": 0,
@@ -438,7 +438,7 @@
       "Name": "AurControlTempSet",
       "Path": "/dev/thermal/tz-by-name/AUR/trip_point_2_temp",
       "Values": [
-        "100000",
+        "85000",
         "80000"
       ],
       "DefaultIndex": 0,
@@ -448,7 +448,7 @@
       "Name": "BigSwitchOnTempSet",
       "Path": "/dev/thermal/tz-by-name/BIG/trip_point_1_temp",
       "Values": [
-        "80000",
+        "65000",
         "60000"
       ],
       "DefaultIndex": 0,
@@ -458,7 +458,7 @@
       "Name": "MidSwitchOnTempSet",
       "Path": "/dev/thermal/tz-by-name/MID/trip_point_1_temp",
       "Values": [
-        "80000",
+        "65000",
         "60000"
       ],
       "DefaultIndex": 0,
@@ -468,7 +468,7 @@
       "Name": "LittleSwitchOnTempSet",
       "Path": "/dev/thermal/tz-by-name/LITTLE/trip_point_1_temp",
       "Values": [
-        "80000",
+        "65000",
         "60000"
       ],
       "DefaultIndex": 0,
@@ -478,7 +478,7 @@
       "Name": "G3dSwitchOnTempSet",
       "Path": "/dev/thermal/tz-by-name/G3D/trip_point_1_temp",
       "Values": [
-        "80000",
+        "65000",
         "60000"
       ],
       "DefaultIndex": 0,
@@ -488,7 +488,7 @@
       "Name": "TpuSwitchOnTempSet",
       "Path": "/dev/thermal/tz-by-name/TPU/trip_point_1_temp",
       "Values": [
-        "80000",
+        "65000",
         "60000"
       ],
       "DefaultIndex": 0,
@@ -498,7 +498,7 @@
       "Name": "AurSwitchOnTempSet",
       "Path": "/dev/thermal/tz-by-name/AUR/trip_point_1_temp",
       "Values": [
-        "80000",
+        "65000",
         "60000"
       ],
       "DefaultIndex": 0,
