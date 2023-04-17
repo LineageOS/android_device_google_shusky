@@ -258,6 +258,7 @@
       "Values": [
         "0-3",
         "4-7",
+        "4-8",
         "0-8"
       ],
       "ResetOnInit": true
@@ -1230,6 +1231,12 @@
     },
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
+      "Node": "CDPreferIdle",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_HIGH",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 0,
       "Value": "1852000"
@@ -1286,7 +1293,7 @@
       "PowerHint": "CAMERA_STREAMING_HIGH",
       "Node": "CDMidCpusetCpus",
       "Duration": 0,
-      "Value": "4-7"
+      "Value": "4-8"
     },
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
@@ -1298,7 +1305,7 @@
       "PowerHint": "CAMERA_STREAMING_HIGH",
       "Node": "CDCpuset",
       "Duration": 0,
-      "Value": "4-7"
+      "Value": "4-8"
     },
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
