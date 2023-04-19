@@ -268,10 +268,6 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.build.svn=1
 
-# P23 Devices no longer need rlsservice
-PRODUCT_VENDOR_PROPERTIES += \
-    persist.vendor.camera.rls_supported=false
-
 # WLC userdebug specific
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
     PRODUCT_COPY_FILES += \

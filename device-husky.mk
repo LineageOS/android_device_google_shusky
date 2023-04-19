@@ -304,10 +304,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_VENDOR_PROPERTIES += \
     hypervisor.memory_reclaim.supported=1
 
-# P23 Devices no longer need rlsservice
-PRODUCT_VENDOR_PROPERTIES += \
-    persist.vendor.camera.rls_supported=false
-
 # SKU specific RROs
 PRODUCT_PACKAGES += \
     SettingsOverlayGE9DP
