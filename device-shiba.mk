@@ -21,6 +21,7 @@ $(call inherit-product-if-exists, vendor/google_devices/shusky/prebuilts/device-
 $(call inherit-product-if-exists, vendor/google_devices/zuma/prebuilts/device-vendor.mk)
 $(call inherit-product-if-exists, vendor/google_devices/zuma/proprietary/device-vendor.mk)
 $(call inherit-product-if-exists, vendor/google_devices/shusky/proprietary/shiba/device-vendor-shiba.mk)
+$(call inherit-product-if-exists, vendor/google_devices/shiba/proprietary/device-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/google/shusky/shiba/overlay
 
