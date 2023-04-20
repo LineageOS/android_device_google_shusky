@@ -24,5 +24,6 @@ BOARD_KERNEL_CMDLINE += disable_dma32=on
 
 include device/google/zuma/BoardConfig-common.mk
 -include vendor/google_devices/zuma/prebuilts/BoardConfigVendor.mk
+-include vendor/google_devices/shiba/proprietary/BoardConfigVendor.mk
 include device/google/shusky-sepolicy/shiba-sepolicy.mk
 include device/google/shusky/wifi/BoardConfig-wifi.mk
