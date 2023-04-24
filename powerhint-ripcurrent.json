@@ -1548,6 +1548,114 @@
       "Value": "0"
     },
     {
+      "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
+      "Node": "PowerHALCameraRunning",
+      "Duration": 0,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
+      "Node": "EM_Profile",
+      "Duration": 0,
+      "Value": "cam1"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
+      "Node": "CDPreferHighCap",
+      "Duration": 0,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
+      "Node": "TAPreferHighCap",
+      "Duration": 0,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
+      "Node": "TAPreferIdle",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
+      "Node": "CDPreferIdle",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
+      "Node": "CPUBigClusterMaxFreq",
+      "Duration": 0,
+      "Value": "1164000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
+      "Node": "CPUMidClusterMaxFreq",
+      "Duration": 0,
+      "Value": "1328000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
+      "Node": "CPULittleClusterMaxFreq",
+      "Duration": 0,
+      "Value": "1328000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
+      "Node": "BCIMaxFreq",
+      "Duration": 0,
+      "Value": "700000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
+      "Node": "DsuMaxFreq",
+      "Duration": 0,
+      "Value": "820000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
+      "Node": "MemFreq",
+      "Duration": 0,
+      "Value": "1352000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
+      "Node": "CDHighCpusetCpus",
+      "Duration": 0,
+      "Value": "8"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
+      "Node": "CDMidCpusetCpus",
+      "Duration": 0,
+      "Value": "4-7"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
+      "Node": "CDMidHighCpusetCpus",
+      "Duration": 0,
+      "Value": "4-8"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
+      "Node": "CDCpuset",
+      "Duration": 0,
+      "Value": "4-7"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
+      "Node": "CPUUtilThreshold",
+      "Duration": 0,
+      "Value": "1100"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
+      "Node": "NPITaskPacking",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
       "PowerHint": "CAMERA_VIDEO_RECORDING",
       "Type": "MaskHint",
       "Value": "CDCPUSET_RESTRICTED"
