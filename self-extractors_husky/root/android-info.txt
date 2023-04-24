@@ -1,0 +1,6 @@
+require board=ripcurrent|husky|shiba
+require version-bootloader=ripcurrent-14.0-9960440
+
+
+
+require version-baseband=g5300i-230407-230411-B-9917799
