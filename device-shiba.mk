@@ -228,7 +228,7 @@ endif
 
 # Set zram size
 PRODUCT_VENDOR_PROPERTIES += \
-	vendor.zram.size=3g \
+	vendor.zram.size=50p \
 	persist.device_config.configuration.disable_rescue_party=true
 
 # Fingerprint HAL
