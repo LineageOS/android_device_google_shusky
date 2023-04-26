@@ -57,7 +57,7 @@
   <!-- The device_builder: format is "type="x" codec_name="y" argu="z". name and argu are optional. -->
   <device_builder>
     <device type="bt" />
-    <device type="usb" argu="MaxSamplingRate=96000,UnsupportedFormat=S24_LE" />
+    <device type="usb" argu="MaxSamplingRate=192000,UnsupportedFormat=S24_LE,MaxCapPacketInterval=125,MaxCapSampleRate=192000,MaxCapBitWidth=32,MaxCapChannel=2,EnableHifi192kMultichannel=0" />
     <device type="speaker" codec_name="cs35l41" argu="SpeakerNum=4,Rotation,AcousticShockProtection" />
   </device_builder>
 
