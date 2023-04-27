@@ -256,7 +256,7 @@
         {
             "Name":"VSYS_PWR_RFFE",
             "PowerSampleDelay":7000,
-            "PowerSampleCount":4
+            "PowerSampleCount":2
         },
         {
             "Name":"S2M_VDD_CPUCL2",
