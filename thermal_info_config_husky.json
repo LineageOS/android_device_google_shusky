@@ -338,8 +338,8 @@
             "VirtualSensor":true,
             "Formula":"WEIGHTED_AVG",
             "Combination":["cam_therm", "north_therm", "soc_therm"],
-            "Coefficient":[0.355, 0.419, -0.0322],
-            "Offset":7194,
+            "Coefficient":[0.14, 0.27, 0.03],
+            "Offset":1900,
             "Multiplier":0.001
         },
         {
