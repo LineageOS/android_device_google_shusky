@@ -91,3 +91,9 @@ on property:vendor.all.modules.ready=1
     chown system system /sys/bus/i2c/devices/4-0043/default/delay_before_stop_playback_us
 
     enable vendor.vibrator.cs40l26
+
+# For Japan sku, always enforce camera shutter sound
+# Since this property is read by the audio server in system service,
+# it should be written by the system init.
+on property:ro.boot.hardware.sku=GZPF0
+    setprop audio.camerasound.force true

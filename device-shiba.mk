@@ -21,6 +21,7 @@ $(call inherit-product-if-exists, vendor/google_devices/shusky/prebuilts/device-
 $(call inherit-product-if-exists, vendor/google_devices/zuma/prebuilts/device-vendor.mk)
 $(call inherit-product-if-exists, vendor/google_devices/zuma/proprietary/device-vendor.mk)
 $(call inherit-product-if-exists, vendor/google_devices/shusky/proprietary/shiba/device-vendor-shiba.mk)
+$(call inherit-product-if-exists, vendor/google_devices/shiba/proprietary/device-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/google/shusky/shiba/overlay
 
@@ -66,15 +67,12 @@ PRODUCT_PACKAGES += \
 
 # SecureElement
 PRODUCT_PACKAGES += \
-	android.hardware.secure_element@1.2-service-gto
+	android.hardware.secure_element-service.thales
 
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.se.omapi.ese.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.se.omapi.ese.xml \
 	frameworks/native/data/etc/android.hardware.se.omapi.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.se.omapi.uicc.xml \
 	device/google/shusky/nfc/libse-gto-hal.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libse-gto-hal.conf
-
-DEVICE_MANIFEST_FILE += \
-	device/google/shusky/nfc/manifest_se.xml
 
 # Thermal Config
 PRODUCT_COPY_FILES += \
@@ -124,16 +122,24 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Override BQR mask to enable LE Audio Choppy report, remove BTRT logging
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_PRODUCT_PROPERTIES += \
-    persist.bluetooth.bqr.event_mask=262238
+    persist.bluetooth.bqr.event_mask=295006 \
+    persist.bluetooth.bqr.vnd_quality_mask=29 \
+    persist.bluetooth.bqr.vnd_trace_mask=0
 else
 PRODUCT_PRODUCT_PROPERTIES += \
-    persist.bluetooth.bqr.event_mask=94
+    persist.bluetooth.bqr.event_mask=295006 \
+    persist.bluetooth.bqr.vnd_quality_mask=16 \
+    persist.bluetooth.bqr.vnd_trace_mask=0
 endif
 
 # Spatial Audio
 PRODUCT_PACKAGES += \
 	libspatialaudio \
 	librondo
+
+# Bluetooth Super Wide Band
+PRODUCT_PRODUCT_PROPERTIES += \
+	bluetooth.hfp.swb.supported=true
 
 # Bluetooth LE Audio
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -237,6 +243,8 @@ endif
 # Display
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.set_idle_timer_ms=1500
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.ignore_hdr_camera_layers=true
+# lhbm peak brightness delay: decided by kernel
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.primarydisplay.lhbm.frames_to_reach_peak_brightness=0
 
 # display color data
 PRODUCT_COPY_FILES += \
@@ -264,6 +272,10 @@ PRODUCT_VENDOR_PROPERTIES += \
 # Increment the SVN for any official public releases
 PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.build.svn=1
+
+# P23 Devices no longer need rlsservice
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.camera.rls_supported=false
 
 # WLC userdebug specific
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
