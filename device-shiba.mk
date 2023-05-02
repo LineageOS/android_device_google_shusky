@@ -77,15 +77,6 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.se.omapi.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.se.omapi.uicc.xml \
 	device/google/shusky/nfc/libse-gto-hal.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libse-gto-hal.conf
 
-# Thermal Config
-PRODUCT_COPY_FILES += \
-	device/google/shusky/thermal_info_config_shiba.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json \
-	device/google/shusky/thermal_info_config_charge_shiba.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config_charge.json
-
-# Power HAL config
-PRODUCT_COPY_FILES += \
-	device/google/shusky/powerhint-shiba.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
-
 # Bluetooth HAL
 PRODUCT_COPY_FILES += \
 	device/google/shusky/bluetooth/bt_vendor_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth/bt_vendor_overlay.conf
