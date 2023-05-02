@@ -22,6 +22,8 @@ USES_DEVICE_GOOGLE_SHUSKY := true
 BOARD_KERNEL_CMDLINE += swiotlb=noforce
 BOARD_KERNEL_CMDLINE += disable_dma32=on
 
+include device/google/shusky/device-shusky-common.mk
+
 include device/google/zuma/BoardConfig-common.mk
 -include vendor/google_devices/zuma/prebuilts/BoardConfigVendor.mk
 -include vendor/google_devices/husky/proprietary/BoardConfigVendor.mk
