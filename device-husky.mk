@@ -41,6 +41,7 @@ include hardware/google/pixel/vibrator/cs40l26/device.mk
 include device/google/gs-common/bcmbt/bluetooth.mk
 include device/google/gs-common/touch/stm/stm20.mk
 include device/google/gs-common/touch/gti/gti.mk
+include device/google/gs-common/touch/touchinspector/touchinspector.mk
 
 # go/lyric-soong-variables
 $(call soong_config_set,lyric,camera_hardware,husky)
