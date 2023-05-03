@@ -83,15 +83,6 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.se.omapi.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.se.omapi.uicc.xml \
 	device/google/shusky/nfc/libse-gto-hal.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libse-gto-hal.conf
 
-# Thermal Config
-PRODUCT_COPY_FILES += \
-	device/google/shusky/thermal_info_config_husky.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json \
-	device/google/shusky/thermal_info_config_charge_husky.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config_charge.json
-
-# Power HAL config
-PRODUCT_COPY_FILES += \
-	device/google/shusky/powerhint-husky.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
-
 # Bluetooth HAL
 PRODUCT_COPY_FILES += \
 	device/google/shusky/bluetooth/bt_vendor_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth/bt_vendor_overlay.conf
@@ -257,6 +248,10 @@ endif
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.udfps.als_feed_forward_supported=true \
     persist.vendor.udfps.lhbm_controlled_in_hal_supported=true
+
+# Camera Vendor property
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.camera.front_720P_always_binning=true
 
 # config of display brightness dimming
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.0.brightness.dimming.usage?=1

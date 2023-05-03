@@ -78,14 +78,6 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.se.omapi.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.se.omapi.uicc.xml \
 	device/google/shusky/nfc/libse-gto-hal-disable.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libse-gto-hal.conf
 
-# Thermal Config
-PRODUCT_COPY_FILES += \
-	device/google/shusky/thermal_info_config_ripcurrent.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json \
-	device/google/shusky/thermal_info_config_charge_ripcurrent.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config_charge.json
-
-# Power HAL config
-PRODUCT_COPY_FILES += \
-	device/google/shusky/powerhint-ripcurrent.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
 # Bluetooth HAL
 PRODUCT_COPY_FILES += \
@@ -236,6 +228,10 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.udfps.als_feed_forward_supported=true \
     persist.vendor.udfps.lhbm_controlled_in_hal_supported=true
+
+# Camera Vendor property
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.camera.front_720P_always_binning=true
 
 # Vibrator HAL
 ACTUATOR_MODEL := luxshare_ict_081545

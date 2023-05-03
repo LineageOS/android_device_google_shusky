@@ -20,6 +20,8 @@ TARGET_SCREEN_DENSITY := 440
 BOARD_USES_GENERIC_AUDIO := true
 USES_DEVICE_GOOGLE_SHUSKY := true
 
+include device/google/shusky/device-shusky-common.mk
+
 include device/google/zuma/BoardConfig-common.mk
 -include vendor/google_devices/zuma/prebuilts/BoardConfigVendor.mk
 include device/google/shusky-sepolicy/ripcurrent-sepolicy.mk
