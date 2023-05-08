@@ -61,6 +61,7 @@
        ReAidingOnHotStart="false"
        ReAidingIntervalSec="1200"
        RuntimeSwLteFilterEnable="true"
+       MallocDebugAssertThreshold="104857600"
   />
 
   <gll
