@@ -28,6 +28,10 @@ on property:vendor.mfgapi.touchpanel.permission=1
     chmod 0600 /sys/devices/virtual/sec/tsp/cmd
     chown system system /sys/devices/virtual/sec/tsp/cmd
 
+# Permissions for display
+on fs
+    chown system system /sys/class/backlight/panel0-backlight/acl_mode
+
 # WiFi
 on post-fs-data
     setprop wifi.direct.interface p2p-dev-wlan0
