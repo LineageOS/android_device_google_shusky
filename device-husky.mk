@@ -144,7 +144,7 @@ PRODUCT_PACKAGES += \
 
 # Bluetooth Super Wide Band
 PRODUCT_PRODUCT_PROPERTIES += \
-	bluetooth.hfp.swb.supported=true
+	bluetooth.hfp.swb.supported=false
 
 # Bluetooth LE Audio
 PRODUCT_PRODUCT_PROPERTIES += \
