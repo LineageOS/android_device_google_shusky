@@ -1353,7 +1353,7 @@
       "PowerHint": "CAMERA_STREAMING_HIGH",
       "Node": "CDPreferHighCap",
       "Duration": 0,
-      "Value": "1"
+      "Value": "0"
     },
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
@@ -1406,12 +1406,6 @@
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
       "Node": "CDMidCpusetCpus",
-      "Duration": 0,
-      "Value": "4-8"
-    },
-    {
-      "PowerHint": "CAMERA_STREAMING_HIGH",
-      "Node": "CDCpuset",
       "Duration": 0,
       "Value": "4-8"
     },
