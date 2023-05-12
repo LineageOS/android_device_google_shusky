@@ -51,8 +51,14 @@ volume index from 0 to 100.
         <point>66,-2200</point>
         <point>100,-1800</point>
     </volume>
-    <volume stream="AUDIO_STREAM_SYSTEM" deviceCategory="DEVICE_CATEGORY_SPEAKER"
-                                         ref="DEFAULT_SYSTEM_VOLUME_CURVE"/>
+    <volume stream="AUDIO_STREAM_SYSTEM" deviceCategory="DEVICE_CATEGORY_SPEAKER">
+        <point>1,-4500</point>
+        <point>29,-3400</point>
+        <point>57,-2250</point>
+        <point>71,-1900</point>
+        <point>86,-1530</point>
+        <point>100,-1100</point>
+    </volume>
     <volume stream="AUDIO_STREAM_SYSTEM" deviceCategory="DEVICE_CATEGORY_EARPIECE"
                                          ref="DEFAULT_SYSTEM_VOLUME_CURVE"/>
     <volume stream="AUDIO_STREAM_SYSTEM" deviceCategory="DEVICE_CATEGORY_EXT_MEDIA"
@@ -62,9 +68,12 @@ volume index from 0 to 100.
     <volume stream="AUDIO_STREAM_RING" deviceCategory="DEVICE_CATEGORY_HEADSET"
                                        ref="DEFAULT_DEVICE_CATEGORY_HEADSET_VOLUME_CURVE"/>
     <volume stream="AUDIO_STREAM_RING" deviceCategory="DEVICE_CATEGORY_SPEAKER">
-        <point>1,-2970</point>
-        <point>33,-2010</point>
-        <point>66,-1020</point>
+        <point>1,-4000</point>
+        <point>29,-2950</point>
+        <point>43,-2350</point>
+        <point>57,-1850</point>
+        <point>71,-1400</point>
+        <point>86,-700</point>
         <point>100,0</point>
     </volume>
     <volume stream="AUDIO_STREAM_RING" deviceCategory="DEVICE_CATEGORY_EARPIECE"
@@ -76,31 +85,31 @@ volume index from 0 to 100.
     <volume stream="AUDIO_STREAM_MUSIC" deviceCategory="DEVICE_CATEGORY_HEADSET"
                                         ref="DEFAULT_MEDIA_VOLUME_CURVE"/>
     <volume stream="AUDIO_STREAM_MUSIC" deviceCategory="DEVICE_CATEGORY_SPEAKER">
-        <point>1,-6438</point>
-        <point>4,-6438</point>
-        <point>8,-5961</point>
-        <point>12,-5543</point>
-        <point>16,-5167</point>
-        <point>20,-4743</point>
-        <point>24,-4391</point>
-        <point>28,-4061</point>
-        <point>32,-3871</point>
-        <point>36,-3673</point>
-        <point>40,-3471</point>
-        <point>44,-3273</point>
-        <point>48,-3065</point>
-        <point>52,-2850</point>
-        <point>56,-2618</point>
-        <point>60,-2355</point>
-        <point>64,-2060</point>
-        <point>68,-1773</point>
-        <point>72,-1482</point>
-        <point>76,-1205</point>
-        <point>80,-989</point>
-        <point>84,-791</point>
-        <point>88,-578</point>
-        <point>92,-374</point>
-        <point>96,-137</point>
+        <point>1,-5761</point>
+        <point>4,-5927</point>
+        <point>8,-5624</point>
+        <point>12,-5356</point>
+        <point>16,-5029</point>
+        <point>20,-4656</point>
+        <point>24,-4323</point>
+        <point>28,-3947</point>
+        <point>32,-3729</point>
+        <point>36,-3491</point>
+        <point>40,-3249</point>
+        <point>44,-3041</point>
+        <point>48,-2795</point>
+        <point>52,-2561</point>
+        <point>56,-2309</point>
+        <point>60,-2121</point>
+        <point>64,-1905</point>
+        <point>68,-1689</point>
+        <point>72,-1525</point>
+        <point>76,-1333</point>
+        <point>80,-1128</point>
+        <point>84,-957</point>
+        <point>88,-668</point>
+        <point>92,-602</point>
+        <point>96,-241</point>
         <point>100,0</point>
     </volume>
     <volume stream="AUDIO_STREAM_MUSIC" deviceCategory="DEVICE_CATEGORY_EARPIECE"
@@ -112,9 +121,11 @@ volume index from 0 to 100.
     <volume stream="AUDIO_STREAM_ALARM" deviceCategory="DEVICE_CATEGORY_HEADSET"
                                         ref="DEFAULT_NON_MUTABLE_HEADSET_VOLUME_CURVE"/>
     <volume stream="AUDIO_STREAM_ALARM" deviceCategory="DEVICE_CATEGORY_SPEAKER">
-        <point>0,-2970</point>
-        <point>33,-2010</point>
-        <point>66,-1020</point>
+        <point>0,-5600</point>
+        <point>29,-3520</point>
+        <point>57,-1500</point>
+        <point>71,-1150</point>
+        <point>86,-500</point>
         <point>100,0</point>
     </volume>
     <volume stream="AUDIO_STREAM_ALARM" deviceCategory="DEVICE_CATEGORY_EARPIECE"
@@ -126,10 +137,11 @@ volume index from 0 to 100.
     <volume stream="AUDIO_STREAM_NOTIFICATION" deviceCategory="DEVICE_CATEGORY_HEADSET"
                                                ref="DEFAULT_DEVICE_CATEGORY_HEADSET_VOLUME_CURVE"/>
     <volume stream="AUDIO_STREAM_NOTIFICATION" deviceCategory="DEVICE_CATEGORY_SPEAKER">
-        <point>1,-2970</point>
-        <point>33,-2010</point>
-        <point>66,-1020</point>
-        <point>100,0</point>
+        <point>1,-4500</point>
+        <point>29,-3800</point>
+        <point>71,-1850</point>
+        <point>86,-1000</point>
+        <point>100,-500</point>
     </volume>
     <volume stream="AUDIO_STREAM_NOTIFICATION" deviceCategory="DEVICE_CATEGORY_EARPIECE"
                                                ref="DEFAULT_DEVICE_CATEGORY_EARPIECE_VOLUME_CURVE"/>
@@ -165,8 +177,14 @@ volume index from 0 to 100.
         <point>66,-2200</point>
         <point>100,-1800</point>
     </volume>
-    <volume stream="AUDIO_STREAM_ENFORCED_AUDIBLE" deviceCategory="DEVICE_CATEGORY_SPEAKER"
-                                                   ref="DEFAULT_SYSTEM_VOLUME_CURVE"/>
+    <volume stream="AUDIO_STREAM_ENFORCED_AUDIBLE" deviceCategory="DEVICE_CATEGORY_SPEAKER">
+        <point>1,-4500</point>
+        <point>29,-3400</point>
+        <point>57,-2250</point>
+        <point>71,-1900</point>
+        <point>86,-1530</point>
+        <point>100,-1100</point>
+    </volume>
     <volume stream="AUDIO_STREAM_ENFORCED_AUDIBLE" deviceCategory="DEVICE_CATEGORY_EARPIECE"
                                                    ref="DEFAULT_SYSTEM_VOLUME_CURVE"/>
     <volume stream="AUDIO_STREAM_ENFORCED_AUDIBLE" deviceCategory="DEVICE_CATEGORY_EXT_MEDIA"
@@ -179,8 +197,14 @@ volume index from 0 to 100.
         <point>66,-2200</point>
         <point>100,-1800</point>
     </volume>
-    <volume stream="AUDIO_STREAM_DTMF" deviceCategory="DEVICE_CATEGORY_SPEAKER"
-                                       ref="DEFAULT_SYSTEM_VOLUME_CURVE"/>
+    <volume stream="AUDIO_STREAM_DTMF" deviceCategory="DEVICE_CATEGORY_SPEAKER">
+        <point>1,-5700</point>
+        <point>29,-4230</point>
+        <point>43,-3300</point>
+        <point>57,-3100</point>
+        <point>71,-2500</point>
+        <point>100,-1400</point>
+    </volume>
     <volume stream="AUDIO_STREAM_DTMF" deviceCategory="DEVICE_CATEGORY_EARPIECE"
                                        ref="DEFAULT_SYSTEM_VOLUME_CURVE"/>
     <volume stream="AUDIO_STREAM_DTMF" deviceCategory="DEVICE_CATEGORY_EXT_MEDIA"
