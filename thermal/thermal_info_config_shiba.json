@@ -330,7 +330,10 @@
             "Combination":["north_therm", "cam_therm", "soc_therm", "charge_therm", "disp_therm", "battery", "neutral_therm", "quiet_therm", "usb_pwr_therm"],
             "Coefficient":[0.06, 0, 0.31, 0.08, 0.29, 0.1, 0, 0.16, 0],
             "Offset":-1970,
-            "Multiplier":0.001
+            "HotThreshold":["NAN", 37.0, "NAN", "NAN", "NAN", "NAN", "NAN"],
+            "HotHysteresis":[0.0, 1.9, 0.0, 0.0, 0.0, 0.0, 0.0],
+            "Multiplier":0.001,
+            "SendCallback":true
         },
         {
             "Name":"VIRTUAL-SKIN",
