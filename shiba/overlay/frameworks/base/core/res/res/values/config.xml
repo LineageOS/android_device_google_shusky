@@ -157,6 +157,19 @@
     <!-- default refresh rate in the zone defined by birghtness and ambient thresholds -->
     <integer name="config_defaultRefreshRateInZone">120</integer>
 
+    <!-- Switch to fixed refresh rate when display brightness setting is
+         equal or more than this value -->
+    <integer-array name="config_highDisplayBrightnessThresholdsOfFixedRefreshRate">
+        <!-- System brightness for 1000 nits: round((0.71*(255-1)+1) = 181 -->
+        <item>181</item> <!--100% UI normal brightness -->
+    </integer-array>
+
+    <integer-array name="config_highAmbientBrightnessThresholdsOfFixedRefreshRate">
+        <item>50000</item>
+    </integer-array>
+
+    <!-- default refresh rate in the high zone defined by birghtness and ambient thresholds -->
+    <integer name="config_fixedRefreshRateInHighZone">120</integer>
 
     <integer-array name="config_ambientThresholdLevels">
         <item>2</item>
