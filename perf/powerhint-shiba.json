@@ -93,6 +93,15 @@
       "ResetOnInit": true
     },
     {
+      "Name": "CPULittleClusterDownRateLimitUs",
+      "Path": "/sys/devices/system/cpu/cpu0/cpufreq/sched_pixel/down_rate_limit_us",
+      "Values": [
+        "2000",
+        "5000"
+      ],
+      "ResetOnInit": true
+    },
+    {
       "Name": "CPUMidClusterMaxFreq",
       "Path": "/sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq",
       "Values": [
@@ -121,6 +130,15 @@
       "ResetOnInit": true
     },
     {
+      "Name": "CPUMidClusterDownRateLimitUs",
+      "Path": "/sys/devices/system/cpu/cpu4/cpufreq/sched_pixel/down_rate_limit_us",
+      "Values": [
+        "2000",
+        "20000"
+      ],
+      "ResetOnInit": true
+    },
+    {
       "Name": "CPUBigClusterMaxFreq",
       "Path": "/sys/devices/system/cpu/cpu8/cpufreq/scaling_max_freq",
       "Values": [
@@ -145,6 +163,15 @@
         "1852000",
         "1164000",
         "0"
+      ],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "CPUBigClusterDownRateLimitUs",
+      "Path": "/sys/devices/system/cpu/cpu8/cpufreq/sched_pixel/down_rate_limit_us",
+      "Values": [
+        "2000",
+        "20000"
       ],
       "ResetOnInit": true
     },
@@ -380,8 +407,8 @@
       "Name": "BigControlTempSet",
       "Path": "/dev/thermal/tz-by-name/BIG/trip_point_2_temp",
       "Values": [
-        "85000",
-        "80000"
+        "75000",
+        "70000"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": false
@@ -390,8 +417,8 @@
       "Name": "MidControlTempSet",
       "Path": "/dev/thermal/tz-by-name/MID/trip_point_2_temp",
       "Values": [
-        "85000",
-        "80000"
+        "75000",
+        "70000"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": false
@@ -400,8 +427,8 @@
       "Name": "LittleControlTempSet",
       "Path": "/dev/thermal/tz-by-name/LITTLE/trip_point_2_temp",
       "Values": [
-        "85000",
-        "80000"
+        "75000",
+        "70000"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": false
@@ -440,8 +467,8 @@
       "Name": "BigSwitchOnTempSet",
       "Path": "/dev/thermal/tz-by-name/BIG/trip_point_1_temp",
       "Values": [
-        "65000",
-        "60000"
+        "55000",
+        "50000"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": false
@@ -450,8 +477,8 @@
       "Name": "MidSwitchOnTempSet",
       "Path": "/dev/thermal/tz-by-name/MID/trip_point_1_temp",
       "Values": [
-        "65000",
-        "60000"
+        "55000",
+        "50000"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": false
@@ -460,8 +487,8 @@
       "Name": "LittleSwitchOnTempSet",
       "Path": "/dev/thermal/tz-by-name/LITTLE/trip_point_1_temp",
       "Values": [
-        "65000",
-        "60000"
+        "55000",
+        "50000"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": false
@@ -558,8 +585,17 @@
       "DefaultIndex": 0
     },
     {
+      "Name": "PMU_LIT_LIMIT_FREQ",
+      "Path": "/sys/devices/system/cpu/cpufreq/policy0/sched_pixel/limit_frequency",
+      "Values": [
+        "1328000"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
       "Name": "PMU_LIT_LCPI_THRESHOLD",
-      "Path": "/sys/devices/system/cpu/cpu0/cpufreq/sched_pixel/lcpi_threshold",
+      "Path": "/sys/devices/system/cpu/cpufreq/policy0/sched_pixel/lcpi_threshold",
       "Values": [
         "2",
         "0"
@@ -568,16 +604,17 @@
     },
     {
       "Name": "PMU_LIT_SPC_THRESHOLD",
-      "Path": "/sys/devices/system/cpu/cpu0/cpufreq/sched_pixel/spc_threshold",
+      "Path": "/sys/devices/system/cpu/cpufreq/policy0/sched_pixel/spc_threshold",
       "Values": [
         "70",
+        "30",
         "0"
       ],
       "DefaultIndex": 0
     },
     {
       "Name": "PMU_MID_LCPI_THRESHOLD",
-      "Path": "/sys/devices/system/cpu/cpu4/cpufreq/sched_pixel/lcpi_threshold",
+      "Path": "/sys/devices/system/cpu/cpufreq/policy4/sched_pixel/lcpi_threshold",
       "Values": [
         "6",
         "3"
@@ -586,7 +623,7 @@
     },
     {
       "Name": "PMU_MID_SPC_THRESHOLD",
-      "Path": "/sys/devices/system/cpu/cpu4/cpufreq/sched_pixel/spc_threshold",
+      "Path": "/sys/devices/system/cpu/cpufreq/policy4/sched_pixel/spc_threshold",
       "Values": [
         "65",
         "50"
@@ -595,7 +632,7 @@
     },
     {
       "Name": "PMU_BIG_LIMIT_FREQ",
-      "Path": "/sys/devices/system/cpu/cpu8/cpufreq/sched_pixel/limit_frequency",
+      "Path": "/sys/devices/system/cpu/cpufreq/policy8/sched_pixel/limit_frequency",
       "Values": [
         "2556000",
         "1852000"
@@ -604,7 +641,7 @@
     },
     {
       "Name": "PMU_BIG_LCPI_THRESHOLD",
-      "Path": "/sys/devices/system/cpu/cpu8/cpufreq/sched_pixel/lcpi_threshold",
+      "Path": "/sys/devices/system/cpu/cpufreq/policy8/sched_pixel/lcpi_threshold",
       "Values": [
         "5",
         "3"
@@ -613,7 +650,7 @@
     },
     {
       "Name": "PMU_BIG_SPC_THRESHOLD",
-      "Path": "/sys/devices/system/cpu/cpu8/cpufreq/sched_pixel/spc_threshold",
+      "Path": "/sys/devices/system/cpu/cpufreq/policy8/sched_pixel/spc_threshold",
       "Values": [
         "69",
         "50"
@@ -1553,19 +1590,37 @@
       "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 0,
-      "Value": "1164000"
+      "Value": "2049000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
       "Node": "CPUMidClusterMaxFreq",
       "Duration": 0,
-      "Value": "1328000"
+      "Value": "1836000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
       "Node": "CPULittleClusterMaxFreq",
       "Duration": 0,
-      "Value": "1328000"
+      "Value": "1704000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
+      "Node": "CPUBigClusterDownRateLimitUs",
+      "Duration": 0,
+      "Value": "2000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
+      "Node": "CPUMidClusterDownRateLimitUs",
+      "Duration": 0,
+      "Value": "2000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
+      "Node": "CPULittleClusterDownRateLimitUs",
+      "Duration": 0,
+      "Value": "2000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
@@ -1595,7 +1650,7 @@
       "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
       "Node": "CDCpuset",
       "Duration": 0,
-      "Value": "4-7"
+      "Value": "0-7"
     },
     {
       "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
@@ -1608,6 +1663,30 @@
       "Node": "CPUDVFSHeadroom",
       "Duration": 0,
       "Value": "1100"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
+      "Node": "PMU_POLL",
+      "Duration": 0,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
+      "Node": "PMU_LIT_LIMIT_FREQ",
+      "Duration": 0,
+      "Value": "1328000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
+      "Node": "PMU_LIT_LCPI_THRESHOLD",
+      "Duration": 0,
+      "Value": "2"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
+      "Node": "PMU_LIT_SPC_THRESHOLD",
+      "Duration": 0,
+      "Value": "30"
     },
     {
       "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
@@ -1783,19 +1862,19 @@
       "PowerHint": "LOW_POWER",
       "Node": "BigControlTempSet",
       "Duration": 0,
-      "Value": "80000"
+      "Value": "70000"
     },
     {
       "PowerHint": "LOW_POWER",
       "Node": "MidControlTempSet",
       "Duration": 0,
-      "Value": "80000"
+      "Value": "70000"
     },
     {
       "PowerHint": "LOW_POWER",
       "Node": "LittleControlTempSet",
       "Duration": 0,
-      "Value": "80000"
+      "Value": "70000"
     },
     {
       "PowerHint": "LOW_POWER",
@@ -1819,19 +1898,19 @@
       "PowerHint": "LOW_POWER",
       "Node": "BigSwitchOnTempSet",
       "Duration": 0,
-      "Value": "60000"
+      "Value": "50000"
     },
     {
       "PowerHint": "LOW_POWER",
       "Node": "MidSwitchOnTempSet",
       "Duration": 0,
-      "Value": "60000"
+      "Value": "50000"
     },
     {
       "PowerHint": "LOW_POWER",
       "Node": "LittleSwitchOnTempSet",
       "Duration": 0,
-      "Value": "60000"
+      "Value": "50000"
     },
     {
       "PowerHint": "LOW_POWER",
@@ -1926,19 +2005,19 @@
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_LIGHT",
       "Node": "BigControlTempSet",
       "Duration": 0,
-      "Value": "80000"
+      "Value": "70000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_LIGHT",
       "Node": "MidControlTempSet",
       "Duration": 0,
-      "Value": "80000"
+      "Value": "70000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_LIGHT",
       "Node": "LittleControlTempSet",
       "Duration": 0,
-      "Value": "80000"
+      "Value": "70000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_LIGHT",
@@ -1962,19 +2041,19 @@
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_LIGHT",
       "Node": "BigSwitchOnTempSet",
       "Duration": 0,
-      "Value": "60000"
+      "Value": "50000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_LIGHT",
       "Node": "MidSwitchOnTempSet",
       "Duration": 0,
-      "Value": "60000"
+      "Value": "50000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_LIGHT",
       "Node": "LittleSwitchOnTempSet",
       "Duration": 0,
-      "Value": "60000"
+      "Value": "50000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_LIGHT",
@@ -2016,19 +2095,19 @@
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_MODERATE",
       "Node": "BigControlTempSet",
       "Duration": 0,
-      "Value": "80000"
+      "Value": "70000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_MODERATE",
       "Node": "MidControlTempSet",
       "Duration": 0,
-      "Value": "80000"
+      "Value": "70000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_MODERATE",
       "Node": "LittleControlTempSet",
       "Duration": 0,
-      "Value": "80000"
+      "Value": "70000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_MODERATE",
@@ -2052,19 +2131,19 @@
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_MODERATE",
       "Node": "BigSwitchOnTempSet",
       "Duration": 0,
-      "Value": "60000"
+      "Value": "50000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_MODERATE",
       "Node": "MidSwitchOnTempSet",
       "Duration": 0,
-      "Value": "60000"
+      "Value": "50000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_MODERATE",
       "Node": "LittleSwitchOnTempSet",
       "Duration": 0,
-      "Value": "60000"
+      "Value": "50000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_MODERATE",
@@ -2106,19 +2185,19 @@
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_SEVERE",
       "Node": "BigControlTempSet",
       "Duration": 0,
-      "Value": "80000"
+      "Value": "70000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_SEVERE",
       "Node": "MidControlTempSet",
       "Duration": 0,
-      "Value": "80000"
+      "Value": "70000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_SEVERE",
       "Node": "LittleControlTempSet",
       "Duration": 0,
-      "Value": "80000"
+      "Value": "70000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_SEVERE",
@@ -2142,19 +2221,19 @@
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_SEVERE",
       "Node": "BigSwitchOnTempSet",
       "Duration": 0,
-      "Value": "60000"
+      "Value": "50000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_SEVERE",
       "Node": "MidSwitchOnTempSet",
       "Duration": 0,
-      "Value": "60000"
+      "Value": "50000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_SEVERE",
       "Node": "LittleSwitchOnTempSet",
       "Duration": 0,
-      "Value": "60000"
+      "Value": "50000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_SEVERE",
@@ -2196,19 +2275,19 @@
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_CRITICAL",
       "Node": "BigControlTempSet",
       "Duration": 0,
-      "Value": "80000"
+      "Value": "70000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_CRITICAL",
       "Node": "MidControlTempSet",
       "Duration": 0,
-      "Value": "80000"
+      "Value": "70000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_CRITICAL",
       "Node": "LittleControlTempSet",
       "Duration": 0,
-      "Value": "80000"
+      "Value": "70000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_CRITICAL",
@@ -2232,19 +2311,19 @@
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_CRITICAL",
       "Node": "BigSwitchOnTempSet",
       "Duration": 0,
-      "Value": "60000"
+      "Value": "50000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_CRITICAL",
       "Node": "MidSwitchOnTempSet",
       "Duration": 0,
-      "Value": "60000"
+      "Value": "50000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_CRITICAL",
       "Node": "LittleSwitchOnTempSet",
       "Duration": 0,
-      "Value": "60000"
+      "Value": "50000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_CRITICAL",
@@ -2304,19 +2383,19 @@
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_EMERGENCY",
       "Node": "BigControlTempSet",
       "Duration": 0,
-      "Value": "80000"
+      "Value": "70000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_EMERGENCY",
       "Node": "MidControlTempSet",
       "Duration": 0,
-      "Value": "80000"
+      "Value": "70000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_EMERGENCY",
       "Node": "LittleControlTempSet",
       "Duration": 0,
-      "Value": "80000"
+      "Value": "70000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_EMERGENCY",
@@ -2340,19 +2419,19 @@
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_EMERGENCY",
       "Node": "BigSwitchOnTempSet",
       "Duration": 0,
-      "Value": "60000"
+      "Value": "50000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_EMERGENCY",
       "Node": "MidSwitchOnTempSet",
       "Duration": 0,
-      "Value": "60000"
+      "Value": "50000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_EMERGENCY",
       "Node": "LittleSwitchOnTempSet",
       "Duration": 0,
-      "Value": "60000"
+      "Value": "50000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_EMERGENCY",
