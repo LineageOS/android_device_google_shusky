@@ -29,3 +29,12 @@ include device/google/zuma/BoardConfig-common.mk
 -include vendor/google_devices/husky/proprietary/BoardConfigVendor.mk
 include device/google/shusky-sepolicy/husky-sepolicy.mk
 include device/google/shusky/wifi/BoardConfig-wifi.mk
+
+# Android Virtualization Framework (AVF) team is using husky with hypervisor in
+# nvhe mode as a development platform to build infrastructure that supports
+# assigning devices to guest VMs.
+#
+# TODO(b/278008514): remove this once we have builds from our kernel branch.
+ifeq ($(HUSKY_ENABLE_DEVICE_ASSIGNMENT), true)
+BOARD_KERNEL_CMDLINE += kvm-arm.mode=nvhe
+endif
