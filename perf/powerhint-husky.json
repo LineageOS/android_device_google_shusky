@@ -195,6 +195,16 @@
       "ResetOnInit": true
     },
     {
+      "Name": "BigClusterPowerDownTargetResidency",
+      "Path": "/sys/devices/platform/cpupm/cpupm/cpd_cl2_target_residency",
+      "Values": [
+        "750000",
+        "10000"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
       "Name": "CPUUtilThreshold",
       "Path": "/proc/vendor_sched/util_threshold",
       "Values": [
@@ -839,6 +849,12 @@
       "Node": "DsuMinFreq",
       "Duration": 33,
       "Value": "820000"
+    },
+    {
+      "PowerHint": "DISPLAY_INACTIVE",
+      "Node": "BigClusterPowerDownTargetResidency",
+      "Duration": 0,
+      "Value": "10000"
     },
     {
       "PowerHint": "CAMERA_LAUNCH",
