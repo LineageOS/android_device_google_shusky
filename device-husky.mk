@@ -325,3 +325,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.preferred_mode=1008x2244@12
 
 # Window Extensions
 $(call inherit-product, $(SRC_TARGET_DIR)/product/window_extensions.mk)
+
+# Disable Settings large-screen optimization enabled by Window Extensions
+PRODUCT_SYSTEM_PROPERTIES += \
+    persist.settings.large_screen_opt.enabled=false
