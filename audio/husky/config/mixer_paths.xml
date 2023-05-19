@@ -699,8 +699,8 @@
         <ctl name="Fast Use Case Switch Enable" value="1" />
         <ctl name="R Fast Use Case Delta File" value="fast_switch2.txt" />
         <ctl name="R Fast Use Case Switch Enable" value="1" />
-        <ctl name="Digital PCM Volume" value="801"/>
-        <ctl name="R Digital PCM Volume" value="801"/>
+        <ctl name="Digital PCM Volume" value="817"/>
+        <ctl name="R Digital PCM Volume" value="817"/>
     </path>
 
     <path name="voice-speaker-post">
