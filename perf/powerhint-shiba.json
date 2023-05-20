@@ -943,24 +943,6 @@
       "Value": "0"
     },
     {
-      "PowerHint": "CAMERA_THERMAL_CPU_THROTTLE",
-      "Node": "CPUBigClusterMaxFreq",
-      "Duration": 1000,
-      "Value": "893000"
-    },
-    {
-      "PowerHint": "CAMERA_THERMAL_CPU_THROTTLE",
-      "Node": "CPUMidClusterMaxFreq",
-      "Duration": 1000,
-      "Value": "1082000"
-    },
-    {
-      "PowerHint": "CAMERA_THERMAL_CPU_THROTTLE",
-      "Node": "CPULittleClusterMaxFreq",
-      "Duration": 1000,
-      "Value": "1098000"
-    },
-    {
       "PowerHint": "CAMERA_CAPTURE_CPU_THROTTLE",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 2500,
