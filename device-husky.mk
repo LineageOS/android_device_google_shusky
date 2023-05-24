@@ -27,6 +27,7 @@ $(call inherit-product-if-exists, vendor/google_devices/zuma/proprietary/device-
 $(call inherit-product-if-exists, vendor/google_devices/shusky/proprietary/husky/device-vendor-husky.mk)
 $(call inherit-product-if-exists, vendor/google_devices/husky/proprietary/device-vendor.mk)
 $(call inherit-product-if-exists, vendor/qorvo/uwb/qm35-hal/Device.mk)
+$(call inherit-product-if-exists, vendor/google_devices/shusky/proprietary/WallpapersHusky.mk)
 
 # display
 DEVICE_PACKAGE_OVERLAYS += device/google/shusky/husky/overlay
