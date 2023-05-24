@@ -409,8 +409,8 @@
                     "MaxReleaseStep": 1,
                     "MaxThrottleStep": 1,
                     "BindedPowerRail": "S4M_VDD_CPUCL0",
-                    "CdevCeiling": [0, 12, 12, 12, 12, 14, 14],
-                    "LimitInfo": [0, 0, 0, 0, 12, 14, 14]
+                    "CdevCeiling": [0, 7, 7, 7, 7, 9, 9],
+                    "LimitInfo": [0, 0, 0, 0, 7, 9, 9]
                 },
                 {
                     "CdevRequest": "thermal-cpufreq-1",
@@ -418,8 +418,8 @@
                     "MaxReleaseStep": 1,
                     "MaxThrottleStep": 1,
                     "BindedPowerRail": "S3M_VDD_CPUCL1",
-                    "CdevCeiling": [0, 14, 14, 14, 14, 16, 16],
-                    "LimitInfo": [0, 0, 0, 0, 14, 16, 16]
+                    "CdevCeiling": [0, 12, 12, 12, 12, 14, 14],
+                    "LimitInfo": [0, 0, 0, 0, 12, 14, 14]
                 },
                 {
                     "CdevRequest": "thermal-cpufreq-2",
@@ -427,8 +427,8 @@
                     "MaxReleaseStep": 1,
                     "MaxThrottleStep": 2,
                     "BindedPowerRail": "S2M_VDD_CPUCL2",
-                    "CdevCeiling": [0, 14, 14, 14, 14, 16, 16],
-                    "LimitInfo": [0, 0, 0, 0, 14, 16, 16]
+                    "CdevCeiling": [0, 13, 13, 13, 13, 15, 15],
+                    "LimitInfo": [0, 0, 0, 0, 13, 15, 15]
                 }
             ]
         },
@@ -464,8 +464,8 @@
                     "MaxReleaseStep": 1,
                     "MaxThrottleStep": 1,
                     "BindedPowerRail": "S4M_VDD_CPUCL0",
-                    "CdevCeiling": [0, 12, 12, 12, 12, 14, 14],
-                    "LimitInfo": [0, 0, 0, 0, 12, 14, 14]
+                    "CdevCeiling": [0, 7, 7, 7, 7, 9, 9],
+                    "LimitInfo": [0, 0, 0, 0, 7, 9, 9]
                 },
                 {
                     "CdevRequest": "thermal-cpufreq-1",
@@ -473,8 +473,8 @@
                     "MaxReleaseStep": 1,
                     "MaxThrottleStep": 1,
                     "BindedPowerRail": "S3M_VDD_CPUCL1",
-                    "CdevCeiling": [0, 14, 14, 14, 14, 16, 16],
-                    "LimitInfo": [0, 0, 0, 0, 14, 16, 16]
+                    "CdevCeiling": [0, 12, 12, 12, 12, 14, 14],
+                    "LimitInfo": [0, 0, 0, 0, 12, 14, 14]
                 },
                 {
                     "CdevRequest": "thermal-cpufreq-2",
@@ -482,8 +482,8 @@
                     "MaxReleaseStep": 1,
                     "MaxThrottleStep": 2,
                     "BindedPowerRail": "S2M_VDD_CPUCL2",
-                    "CdevCeiling": [0, 14, 14, 14, 14, 16, 16],
-                    "LimitInfo": [0, 0, 0, 0, 14, 16, 16]
+                    "CdevCeiling": [0, 13, 13, 13, 13, 15, 15],
+                    "LimitInfo": [0, 0, 0, 0, 13, 15, 15]
                 },
                 {
                     "CdevRequest": "thermal-gpufreq-0",
