@@ -2110,19 +2110,19 @@
     {
       "PowerHint": "DISPLAY_UPDATE_IMMINENT",
       "Node": "CPULittleClusterDownRateLimitUs",
-      "Duration": 0,
+      "Duration": 50,
       "Value": "5000"
     },
     {
       "PowerHint": "DISPLAY_UPDATE_IMMINENT",
       "Node": "CPUMidClusterDownRateLimitUs",
-      "Duration": 0,
+      "Duration": 50,
       "Value": "20000"
     },
     {
       "PowerHint": "DISPLAY_UPDATE_IMMINENT",
       "Node": "CPUBigClusterDownRateLimitUs",
-      "Duration": 0,
+      "Duration": 50,
       "Value": "20000"
     },
     {
