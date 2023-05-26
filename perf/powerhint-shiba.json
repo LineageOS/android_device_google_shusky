@@ -846,19 +846,19 @@
     {
       "PowerHint": "DISPLAY_INACTIVE",
       "Node": "CPULittleClusterDownRateLimitUs",
-      "Duration": 0,
+      "Duration": 50,
       "Value": "500"
     },
     {
       "PowerHint": "DISPLAY_INACTIVE",
       "Node": "CPUMidClusterDownRateLimitUs",
-      "Duration": 0,
+      "Duration": 50,
       "Value": "500"
     },
     {
       "PowerHint": "DISPLAY_INACTIVE",
       "Node": "CPUBigClusterDownRateLimitUs",
-      "Duration": 0,
+      "Duration": 50,
       "Value": "500"
     },
     {
