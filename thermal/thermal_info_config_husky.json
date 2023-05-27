@@ -450,8 +450,8 @@
                     "MaxReleaseStep": 1,
                     "MaxThrottleStep": 2,
                     "BindedPowerRail": "S2M_VDD_CPUCL2",
-                    "CdevCeiling": [0, 13, 13, 13, 13, 15, 15],
-                    "LimitInfo": [0, 0, 0, 0, 13, 15, 15]
+                    "CdevCeiling": [0, 12, 12, 12, 12, 14, 14],
+                    "LimitInfo": [0, 0, 0, 0, 12, 14, 14]
                 }
             ]
         },
@@ -505,8 +505,8 @@
                     "MaxReleaseStep": 1,
                     "MaxThrottleStep": 2,
                     "BindedPowerRail": "S2M_VDD_CPUCL2",
-                    "CdevCeiling": [0, 13, 13, 13, 13, 15, 15],
-                    "LimitInfo": [0, 0, 0, 0, 13, 15, 15]
+                    "CdevCeiling": [0, 12, 12, 12, 12, 14, 14],
+                    "LimitInfo": [0, 0, 0, 0, 12, 14, 14]
                 },
                 {
                     "CdevRequest": "thermal-gpufreq-0",
@@ -542,7 +542,7 @@
                 "S_Power":["NAN", "NAN", 473, "NAN", "NAN", "NAN", "NAN"],
                 "MinAllocPower":["NAN", "NAN", 0, "NAN", "NAN", "NAN", "NAN"],
                 "MaxAllocPower":["NAN", "NAN", 2500, "NAN", "NAN", "NAN", "NAN"],
-                "I_Cutoff":["NAN", "NAN", 2, "NAN", "NAN", "NAN", "NAN"]
+                "I_Cutoff":["NAN", "NAN", 4, "NAN", "NAN", "NAN", "NAN"]
             },
             "BindedCdevInfo": [
                 {
