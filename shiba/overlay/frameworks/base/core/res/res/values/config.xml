@@ -290,6 +290,20 @@
         @left
     </string>
 
+    <!-- A string config in svg path format for the main display shape.
+         (@see https://www.w3.org/TR/SVG/paths.html#PathData).
+
+         This config must be set unless:
+         1. {@link Configuration#isScreenRound} is true which means the display shape is circular
+            and the system will auto-generate a circular shape.
+         2. The display has no rounded corner and the system will auto-generate a rectangular shape.
+         (@see DisplayShape#createDefaultDisplayShape)
+
+         Note: If the display supports multiple resolutions, please define the path config based on
+         the highest resolution so that it can be scaled correctly in each resolution.
+    -->
+    <string name="config_mainDisplayShape" translatable="false">M 96.4985,0.08523 C 91.1348,0.36051 82.70432,1.62526 79.38136,2.33639 59.52531,6.58116 50.34989,10.96631 39.9404,18.20101 27.73281,26.68534 16.59688,39.8618 10.50012,52.78766 6.40513,61.46939 2.3679,75.03133 1.2197,83.76495 0.13826,91.99294 0.31461,92.13538 0.08515,96.33507 V 2307.6753 l 1.5912,11.4829 c 4.89079,22.9627 11.89155,37.013 25.5533,51.2879 13.94576,14.5714 29.80105,22.7951 53.74919,27.8786 l 11.50244,1.59 H 987.5185 l 11.5025,-1.59 c 23.9482,-5.0835 39.8034,-13.3072 53.7492,-27.8786 13.6616,-14.2749 20.6626,-28.3252 25.5532,-51.2879 l 1.5913,-11.4829 V 96.33507 c -0.2295,-4.19969 -0.053,-4.34213 -1.1346,-12.57012 -1.1482,-8.73362 -5.1854,-22.29556 -9.2804,-30.97729 C 1063.4029,39.8618 1052.267,26.68534 1040.0594,18.20101 1029.65,10.96631 1020.4745,6.58116 1000.6184,2.33639 997.2955,1.62526 988.865,0.36051 983.5013,0.08523 Z</string>
+
     <!-- Type of the udfps long press sensor. Empty if long press is not supported. -->
     <string name="config_dozeUdfpsLongPressSensorType" translatable="false">com.google.sensor.long_press</string>
 
