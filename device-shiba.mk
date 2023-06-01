@@ -83,6 +83,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.bluetooth.a2dp_offload.disabled=false \
     persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac-opus
 
+# POF
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.bluetooth.finder.supported=true
+
 # Spatial Audio
 PRODUCT_PACKAGES += \
 	libspatialaudio
@@ -231,6 +235,10 @@ include device/google/gs101/fingerprint/udfps_shipping.mk
 else
 include device/google/gs101/fingerprint/udfps_factory.mk
 endif
+
+# Fingerprint exposure compensation
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.udfps.auto_exposure_compensation_supported=true
 
 # Display
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.set_idle_timer_ms=1500

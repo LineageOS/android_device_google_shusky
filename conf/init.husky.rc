@@ -39,6 +39,7 @@ on post-fs-data
 
     # Speaker amp permission
     chmod 644 /mnt/vendor/persist/audio/speaker.cal
+    chmod 644 /mnt/vendor/persist/audio/speaker.diag
 
 # Bluetooth
 on post-fs-data

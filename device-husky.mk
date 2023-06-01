@@ -93,6 +93,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.bluetooth.a2dp_offload.disabled=false \
     persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac-opus
 
+# POF
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.bluetooth.finder.supported=true
+
 # Spatial Audio
 PRODUCT_PACKAGES += \
 	libspatialaudio
@@ -250,6 +254,10 @@ endif
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.udfps.als_feed_forward_supported=true \
     persist.vendor.udfps.lhbm_controlled_in_hal_supported=true
+
+# Fingerprint exposure compensation
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.udfps.auto_exposure_compensation_supported=true
 
 # Camera Vendor property
 PRODUCT_VENDOR_PROPERTIES += \
