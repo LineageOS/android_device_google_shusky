@@ -145,9 +145,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 	bluetooth.profile.hap.client.enabled=true \
 	bluetooth.profile.mcp.server.enabled=true \
 	bluetooth.profile.ccp.server.enabled=true \
-	bluetooth.profile.vcp.controller.enabled=true \
-	bluetooth.profile.bap.broadcast.assist.enabled=true \
-	bluetooth.profile.bap.broadcast.source.enabled=true
+	bluetooth.profile.vcp.controller.enabled=true
 
 # Bluetooth LE Audio enable hardware offloading
 PRODUCT_PRODUCT_PROPERTIES += \
