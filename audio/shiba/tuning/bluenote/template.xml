@@ -125,7 +125,7 @@
       <param default="1" id="16" name="strength level" type="uint32"/>
       <param id="17" name="POWER_TIME_SMOOTH" type="float"/>
       <param id="18" name="RMS_TIME_SMOOTH" type="float"/>
-      <param id="19" name="LOWER_BAND_THRESHOLD" size="129" type="float"/>
+      <param id="19" name="LOWER_BAND_THRESHOLD" size="257" type="float"/>
       <param id="20" name="UPPER_BAND_THRESHOLD" size="3" type="float"/>
       <param id="21" name="ATTACK_TIME" type="float"/>
       <param id="22" name="RELEASE_TIME" type="float"/>
@@ -262,6 +262,9 @@
     </module>
     <module id="10002" name="CHRE">
       <param id="297" name="chre_gain" type="uint32"/>
+      <param id="345" name="chre_aec_timeout" type="uint32"/>
+      <param id="346" name="chre_pdm_gain" type="int32"/>
+      <param id="347" name="chre_aec_gain" type="int32"/>
     </module>
   </modules>
   <signalflows>
@@ -283,6 +286,7 @@
       <block id="137">
         <moduleRef id="14"/>
         <moduleRef id="7"/>
+        <moduleRef id="5"/>
         <moduleRef id="8"/>
       </block>
     </signalflow>
