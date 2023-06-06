@@ -433,7 +433,7 @@
       "Name": "BigControlTempSet",
       "Path": "/dev/thermal/tz-by-name/BIG/trip_point_2_temp",
       "Values": [
-        "85000",
+        "95000",
         "80000"
       ],
       "DefaultIndex": 0,
@@ -443,7 +443,7 @@
       "Name": "MidControlTempSet",
       "Path": "/dev/thermal/tz-by-name/MID/trip_point_2_temp",
       "Values": [
-        "85000",
+        "95000",
         "80000"
       ],
       "DefaultIndex": 0,
@@ -453,8 +453,8 @@
       "Name": "LittleControlTempSet",
       "Path": "/dev/thermal/tz-by-name/LITTLE/trip_point_2_temp",
       "Values": [
-        "85000",
-        "80000"
+        "100000",
+        "85000"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": false
@@ -493,7 +493,7 @@
       "Name": "BigSwitchOnTempSet",
       "Path": "/dev/thermal/tz-by-name/BIG/trip_point_1_temp",
       "Values": [
-        "65000",
+        "75000",
         "60000"
       ],
       "DefaultIndex": 0,
@@ -503,7 +503,7 @@
       "Name": "MidSwitchOnTempSet",
       "Path": "/dev/thermal/tz-by-name/MID/trip_point_1_temp",
       "Values": [
-        "65000",
+        "75000",
         "60000"
       ],
       "DefaultIndex": 0,
@@ -513,8 +513,8 @@
       "Name": "LittleSwitchOnTempSet",
       "Path": "/dev/thermal/tz-by-name/LITTLE/trip_point_1_temp",
       "Values": [
-        "65000",
-        "60000"
+        "75000",
+        "65000"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": false
@@ -2029,7 +2029,7 @@
       "PowerHint": "LOW_POWER",
       "Node": "LittleControlTempSet",
       "Duration": 0,
-      "Value": "80000"
+      "Value": "85000"
     },
     {
       "PowerHint": "LOW_POWER",
@@ -2065,7 +2065,7 @@
       "PowerHint": "LOW_POWER",
       "Node": "LittleSwitchOnTempSet",
       "Duration": 0,
-      "Value": "60000"
+      "Value": "65000"
     },
     {
       "PowerHint": "LOW_POWER",
@@ -2190,7 +2190,7 @@
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_LIGHT",
       "Node": "LittleControlTempSet",
       "Duration": 0,
-      "Value": "80000"
+      "Value": "85000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_LIGHT",
@@ -2226,7 +2226,7 @@
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_LIGHT",
       "Node": "LittleSwitchOnTempSet",
       "Duration": 0,
-      "Value": "60000"
+      "Value": "65000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_LIGHT",
@@ -2280,7 +2280,7 @@
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_MODERATE",
       "Node": "LittleControlTempSet",
       "Duration": 0,
-      "Value": "80000"
+      "Value": "85000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_MODERATE",
@@ -2316,7 +2316,7 @@
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_MODERATE",
       "Node": "LittleSwitchOnTempSet",
       "Duration": 0,
-      "Value": "60000"
+      "Value": "65000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_MODERATE",
@@ -2370,7 +2370,7 @@
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_SEVERE",
       "Node": "LittleControlTempSet",
       "Duration": 0,
-      "Value": "80000"
+      "Value": "85000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_SEVERE",
@@ -2406,7 +2406,7 @@
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_SEVERE",
       "Node": "LittleSwitchOnTempSet",
       "Duration": 0,
-      "Value": "60000"
+      "Value": "65000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_SEVERE",
@@ -2460,7 +2460,7 @@
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_CRITICAL",
       "Node": "LittleControlTempSet",
       "Duration": 0,
-      "Value": "80000"
+      "Value": "85000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_CRITICAL",
@@ -2496,7 +2496,7 @@
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_CRITICAL",
       "Node": "LittleSwitchOnTempSet",
       "Duration": 0,
-      "Value": "60000"
+      "Value": "65000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_CRITICAL",
@@ -2568,7 +2568,7 @@
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_EMERGENCY",
       "Node": "LittleControlTempSet",
       "Duration": 0,
-      "Value": "80000"
+      "Value": "85000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_EMERGENCY",
@@ -2604,7 +2604,7 @@
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_EMERGENCY",
       "Node": "LittleSwitchOnTempSet",
       "Duration": 0,
-      "Value": "60000"
+      "Value": "65000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_EMERGENCY",
