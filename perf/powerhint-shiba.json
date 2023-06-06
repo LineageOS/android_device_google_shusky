@@ -423,8 +423,8 @@
       "Name": "BigControlTempSet",
       "Path": "/dev/thermal/tz-by-name/BIG/trip_point_2_temp",
       "Values": [
-        "75000",
-        "70000"
+        "90000",
+        "80000"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": false
@@ -433,8 +433,8 @@
       "Name": "MidControlTempSet",
       "Path": "/dev/thermal/tz-by-name/MID/trip_point_2_temp",
       "Values": [
-        "75000",
-        "70000"
+        "90000",
+        "80000"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": false
@@ -443,8 +443,8 @@
       "Name": "LittleControlTempSet",
       "Path": "/dev/thermal/tz-by-name/LITTLE/trip_point_2_temp",
       "Values": [
-        "75000",
-        "70000"
+        "95000",
+        "85000"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": false
@@ -483,8 +483,8 @@
       "Name": "BigSwitchOnTempSet",
       "Path": "/dev/thermal/tz-by-name/BIG/trip_point_1_temp",
       "Values": [
-        "55000",
-        "50000"
+        "70000",
+        "60000"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": false
@@ -493,8 +493,8 @@
       "Name": "MidSwitchOnTempSet",
       "Path": "/dev/thermal/tz-by-name/MID/trip_point_1_temp",
       "Values": [
-        "55000",
-        "50000"
+        "70000",
+        "60000"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": false
@@ -503,8 +503,8 @@
       "Name": "LittleSwitchOnTempSet",
       "Path": "/dev/thermal/tz-by-name/LITTLE/trip_point_1_temp",
       "Values": [
-        "55000",
-        "50000"
+        "70000",
+        "65000"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": false
@@ -535,6 +535,16 @@
       "Values": [
         "65000",
         "60000"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": false
+    },
+    {
+      "Name": "BigEarlyThrottlingTempSet",
+      "Path": "/dev/thermal/tz-by-name/BIG/trip_point_4_temp",
+      "Values": [
+        "80000",
+        "85000"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": false
@@ -1905,19 +1915,19 @@
       "PowerHint": "LOW_POWER",
       "Node": "BigControlTempSet",
       "Duration": 0,
-      "Value": "70000"
+      "Value": "80000"
     },
     {
       "PowerHint": "LOW_POWER",
       "Node": "MidControlTempSet",
       "Duration": 0,
-      "Value": "70000"
+      "Value": "80000"
     },
     {
       "PowerHint": "LOW_POWER",
       "Node": "LittleControlTempSet",
       "Duration": 0,
-      "Value": "70000"
+      "Value": "85000"
     },
     {
       "PowerHint": "LOW_POWER",
@@ -1941,19 +1951,19 @@
       "PowerHint": "LOW_POWER",
       "Node": "BigSwitchOnTempSet",
       "Duration": 0,
-      "Value": "50000"
+      "Value": "60000"
     },
     {
       "PowerHint": "LOW_POWER",
       "Node": "MidSwitchOnTempSet",
       "Duration": 0,
-      "Value": "50000"
+      "Value": "60000"
     },
     {
       "PowerHint": "LOW_POWER",
       "Node": "LittleSwitchOnTempSet",
       "Duration": 0,
-      "Value": "50000"
+      "Value": "65000"
     },
     {
       "PowerHint": "LOW_POWER",
@@ -1972,6 +1982,12 @@
       "Node": "AurSwitchOnTempSet",
       "Duration": 0,
       "Value": "60000"
+    },
+    {
+      "PowerHint": "LOW_POWER",
+      "Node": "BigEarlyThrottlingTempSet",
+      "Duration": 0,
+      "Value": "85000"
     },
     {
       "PowerHint": "REFRESH_120FPS",
@@ -2066,19 +2082,19 @@
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_LIGHT",
       "Node": "BigControlTempSet",
       "Duration": 0,
-      "Value": "70000"
+      "Value": "80000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_LIGHT",
       "Node": "MidControlTempSet",
       "Duration": 0,
-      "Value": "70000"
+      "Value": "80000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_LIGHT",
       "Node": "LittleControlTempSet",
       "Duration": 0,
-      "Value": "70000"
+      "Value": "85000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_LIGHT",
@@ -2102,19 +2118,19 @@
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_LIGHT",
       "Node": "BigSwitchOnTempSet",
       "Duration": 0,
-      "Value": "50000"
+      "Value": "60000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_LIGHT",
       "Node": "MidSwitchOnTempSet",
       "Duration": 0,
-      "Value": "50000"
+      "Value": "60000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_LIGHT",
       "Node": "LittleSwitchOnTempSet",
       "Duration": 0,
-      "Value": "50000"
+      "Value": "65000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_LIGHT",
@@ -2133,6 +2149,12 @@
       "Node": "AurSwitchOnTempSet",
       "Duration": 0,
       "Value": "60000"
+    },
+    {
+      "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_LIGHT",
+      "Node": "BigEarlyThrottlingTempSet",
+      "Duration": 0,
+      "Value": "85000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_LIGHT",
@@ -2156,19 +2178,19 @@
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_MODERATE",
       "Node": "BigControlTempSet",
       "Duration": 0,
-      "Value": "70000"
+      "Value": "80000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_MODERATE",
       "Node": "MidControlTempSet",
       "Duration": 0,
-      "Value": "70000"
+      "Value": "80000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_MODERATE",
       "Node": "LittleControlTempSet",
       "Duration": 0,
-      "Value": "70000"
+      "Value": "85000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_MODERATE",
@@ -2192,19 +2214,19 @@
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_MODERATE",
       "Node": "BigSwitchOnTempSet",
       "Duration": 0,
-      "Value": "50000"
+      "Value": "60000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_MODERATE",
       "Node": "MidSwitchOnTempSet",
       "Duration": 0,
-      "Value": "50000"
+      "Value": "60000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_MODERATE",
       "Node": "LittleSwitchOnTempSet",
       "Duration": 0,
-      "Value": "50000"
+      "Value": "65000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_MODERATE",
@@ -2223,6 +2245,12 @@
       "Node": "AurSwitchOnTempSet",
       "Duration": 0,
       "Value": "60000"
+    },
+    {
+      "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_MODERATE",
+      "Node": "BigEarlyThrottlingTempSet",
+      "Duration": 0,
+      "Value": "85000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_MODERATE",
@@ -2246,19 +2274,19 @@
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_SEVERE",
       "Node": "BigControlTempSet",
       "Duration": 0,
-      "Value": "70000"
+      "Value": "80000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_SEVERE",
       "Node": "MidControlTempSet",
       "Duration": 0,
-      "Value": "70000"
+      "Value": "80000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_SEVERE",
       "Node": "LittleControlTempSet",
       "Duration": 0,
-      "Value": "70000"
+      "Value": "85000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_SEVERE",
@@ -2282,19 +2310,19 @@
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_SEVERE",
       "Node": "BigSwitchOnTempSet",
       "Duration": 0,
-      "Value": "50000"
+      "Value": "60000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_SEVERE",
       "Node": "MidSwitchOnTempSet",
       "Duration": 0,
-      "Value": "50000"
+      "Value": "60000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_SEVERE",
       "Node": "LittleSwitchOnTempSet",
       "Duration": 0,
-      "Value": "50000"
+      "Value": "65000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_SEVERE",
@@ -2313,6 +2341,12 @@
       "Node": "AurSwitchOnTempSet",
       "Duration": 0,
       "Value": "60000"
+    },
+    {
+      "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_SEVERE",
+      "Node": "BigEarlyThrottlingTempSet",
+      "Duration": 0,
+      "Value": "85000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_SEVERE",
@@ -2336,19 +2370,19 @@
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_CRITICAL",
       "Node": "BigControlTempSet",
       "Duration": 0,
-      "Value": "70000"
+      "Value": "80000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_CRITICAL",
       "Node": "MidControlTempSet",
       "Duration": 0,
-      "Value": "70000"
+      "Value": "80000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_CRITICAL",
       "Node": "LittleControlTempSet",
       "Duration": 0,
-      "Value": "70000"
+      "Value": "85000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_CRITICAL",
@@ -2372,19 +2406,19 @@
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_CRITICAL",
       "Node": "BigSwitchOnTempSet",
       "Duration": 0,
-      "Value": "50000"
+      "Value": "60000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_CRITICAL",
       "Node": "MidSwitchOnTempSet",
       "Duration": 0,
-      "Value": "50000"
+      "Value": "60000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_CRITICAL",
       "Node": "LittleSwitchOnTempSet",
       "Duration": 0,
-      "Value": "50000"
+      "Value": "65000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_CRITICAL",
@@ -2403,6 +2437,12 @@
       "Node": "AurSwitchOnTempSet",
       "Duration": 0,
       "Value": "60000"
+    },
+    {
+      "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_CRITICAL",
+      "Node": "BigEarlyThrottlingTempSet",
+      "Duration": 0,
+      "Value": "85000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_CRITICAL",
@@ -2444,19 +2484,19 @@
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_EMERGENCY",
       "Node": "BigControlTempSet",
       "Duration": 0,
-      "Value": "70000"
+      "Value": "80000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_EMERGENCY",
       "Node": "MidControlTempSet",
       "Duration": 0,
-      "Value": "70000"
+      "Value": "80000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_EMERGENCY",
       "Node": "LittleControlTempSet",
       "Duration": 0,
-      "Value": "70000"
+      "Value": "85000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_EMERGENCY",
@@ -2480,19 +2520,19 @@
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_EMERGENCY",
       "Node": "BigSwitchOnTempSet",
       "Duration": 0,
-      "Value": "50000"
+      "Value": "60000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_EMERGENCY",
       "Node": "MidSwitchOnTempSet",
       "Duration": 0,
-      "Value": "50000"
+      "Value": "60000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_EMERGENCY",
       "Node": "LittleSwitchOnTempSet",
       "Duration": 0,
-      "Value": "50000"
+      "Value": "65000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_EMERGENCY",
@@ -2511,6 +2551,12 @@
       "Node": "AurSwitchOnTempSet",
       "Duration": 0,
       "Value": "60000"
+    },
+    {
+      "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_EMERGENCY",
+      "Node": "BigEarlyThrottlingTempSet",
+      "Duration": 0,
+      "Value": "85000"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_EMERGENCY",
