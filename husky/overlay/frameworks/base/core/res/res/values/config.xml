@@ -295,4 +295,8 @@
     <!-- The maximum range of gamma adjustment possible using the screen
          auto-brightness adjustment setting. -->
     <fraction name="config_autoBrightnessAdjustmentMaxGamma">105%</fraction>
+
+    <!-- Boolean indicating whether allow sending null to modem to clear the previous initial attach
+         data profile -->
+    <bool name="allow_clear_initial_attach_data_profile">true</bool>
 </resources>
