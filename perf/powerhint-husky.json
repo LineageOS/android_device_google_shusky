@@ -646,6 +646,7 @@
         "70",
         "35",
         "30",
+        "20",
         "0"
       ],
       "DefaultIndex": 0
@@ -672,6 +673,7 @@
       "Path": "/sys/devices/system/cpu/cpufreq/policy4/sched_pixel/spc_threshold",
       "Values": [
         "50",
+        "30",
         "20"
       ],
       "DefaultIndex": 0
@@ -1324,21 +1326,69 @@
     },
     {
       "PowerHint": "CAMERA_STREAMING_EXTREME",
-      "Node": "CPULittleClusterMaxFreq",
+      "Node": "PMU_LIT_LIMIT_FREQ",
       "Duration": 0,
-      "Value": "1475000"
+      "Value": "1098000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_EXTREME",
-      "Node": "CPUMidClusterMaxFreq",
+      "Node": "PMU_LIT_LCPI_THRESHOLD",
       "Duration": 0,
-      "Value": "1622000"
+      "Value": "0"
     },
     {
       "PowerHint": "CAMERA_STREAMING_EXTREME",
-      "Node": "CPUBigClusterMaxFreq",
+      "Node": "PMU_LIT_SPC_THRESHOLD",
       "Duration": 0,
-      "Value": "1852000"
+      "Value": "20"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_EXTREME",
+      "Node": "PMU_MID_LIMIT_FREQ",
+      "Duration": 0,
+      "Value": "1328000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_EXTREME",
+      "Node": "PMU_MID_LCPI_THRESHOLD",
+      "Duration": 0,
+      "Value": "3"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_EXTREME",
+      "Node": "PMU_MID_SPC_THRESHOLD",
+      "Duration": 0,
+      "Value": "30"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_EXTREME",
+      "Node": "PMU_BIG_LIMIT_FREQ",
+      "Duration": 0,
+      "Value": "1298000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_EXTREME",
+      "Node": "PMU_BIG_LCPI_THRESHOLD",
+      "Duration": 0,
+      "Value": "3"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_EXTREME",
+      "Node": "PMU_BIG_SPC_THRESHOLD",
+      "Duration": 0,
+      "Value": "20"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_EXTREME",
+      "Node": "PMU_POLL",
+      "Duration": 0,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_EXTREME",
+      "Node": "EM_Profile",
+      "Duration": 0,
+      "Value": "cam2"
     },
     {
       "PowerHint": "CAMERA_STREAMING_EXTREME",
