@@ -234,6 +234,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # Fingerprint HAL
 GOODIX_CONFIG_BUILD_VERSION := g7_trusty
+$(call soong_config_set,goodix,fingerprint_ta,//vendor/google_devices/shusky/prebuilts:g7.app)
 include device/google/gs101/fingerprint/udfps_common.mk
 ifeq ($(filter factory%, $(TARGET_PRODUCT)),)
 include device/google/gs101/fingerprint/udfps_shipping.mk
