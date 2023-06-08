@@ -176,6 +176,15 @@
       "ResetOnInit": true
     },
     {
+      "Name": "GPUDvfsPeriod",
+      "Path": "/sys/devices/platform/1f000000.mali/dvfs_period",
+      "Values": [
+        "10",
+        "20"
+      ],
+      "ResetOnInit": true
+    },
+    {
       "Name": "ReducePreferIdle",
       "Path": "/proc/vendor_sched/reduce_prefer_idle",
       "Values": [
@@ -732,10 +741,21 @@
       "Value": "0"
     },
     {
+      "PowerHint": "LAUNCH_GPU",
+      "Node": "GPUDvfsPeriod",
+      "Duration": 1000,
+      "Value": "10"
+    },
+    {
       "PowerHint": "LAUNCH",
       "Node": "FGPreferIdle",
       "Duration": 5000,
       "Value": "1"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Type": "DoHint",
+      "Value": "LAUNCH_GPU"
     },
     {
       "PowerHint": "LAUNCH",
@@ -819,6 +839,29 @@
       "Type": "DoHint",
       "EnableProperty": "vendor.powerhal.camerarunning",
       "Value": "CDMIDHIGHCPUSETCPUS_RESTRICTED"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Type": "DoHint",
+      "Value": "LAUNCH_EXTEND"
+    },
+    {
+      "PowerHint": "LAUNCH_EXTEND",
+      "Node": "CPUBigClusterMaxFreq",
+      "Duration": 2000,
+      "Value": "9999999"
+    },
+    {
+      "PowerHint": "LAUNCH_EXTEND",
+      "Node": "CPUMidClusterMaxFreq",
+      "Duration": 2000,
+      "Value": "9999999"
+    },
+    {
+      "PowerHint": "LAUNCH_EXTEND",
+      "Node": "CPULittleClusterMaxFreq",
+      "Duration": 2000,
+      "Value": "9999999"
     },
     {
       "PowerHint": "LAUNCH_PMU",
