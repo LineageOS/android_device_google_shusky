@@ -248,9 +248,9 @@
 
     <!-- Display cutout configuration -->
     <string translatable="false" name="config_mainBuiltInDisplayCutout">
-        M 626.5,75.5
-        a 45,45 0 1 0 90,0
-        a 45,45 0 1 0 -90,0
+        M 628.75,75
+        a 43.25,43.25 0 1 0 86.5,0
+        a 43.25,43.25 0 1 0 -86.5,0
         Z
         @left
     </string>
