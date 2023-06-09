@@ -20,6 +20,8 @@ $(call inherit-product-if-exists, vendor/google/products/sources_pixel.mk)
 TARGET_KERNEL_DIR ?= device/google/shusky-kernel
 TARGET_BOARD_KERNEL_HEADERS := device/google/shusky-kernel/kernel-headers
 
+LOCAL_PATH := device/google/shusky
+
 $(call inherit-product-if-exists, vendor/google_devices/shusky/prebuilts/device-vendor-shiba.mk)
 $(call inherit-product-if-exists, vendor/google_devices/zuma/prebuilts/device-vendor.mk)
 $(call inherit-product-if-exists, vendor/google_devices/zuma/proprietary/device-vendor.mk)
@@ -89,7 +91,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Bluetooth Tx power caps
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/bluetooth/bluetooth_power_limits_shiba.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits.csv \
-	$(LOCAL_PATH)/bluetooth/bluetooth_power_limits_shiba_JP.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_JP.csv
+    $(LOCAL_PATH)/bluetooth/bluetooth_power_limits_shiba_JP.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_JP.csv
 
 # POF
 PRODUCT_PRODUCT_PROPERTIES += \
