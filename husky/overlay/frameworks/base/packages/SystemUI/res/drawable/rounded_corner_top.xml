@@ -1,5 +1,5 @@
 <!--
-    Copyright (C) 2022 The Android Open Source Project
+    Copyright (C) 2023 The Android Open Source Project
 
     You may obtain a copy of the License at
 
@@ -12,11 +12,11 @@
     limitations under the License.
 -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="120px"
-    android:height="120px"
-    android:viewportWidth="12"
-    android:viewportHeight="12">
+        android:width="146.5px"
+        android:height="146.5px"
+        android:viewportWidth="21.56"
+        android:viewportHeight="21.56">
     <path
         android:fillColor="#000000"
-        android:pathData="M 0.1412,10.432865 C 0.28411,9.343999 0.78655,7.653078 1.29623,6.570671 2.05506,4.959135 3.44108,3.316382 4.96049,2.258588 6.2561,1.356598 7.39814,0.809879 9.86951,0.280664 10.2831,0.192 11.33241,0.03432 12,0 H 0 V 11.999999 C 0.02856,11.4764 0.0066,11.458694 0.1412,10.432865 Z"/>
+        android:pathData="m0,21.56C0,18.524 -0.037,15.685 0.701,12.679c0.717,-2.922 2.089,-5.584 4.241,-7.736C7.093,2.791 9.755,1.419 12.678,0.701 15.684,-0.037 18.524,0 21.56,0H0v21.559Z"/>
 </vector>

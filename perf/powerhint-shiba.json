@@ -646,6 +646,7 @@
         "70",
         "35",
         "30",
+        "20",
         "0"
       ],
       "DefaultIndex": 0
@@ -672,6 +673,7 @@
       "Path": "/sys/devices/system/cpu/cpufreq/policy4/sched_pixel/spc_threshold",
       "Values": [
         "50",
+        "30",
         "20"
       ],
       "DefaultIndex": 0
@@ -723,6 +725,26 @@
         "0,1,2,3,4,5,6,7,8"
       ],
       "Type": "Property"
+    },
+    {
+      "Name": "Dex2oatGroup",
+      "Path": "/proc/vendor_sched/dex2oat_ug",
+      "Values": [
+        "1",
+        "0"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
+      "Name": "UgBgGroupThrottle",
+      "Path": "/proc/vendor_sched/ug_bg_group_throttle",
+      "Values": [
+        "512",
+        "308"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
     }
   ],
   "Actions": [
@@ -1222,27 +1244,81 @@
     },
     {
       "PowerHint": "CAMERA_STREAMING_EXTREME",
-      "Node": "CPULittleClusterMaxFreq",
+      "Node": "PMU_LIT_LIMIT_FREQ",
       "Duration": 0,
-      "Value": "1475000"
+      "Value": "1098000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_EXTREME",
-      "Node": "CPUMidClusterMaxFreq",
+      "Node": "PMU_LIT_LCPI_THRESHOLD",
       "Duration": 0,
-      "Value": "1622000"
+      "Value": "0"
     },
     {
       "PowerHint": "CAMERA_STREAMING_EXTREME",
-      "Node": "CPUBigClusterMaxFreq",
+      "Node": "PMU_LIT_SPC_THRESHOLD",
       "Duration": 0,
-      "Value": "1852000"
+      "Value": "20"
     },
     {
       "PowerHint": "CAMERA_STREAMING_EXTREME",
-      "Node": "CDPreferHighCap",
+      "Node": "PMU_MID_LIMIT_FREQ",
+      "Duration": 0,
+      "Value": "1328000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_EXTREME",
+      "Node": "PMU_MID_LCPI_THRESHOLD",
+      "Duration": 0,
+      "Value": "3"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_EXTREME",
+      "Node": "PMU_MID_SPC_THRESHOLD",
+      "Duration": 0,
+      "Value": "30"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_EXTREME",
+      "Node": "PMU_BIG_LIMIT_FREQ",
+      "Duration": 0,
+      "Value": "1298000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_EXTREME",
+      "Node": "PMU_BIG_LCPI_THRESHOLD",
+      "Duration": 0,
+      "Value": "3"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_EXTREME",
+      "Node": "PMU_BIG_SPC_THRESHOLD",
+      "Duration": 0,
+      "Value": "20"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_EXTREME",
+      "Node": "PMU_POLL",
       "Duration": 0,
       "Value": "1"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_EXTREME",
+      "Node": "EM_Profile",
+      "Duration": 0,
+      "Value": "cam2"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_EXTREME",
+      "Node": "CPUDVFSHeadroom",
+      "Duration": 0,
+      "Value": "1100"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_EXTREME",
+      "Node": "CPUUtilThreshold",
+      "Duration": 0,
+      "Value": "1100"
     },
     {
       "PowerHint": "CAMERA_STREAMING_EXTREME",
@@ -1272,7 +1348,7 @@
       "PowerHint": "CAMERA_STREAMING_EXTREME",
       "Node": "CDMidCpusetCpus",
       "Duration": 0,
-      "Value": "4-7"
+      "Value": "4-8"
     },
     {
       "PowerHint": "CAMERA_STREAMING_EXTREME",
@@ -1284,7 +1360,7 @@
       "PowerHint": "CAMERA_STREAMING_EXTREME",
       "Node": "CDCpuset",
       "Duration": 0,
-      "Value": "4-7"
+      "Value": "0-8"
     },
     {
       "PowerHint": "CAMERA_STREAMING_EXTREME",
@@ -1952,7 +2028,7 @@
       "PowerHint": "LOW_POWER",
       "Node": "PMU_POLL",
       "Duration": 0,
-      "Value": "0"
+      "Value": "1"
     },
     {
       "PowerHint": "LOW_POWER",
@@ -2119,7 +2195,7 @@
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_LIGHT",
       "Node": "PMU_POLL",
       "Duration": 0,
-      "Value": "0"
+      "Value": "1"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_LIGHT",
@@ -2212,10 +2288,16 @@
       "Value": "0,1,2,3,4,5,6,7"
     },
     {
+      "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_LIGHT",
+      "Node": "Dex2oatGroup",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_MODERATE",
       "Node": "PMU_POLL",
       "Duration": 0,
-      "Value": "0"
+      "Value": "1"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_MODERATE",
@@ -2308,10 +2390,16 @@
       "Value": "0,1,2,3"
     },
     {
+      "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_MODERATE",
+      "Node": "Dex2oatGroup",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_SEVERE",
       "Node": "PMU_POLL",
       "Duration": 0,
-      "Value": "0"
+      "Value": "1"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_SEVERE",
@@ -2402,12 +2490,18 @@
       "Node": "Dex2oatCPUSet",
       "Duration": 0,
       "Value": "0,1,2,3"
+    },
+    {
+      "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_SEVERE",
+      "Node": "Dex2oatGroup",
+      "Duration": 0,
+      "Value": "0"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_CRITICAL",
       "Node": "PMU_POLL",
       "Duration": 0,
-      "Value": "0"
+      "Value": "1"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_CRITICAL",
@@ -2500,10 +2594,16 @@
       "Value": "0,1,2,3"
     },
     {
+      "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_CRITICAL",
+      "Node": "Dex2oatGroup",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_EMERGENCY",
       "Node": "PMU_POLL",
       "Duration": 0,
-      "Value": "0"
+      "Value": "1"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_EMERGENCY",
@@ -2612,6 +2712,12 @@
       "Node": "Dex2oatCPUSet",
       "Duration": 0,
       "Value": "0,1,2,3"
+    },
+    {
+      "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_EMERGENCY",
+      "Node": "Dex2oatGroup",
+      "Duration": 0,
+      "Value": "0"
     },
     {
       "PowerHint": "FACE_UNLOCK_BOOST",
