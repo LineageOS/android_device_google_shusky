@@ -17,6 +17,8 @@
 TARGET_KERNEL_DIR ?= device/google/shusky-kernel
 TARGET_BOARD_KERNEL_HEADERS := device/google/shusky-kernel/kernel-headers
 
+LOCAL_PATH := device/google/shusky
+
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
     USE_UWBFIELDTESTQM := true
 endif
@@ -92,6 +94,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.bluetooth.a2dp_offload.supported=true \
     persist.bluetooth.a2dp_offload.disabled=false \
     persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac-opus
+
+# Bluetooth Tx power caps
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/bluetooth/bluetooth_power_limits_husky.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits.csv \
+    $(LOCAL_PATH)/bluetooth/bluetooth_power_limits_husky_JP.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_JP.csv
 
 # POF
 PRODUCT_PRODUCT_PROPERTIES += \
