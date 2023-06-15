@@ -719,6 +719,15 @@
       ],
       "DefaultIndex": 0,
       "ResetOnInit": true
+    },
+    {
+      "Name": "MIFTargetLoad",
+      "Path": "/sys/class/devfreq/17000010.devfreq_mif/interactive/target_load",
+      "Values": [
+        "20 80",
+        "20 40"
+      ],
+      "ResetOnInit": true
     }
   ],
   "Actions": [
@@ -2621,6 +2630,144 @@
       "Node": "PMQoSCpuDmaLatency",
       "Duration": 2000,
       "Value": "44"
+    },
+    {
+      "PowerHint": "CAMERA_PROJECT11",
+      "Node": "PowerHALCameraRunning",
+      "Duration": 0,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "CAMERA_PROJECT11",
+      "Node": "PMU_LIT_LCPI_THRESHOLD",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_PROJECT11",
+      "Node": "PMU_LIT_SPC_THRESHOLD",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_PROJECT11",
+      "Node": "PMU_MID_LCPI_THRESHOLD",
+      "Duration": 0,
+      "Value": "3"
+    },
+    {
+      "PowerHint": "CAMERA_PROJECT11",
+      "Node": "PMU_MID_SPC_THRESHOLD",
+      "Duration": 0,
+      "Value": "50"
+    },
+    {
+      "PowerHint": "CAMERA_PROJECT11",
+      "Node": "PMU_BIG_LIMIT_FREQ",
+      "Duration": 0,
+      "Value": "1852000"
+    },
+    {
+      "PowerHint": "CAMERA_PROJECT11",
+      "Node": "PMU_BIG_LCPI_THRESHOLD",
+      "Duration": 0,
+      "Value": "3"
+    },
+    {
+      "PowerHint": "CAMERA_PROJECT11",
+      "Node": "PMU_BIG_SPC_THRESHOLD",
+      "Duration": 0,
+      "Value": "50"
+    },
+    {
+      "PowerHint": "CAMERA_PROJECT11",
+      "Node": "PMU_POLL",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_PROJECT11",
+      "Node": "EM_Profile",
+      "Duration": 0,
+      "Value": "cam1"
+    },
+    {
+      "PowerHint": "CAMERA_PROJECT11",
+      "Node": "CDPreferHighCap",
+      "Duration": 0,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "CAMERA_PROJECT11",
+      "Node": "CDPreferIdle",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_PROJECT11",
+      "Node": "TAPreferHighCap",
+      "Duration": 0,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "CAMERA_PROJECT11",
+      "Node": "CPUBigClusterMaxFreq",
+      "Duration": 0,
+      "Value": "1852000"
+    },
+    {
+      "PowerHint": "CAMERA_PROJECT11",
+      "Node": "CPUMidClusterMaxFreq",
+      "Duration": 0,
+      "Value": "1622000"
+    },
+    {
+      "PowerHint": "CAMERA_PROJECT11",
+      "Node": "CPULittleClusterMaxFreq",
+      "Duration": 0,
+      "Value": "1475000"
+    },
+    {
+      "PowerHint": "CAMERA_PROJECT11",
+      "Node": "MemFreq",
+      "Duration": 0,
+      "Value": "1352000"
+    },
+    {
+      "PowerHint": "CAMERA_PROJECT11",
+      "Node": "CDCpuset",
+      "Duration": 0,
+      "Value": "0-8"
+    },
+    {
+      "PowerHint": "CAMERA_PROJECT11",
+      "Node": "CDHighCpusetCpus",
+      "Duration": 0,
+      "Value": "8"
+    },
+    {
+      "PowerHint": "CAMERA_PROJECT11",
+      "Node": "CDMidCpusetCpus",
+      "Duration": 0,
+      "Value": "4-7"
+    },
+    {
+      "PowerHint": "CAMERA_PROJECT11",
+      "Node": "CDMidHighCpusetCpus",
+      "Duration": 0,
+      "Value": "4-8"
+    },
+    {
+      "PowerHint": "CAMERA_PROJECT11",
+      "Node": "NPITaskPacking",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_PROJECT11",
+      "Node": "MIFTargetLoad",
+      "Duration": 0,
+      "Value": "20 80"
     }
   ],
   "AdpfConfig": [
