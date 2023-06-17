@@ -326,3 +326,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/window_extensions.mk)
 # Disable Settings large-screen optimization enabled by Window Extensions
 PRODUCT_SYSTEM_PROPERTIES += \
     persist.settings.large_screen_opt.enabled=false
+
+# Keyboard bottom padding in dp for portrait mode
+PRODUCT_PRODUCT_PROPERTIES += \
+     ro.com.google.ime.kb_pad_port_b=8
