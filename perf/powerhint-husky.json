@@ -2579,7 +2579,7 @@
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_CRITICAL",
       "Node": "PMU_POLL",
       "Duration": 0,
-      "Value": "0"
+      "Value": "1"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_CRITICAL",
