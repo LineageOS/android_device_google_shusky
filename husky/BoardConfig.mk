@@ -29,6 +29,10 @@ USES_DEVICE_GOOGLE_SHUSKY := true
 BOARD_KERNEL_CMDLINE += swiotlb=noforce
 BOARD_KERNEL_CMDLINE += disable_dma32=on
 
+# Wifi
+WIFI_FEATURE_REAR_CAMERA_SAR := true
+$(call soong_config_set,wifi,feature_rear_camera_sar,$(WIFI_FEATURE_REAR_CAMERA_SAR))
+
 include device/google/shusky/device-shusky-common.mk
 
 include device/google/zuma/BoardConfig-common.mk
