@@ -476,6 +476,28 @@
                     "MaxThrottleStep": 2,
                     "CdevCeiling": [0, 12, 12, 12, 12, 12, 12]
                 }
+            ],
+            "Profile": [
+                {
+                    "Mode": "game",
+                    "BindedCdevInfo": [
+                        {
+                           "CdevRequest": "thermal-cpufreq-0",
+                           "MaxReleaseStep": 1,
+                           "Disabled":true
+                        },
+                        {
+                           "CdevRequest": "thermal-cpufreq-1",
+                           "MaxReleaseStep": 1,
+                           "Disabled":true
+                        },
+                        {
+                           "CdevRequest": "thermal-cpufreq-2",
+                           "MaxReleaseStep": 1,
+                           "Disabled":true
+                        }
+                    ]
+                }
             ]
         },
         {
@@ -524,6 +546,28 @@
                     "MaxReleaseStep": 1,
                     "MaxThrottleStep": 2,
                     "CdevCeiling": [0, 13, 13, 13, 13, 13, 13]
+                }
+            ],
+            "Profile": [
+                {
+                    "Mode": "game",
+                    "BindedCdevInfo": [
+                        {
+                           "CdevRequest": "thermal-cpufreq-0",
+                           "MaxReleaseStep": 1,
+                           "Disabled":true
+                        },
+                        {
+                           "CdevRequest": "thermal-cpufreq-1",
+                           "MaxReleaseStep": 1,
+                           "Disabled":true
+                        },
+                        {
+                           "CdevRequest": "thermal-cpufreq-2",
+                           "MaxReleaseStep": 1,
+                           "Disabled":true
+                        }
+                    ]
                 }
             ]
         },
