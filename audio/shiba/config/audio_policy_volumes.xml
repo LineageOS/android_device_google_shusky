@@ -85,31 +85,31 @@ volume index from 0 to 100.
     <volume stream="AUDIO_STREAM_MUSIC" deviceCategory="DEVICE_CATEGORY_HEADSET"
                                         ref="DEFAULT_MEDIA_VOLUME_CURVE"/>
     <volume stream="AUDIO_STREAM_MUSIC" deviceCategory="DEVICE_CATEGORY_SPEAKER">
-        <point>1,-5761</point>
+        <point>1,-5927</point>
         <point>4,-5927</point>
-        <point>8,-5624</point>
-        <point>12,-5356</point>
-        <point>16,-5029</point>
-        <point>20,-4656</point>
-        <point>24,-4323</point>
-        <point>28,-3947</point>
-        <point>32,-3729</point>
-        <point>36,-3491</point>
-        <point>40,-3249</point>
-        <point>44,-3041</point>
-        <point>48,-2795</point>
-        <point>52,-2561</point>
-        <point>56,-2309</point>
-        <point>60,-2121</point>
-        <point>64,-1905</point>
-        <point>68,-1689</point>
-        <point>72,-1525</point>
-        <point>76,-1333</point>
-        <point>80,-1128</point>
-        <point>84,-957</point>
-        <point>88,-668</point>
-        <point>92,-602</point>
-        <point>96,-241</point>
+        <point>8,-5574</point>
+        <point>12,-5281</point>
+        <point>16,-4952</point>
+        <point>20,-4562</point>
+        <point>24,-4213</point>
+        <point>28,-3838</point>
+        <point>32,-3600</point>
+        <point>36,-3385</point>
+        <point>40,-3116</point>
+        <point>44,-2927</point>
+        <point>48,-2665</point>
+        <point>52,-2436</point>
+        <point>56,-2181</point>
+        <point>60,-1985</point>
+        <point>64,-1743</point>
+        <point>68,-1553</point>
+        <point>72,-1427</point>
+        <point>76,-1166</point>
+        <point>80,-1045</point>
+        <point>84,-895</point>
+        <point>88,-644</point>
+        <point>92,-486</point>
+        <point>96,-209</point>
         <point>100,0</point>
     </volume>
     <volume stream="AUDIO_STREAM_MUSIC" deviceCategory="DEVICE_CATEGORY_EARPIECE"
