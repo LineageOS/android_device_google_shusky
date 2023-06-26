@@ -129,6 +129,7 @@
       <param id="20" name="UPPER_BAND_THRESHOLD" size="3" type="float"/>
       <param id="21" name="ATTACK_TIME" type="float"/>
       <param id="22" name="RELEASE_TIME" type="float"/>
+      <param id="23" name="BIN_THRESHOLD" size="5" type="uint32"/>
     </module>
     <module id="14" name="Linear Gain">
       <param default="0" id="0" max="3" name="opMode_" type="uint32"/>
