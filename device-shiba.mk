@@ -229,6 +229,16 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts
 
 # Location
+# SDK build system
+ifneq ($(BOARD_WITHOUT_RADIO),true)
+# Release stable version to factory image
+ifneq ($(filter factory_%,$(TARGET_PRODUCT)),)
+	include device/google/gs-common/gps/brcm/device.mk
+else
+	include device/google/gs-common/gps/brcm/device_v2.mk
+endif
+endif
+
 PRODUCT_COPY_FILES += \
        device/google/shusky/location/gps.cer:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.cer
 
