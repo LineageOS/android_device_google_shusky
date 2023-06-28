@@ -166,4 +166,7 @@
          regulatory approval (for example, FCC pre-approval is required according to "594280 D01
          Software Configuration Control v02r01").-->
     <bool translatable="false" name ="config_wifiUpdateCountryCodeFromScanResultGeneric">true</bool>
+
+    <!-- boolean indicating whether the caller thread needs to wait for destroyed listeners -->
+    <bool translatable="false" name ="config_wifiWaitForDestroyedListeners">true</bool>
 </resources>
