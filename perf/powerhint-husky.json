@@ -741,6 +741,24 @@
       "ResetOnInit": true
     },
     {
+      "Name": "VIRTUAL-SKIN-CPU-MID",
+      "Path": "vendor.thermal.VIRTUAL-SKIN-CPU-MID.profile",
+      "Values": [
+        "game",
+        ""
+      ],
+      "Type": "Property"
+    },
+    {
+      "Name": "VIRTUAL-SKIN-CPU-HIGH",
+      "Path": "vendor.thermal.VIRTUAL-SKIN-CPU-HIGH.profile",
+      "Values": [
+        "game",
+        ""
+      ],
+      "Type": "Property"
+    },
+    {
       "Name": "MIFTargetLoad",
       "Path": "/sys/class/devfreq/17000010.devfreq_mif/interactive/target_load",
       "Values": [
@@ -2295,6 +2313,18 @@
       "Node": "GPUMinFreq",
       "Duration": 0,
       "Value": "419000"
+    },
+    {
+      "PowerHint": "GAME",
+      "Node": "VIRTUAL-SKIN-CPU-MID",
+      "Duration": 0,
+      "Value": "game"
+    },
+    {
+      "PowerHint": "GAME",
+      "Node": "VIRTUAL-SKIN-CPU-HIGH",
+      "Duration": 0,
+      "Value": "game"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_LIGHT",
