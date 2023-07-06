@@ -301,6 +301,9 @@ PRODUCT_VENDOR_PROPERTIES += \
     vendor.primarydisplay.min_idle_refresh_rate.blocking_zone=10 \
     vendor.primarydisplay.min_idle_refresh_rate.blocking_zone_dbv=492
 
+# Display ACL
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.0.brightness.acl.default=1
+
 # display color data
 PRODUCT_COPY_FILES += \
 	device/google/shusky/husky/panel_config_google-hk3_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/panel_config_google-hk3_cal0.pb
