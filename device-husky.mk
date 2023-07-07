@@ -362,3 +362,7 @@ PRODUCT_SYSTEM_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
          ro.com.google.ime.kb_pad_port_b=10.4 \
          ro.com.google.ime.height_ratio=1.0
+
+# Enable camera exif model/make reporting
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.vendor.camera.exif_reveal_make_model=true
