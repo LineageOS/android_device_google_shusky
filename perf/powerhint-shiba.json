@@ -1,6 +1,14 @@
 {
   "Nodes": [
     {
+      "Name": "GPUPowerOn",
+      "Path": "/sys/devices/platform/1f000000.mali/hint_power_on",
+      "Values": [
+        "1",
+        "0"
+      ]
+    },
+    {
       "Name": "GPUMinFreq",
       "Path": "/sys/devices/platform/1f000000.mali/hint_min_freq",
       "Values": [
@@ -927,6 +935,12 @@
       "Node": "PMU_POLL",
       "Duration": 3000,
       "Value": "0"
+    },
+    {
+      "PowerHint": "CPU_LOAD_RESET",
+      "Node": "GPUPowerOn",
+      "Duration": 10,
+      "Value": "1"
     },
     {
       "PowerHint": "CPU_LOAD_RESET",
