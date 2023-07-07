@@ -179,9 +179,9 @@
             "Type":"UNKNOWN",
             "VirtualSensor":true,
             "Formula":"WEIGHTED_AVG",
-            "Combination":["cam_therm", "north_therm", "soc_therm"],
-            "Coefficient":[0.14, 0.27, 0.03],
-            "Offset":1900,
+            "Combination":["cam_therm", "north_therm"],
+            "Coefficient":[0.05, 0.14],
+            "Offset":560,
             "Multiplier":0.001
         },
         {
