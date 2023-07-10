@@ -179,8 +179,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Bluetooth LE Audio enable hardware offloading
 PRODUCT_PRODUCT_PROPERTIES += \
 	ro.bluetooth.leaudio_offload.supported=true \
-	persist.bluetooth.leaudio_offload.disabled=false \
-	ro.bluetooth.leaudio_broadcast_switcher.supported=true
+	persist.bluetooth.leaudio_offload.disabled=false
 
 # Bluetooth LE Auido offload capabilities setting
 PRODUCT_COPY_FILES += \
