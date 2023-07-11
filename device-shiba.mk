@@ -93,8 +93,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Bluetooth Tx power caps
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/bluetooth/bluetooth_power_limits_shiba.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits.csv \
-    $(LOCAL_PATH)/bluetooth/bluetooth_power_limits_shiba_JP.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_JP.csv
+	$(LOCAL_PATH)/bluetooth/bluetooth_power_limits_shiba.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits.csv \
+	$(LOCAL_PATH)/bluetooth/bluetooth_power_limits_shiba_CA.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_CA.csv \
+	$(LOCAL_PATH)/bluetooth/bluetooth_power_limits_shiba_EU.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_EU.csv \
+	$(LOCAL_PATH)/bluetooth/bluetooth_power_limits_shiba_JP.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_JP.csv \
+	$(LOCAL_PATH)/bluetooth/bluetooth_power_limits_shiba_US.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_US.csv \
+	$(LOCAL_PATH)/bluetooth/bluetooth_power_limits_shiba_GKWS6_CA.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_GKWS6_CA.csv \
+	$(LOCAL_PATH)/bluetooth/bluetooth_power_limits_shiba_GKWS6_EU.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_GKWS6_EU.csv \
+	$(LOCAL_PATH)/bluetooth/bluetooth_power_limits_shiba_GKWS6_JP.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_GKWS6_JP.csv \
+	$(LOCAL_PATH)/bluetooth/bluetooth_power_limits_shiba_GKWS6_US.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_GKWS6_US.csv
 
 # POF
 PRODUCT_PRODUCT_PROPERTIES += \
