@@ -341,9 +341,9 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.camera.rls_supported=false
 
-# SKU specific RROs
+# Settings Overlay
 PRODUCT_PACKAGES += \
-    SettingsOverlayGE9DP
+    SettingsHuskyOverlay
 
 # Display RRS default Config
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += persist.vendor.display.primary.boot_config=1008x2244@120
