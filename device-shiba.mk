@@ -318,9 +318,9 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_VENDOR_PROPERTIES += \
     hypervisor.memory_reclaim.supported=1
 
-# SKU specific RROs
+# Settings Overlay
 PRODUCT_PACKAGES += \
-    SettingsOverlayGZPF0
+    SettingsShibaOverlay
 
 # Window Extensions
 $(call inherit-product, $(SRC_TARGET_DIR)/product/window_extensions.mk)
