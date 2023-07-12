@@ -105,7 +105,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Bluetooth Tx power caps
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/bluetooth/bluetooth_power_limits_husky.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits.csv \
-    $(LOCAL_PATH)/bluetooth/bluetooth_power_limits_husky_JP.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_JP.csv
+    $(LOCAL_PATH)/bluetooth/bluetooth_power_limits_husky_CA.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_CA.csv \
+    $(LOCAL_PATH)/bluetooth/bluetooth_power_limits_husky_EU.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_EU.csv \
+    $(LOCAL_PATH)/bluetooth/bluetooth_power_limits_husky_JP.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_JP.csv \
+    $(LOCAL_PATH)/bluetooth/bluetooth_power_limits_husky_US.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_US.csv \
+    $(LOCAL_PATH)/bluetooth/bluetooth_power_limits_husky_GC3VE_EU.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_GC3VE_EU.csv
 
 # POF
 PRODUCT_PRODUCT_PROPERTIES += \
