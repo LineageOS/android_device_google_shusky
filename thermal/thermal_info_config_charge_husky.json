@@ -186,14 +186,23 @@
             "Multiplier":0.001
         },
         {
+            "Name":"VIRTUAL-USB-THROTTLING-SUB0",
+            "Type":"UNKNOWN",
+            "VirtualSensor":true,
+            "Formula":"COUNT_THRESHOLD",
+            "Combination":["USB-MINUS-NEUTRAL", "USB_QUIET_RFFE"],
+            "Coefficient":[10000, 4000],
+            "Multiplier":1
+        },
+        {
             "Name":"VIRTUAL-USB-THROTTLING",
             "Type":"USB_PORT",
             "VirtualSensor":true,
             "Formula":"COUNT_THRESHOLD",
             "TriggerSensor": "usb_pwr_therm",
-            "Combination":["usb_pwr_therm", "usb_pwr_therm", "USB-MINUS-NEUTRAL", "USB_QUIET_RFFE"],
-            "Coefficient":[46000, 46000, 10000, 4000],
-            "HotThreshold":["NAN", "NAN", "NAN", "NAN", "3.0", "NAN", "NAN"],
+            "Combination":["usb_pwr_therm", "USB-MINUS-NEUTRAL", "USB-MINUS-QUIET", "VIRTUAL-USB-THROTTLING-SUB0"],
+            "Coefficient":[46000, 0, 0, 1],
+            "HotThreshold":["NAN", "NAN", "NAN", "NAN", "4.0", "NAN", "NAN"],
             "BindedCdevInfo": [
                 {
                     "CdevRequest": "usbc-port",
