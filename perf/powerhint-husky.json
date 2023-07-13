@@ -1060,6 +1060,12 @@
       "Value": "0"
     },
     {
+      "PowerHint": "CAMERA_LAUNCH",
+      "Node": "CDPreferIdle",
+      "Duration": 1000,
+      "Value": "1"
+    },
+    {
       "PowerHint": "CAMERA_LAUNCH_EXTENDED",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 2000,
