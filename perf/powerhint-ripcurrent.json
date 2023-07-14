@@ -648,6 +648,7 @@
       "Name": "PMU_MID_LIMIT_FREQ",
       "Path": "/sys/devices/system/cpu/cpufreq/policy4/sched_pixel/limit_frequency",
       "Values": [
+        "1836000",
         "1328000"
       ],
       "DefaultIndex": 0,
@@ -676,6 +677,7 @@
       "Name": "PMU_BIG_LIMIT_FREQ",
       "Path": "/sys/devices/system/cpu/cpufreq/policy8/sched_pixel/limit_frequency",
       "Values": [
+        "2363000",
         "1852000",
         "1298000"
       ],
