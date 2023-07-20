@@ -3,7 +3,7 @@
         {
             "Name":"north_therm",
             "Type":"UNKNOWN",
-            "HotThreshold":["NAN", 32.5, "NAN", "NAN", "NAN", "NAN", "NAN"],
+            "HotThreshold":["NAN", 32.1, "NAN", "NAN", "NAN", "NAN", "NAN"],
             "HotHysteresis":[0.0, 0.9, 0.0, 0.0, 0.0, 0.0, 0.0],
             "TempPath":"/dev/thermal/tz-by-name/north_therm/tz_temp",
             "Multiplier":0.001,
@@ -13,7 +13,7 @@
         {
             "Name":"cam_therm",
             "Type":"UNKNOWN",
-            "HotThreshold":["NAN", 33.6, "NAN", "NAN", "NAN", "NAN", "NAN"],
+            "HotThreshold":["NAN", 33.7, "NAN", "NAN", "NAN", "NAN", "NAN"],
             "HotHysteresis":[0.0, 0.9, 0.0, 0.0, 0.0, 0.0, 0.0],
             "TempPath":"/dev/thermal/tz-by-name/cam_therm/tz_temp",
             "Multiplier":0.001,
@@ -23,7 +23,7 @@
         {
             "Name":"soc_therm",
             "Type":"UNKNOWN",
-            "HotThreshold":["NAN", 45.8, "NAN", "NAN", "NAN", "NAN", "NAN"],
+            "HotThreshold":["NAN", 47.2, "NAN", "NAN", "NAN", "NAN", "NAN"],
             "HotHysteresis":[0.0, 0.9, 0.0, 0.0, 0.0, 0.0, 0.0],
             "TempPath":"/dev/thermal/tz-by-name/soc_therm/tz_temp",
             "Multiplier":0.001,
@@ -33,7 +33,7 @@
         {
             "Name":"charge_therm",
             "Type":"UNKNOWN",
-            "HotThreshold":["NAN", 52.9, "NAN", "NAN", "NAN", "NAN", "NAN"],
+            "HotThreshold":["NAN", 48.4, "NAN", "NAN", "NAN", "NAN", "NAN"],
             "HotHysteresis":[0.0, 0.9, 0.0, 0.0, 0.0, 0.0, 0.0],
             "TempPath":"/dev/thermal/tz-by-name/charge_therm/tz_temp",
             "Multiplier":0.001,
@@ -43,7 +43,7 @@
         {
             "Name":"disp_therm",
             "Type":"UNKNOWN",
-            "HotThreshold":["NAN", 33.9, "NAN", "NAN", "NAN", "NAN", "NAN"],
+            "HotThreshold":["NAN", 31.7, "NAN", "NAN", "NAN", "NAN", "NAN"],
             "HotHysteresis":[0.0, 0.9, 0.0, 0.0, 0.0, 0.0, 0.0],
             "TempPath":"/dev/thermal/tz-by-name/disp_therm/tz_temp",
             "Multiplier":0.001,
@@ -59,13 +59,17 @@
         {
             "Name":"neutral_therm",
             "Type":"UNKNOWN",
+            "HotThreshold":["NAN", 44.1, "NAN", "NAN", "NAN", "NAN", "NAN"],
+            "HotHysteresis":[0.0, 0.9, 0.0, 0.0, 0.0, 0.0, 0.0],
             "TempPath":"/dev/thermal/tz-by-name/neutral_therm/tz_temp",
-            "Multiplier":0.001
+            "Multiplier":0.001,
+            "PollingDelay":60000,
+            "PassiveDelay":7000
         },
         {
             "Name":"quiet_therm",
             "Type":"UNKNOWN",
-            "HotThreshold":["NAN", 35.6, "NAN", "NAN", "NAN", "NAN", "NAN"],
+            "HotThreshold":["NAN", 34.6, "NAN", "NAN", "NAN", "NAN", "NAN"],
             "HotHysteresis":[0.0, 0.9, 0.0, 0.0, 0.0, 0.0, 0.0],
             "TempPath":"/dev/thermal/tz-by-name/quiet_therm/tz_temp",
             "Multiplier":0.001,
@@ -191,8 +195,8 @@
             "VirtualSensor":true,
             "Formula":"WEIGHTED_AVG",
             "Combination":["north_therm", "cam_therm", "soc_therm", "charge_therm", "disp_therm", "battery", "neutral_therm", "quiet_therm", "usb_pwr_therm"],
-            "Coefficient":[0.33, 0.02, 0.50, 0, 0, 0, 0.06, 0, 0],
-            "Offset":-1530,
+            "Coefficient":[0, 0.27, 0.17, 0.11, 0, 0.2, 0.01, 0.06, 0.08],
+            "Offset":2110,
             "Multiplier":0.001
         },
         {
@@ -202,8 +206,8 @@
             "VirtualSensor":true,
             "Formula":"WEIGHTED_AVG",
             "Combination":["north_therm", "cam_therm", "soc_therm", "charge_therm", "disp_therm", "battery", "neutral_therm", "quiet_therm", "usb_pwr_therm"],
-            "Coefficient":[0.05, 0.09, 0.27, 0.15, 0.02, 0.18, 0.03, 0.01, 0.07],
-            "Offset":2160,
+            "Coefficient":[0.46, 0, 0.14, 0.28, 0, 0.06, 0.02, 0.14, 0],
+            "Offset":-7280,
             "Multiplier":0.001
         },
         {
@@ -213,8 +217,8 @@
             "VirtualSensor":true,
             "Formula":"WEIGHTED_AVG",
             "Combination":["north_therm", "cam_therm", "soc_therm", "charge_therm", "disp_therm", "battery", "neutral_therm", "quiet_therm", "usb_pwr_therm"],
-            "Coefficient":[0, 0, 0, 0, 0.13, 0.14, 0.14, 0.24, 0.22],
-            "Offset":2210,
+            "Coefficient":[0.07, 0, 0, 0, 0, 0.28, 0.15, 0.02, 0.3],
+            "Offset":4010,
             "Multiplier":0.001
         },
         {
@@ -224,8 +228,8 @@
             "VirtualSensor":true,
             "Formula":"WEIGHTED_AVG",
             "Combination":["north_therm", "cam_therm", "soc_therm", "charge_therm", "disp_therm", "battery", "neutral_therm", "quiet_therm", "usb_pwr_therm"],
-            "Coefficient":[0.14, 0.01, 0.16, 0.1, 0.42, 0, 0.02, 0.03, 0],
-            "Offset":3000,
+            "Coefficient":[0.27, 0.06, 0.3, 0, 0, 0.2, 0.03, 0.02, 0.04],
+            "Offset":10,
             "Multiplier":0.001
         },
         {
@@ -235,8 +239,8 @@
             "VirtualSensor":true,
             "Formula":"WEIGHTED_AVG",
             "Combination":["north_therm", "cam_therm", "soc_therm", "charge_therm", "disp_therm", "battery", "neutral_therm", "quiet_therm", "usb_pwr_therm"],
-            "Coefficient":[0, 0.02, 0, 0, 0.04, 0.32, 0.22, 0, 0.08],
-            "Offset":10780,
+            "Coefficient":[0.9, 0, 0.05, 0, 0, 0, 0.01, 0, 0],
+            "Offset":730,
             "Multiplier":0.001
         },
         {
@@ -246,8 +250,8 @@
             "VirtualSensor":true,
             "Formula":"WEIGHTED_AVG",
             "Combination":["north_therm", "cam_therm", "soc_therm", "charge_therm", "disp_therm", "battery", "neutral_therm", "quiet_therm", "usb_pwr_therm"],
-            "Coefficient":[0.01, 0.11, 0.17, 0.19, 0, 0.23, 0, 0.11, 0.04],
-            "Offset":3500,
+            "Coefficient":[0.08, 0.02, 0.24, 0.23, 0, 0.29, 0.01, 0, 0],
+            "Offset":1870,
             "Multiplier":0.001
         },
         {
@@ -257,8 +261,8 @@
             "VirtualSensor":true,
             "Formula":"WEIGHTED_AVG",
             "Combination":["north_therm", "cam_therm", "soc_therm", "charge_therm", "disp_therm", "battery", "neutral_therm", "quiet_therm", "usb_pwr_therm"],
-            "Coefficient":[0, 0.05, 0.24, 0.17, 0, 0.32, 0.02, 0, 0],
-            "Offset":5130,
+            "Coefficient":[0, 0, 0, 0.04, 0.2, 0.07, 0.15, 0.3, 0.16],
+            "Offset":-440,
             "Multiplier":0.001
         },
         {
@@ -268,21 +272,54 @@
             "VirtualSensor":true,
             "Formula":"WEIGHTED_AVG",
             "Combination":["north_therm", "cam_therm", "soc_therm", "charge_therm", "disp_therm", "battery", "neutral_therm", "quiet_therm", "usb_pwr_therm"],
-            "Coefficient":[0, 0, 0.08, 0, 0.01, 0.81, 0.03, 0, 0],
-            "Offset":1530,
+            "Coefficient":[0, 0.01, 0, 0, 0.07, 0.28, 0.25, 0.02, 0.08],
+            "Offset":9170,
+            "Multiplier":0.001
+        },
+        {
+            "Name":"VIRTUAL-SKIN-SUB-8",
+            "Type":"UNKNOWN",
+            "Hidden":true,
+            "VirtualSensor":true,
+            "Formula":"WEIGHTED_AVG",
+            "Combination":["north_therm", "cam_therm", "soc_therm", "charge_therm", "disp_therm", "battery", "neutral_therm", "quiet_therm", "usb_pwr_therm"],
+            "Coefficient":[0.1, 0.16, 0.11, 0.19, 0.26, 0, 0, 0.11, 0],
+            "Offset":1140,
+            "Multiplier":0.001
+        },
+        {
+            "Name":"VIRTUAL-SKIN-SUB-9",
+            "Type":"UNKNOWN",
+            "Hidden":true,
+            "VirtualSensor":true,
+            "Formula":"WEIGHTED_AVG",
+            "Combination":["north_therm", "cam_therm", "soc_therm", "charge_therm", "disp_therm", "battery", "neutral_therm", "quiet_therm", "usb_pwr_therm"],
+            "Coefficient":[0.02, 0.05, 0.21, 0.13, 0.02, 0.29, 0.09, 0, 0],
+            "Offset":5160,
+            "Multiplier":0.001
+        },
+        {
+            "Name":"VIRTUAL-SKIN-SUB-10",
+            "Type":"UNKNOWN",
+            "Hidden":true,
+            "VirtualSensor":true,
+            "Formula":"WEIGHTED_AVG",
+            "Combination":["north_therm", "cam_therm", "soc_therm", "charge_therm", "disp_therm", "battery", "neutral_therm", "quiet_therm", "usb_pwr_therm"],
+            "Coefficient":[0, 0, 0.16, 0, 0.49, 0.35, 0, 0, 0],
+            "Offset":-1500,
             "Multiplier":0.001
         },
         {
             "Name":"VIRTUAL-SKIN",
             "Type":"SKIN",
-            "Version":"4.0",
+            "Version":"5.0",
             "VirtualSensor":true,
             "TriggerSensor":["north_therm", "cam_therm", "soc_therm", "charge_therm", "disp_therm", "quiet_therm", "usb_pwr_therm"],
             "Formula":"MAXIMUM",
             "Combination":["VIRTUAL-SKIN-SUB-0", "VIRTUAL-SKIN-SUB-1", "VIRTUAL-SKIN-SUB-2",
                     "VIRTUAL-SKIN-SUB-3", "VIRTUAL-SKIN-SUB-4", "VIRTUAL-SKIN-SUB-5",
-                    "VIRTUAL-SKIN-SUB-6", "VIRTUAL-SKIN-SUB-7"],
-            "Coefficient":[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+                    "VIRTUAL-SKIN-SUB-6", "VIRTUAL-SKIN-SUB-7", "VIRTUAL-SKIN-SUB-8", "VIRTUAL-SKIN-SUB-9", "VIRTUAL-SKIN-SUB-10"],
+            "Coefficient":[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
             "HotThreshold":["NAN", 39.0, 43.0, 45.0, 46.5, 52.0, 55.0],
             "HotHysteresis":[0.0, 1.9, 1.9, 1.9, 1.4, 1.9, 1.9],
             "Multiplier":0.001,
@@ -378,7 +415,7 @@
             "Combination":["VIRTUAL-SKIN"],
             "Coefficient":[1.0],
             "HotThreshold":["NAN", 39.0, 41.0, "NAN", "NAN", "NAN", "NAN"],
-            "HotHysteresis":[0.0, 1.9, 1.9, 0.0, 0.0, 0.0, 0.0],
+            "HotHysteresis":[0.0, 0.0, 1.9, 0.0, 0.0, 0.0, 0.0],
             "Multiplier":0.001,
             "PollingDelay":300000,
             "PassiveDelay":7000,
@@ -449,7 +486,7 @@
             "Combination":["VIRTUAL-SKIN"],
             "Coefficient":[1.0],
             "HotThreshold":["NAN", 41.0, 43.0, 52.0, "NAN", "NAN", "NAN"],
-            "HotHysteresis":[0.0, 1.9, 1.9, 1.9, 0.0, 0.0, 0.0],
+            "HotHysteresis":[0.0, 0.0, 1.9, 1.9, 0.0, 0.0, 0.0],
             "Multiplier":0.001,
             "PollingDelay":300000,
             "PassiveDelay":7000,
@@ -629,8 +666,8 @@
             "VirtualSensor":true,
             "Formula":"WEIGHTED_AVG",
             "Combination":["north_therm", "cam_therm", "soc_therm", "charge_therm", "disp_therm", "battery", "neutral_therm", "quiet_therm", "usb_pwr_therm"],
-            "Coefficient":[0.11, 0.01, 0.08, 0, 0, 0.22, 0.02, 0.08, 0.32],
-            "Offset":1430,
+            "Coefficient":[0, 0.14, 0, 0.15, 0, 0, 0, 0.88, 0],
+            "Offset":-11750,
             "Multiplier":0.001
         },
         {
@@ -640,8 +677,8 @@
             "VirtualSensor":true,
             "Formula":"WEIGHTED_AVG",
             "Combination":["north_therm", "cam_therm", "soc_therm", "charge_therm", "disp_therm", "battery", "neutral_therm", "quiet_therm", "usb_pwr_therm"],
-            "Coefficient":[0.02, 0, 0.14, 0, 0.29, 0.11, 0.08, 0.3, 0.14],
-            "Offset":-9650,
+            "Coefficient":[0.01, 0.18, 0, 0, 0, 0.24, 0, 0.01, 0.35],
+            "Offset":3600,
             "Multiplier":0.001
         },
         {
@@ -651,53 +688,19 @@
             "VirtualSensor":true,
             "Formula":"WEIGHTED_AVG",
             "Combination":["north_therm", "cam_therm", "soc_therm", "charge_therm", "disp_therm", "battery", "neutral_therm", "quiet_therm", "usb_pwr_therm"],
-            "Coefficient":[0.12, 0, 0.13, 0, 0.02, 0.17, 0.2, 0.05, 0.23],
-            "Offset":-3450,
-            "Multiplier":0.001
-        },
-        {
-            "Name":"VIRTUAL-SKIN-SPEAKER-SUB-3",
-            "Type":"UNKNOWN",
-            "Hidden":true,
-            "VirtualSensor":true,
-            "Formula":"WEIGHTED_AVG",
-            "Combination":["north_therm", "cam_therm", "soc_therm", "charge_therm", "disp_therm", "battery", "neutral_therm", "quiet_therm", "usb_pwr_therm"],
-            "Coefficient":[0.01, 0.38, 0, 0, 0.01, 0.03, 0, 0.48, 0.1],
-            "Offset":-3420,
-            "Multiplier":0.001
-        },
-        {
-            "Name":"VIRTUAL-SKIN-SPEAKER-SUB-4",
-            "Type":"UNKNOWN",
-            "Hidden":true,
-            "VirtualSensor":true,
-            "Formula":"WEIGHTED_AVG",
-            "Combination":["north_therm", "cam_therm", "soc_therm", "charge_therm", "disp_therm", "battery", "neutral_therm", "quiet_therm", "usb_pwr_therm"],
-            "Coefficient":[0.04, 0, 0, 0.03, 0, 0, 0.14, 0.36, 0.29],
-            "Offset":-3490,
-            "Multiplier":0.001
-        },
-        {
-            "Name":"VIRTUAL-SKIN-SPEAKER-SUB-5",
-            "Type":"UNKNOWN",
-            "Hidden":true,
-            "VirtualSensor":true,
-            "Formula":"WEIGHTED_AVG",
-            "Combination":["north_therm", "cam_therm", "soc_therm", "charge_therm", "disp_therm", "battery", "neutral_therm", "quiet_therm", "usb_pwr_therm"],
-            "Coefficient":[0.05, 0, 0, 0, 0.22, 0.21, 0, 0.5, 0],
-            "Offset":-2550,
+            "Coefficient":[0, 0.01, 0, 0, 0.13, 0.31, 0.11, 0.18, 0.09],
+            "Offset":2140,
             "Multiplier":0.001
         },
         {
             "Name":"VIRTUAL-SKIN-SPEAKER",
             "Type":"UNKNOWN",
-            "Version":"1.0",
+            "Version":"2.0",
             "VirtualSensor":true,
             "TriggerSensor":["north_therm", "cam_therm", "soc_therm", "charge_therm", "disp_therm", "quiet_therm", "usb_pwr_therm"],
             "Formula":"MAXIMUM",
-            "Combination":["VIRTUAL-SKIN-SPEAKER-SUB-0", "VIRTUAL-SKIN-SPEAKER-SUB-1", "VIRTUAL-SKIN-SPEAKER-SUB-2",
-                           "VIRTUAL-SKIN-SPEAKER-SUB-3", "VIRTUAL-SKIN-SPEAKER-SUB-4", "VIRTUAL-SKIN-SPEAKER-SUB-5"],
-            "Coefficient":[1, 1, 1, 1, 1, 1],
+            "Combination":["VIRTUAL-SKIN-SPEAKER-SUB-0", "VIRTUAL-SKIN-SPEAKER-SUB-1", "VIRTUAL-SKIN-SPEAKER-SUB-2"],
+            "Coefficient":[1, 1, 1],
             "HotThreshold":["NAN", 37.0, "NAN", "NAN", "NAN", "NAN", "NAN"],
             "HotHysteresis":[0.0, 1.9, 0.0, 0.0, 0.0, 0.0, 0.0],
             "Multiplier":0.001,
@@ -710,8 +713,8 @@
             "VirtualSensor":true,
             "Formula":"WEIGHTED_AVG",
             "Combination":["north_therm", "cam_therm", "soc_therm", "charge_therm", "disp_therm", "battery", "neutral_therm", "quiet_therm", "usb_pwr_therm"],
-            "Coefficient":[0.05, 0.02, 0.01, 0, 0.49, 0.04, 0.12, 0.07, 0.12],
-            "Offset":760,
+            "Coefficient":[0.04, 0.16, 0.19, 0.16, 0.17, 0, 0.01, 0.24, 0],
+            "Offset":-820,
             "Multiplier":0.001
         },
         {
@@ -721,8 +724,8 @@
             "VirtualSensor":true,
             "Formula":"WEIGHTED_AVG",
             "Combination":["north_therm", "cam_therm", "soc_therm", "charge_therm", "disp_therm", "battery", "neutral_therm", "quiet_therm", "usb_pwr_therm"],
-            "Coefficient":[0.14, 0.01, 0.16, 0.1, 0.42, 0, 0.02, 0.03, 0],
-            "Offset":3000,
+            "Coefficient":[0.02, 0.01, 0.04, 0.04, 0.4, 0.14, 0.1, 0.02, 0.12],
+            "Offset":1840,
             "Multiplier":0.001
         },
         {
@@ -732,19 +735,30 @@
             "VirtualSensor":true,
             "Formula":"WEIGHTED_AVG",
             "Combination":["north_therm", "cam_therm", "soc_therm", "charge_therm", "disp_therm", "battery", "neutral_therm", "quiet_therm", "usb_pwr_therm"],
-            "Coefficient":[0.09, 0.19, 0.08, 0.17, 0.36, 0.04, 0, 0, 0],
-            "Offset":1290,
+            "Coefficient":[0.18, 0.1, 0.15, 0.13, 0.22, 0.16, 0.02, 0.04, 0.01],
+            "Offset":-2810,
+            "Multiplier":0.001
+        },
+        {
+            "Name":"VIRTUAL-SKIN-CHARGE-SUB-3",
+            "Type":"UNKNOWN",
+            "Hidden":true,
+            "VirtualSensor":true,
+            "Formula":"WEIGHTED_AVG",
+            "Combination":["north_therm", "cam_therm", "soc_therm", "charge_therm", "disp_therm", "battery", "neutral_therm", "quiet_therm", "usb_pwr_therm"],
+            "Coefficient":[0.1, 0.16, 0.11, 0.19, 0.26, 0, 0, 0.11, 0],
+            "Offset":1140,
             "Multiplier":0.001
         },
         {
             "Name":"VIRTUAL-SKIN-CHARGE",
             "Type":"UNKNOWN",
-            "Version":"3.0",
+            "Version":"4.0",
             "VirtualSensor":true,
             "TriggerSensor":["north_therm", "cam_therm", "soc_therm", "charge_therm", "disp_therm", "quiet_therm", "usb_pwr_therm"],
             "Formula":"MAXIMUM",
-            "Combination":["VIRTUAL-SKIN-CHARGE-SUB-0", "VIRTUAL-SKIN-CHARGE-SUB-1", "VIRTUAL-SKIN-CHARGE-SUB-2"],
-            "Coefficient":[1.0, 1.0, 1.0],
+            "Combination":["VIRTUAL-SKIN-CHARGE-SUB-0", "VIRTUAL-SKIN-CHARGE-SUB-1", "VIRTUAL-SKIN-CHARGE-SUB-2", "VIRTUAL-SKIN-CHARGE-SUB-3"],
+            "Coefficient":[1.0, 1.0, 1.0, 1.0],
             "HotThreshold":["NAN", 34.0, 38.0, 41.0, 45.0, 47.0, 55.0],
             "HotHysteresis":[0.0, 1.9, 3.9, 2.9, 3.9, 1.9, 1.9],
             "Multiplier":0.001,
