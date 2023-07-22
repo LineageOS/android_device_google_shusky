@@ -341,5 +341,5 @@ PRODUCT_PRODUCT_PROPERTIES += \
      ro.com.google.ime.kb_pad_port_b=8
 
 # Enable camera exif model/make reporting
-PRODUCT_PRODUCT_PROPERTIES += \
+PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.camera.exif_reveal_make_model=true
