@@ -6,7 +6,8 @@
       "Values": [
         "1",
         "0"
-      ]
+      ],
+      "WriteOnly": true
     },
     {
       "Name": "GPUMinFreq",
