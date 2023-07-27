@@ -288,9 +288,10 @@
       "Name": "CDPreferIdle",
       "Path": "/proc/vendor_sched/cam_prefer_idle",
       "Values": [
-        "0",
-        "1"
+        "1",
+        "0"
       ],
+      "DefaultIndex": 0,
       "ResetOnInit": true
     },
     {
@@ -652,6 +653,7 @@
       "Name": "PMU_LIT_SPC_THRESHOLD",
       "Path": "/sys/devices/system/cpu/cpufreq/policy0/sched_pixel/spc_threshold",
       "Values": [
+        "100",
         "70",
         "42",
         "35",
@@ -683,6 +685,7 @@
       "Name": "PMU_MID_SPC_THRESHOLD",
       "Path": "/sys/devices/system/cpu/cpufreq/policy4/sched_pixel/spc_threshold",
       "Values": [
+        "100",
         "50",
         "30",
         "20",
@@ -712,6 +715,7 @@
       "Name": "PMU_BIG_SPC_THRESHOLD",
       "Path": "/sys/devices/system/cpu/cpufreq/policy8/sched_pixel/spc_threshold",
       "Values": [
+        "100",
         "50",
         "22",
         "20"
@@ -1193,6 +1197,30 @@
       "Node": "TNRFreq",
       "Duration": 1000,
       "Value": "664000"
+    },
+    {
+      "PowerHint": "CAMERA_ZOOMING_BOOST",
+      "Node": "CDPreferIdle",
+      "Duration": 100,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "CAMERA_ZOOMING_BOOST",
+      "Node": "PMU_LIT_SPC_THRESHOLD",
+      "Duration": 100,
+      "Value": "100"
+    },
+    {
+      "PowerHint": "CAMERA_ZOOMING_BOOST",
+      "Node": "PMU_MID_SPC_THRESHOLD",
+      "Duration": 100,
+      "Value": "100"
+    },
+    {
+      "PowerHint": "CAMERA_ZOOMING_BOOST",
+      "Node": "PMU_BIG_SPC_THRESHOLD",
+      "Duration": 100,
+      "Value": "100"
     },
     {
       "PowerHint": "GCA_CAMERA_SHOT_BIGCPU",
