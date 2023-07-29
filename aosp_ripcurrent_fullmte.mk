@@ -1,5 +1,4 @@
-include device/google/shusky/fullmte-vars.mk
+include device/google/gs-common/mte/fullmte-pixel.mk
 $(call inherit-product, device/google/shusky/aosp_ripcurrent.mk)
-$(call inherit-product, device/google/shusky/fullmte-common.mk)
 
 PRODUCT_NAME := aosp_ripcurrent_fullmte
