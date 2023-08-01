@@ -118,6 +118,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
        ro.audio.spatializer_enabled=true
 
+# Audio CCA property
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.vendor.audio.cca.enabled=false
+
 # DCK properties based on target
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.gms.dck.eligible_wcc=2 \
