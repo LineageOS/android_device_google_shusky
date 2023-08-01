@@ -14,3 +14,6 @@ genfscon sysfs /devices/platform/10c90000.hsi2c/i2c-6/6-003c                    
 genfscon sysfs /devices/platform/10c90000.hsi2c/i2c-7/7-003c                            u:object_r:sysfs_wlc:s0
 genfscon sysfs /devices/platform/10c90000.hsi2c/i2c-8/8-003c                            u:object_r:sysfs_wlc:s0
 genfscon sysfs /devices/platform/10c90000.hsi2c/i2c-9/9-003c                            u:object_r:sysfs_wlc:s0
+
+# GPS
+genfscon sysfs /devices/platform/111e0000.spi/spi_master/spi21/spi21.0/nstandby  u:object_r:sysfs_gps:s0
