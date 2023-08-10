@@ -288,7 +288,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.camera.front_720P_always_binning=true
 
 # Media Performance Class 14
-PRODUCT_PROPERTY_OVERRIDES += ro.odm.build.media_performance_class=34
+PRODUCT_PRODUCT_PROPERTIES += ro.odm.build.media_performance_class=34
 
 # Display LBE
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.lbe.supported=1
