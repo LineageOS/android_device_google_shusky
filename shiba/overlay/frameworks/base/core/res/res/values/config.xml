@@ -142,34 +142,6 @@
     <!-- The default peak refresh rate. -->
     <integer name="config_defaultPeakRefreshRate">120</integer>
 
-    <!-- Not allow to switch to higher refresh rate when display brightness setting is
-         equal or less than this value -->
-    <integer-array name="config_brightnessThresholdsOfPeakRefreshRate">
-        <!-- System brightness for 10 nits: round((10-2)/(1400-2)*(255-1)+1) = 2 -->
-        <item>2</item>
-        <item>-1</item>
-    </integer-array>
-    <integer-array name="config_ambientThresholdsOfPeakRefreshRate">
-        <item>-1</item>
-        <item>10</item>
-    </integer-array>
-    <!-- default refresh rate in the zone defined by birghtness and ambient thresholds -->
-    <integer name="config_defaultRefreshRateInZone">120</integer>
-
-    <!-- Switch to fixed refresh rate when display brightness setting is
-         equal or more than this value -->
-    <integer-array name="config_highDisplayBrightnessThresholdsOfFixedRefreshRate">
-        <!-- System brightness for 1000 nits: round((0.71*(255-1)+1) = 181 -->
-        <item>181</item> <!--100% UI normal brightness -->
-    </integer-array>
-
-    <integer-array name="config_highAmbientBrightnessThresholdsOfFixedRefreshRate">
-        <item>50000</item>
-    </integer-array>
-
-    <!-- default refresh rate in the high zone defined by birghtness and ambient thresholds -->
-    <integer name="config_fixedRefreshRateInHighZone">120</integer>
-
     <integer-array name="config_ambientThresholdLevels">
         <item>2</item>
         <item>3</item>
