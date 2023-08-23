@@ -317,7 +317,14 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.vibrator.hal.context.scale=60 \
     persist.vendor.vibrator.hal.context.fade=true \
     persist.vendor.vibrator.hal.context.cooldowntime=1600 \
-    persist.vendor.vibrator.hal.context.settlingtime=5000
+    persist.vendor.vibrator.hal.context.settlingtime=5000 \
+    ro.vendor.vibrator.hal.dbc.enable=true \
+    ro.vendor.vibrator.hal.dbc.envrelcoef=8353728 \
+    ro.vendor.vibrator.hal.dbc.riseheadroom=1909602 \
+    ro.vendor.vibrator.hal.dbc.fallheadroom=1909602 \
+    ro.vendor.vibrator.hal.dbc.txlvlthreshfs=2516583 \
+    ro.vendor.vibrator.hal.dbc.txlvlholdoffms=0 \
+    ro.vendor.vibrator.hal.pm.activetimeout=5
 
 # Increment the SVN for any official public releases
 PRODUCT_VENDOR_PROPERTIES += \
