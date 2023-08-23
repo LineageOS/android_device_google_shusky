@@ -236,14 +236,7 @@ PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts
 
 # Location
 # SDK build system
-ifneq ($(BOARD_WITHOUT_RADIO),true)
-# Release stable version to factory image
-ifneq ($(filter factory_%,$(TARGET_PRODUCT)),)
-	include device/google/gs-common/gps/brcm/device.mk
-else
-	include device/google/gs-common/gps/brcm/device_v2.mk
-endif
-endif
+include device/google/gs-common/gps/brcm/device.mk
 
 PRODUCT_COPY_FILES += \
        device/google/shusky/location/gps.cer:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.cer
@@ -320,7 +313,14 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.vibrator.hal.context.scale=60 \
     persist.vendor.vibrator.hal.context.fade=true \
     persist.vendor.vibrator.hal.context.cooldowntime=1600 \
-    persist.vendor.vibrator.hal.context.settlingtime=5000
+    persist.vendor.vibrator.hal.context.settlingtime=5000 \
+    ro.vendor.vibrator.hal.dbc.enable=true \
+    ro.vendor.vibrator.hal.dbc.envrelcoef=8353728 \
+    ro.vendor.vibrator.hal.dbc.riseheadroom=1909602 \
+    ro.vendor.vibrator.hal.dbc.fallheadroom=1909602 \
+    ro.vendor.vibrator.hal.dbc.txlvlthreshfs=2516583 \
+    ro.vendor.vibrator.hal.dbc.txlvlholdoffms=0 \
+    ro.vendor.vibrator.hal.pm.activetimeout=5
 
 # Increment the SVN for any official public releases
 PRODUCT_VENDOR_PROPERTIES += \
