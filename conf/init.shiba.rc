@@ -90,6 +90,27 @@ on property:vendor.all.modules.ready=1
     chown system system /sys/bus/i2c/devices/6-0043/default/delay_before_stop_playback_us
     chown system system /sys/bus/i2c/devices/5-0043/default/delay_before_stop_playback_us
     chown system system /sys/bus/i2c/devices/4-0043/default/delay_before_stop_playback_us
+    chown system system /sys/bus/i2c/devices/6-0043/dbc/dbc_env_rel_coef
+    chown system system /sys/bus/i2c/devices/5-0043/dbc/dbc_env_rel_coef
+    chown system system /sys/bus/i2c/devices/4-0043/dbc/dbc_env_rel_coef
+    chown system system /sys/bus/i2c/devices/6-0043/dbc/dbc_rise_headroom
+    chown system system /sys/bus/i2c/devices/5-0043/dbc/dbc_rise_headroom
+    chown system system /sys/bus/i2c/devices/4-0043/dbc/dbc_rise_headroom
+    chown system system /sys/bus/i2c/devices/6-0043/dbc/dbc_fall_headroom
+    chown system system /sys/bus/i2c/devices/5-0043/dbc/dbc_fall_headroom
+    chown system system /sys/bus/i2c/devices/4-0043/dbc/dbc_fall_headroom
+    chown system system /sys/bus/i2c/devices/6-0043/dbc/dbc_enable
+    chown system system /sys/bus/i2c/devices/5-0043/dbc/dbc_enable
+    chown system system /sys/bus/i2c/devices/4-0043/dbc/dbc_enable
+    chown system system /sys/bus/i2c/devices/6-0043/dbc/dbc_tx_lvl_thresh_fs
+    chown system system /sys/bus/i2c/devices/5-0043/dbc/dbc_tx_lvl_thresh_fs
+    chown system system /sys/bus/i2c/devices/4-0043/dbc/dbc_tx_lvl_thresh_fs
+    chown system system /sys/bus/i2c/devices/6-0043/dbc/dbc_tx_lvl_hold_off_ms
+    chown system system /sys/bus/i2c/devices/5-0043/dbc/dbc_tx_lvl_hold_off_ms
+    chown system system /sys/bus/i2c/devices/4-0043/dbc/dbc_tx_lvl_hold_off_ms
+    chown system system /sys/bus/i2c/devices/6-0043/default/pm_active_timeout_ms
+    chown system system /sys/bus/i2c/devices/5-0043/default/pm_active_timeout_ms
+    chown system system /sys/bus/i2c/devices/4-0043/default/pm_active_timeout_ms
 
     enable vendor.vibrator.cs40l26
 
