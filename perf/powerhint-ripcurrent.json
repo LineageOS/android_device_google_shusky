@@ -1363,6 +1363,12 @@
     },
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
+      "Node": "DsuMinFreq",
+      "Duration": 0,
+      "Value": "820000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_HIGH",
       "Node": "PMU_LIT_LIMIT_FREQ",
       "Duration": 0,
       "Value": "1098000"
