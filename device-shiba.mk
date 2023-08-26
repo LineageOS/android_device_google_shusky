@@ -187,6 +187,11 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_COPY_FILES += \
 	device/google/shusky/bluetooth/le_audio_codec_capabilities.xml:$(TARGET_COPY_OUT_VENDOR)/etc/le_audio_codec_capabilities.xml
 
+# Bluetooth LE Audio CIS handover to SCO
+# Set the property only for the controller couldn't support CIS/SCO simultaneously. More detailed in b/242908683.
+PRODUCT_PRODUCT_PROPERTIES += \
+	persist.bluetooth.leaudio.notify.idle.during.call=true
+
 # Support One-Handed mode
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.support_one_handed_mode=true
@@ -324,7 +329,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # Increment the SVN for any official public releases
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.build.svn=1
+    ro.vendor.build.svn=3
 
 # P23 Devices no longer need rlsservice
 PRODUCT_VENDOR_PROPERTIES += \
