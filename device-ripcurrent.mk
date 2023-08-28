@@ -30,17 +30,15 @@ $(call inherit-product-if-exists, vendor/google_devices/zuma/proprietary/device-
 $(call inherit-product-if-exists, vendor/google_devices/shusky/proprietary/ripcurrent/device-vendor-ripcurrent.mk)
 $(call inherit-product-if-exists, vendor/qorvo/uwb/qm35-hal/Device.mk)
 
+CAMERA_PRODUCT ?= ripcurrent
+
 include device/google/shusky/audio/ripcurrent/audio-tables.mk
+include device/google/shusky/camera/camera.mk
 include device/google/zuma/device-shipping-common.mk
 include hardware/google/pixel/vibrator/cs40l26/device-stereo.mk
 include device/google/gs-common/bcmbt/bluetooth.mk
 include device/google/gs-common/gps/brcm/cbd_gps.mk
 include device/google/gs-common/touch/stm/stm20.mk
-
-# go/lyric-soong-variables
-$(call soong_config_set,lyric,camera_hardware,ripcurrent)
-$(call soong_config_set,lyric,tuning_product,ripcurrent)
-$(call soong_config_set,google3a_config,target_device,ripcurrent)
 
 # display
 DEVICE_PACKAGE_OVERLAYS += device/google/shusky/ripcurrent/overlay

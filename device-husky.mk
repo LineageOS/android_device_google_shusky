@@ -42,18 +42,16 @@ PRODUCT_COPY_FILES += \
 	device/google/shusky/husky/display_colordata_dev_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_colordata_dev_cal0.pb \
     device/google/shusky/husky/display_golden_google-hk3_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_golden_google-hk3_cal0.pb
 
+CAMERA_PRODUCT ?= husky
+
 include device/google/shusky/audio/husky/audio-tables.mk
+include device/google/shusky/camera/camera.mk
 include device/google/zuma/device-shipping-common.mk
 include hardware/google/pixel/vibrator/cs40l26/device.mk
 include device/google/gs-common/bcmbt/bluetooth.mk
 include device/google/gs-common/touch/stm/stm20.mk
 include device/google/gs-common/touch/gti/gti.mk
 include device/google/gs-common/touch/touchinspector/touchinspector.mk
-
-# go/lyric-soong-variables
-$(call soong_config_set,lyric,camera_hardware,husky)
-$(call soong_config_set,lyric,tuning_product,husky)
-$(call soong_config_set,google3a_config,target_device,husky)
 
 # Init files
 PRODUCT_COPY_FILES += \
