@@ -827,27 +827,27 @@
             "Formula":"MAXIMUM",
             "Combination":["VIRTUAL-SKIN-CHARGE"],
             "Coefficient":[1.0],
-            "HotThreshold":["NAN", 34.0, 41.0, 45.0, 47.0, 51.0, 55.0],
+            "HotThreshold":["NAN", 35.0, 41.0, 45.0, 47.0, 51.0, 55.0],
             "HotHysteresis":[0.0, 1.9, 1.9, 3.9, 1.9, 1.9, 1.9],
             "Multiplier":0.001,
             "PollingDelay":60000,
             "PassiveDelay":7000,
             "PIDInfo": {
-                "K_Po":["NAN", "NAN", 119, "NAN", "NAN", "NAN", "NAN"],
-                "K_Pu":["NAN", "NAN", 119, "NAN", "NAN", "NAN", "NAN"],
-                "K_I":["NAN", "NAN", 25, "NAN", "NAN", "NAN", "NAN"],
+                "K_Po":["NAN", "NAN", 213, "NAN", "NAN", "NAN", "NAN"],
+                "K_Pu":["NAN", "NAN", 213, "NAN", "NAN", "NAN", "NAN"],
+                "K_I":["NAN", "NAN", 27, "NAN", "NAN", "NAN", "NAN"],
                 "K_D":["NAN", "NAN", 0, "NAN", "NAN", "NAN", "NAN"],
-                "I_Max":["NAN", "NAN", 1302, "NAN", "NAN", "NAN", "NAN"],
-                "S_Power":["NAN", "NAN", 2527, "NAN", "NAN", "NAN", "NAN"],
+                "I_Max":["NAN", "NAN", 1383, "NAN", "NAN", "NAN", "NAN"],
+                "S_Power":["NAN", "NAN", 2383, "NAN", "NAN", "NAN", "NAN"],
                 "MinAllocPower":["NAN", "NAN", 0, "NAN", "NAN", "NAN", "NAN"],
-                "MaxAllocPower":["NAN", "NAN", 6219, "NAN", "NAN", "NAN", "NAN"],
-                "I_Cutoff":["NAN", "NAN", 6, "NAN", "NAN", "NAN", "NAN"],
-                "I_Default":1302
+                "MaxAllocPower":["NAN", "NAN", 8022, "NAN", "NAN", "NAN", "NAN"],
+                "I_Cutoff":["NAN", "NAN", 8, "NAN", "NAN", "NAN", "NAN"],
+                "I_Default":1383
             },
             "ExcludedPowerInfo": [
                 {
                     "PowerRail": "PARTIAL_SYSTEM_POWER",
-                    "PowerWeight": [0.12, 0.12, 0.06, 0.06, 0.24, 0.24, 0.24]
+                    "PowerWeight": [0.21, 0.21, 0.21, 0.21, 0.42, 0.42, 0.42]
                 }
             ],
             "BindedCdevInfo": [

@@ -239,27 +239,27 @@
             "Formula":"MAXIMUM",
             "Combination":["VIRTUAL-SKIN-CHARGE"],
             "Coefficient":[1.0],
-            "HotThreshold":["NAN", 34.0, 41.0, 45.0, 47.0, 51.0, 55.0],
+            "HotThreshold":["NAN", 35.0, 41.0, 45.0, 47.0, 51.0, 55.0],
             "HotHysteresis":[0.0, 1.9, 1.9, 3.9, 1.9, 1.9, 1.9],
             "Multiplier":0.001,
             "PollingDelay":60000,
             "PassiveDelay":7000,
             "PIDInfo": {
-                "K_Po":["NAN", "NAN", 101, "NAN", "NAN", "NAN", "NAN"],
-                "K_Pu":["NAN", "NAN", 101, "NAN", "NAN", "NAN", "NAN"],
+                "K_Po":["NAN", "NAN", 164, "NAN", "NAN", "NAN", "NAN"],
+                "K_Pu":["NAN", "NAN", 164, "NAN", "NAN", "NAN", "NAN"],
                 "K_I":["NAN", "NAN", 21, "NAN", "NAN", "NAN", "NAN"],
                 "K_D":["NAN", "NAN", 0, "NAN", "NAN", "NAN", "NAN"],
-                "I_Max":["NAN", "NAN", 1099, "NAN", "NAN", "NAN", "NAN"],
-                "S_Power":["NAN", "NAN", 2404, "NAN", "NAN", "NAN", "NAN"],
+                "I_Max":["NAN", "NAN", 1066, "NAN", "NAN", "NAN", "NAN"],
+                "S_Power":["NAN", "NAN", 2066, "NAN", "NAN", "NAN", "NAN"],
                 "MinAllocPower":["NAN", "NAN", 0, "NAN", "NAN", "NAN", "NAN"],
-                "MaxAllocPower":["NAN", "NAN", 5519, "NAN", "NAN", "NAN", "NAN"],
-                "I_Cutoff":["NAN", "NAN", 6, "NAN", "NAN", "NAN", "NAN"],
-                "I_Default":1099
+                "MaxAllocPower":["NAN", "NAN", 6412, "NAN", "NAN", "NAN", "NAN"],
+                "I_Cutoff":["NAN", "NAN", 8, "NAN", "NAN", "NAN", "NAN"],
+                "I_Default":1066
             },
             "ExcludedPowerInfo": [
                 {
                     "PowerRail": "PARTIAL_SYSTEM_POWER",
-                    "PowerWeight": [0.1, 0.1, 0.05, 0.05, 0.2, 0.2, 0.2]
+                    "PowerWeight": [0.16, 0.16, 0.16, 0.16, 0.32, 0.32, 0.32]
                 }
             ],
             "BindedCdevInfo": [
