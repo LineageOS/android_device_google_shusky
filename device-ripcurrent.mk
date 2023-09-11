@@ -23,6 +23,10 @@ TARGET_BOARD_KERNEL_HEADERS := device/google/shusky-kernel/kernel-headers
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
     USE_UWBFIELDTESTQM := true
 endif
+ifeq ($(filter factory_ripcurrent, $(TARGET_PRODUCT)),)
+    include device/google/shusky/uwb/uwb_calibration.mk
+endif
+
 
 $(call inherit-product-if-exists, vendor/google_devices/shusky/prebuilts/device-vendor-ripcurrent.mk)
 $(call inherit-product-if-exists, vendor/google_devices/zuma/prebuilts/device-vendor.mk)
@@ -207,6 +211,10 @@ PRODUCT_PACKAGES += \
 
 # Trusty liboemcrypto.so
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts
+
+# UWB
+PRODUCT_SOONG_NAMESPACES += \
+    device/google/shusky/uwb
 
 # Location
 # SDK build system
