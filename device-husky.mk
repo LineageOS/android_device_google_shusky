@@ -330,7 +330,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     vendor.primarydisplay.min_idle_refresh_rate.blocking_zone_dbv=492
 
 # Display ACL
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.0.brightness.acl.default=1
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.0.brightness.acl.default=0
 
 # display color data
 PRODUCT_COPY_FILES += \
