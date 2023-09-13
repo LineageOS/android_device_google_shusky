@@ -441,6 +441,26 @@
                            "Disabled":true
                         }
                     ]
+                },
+                {
+                    "Mode": "camera",
+                    "BindedCdevInfo": [
+                        {
+                           "CdevRequest": "thermal-cpufreq-0",
+                           "MaxReleaseStep": 1,
+                           "Disabled":true
+                        },
+                        {
+                           "CdevRequest": "thermal-cpufreq-1",
+                           "MaxReleaseStep": 1,
+                           "Disabled":true
+                        },
+                        {
+                           "CdevRequest": "thermal-cpufreq-2",
+                           "MaxReleaseStep": 1,
+                           "Disabled":true
+                        }
+                    ]
                 }
             ]
         },
@@ -486,7 +506,7 @@
                 },
                 {
                     "CdevRequest": "thermal-cpufreq-2",
-                    "CdevWeightForPID": [0.252, 0.225, 0.225, 0.225, 0.225, 0.225, 0.225],
+                    "CdevWeightForPID": [0.225, 0.225, 0.225, 0.225, 0.225, 0.225, 0.225],
                     "MaxReleaseStep": 1,
                     "MaxThrottleStep": 2,
                     "CdevCeiling": [0, 13, 13, 13, 13, 13, 13]
@@ -518,18 +538,24 @@
                     "BindedCdevInfo": [
                         {
                            "CdevRequest": "thermal-cpufreq-0",
+                           "CdevWeightForPID": [0.156, 0.156, 0.156, 0.156, 0.156, 0.156, 0.156],
                            "MaxReleaseStep": 1,
-                           "Disabled":true
+                           "MaxThrottleStep": 1,
+                           "CdevCeiling": [0, 6, 6, 6, 6, 6, 6]
                         },
                         {
                            "CdevRequest": "thermal-cpufreq-1",
+                           "CdevWeightForPID": [0.428, 0.428, 0.428, 0.428, 0.428, 0.428, 0.428],
                            "MaxReleaseStep": 1,
-                           "Disabled":true
+                           "MaxThrottleStep": 2,
+                           "CdevCeiling": [0, 9, 9, 9, 9, 9, 9]
                         },
                         {
                            "CdevRequest": "thermal-cpufreq-2",
+                           "CdevWeightForPID": [0.225, 0.225, 0.225, 0.225, 0.225, 0.225, 0.225],
                            "MaxReleaseStep": 1,
-                           "Disabled":true
+                           "MaxThrottleStep": 2,
+                           "CdevCeiling": [0, 12, 12, 12, 12, 12, 12]
                         }
                     ]
                 }
