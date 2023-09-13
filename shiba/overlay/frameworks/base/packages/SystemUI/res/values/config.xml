@@ -49,7 +49,7 @@
 
    <!-- Configure 13px of extra protection around the front-facing camera -->
     <string translatable="false" name="config_frontBuiltInDisplayCutoutProtection">
-        M 489.5,66
+        M 490,66.5
         a 50,50 0 0 1 100,0
         a 50,50 0 0 1 -100,0
         Z
