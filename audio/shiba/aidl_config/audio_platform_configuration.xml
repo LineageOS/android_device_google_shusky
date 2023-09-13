@@ -30,6 +30,7 @@
       <argument name="ThermistorType" value="SKIN" />
       <argument name="ThrottlingSeverity" value="MODERATE" />
     </feature>
+    <feature name="RuntimeTuningDump" />
   </features>
 
   <voipVolume>
