@@ -376,3 +376,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 # Enable DeviceAsWebcam support
 PRODUCT_VENDOR_PROPERTIES += \
     ro.usb.uvc.enabled=true
+
+# DisplayPort should be disabled by default (b/300167292)
+PRODUCT_VENDOR_PROPERTIES += \
+       persist.vendor.usb.displayport.enabled=0
