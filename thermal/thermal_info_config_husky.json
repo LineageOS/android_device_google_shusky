@@ -797,14 +797,39 @@
             "Multiplier":0.001
         },
         {
+            "Name":"thb_hda",
+            "Type":"UNKNOWN",
+            "Multiplier":1
+        },
+        {
+            "Name":"IS_WLC",
+            "Type":"UNKNOWN",
+            "Hidden":true,
+            "VirtualSensor":true,
+            "Formula":"COUNT_THRESHOLD",
+            "Combination":["thb_hda"],
+            "Coefficient":[1],
+            "Multiplier":1
+        },
+        {
             "Name":"VIRTUAL-SKIN-CHARGE",
             "Type":"UNKNOWN",
             "Version":"4.0",
             "VirtualSensor":true,
-            "TriggerSensor":["north_therm", "cam_therm", "soc_therm", "charge_therm", "disp_therm", "quiet_therm", "usb_pwr_therm"],
             "Formula":"MAXIMUM",
             "Combination":["VIRTUAL-SKIN-CHARGE-SUB-0", "VIRTUAL-SKIN-CHARGE-SUB-1", "VIRTUAL-SKIN-CHARGE-SUB-2", "VIRTUAL-SKIN-CHARGE-SUB-3"],
             "Coefficient":[1.0, 1.0, 1.0, 1.0],
+            "Multiplier":0.001
+        },
+        {
+            "Name":"VIRTUAL-SKIN-CHARGE-WIRED",
+            "Type":"UNKNOWN",
+            "Hidden":true,
+            "VirtualSensor":true,
+            "TriggerSensor":["north_therm", "cam_therm", "soc_therm", "charge_therm", "disp_therm", "quiet_therm", "usb_pwr_therm"],
+            "Formula":"WEIGHTED_AVG",
+            "Combination":["VIRTUAL-SKIN-CHARGE", "IS_WLC"],
+            "Coefficient":[1.0, -1000000],
             "HotThreshold":["NAN", 34.0, 38.0, 41.0, 45.0, 47.0, 55.0],
             "HotHysteresis":[0.0, 1.9, 3.9, 2.9, 3.9, 1.9, 1.9],
             "Multiplier":0.001,
@@ -836,6 +861,49 @@
                     "MaxThrottleStep": 1,
                     "CdevCeiling": [0, 25, 25, 25, 26, 26, 26],
                     "LimitInfo": [0, 0, 1, 1, 1, 26, 26]
+                }
+            ]
+        },
+        {
+            "Name":"VIRTUAL-SKIN-CHARGE-PERSIST",
+            "Type":"UNKNOWN",
+            "Hidden":true,
+            "VirtualSensor":true,
+            "TriggerSensor":["north_therm", "cam_therm", "soc_therm", "charge_therm", "disp_therm", "quiet_therm", "usb_pwr_therm"],
+            "Formula":"MAXIMUM",
+            "Combination":["VIRTUAL-SKIN-CHARGE"],
+            "Coefficient":[1.0],
+            "HotThreshold":["NAN", 35.0, 41.0, 45.0, 47.0, 51.0, 55.0],
+            "HotHysteresis":[0.0, 1.9, 1.9, 3.9, 1.9, 1.9, 1.9],
+            "Multiplier":0.001,
+            "PollingDelay":60000,
+            "PassiveDelay":7000,
+            "PIDInfo": {
+                "K_Po":["NAN", "NAN", 213, "NAN", "NAN", "NAN", "NAN"],
+                "K_Pu":["NAN", "NAN", 213, "NAN", "NAN", "NAN", "NAN"],
+                "K_I":["NAN", "NAN", 27, "NAN", "NAN", "NAN", "NAN"],
+                "K_D":["NAN", "NAN", 0, "NAN", "NAN", "NAN", "NAN"],
+                "I_Max":["NAN", "NAN", 1383, "NAN", "NAN", "NAN", "NAN"],
+                "S_Power":["NAN", "NAN", 2383, "NAN", "NAN", "NAN", "NAN"],
+                "MinAllocPower":["NAN", "NAN", 0, "NAN", "NAN", "NAN", "NAN"],
+                "MaxAllocPower":["NAN", "NAN", 8022, "NAN", "NAN", "NAN", "NAN"],
+                "I_Cutoff":["NAN", "NAN", 8, "NAN", "NAN", "NAN", "NAN"],
+                "I_Default":1383
+            },
+            "ExcludedPowerInfo": [
+                {
+                    "PowerRail": "PARTIAL_SYSTEM_POWER",
+                    "PowerWeight": [0.21, 0.21, 0.21, 0.21, 0.42, 0.42, 0.42]
+                }
+            ],
+            "BindedCdevInfo": [
+                {
+                    "CdevRequest": "chg_mdis",
+                    "CdevWeightForPID": [1, 1, 1, 1, 1, 1, 1],
+                    "MaxReleaseStep": 1,
+                    "MaxThrottleStep": 1,
+                    "CdevCeiling": [0, 25, 25, 26, 26, 26, 26],
+                    "LimitInfo": [0, 0, 1, 1, 26, 26, 26]
                 }
             ]
         },
