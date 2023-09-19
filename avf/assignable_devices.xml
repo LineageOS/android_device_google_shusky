@@ -16,6 +16,7 @@
 <devices>
     <device>
         <kind>eh</kind>
+        <dtbo_node>eh</dtbo_node>
         <sysfs_path>/sys/bus/platform/devices/16d00000.eh</sysfs_path>
     </device>
 </devices>
