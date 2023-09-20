@@ -222,6 +222,16 @@
       "ResetOnInit": true
     },
     {
+      "Name": "MidClusterPowerDownTargetResidency",
+      "Path": "/sys/devices/platform/cpupm/cpupm/cpd_cl1_target_residency",
+      "Values": [
+        "750000",
+        "10000"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
       "Name": "CPUUtilThreshold",
       "Path": "/proc/vendor_sched/util_threshold",
       "Values": [
@@ -1002,6 +1012,12 @@
     {
       "PowerHint": "DISPLAY_INACTIVE",
       "Node": "BigClusterPowerDownTargetResidency",
+      "Duration": 0,
+      "Value": "10000"
+    },
+    {
+      "PowerHint": "DISPLAY_INACTIVE",
+      "Node": "MidClusterPowerDownTargetResidency",
       "Duration": 0,
       "Value": "10000"
     },
@@ -2626,7 +2642,7 @@
       "Name": "REFRESH_90FPS",
       "PID_On": true,
       "PID_Po": 2.0,
-      "PID_Pu": 1.0,
+      "PID_Pu": 0.7,
       "PID_I": 0.0,
       "PID_I_Init": 200,
       "PID_I_High": 512,
@@ -2634,7 +2650,7 @@
       "PID_Do": 500.0,
       "PID_Du": 0.0,
       "UclampMin_On": true,
-      "UclampMin_Init": 161,
+      "UclampMin_Init": 231,
       "UclampMin_High": 480,
       "UclampMin_Low": 2,
       "SamplingWindow_P": 1,
@@ -2650,7 +2666,7 @@
       "Name": "REFRESH_60FPS",
       "PID_On": true,
       "PID_Po": 2.0,
-      "PID_Pu": 1.0,
+      "PID_Pu": 0.5,
       "PID_I": 0.0,
       "PID_I_Init": 200,
       "PID_I_High": 512,
@@ -2658,7 +2674,7 @@
       "PID_Do": 500.0,
       "PID_Du": 0.0,
       "UclampMin_On": true,
-      "UclampMin_Init": 161,
+      "UclampMin_Init": 231,
       "UclampMin_High": 480,
       "UclampMin_Low": 2,
       "SamplingWindow_P": 1,
