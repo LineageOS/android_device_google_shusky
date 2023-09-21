@@ -19,6 +19,9 @@ TARGET_LINUX_KERNEL_VERSION := 5.15
 $(call inherit-product, device/google/zuma/factory_common.mk)
 $(call inherit-product, device/google/shusky/device-shiba.mk)
 include device/google/shusky/audio/shiba/factory-audio-tables.mk
+# Override to factory SDK
+$(call soong_config_set, gpssdk, sdkv1, True)
+$(call soong_config_set, gpssdk, gpsmcuversion, gpsv1_$(TARGET_BUILD_VARIANT))
 
 PRODUCT_NAME := factory_shiba
 PRODUCT_DEVICE := shiba

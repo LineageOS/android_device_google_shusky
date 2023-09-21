@@ -24,7 +24,13 @@ BOARD_KERNEL_CMDLINE += samsung_iommu_v9.load_sequential=1
 
 TARGET_BOARD_INFO_FILE := device/google/shusky/board-info.txt
 TARGET_BOOTLOADER_BOARD_NAME := shiba
-TARGET_SCREEN_DENSITY := 420
+
+ifdef PHONE_CAR_BOARD_PRODUCT
+    include vendor/auto/embedded/products/$(PHONE_CAR_BOARD_PRODUCT)/BoardConfig.mk
+else
+    TARGET_SCREEN_DENSITY := 420
+endif
+
 BOARD_USES_GENERIC_AUDIO := true
 USES_DEVICE_GOOGLE_SHUSKY := true
 BOARD_KERNEL_CMDLINE += swiotlb=noforce

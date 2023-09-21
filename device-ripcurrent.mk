@@ -23,6 +23,10 @@ TARGET_BOARD_KERNEL_HEADERS := device/google/shusky-kernel/kernel-headers
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
     USE_UWBFIELDTESTQM := true
 endif
+ifeq ($(filter factory_ripcurrent, $(TARGET_PRODUCT)),)
+    include device/google/shusky/uwb/uwb_calibration.mk
+endif
+
 
 $(call inherit-product-if-exists, vendor/google_devices/shusky/prebuilts/device-vendor-ripcurrent.mk)
 $(call inherit-product-if-exists, vendor/google_devices/zuma/prebuilts/device-vendor.mk)
@@ -30,17 +34,15 @@ $(call inherit-product-if-exists, vendor/google_devices/zuma/proprietary/device-
 $(call inherit-product-if-exists, vendor/google_devices/shusky/proprietary/ripcurrent/device-vendor-ripcurrent.mk)
 $(call inherit-product-if-exists, vendor/qorvo/uwb/qm35-hal/Device.mk)
 
+CAMERA_PRODUCT ?= ripcurrent
+
 include device/google/shusky/audio/ripcurrent/audio-tables.mk
+include device/google/shusky/camera/camera.mk
 include device/google/zuma/device-shipping-common.mk
 include hardware/google/pixel/vibrator/cs40l26/device-stereo.mk
 include device/google/gs-common/bcmbt/bluetooth.mk
 include device/google/gs-common/gps/brcm/cbd_gps.mk
 include device/google/gs-common/touch/stm/stm20.mk
-
-# go/lyric-soong-variables
-$(call soong_config_set,lyric,camera_hardware,ripcurrent)
-$(call soong_config_set,lyric,tuning_product,ripcurrent)
-$(call soong_config_set,google3a_config,target_device,ripcurrent)
 
 # display
 DEVICE_PACKAGE_OVERLAYS += device/google/shusky/ripcurrent/overlay
@@ -164,6 +166,11 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_COPY_FILES += \
 	device/google/shusky/bluetooth/le_audio_codec_capabilities.xml:$(TARGET_COPY_OUT_VENDOR)/etc/le_audio_codec_capabilities.xml
 
+# Bluetooth LE Audio CIS handover to SCO
+# Set the property only for the controller couldn't support CIS/SCO simultaneously. More detailed in b/242908683.
+PRODUCT_PRODUCT_PROPERTIES += \
+	persist.bluetooth.leaudio.notify.idle.during.call=true
+
 # Keymaster HAL
 #LOCAL_KEYMASTER_PRODUCT_PACKAGE ?= android.hardware.keymaster@4.1-service
 
@@ -205,16 +212,13 @@ PRODUCT_PACKAGES += \
 # Trusty liboemcrypto.so
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts
 
+# UWB
+PRODUCT_SOONG_NAMESPACES += \
+    device/google/shusky/uwb
+
 # Location
 # SDK build system
-ifneq ($(BOARD_WITHOUT_RADIO),true)
-# Release stable version to factory image
-ifneq ($(filter factory_%,$(TARGET_PRODUCT)),)
-	include device/google/gs-common/gps/brcm/device.mk
-else
-	include device/google/gs-common/gps/brcm/device_v2.mk
-endif
-endif
+include device/google/gs-common/gps/brcm/device.mk
 
 PRODUCT_COPY_FILES += \
        device/google/shusky/location/gps.cer:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.cer
@@ -247,7 +251,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 # Vibrator HAL
 ACTUATOR_MODEL := luxshare_ict_081545
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.vibrator.hal.chirp.enabled=1 \
+    persist.vendor.vibrator.hal.chirp.enabled=0 \
     ro.vendor.vibrator.hal.device.mass=0.222 \
     ro.vendor.vibrator.hal.loc.coeff=2.8
 

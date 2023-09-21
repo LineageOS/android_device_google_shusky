@@ -25,6 +25,10 @@ LOCAL_PATH := device/google/shusky
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
     USE_UWBFIELDTESTQM := true
 endif
+ifeq ($(filter factory_husky, $(TARGET_PRODUCT)),)
+    include device/google/shusky/uwb/uwb_calibration.mk
+endif
+
 
 $(call inherit-product-if-exists, vendor/google_devices/shusky/prebuilts/device-vendor-husky.mk)
 $(call inherit-product-if-exists, vendor/google_devices/zuma/prebuilts/device-vendor.mk)
@@ -42,18 +46,16 @@ PRODUCT_COPY_FILES += \
 	device/google/shusky/husky/display_colordata_dev_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_colordata_dev_cal0.pb \
     device/google/shusky/husky/display_golden_google-hk3_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_golden_google-hk3_cal0.pb
 
+CAMERA_PRODUCT ?= husky
+
 include device/google/shusky/audio/husky/audio-tables.mk
+include device/google/shusky/camera/camera.mk
 include device/google/zuma/device-shipping-common.mk
 include hardware/google/pixel/vibrator/cs40l26/device.mk
 include device/google/gs-common/bcmbt/bluetooth.mk
 include device/google/gs-common/touch/stm/stm20.mk
 include device/google/gs-common/touch/gti/gti.mk
 include device/google/gs-common/touch/touchinspector/touchinspector.mk
-
-# go/lyric-soong-variables
-$(call soong_config_set,lyric,camera_hardware,husky)
-$(call soong_config_set,lyric,tuning_product,husky)
-$(call soong_config_set,google3a_config,target_device,husky)
 
 # Init files
 PRODUCT_COPY_FILES += \
@@ -161,12 +163,14 @@ ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.bqr.event_mask=295006 \
     persist.bluetooth.bqr.vnd_quality_mask=29 \
-    persist.bluetooth.bqr.vnd_trace_mask=0
+    persist.bluetooth.bqr.vnd_trace_mask=0 \
+    persist.bluetooth.vendor.btsnoop=true
 else
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.bqr.event_mask=295006 \
     persist.bluetooth.bqr.vnd_quality_mask=16 \
-    persist.bluetooth.bqr.vnd_trace_mask=0
+    persist.bluetooth.bqr.vnd_trace_mask=0 \
+    persist.bluetooth.vendor.btsnoop=false
 endif
 
 # Spatial Audio
@@ -196,6 +200,11 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Bluetooth LE Auido offload capabilities setting
 PRODUCT_COPY_FILES += \
 	device/google/shusky/bluetooth/le_audio_codec_capabilities.xml:$(TARGET_COPY_OUT_VENDOR)/etc/le_audio_codec_capabilities.xml
+
+# Bluetooth LE Audio CIS handover to SCO
+# Set the property only for the controller couldn't support CIS/SCO simultaneously. More detailed in b/242908683.
+PRODUCT_PRODUCT_PROPERTIES += \
+	persist.bluetooth.leaudio.notify.idle.during.call=true
 
 # Support One-Handed mode
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -245,16 +254,13 @@ PRODUCT_PACKAGES += \
 # Trusty liboemcrypto.so
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts
 
+# UWB
+PRODUCT_SOONG_NAMESPACES += \
+    device/google/shusky/uwb
+
 # Location
 # SDK build system
-ifneq ($(BOARD_WITHOUT_RADIO),true)
-# Release stable version to factory image
-ifneq ($(filter factory_%,$(TARGET_PRODUCT)),)
-	include device/google/gs-common/gps/brcm/device.mk
-else
-	include device/google/gs-common/gps/brcm/device_v2.mk
-endif
-endif
+include device/google/gs-common/gps/brcm/device.mk
 
 PRODUCT_COPY_FILES += \
        device/google/shusky/location/gps.cer:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.cer
@@ -278,7 +284,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # Fingerprint HAL
 GOODIX_CONFIG_BUILD_VERSION := g7_trusty
-$(call soong_config_set,goodix,fingerprint_ta,//vendor/google_devices/shusky/prebuilts:g7.app)
+APEX_FPS_TA_DIR := //vendor/google_devices/shusky/prebuilts
 $(call inherit-product-if-exists, vendor/goodix/udfps/configuration/udfps_common.mk)
 ifeq ($(filter factory%, $(TARGET_PRODUCT)),)
 $(call inherit-product-if-exists, vendor/goodix/udfps/configuration/udfps_shipping.mk)
@@ -324,7 +330,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     vendor.primarydisplay.min_idle_refresh_rate.blocking_zone_dbv=492
 
 # Display ACL
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.0.brightness.acl.default=1
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.0.brightness.acl.default=0
 
 # display color data
 PRODUCT_COPY_FILES += \
@@ -332,14 +338,27 @@ PRODUCT_COPY_FILES += \
 
 # Vibrator HAL
 ACTUATOR_MODEL := luxshare_ict_081545
+ADAPTIVE_HAPTICS_FEATURE := adaptive_haptics_v1
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.vibrator.hal.chirp.enabled=1 \
+    persist.vendor.vibrator.hal.chirp.enabled=0 \
     ro.vendor.vibrator.hal.device.mass=0.222 \
-    ro.vendor.vibrator.hal.loc.coeff=2.8
+    ro.vendor.vibrator.hal.loc.coeff=2.8 \
+    persist.vendor.vibrator.hal.context.enable=false \
+    persist.vendor.vibrator.hal.context.scale=60 \
+    persist.vendor.vibrator.hal.context.fade=true \
+    persist.vendor.vibrator.hal.context.cooldowntime=1600 \
+    persist.vendor.vibrator.hal.context.settlingtime=5000 \
+    ro.vendor.vibrator.hal.dbc.enable=true \
+    ro.vendor.vibrator.hal.dbc.envrelcoef=8353728 \
+    ro.vendor.vibrator.hal.dbc.riseheadroom=1909602 \
+    ro.vendor.vibrator.hal.dbc.fallheadroom=1909602 \
+    ro.vendor.vibrator.hal.dbc.txlvlthreshfs=2516583 \
+    ro.vendor.vibrator.hal.dbc.txlvlholdoffms=0 \
+    ro.vendor.vibrator.hal.pm.activetimeout=5
 
 # Increment the SVN for any official public releases
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.build.svn=1
+    ro.vendor.build.svn=4
 
 # WLC userdebug specific
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
@@ -388,3 +407,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Enable camera exif model/make reporting
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.camera.exif_reveal_make_model=true
+
+# AVF assignable devices xml
+PRODUCT_PACKAGES += shusky_assignable_devices.xml
+
+# Enable DeviceAsWebcam support
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.usb.uvc.enabled=true
