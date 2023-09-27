@@ -282,6 +282,16 @@
       "ResetOnInit": true
     },
     {
+      "Name": "Dex2oatUClampMaxBoost",
+      "Path": "/proc/vendor_sched/dex2oat_uclamp_max",
+      "Values": [
+        "-2",
+        "615"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
       "Name": "CAMUClampBoost",
       "Path": "/proc/vendor_sched/cam_uclamp_min",
       "Values": [
@@ -842,6 +852,12 @@
     },
     {
       "PowerHint": "LAUNCH",
+      "Node": "Dex2oatUClampMaxBoost",
+      "Duration": 5000,
+      "Value": "615"
+    },
+    {
+      "PowerHint": "LAUNCH",
       "Node": "TAUClampBoost",
       "Duration": 5000,
       "Value": "765"
@@ -951,6 +967,24 @@
       "Node": "CPUTaperedDVFSHeadroomEnable",
       "Duration": 2000,
       "Value": "0"
+    },
+    {
+      "PowerHint": "LAUNCH_EXTEND",
+      "Node": "CPUUClampMaxFilterEnable",
+      "Duration": 2000,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "LAUNCH_EXTEND",
+      "Node": "BGUClampMaxBoost",
+      "Duration": 2000,
+      "Value": "512"
+    },
+    {
+      "PowerHint": "LAUNCH_EXTEND",
+      "Node": "Dex2oatUClampMaxBoost",
+      "Duration": 2000,
+      "Value": "615"
     },
     {
       "PowerHint": "LAUNCH_EXTEND",
