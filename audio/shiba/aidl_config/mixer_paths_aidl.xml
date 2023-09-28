@@ -405,6 +405,14 @@
     <path name="primary-playback -> bt" />
   </path>
 
+  <path name="primary-playback-0 -> bluetooth-low-energy-headset">
+    <path name="primary-playback -> bt" />
+  </path>
+
+  <path name="primary-playback-0 -> bluetooth-low-energy-speaker">
+    <path name="primary-playback -> bt" />
+  </path>
+
   <path name="primary-playback-0 -> usb">
     <ctl name="USB_RX Mixer EP2" value="1" />
   </path>
@@ -465,6 +473,14 @@
     <path name="raw-playback -> bt" />
   </path>
 
+  <path name="raw-playback-0 -> bluetooth-low-energy-headset">
+    <path name="raw-playback -> bt" />
+  </path>
+
+  <path name="raw-playback-0 -> bluetooth-low-energy-speaker">
+    <path name="raw-playback -> bt" />
+  </path>
+
   <path name="raw-playback-0 -> usb">
     <ctl name="USB_RX Mixer RAW" value="1" />
   </path>
@@ -522,6 +538,14 @@
   </path>
 
   <path name="deep-buffer-playback-0 -> bluetooth-sco-car-kit">
+    <path name="deep-buffer-playback -> bt" />
+  </path>
+
+  <path name="deep-buffer-playback-0 -> bluetooth-low-energy-headset">
+    <path name="deep-buffer-playback -> bt" />
+  </path>
+
+  <path name="deep-buffer-playback-0 -> bluetooth-low-energy-speaker">
     <path name="deep-buffer-playback -> bt" />
   </path>
 
@@ -590,6 +614,14 @@
     <path name="compress-offload-playback -> bt" />
   </path>
 
+  <path name="compress-offload-playback-0 -> bluetooth-low-energy-headset">
+    <path name="compress-offload-playback -> bt" />
+  </path>
+
+  <path name="compress-offload-playback-0 -> bluetooth-low-energy-speaker">
+    <path name="compress-offload-playback -> bt" />
+  </path>
+
   <path name="compress-offload-playback-0 -> usb">
     <ctl name="USB_RX Mixer EP7" value="1" />
   </path>
@@ -647,6 +679,14 @@
   </path>
 
   <path name="mmap-playback-0 -> bluetooth-sco-car-kit">
+    <path name="mmap-playback -> bt" />
+  </path>
+
+  <path name="mmap-playback-0 -> bluetooth-low-energy-headset">
+    <path name="mmap-playback -> bt" />
+  </path>
+
+  <path name="mmap-playback-0 -> bluetooth-low-energy-speaker">
     <path name="mmap-playback -> bt" />
   </path>
 
@@ -719,6 +759,14 @@
   </path>
 
   <path name="voip-playback-0 -> bluetooth-sco-car-kit">
+    <path name="voip-playback -> bt" />
+  </path>
+
+  <path name="voip-playback-0 -> bluetooth-low-energy-headset">
+    <path name="voip-playback -> bt" />
+  </path>
+
+  <path name="voip-playback-0 -> bluetooth-low-energy-speaker">
     <path name="voip-playback -> bt" />
   </path>
 
@@ -832,6 +880,14 @@
     <path name="haptic-playback -> bt" />
   </path>
 
+  <path name="haptic-playback-0 -> bluetooth-low-energy-headset">
+    <path name="haptic-playback -> bt" />
+  </path>
+
+  <path name="haptic-playback-0 -> bluetooth-low-energy-speaker">
+    <path name="haptic-playback -> bt" />
+  </path>
+
   <path name="haptic-playback-0 -> usb">
     <ctl name="USB_RX Mixer EP3" value="1" />
     <ctl name="TDM_0_RX Mixer EP8" value="1" />
@@ -866,6 +922,14 @@
     <path name="usb-microphones -> primary-capture-0" />
   </path>
 
+  <path name="bluetooth-sco-headset-microphones -> primary-capture-0">
+    <ctl name="EP1 TX Mixer BT_TX" value="1" />
+  </path>
+
+  <path name="bluetooth-low-energy-headset-microphones -> primary-capture-0">
+    <ctl name="EP1 TX Mixer BT_TX" value="1" />
+  </path>
+
   <path name="microphones -> voip-capture-0">
     <ctl name="VOIP TX Mixer INTERNAL_MIC_TX" value="1" />
   </path>
@@ -890,6 +954,10 @@
     <ctl name="VOIP TX Mixer BT_TX" value="1" />
   </path>
 
+  <path name="bluetooth-low-energy-headset-microphones -> voip-capture-0">
+    <ctl name="VOIP TX Mixer BT_TX" value="1" />
+  </path>
+
   <path name="microphones -> fast-capture-0">
     <ctl name="EP3 TX Mixer INTERNAL_MIC_TX" value="1" />
   </path>
@@ -911,6 +979,10 @@
   </path>
 
   <path name="bluetooth-sco-headset-microphones -> fast-capture-0">
+    <ctl name="EP3 TX Mixer BT_TX" value="1" />
+  </path>
+
+  <path name="bluetooth-low-energy-headset-microphones -> fast-capture-0">
     <ctl name="EP3 TX Mixer BT_TX" value="1" />
   </path>
 
@@ -945,6 +1017,14 @@
   </path>
 
   <path name="voice-call-downlink-0 -> bluetooth-sco-car-kit">
+    <path name="voice-call-downlink-0 -> bt" />
+  </path>
+
+  <path name="voice-call-downlink-0 -> bluetooth-low-energy-headset">
+    <path name="voice-call-downlink-0 -> bt" />
+  </path>
+
+  <path name="voice-call-downlink-0 -> bluetooth-low-energy-speaker">
     <path name="voice-call-downlink-0 -> bt" />
   </path>
 
@@ -985,6 +1065,10 @@
   </path>
 
   <path name="bluetooth-sco-headset-microphones -> voice-call-uplink-0">
+    <ctl name="EP4 TX Mixer BT_TX" value="1" />
+  </path>
+
+  <path name="bluetooth-low-energy-headset-microphones -> voice-call-uplink-0">
     <ctl name="EP4 TX Mixer BT_TX" value="1" />
   </path>
 
@@ -1049,6 +1133,10 @@
   </path>
 
   <path name="bluetooth-sco-headset-microphones -> mmap-capture-0">
+    <ctl name="EP2 TX Mixer BT_TX" value="1" />
+  </path>
+
+  <path name="bluetooth-low-energy-headset-microphones -> mmap-capture-0">
     <ctl name="EP2 TX Mixer BT_TX" value="1" />
   </path>
 
@@ -1220,6 +1308,10 @@
     <ctl name="Audio Capture Mic Source" value="BT_MIC" />
     <ctl name="Voice Call Mic Source" value="BT_MIC" />
     <ctl name="MIC Record Soft Gain (dB)" value="0" />
+  </path>
+
+  <path name="bluetooth-low-energy-headset-microphones">
+    <path name="bluetooth-sco-headset-microphones" />
   </path>
 
   <path name="usb-headset-microphones">
