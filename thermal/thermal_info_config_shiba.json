@@ -1226,7 +1226,61 @@
                     "Name": "VIRTUAL-USB-THROTTLING",
                     "Thresholds": [3.0]
                 }
-            ]
+            ],
+            "Abnormality": {
+                "Outlier": {
+                    "Configs": [
+                        {
+                            "Monitor": [
+                                "VIRTUAL-SKIN",
+                                "VIRTUAL-SKIN-SUB-0",
+                                "VIRTUAL-SKIN-SUB-1",
+                                "VIRTUAL-SKIN-SUB-2",
+                                "VIRTUAL-SKIN-SUB-3",
+                                "VIRTUAL-SKIN-SUB-4",
+                                "VIRTUAL-SKIN-SUB-5",
+                                "VIRTUAL-SKIN-SUB-6",
+                                "VIRTUAL-SKIN-SUB-7",
+                                "VIRTUAL-SKIN-SUB-8"
+                            ],
+                            "TempRange": [0.0, 55.0]
+                        }
+                    ]
+                },
+                "Stuck": {
+                    "Configs": [
+                        {
+                            "Monitor":  [
+                                "VIRTUAL-SKIN",
+                                "VIRTUAL-SKIN-SUB-0",
+                                "VIRTUAL-SKIN-SUB-1",
+                                "VIRTUAL-SKIN-SUB-2",
+                                "VIRTUAL-SKIN-SUB-3",
+                                "VIRTUAL-SKIN-SUB-4",
+                                "VIRTUAL-SKIN-SUB-5",
+                                "VIRTUAL-SKIN-SUB-6",
+                                "VIRTUAL-SKIN-SUB-7",
+                                "VIRTUAL-SKIN-SUB-8",
+                                "VIRTUAL-SKIN-SPEAKER",
+                                "VIRTUAL-SKIN-SPEAKER-SUB-0",
+                                "VIRTUAL-SKIN-SPEAKER-SUB-1",
+                                "VIRTUAL-SKIN-SPEAKER-SUB-2",
+                                "VIRTUAL-SKIN-SPEAKER-SUB-3",
+                                "VIRTUAL-SKIN-FRONT",
+                                "VIRTUAL-SKIN-FRONT-SUB-0",
+                                "VIRTUAL-SKIN-FRONT-SUB-1",
+                                "VIRTUAL-SKIN-FRONT-SUB-2",
+                                "VIRTUAL-SKIN-FRONT-SUB-3",
+                                "VIRTUAL-SKIN-FRONT-SUB-4"
+                            ],
+                            "TempStuck": {
+                                "MinPollingCount": 8,
+                                "MinStuckDuration": 120000
+                            }
+                        }
+                    ]
+                }
+            }
         },
         "CoolingDevices": {
             "RecordVotePerSensor": {
