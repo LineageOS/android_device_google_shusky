@@ -301,5 +301,5 @@
     <bool name="allow_clear_initial_attach_data_profile">true</bool>
 
     <!-- The integer index of the selected option in config_udfps_touch_detection_options -->
-    <integer name="config_selected_udfps_touch_detection">4</integer>
+    <integer name="config_selected_udfps_touch_detection">5</integer>
 </resources>
