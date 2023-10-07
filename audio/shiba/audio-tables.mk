@@ -16,10 +16,8 @@
 
 AUDIO_TABLE_FOLDER := shiba
 
-# Enable this to build AIDL
-# BUILD_AUDIO_AIDL_VERSION := true
-
-ifeq ($(BUILD_AUDIO_AIDL_VERSION),true)
+# Choose AIDL config by build flag.
+ifeq ($(RELEASE_PIXEL_AIDL_AUDIO_HAL),true)
 PRODUCT_COPY_FILES += \
     device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/aidl_config/audio_platform_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_configuration.xml \
     device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/aidl_config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
