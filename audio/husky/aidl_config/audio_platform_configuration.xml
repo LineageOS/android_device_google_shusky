@@ -15,10 +15,6 @@
 -->
 <audioPlatformConfiguration xmlns:xi="http://www.w3.org/2001/XInclude">
   <features>
-    <feature name="ThermalThrottle">
-      <argument name="Type" value="SKIN" />
-      <argument name="Name" value="VIRTUAL-SKIN" />
-    </feature>
     <feature name="BatteryThrottle">
       <argument name="Type" value="BCL_VOLTAGE" />
       <argument name="Name" value="BCL_AUDIO_BAACL" />
@@ -26,7 +22,7 @@
     </feature>
     <feature name="PlaybackThermalThrottle">
       <argument name="PollWaitMs" value="20000" />
-      <argument name="ThermistorName" value="VIRTUAL-SKIN" />
+      <argument name="ThermistorName" value="VIRTUAL-SKIN-SPEAKER" />
       <argument name="ThermistorType" value="SKIN" />
       <argument name="ThrottlingSeverity" value="MODERATE" />
     </feature>
@@ -66,7 +62,7 @@
   <tuners>
     <tuner type="playback" name="waves">
       <argument name="Sink" value="SPK" />
-      <argument name="ThermistorsName" value="VIRTUAL-SKIN" />
+      <argument name="ThermistorsName" value="VIRTUAL-SKIN-SPEAKER" />
     </tuner>
     <tuner type="telephony" name="fortemedia">
       <argument name="VoIP_DLCHs" value="SPK:2,USB:2" />
