@@ -13,10 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-$(call inherit-product, device/google/shusky/aosp_shiba.mk)
+$(call inherit-product, device/google/pixel_61/aosp_husky_61.mk)
 
-PRODUCT_NAME := aosp_shiba_pgagnostic
-PRODUCT_MODEL := AOSP page-size agnostic Shiba 64K ELF
+PRODUCT_NAME := aosp_husky_61_pgagnostic
+PRODUCT_MODEL := AOSP page-size agnostic Husky 64K ELF
 
 PRODUCT_PAGE_SIZE_AGNOSTIC := true
 PRODUCT_MAX_PAGE_SIZE_SUPPORTED := 65536
