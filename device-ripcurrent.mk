@@ -211,6 +211,11 @@ PRODUCT_PACKAGES += \
 
 # Trusty liboemcrypto.so
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts
+ifeq ($(RELEASE_PLATFORM_VERSION),UP1A)
+PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts/trusty/24Q1
+else
+PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts/trusty/trunk
+endif
 
 # UWB
 PRODUCT_SOONG_NAMESPACES += \

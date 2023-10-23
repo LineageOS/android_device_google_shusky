@@ -242,6 +242,11 @@ PRODUCT_PACKAGES += \
 
 # Trusty liboemcrypto.so
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts
+ifeq ($(RELEASE_PLATFORM_VERSION),UP1A)
+PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts/trusty/24Q1
+else
+PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts/trusty/trunk
+endif
 
 # Location
 # SDK build system
@@ -268,8 +273,12 @@ PRODUCT_VENDOR_PROPERTIES += \
 	persist.device_config.configuration.disable_rescue_party=true
 
 # Fingerprint HAL
+ifeq ($(RELEASE_PLATFORM_VERSION),UP1A)
+APEX_FPS_TA_DIR := //vendor/google_devices/shusky/prebuilts/firmware/fingerprint/24Q1
+else
+APEX_FPS_TA_DIR := //vendor/google_devices/shusky/prebuilts/firmware/fingerprint/trunk
+endif
 GOODIX_CONFIG_BUILD_VERSION := g7_trusty
-APEX_FPS_TA_DIR := //vendor/google_devices/shusky/prebuilts
 $(call inherit-product-if-exists, vendor/goodix/udfps/configuration/udfps_common.mk)
 ifeq ($(filter factory%, $(TARGET_PRODUCT)),)
 $(call inherit-product-if-exists, vendor/goodix/udfps/configuration/udfps_shipping.mk)
