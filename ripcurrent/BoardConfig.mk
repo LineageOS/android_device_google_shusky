@@ -27,6 +27,12 @@ TARGET_SCREEN_DENSITY := 440
 BOARD_USES_GENERIC_AUDIO := true
 USES_DEVICE_GOOGLE_SHUSKY := true
 
+ifeq ($(RELEASE_PLATFORM_VERSION),UP1A)
+RELEASE_GOOGLE_PRODUCT_BOOTLOADER_DIR := bootloader/24Q1
+else
+RELEASE_GOOGLE_PRODUCT_BOOTLOADER_DIR := bootloader/trunk
+endif
+
 include device/google/shusky/device-shusky-common.mk
 
 include device/google/zuma/BoardConfig-common.mk
