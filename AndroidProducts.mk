@@ -28,6 +28,6 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/factory_shiba.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_ripcurrent-userdebug \
-    aosp_husky-userdebug \
-    aosp_shiba-userdebug
+    aosp_ripcurrent-trunk_staging-userdebug \
+    aosp_husky-trunk_staging-userdebug \
+    aosp_shiba-trunk_staging-userdebug
