@@ -242,7 +242,7 @@ PRODUCT_PACKAGES += \
 
 # Trusty liboemcrypto.so
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts
-ifeq ($(RELEASE_PLATFORM_VERSION),UP1A)
+ifneq (,$(filter AP1%,$(RELEASE_PLATFORM_VERSION)))
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts/trusty/24Q1
 else
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts/trusty/trunk
@@ -273,7 +273,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 	persist.device_config.configuration.disable_rescue_party=true
 
 # Fingerprint HAL
-ifeq ($(RELEASE_PLATFORM_VERSION),UP1A)
+ifneq (,$(filter AP1%,$(RELEASE_PLATFORM_VERSION)))
 APEX_FPS_TA_DIR := //vendor/google_devices/shusky/prebuilts/firmware/fingerprint/24Q1
 else
 APEX_FPS_TA_DIR := //vendor/google_devices/shusky/prebuilts/firmware/fingerprint/trunk
