@@ -393,3 +393,6 @@ PRODUCT_PACKAGES += shusky_assignable_devices.xml
 # Enable DeviceAsWebcam support
 PRODUCT_VENDOR_PROPERTIES += \
     ro.usb.uvc.enabled=true
+
+PRODUCT_PACKAGES += \
+    NfcOverlayShiba
