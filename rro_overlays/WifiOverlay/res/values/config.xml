@@ -171,4 +171,7 @@
 
     <!-- boolean indicating whether the caller thread needs to wait for destroyed listeners -->
     <bool translatable="false" name ="config_wifiWaitForDestroyedListeners">true</bool>
+
+        <!-- Enable aggregation of Wifi link layer radio stats from all radios -->
+    <bool translatable="false" name="config_wifiLinkLayerAllRadiosStatsAggregationEnabled">true</bool>
 </resources>
