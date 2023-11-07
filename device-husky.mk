@@ -83,7 +83,7 @@ PRODUCT_COPY_FILES += \
 	device/google/shusky/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_PRODUCT)/etc/libnfc-nci.conf
 
 PRODUCT_PACKAGES += \
-	com.android.nfcservices \
+	NfcNci \
 	Tag \
 	android.hardware.nfc-service.st
 
@@ -423,6 +423,3 @@ PRODUCT_PACKAGES += shusky_assignable_devices.xml
 # Enable DeviceAsWebcam support
 PRODUCT_VENDOR_PROPERTIES += \
     ro.usb.uvc.enabled=true
-
-PRODUCT_PACKAGES += \
-	NfcOverlayHusky \
