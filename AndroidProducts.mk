@@ -21,10 +21,12 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/aosp_husky.mk \
     $(LOCAL_DIR)/aosp_husky_61_pgagnostic.mk \
     $(LOCAL_DIR)/aosp_husky_fullmte.mk \
+    $(LOCAL_DIR)/aosp_husky_pgagnostic.mk \
     $(LOCAL_DIR)/factory_husky.mk \
     $(LOCAL_DIR)/aosp_shiba.mk \
     $(LOCAL_DIR)/aosp_shiba_61_pgagnostic.mk \
     $(LOCAL_DIR)/aosp_shiba_fullmte.mk \
+    $(LOCAL_DIR)/aosp_shiba_pgagnostic.mk \
     $(LOCAL_DIR)/factory_shiba.mk
 
 COMMON_LUNCH_CHOICES := \
