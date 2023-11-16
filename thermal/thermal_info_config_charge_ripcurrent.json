@@ -4,15 +4,15 @@
             "Name":"battery",
             "Type":"BATTERY",
             "HotThreshold":[
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
+                "NaN",
+                "NaN",
+                "NaN",
+                "NaN",
+                "NaN",
+                "NaN",
                 "60.0"
             ],
-            "VrThreshold":"NAN",
+            "VrThreshold":"NaN",
             "Multiplier":0.001
         }
     ]
