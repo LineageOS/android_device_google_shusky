@@ -235,6 +235,7 @@
       "Name": "CPUUtilThreshold",
       "Path": "/proc/vendor_sched/util_threshold",
       "Values": [
+        "2048 1280 1280",
         "1280",
         "1100"
       ],
@@ -1899,6 +1900,12 @@
       "Duration": 0,
       "Value": "cam1"
     },
+   {
+      "PowerHint": "CAMERA_STREAMING_STANDARD",
+      "Node": "CPUUtilThreshold",
+      "Duration": 0,
+      "Value": "1280"
+    },
     {
       "PowerHint": "CAMERA_STREAMING_STANDARD",
       "Node": "CDPreferHighCap",
@@ -2042,6 +2049,12 @@
       "Node": "EM_Profile",
       "Duration": 0,
       "Value": "cam1"
+    },
+   {
+      "PowerHint": "CAMERA_STREAMING_LOW",
+      "Node": "CPUUtilThreshold",
+      "Duration": 0,
+      "Value": "1280"
     },
     {
       "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
@@ -2475,6 +2488,12 @@
       "Node": "FGPreferIdle",
       "Duration": 0,
       "Value": "0"
+    },
+    {
+      "PowerHint": "GAME",
+      "Node": "CPUUtilThreshold",
+      "Duration": 0,
+      "Value": "1280"
     },
     {
       "PowerHint": "GAME",
