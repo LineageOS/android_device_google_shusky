@@ -17,5 +17,5 @@
 -->
 <resources>
     <!-- Weather clock smartspace positioning to apply for the weather clock on shiba -->
-    <dimen name="weather_clock_smartspace_translateY">20dp</dimen>
+    <dimen name="weather_clock_smartspace_translateY">10dp</dimen>
 </resources>
