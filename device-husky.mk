@@ -35,7 +35,7 @@ $(call inherit-product-if-exists, vendor/google_devices/zuma/prebuilts/device-ve
 $(call inherit-product-if-exists, vendor/google_devices/zuma/proprietary/device-vendor.mk)
 $(call inherit-product-if-exists, vendor/google_devices/shusky/proprietary/husky/device-vendor-husky.mk)
 $(call inherit-product-if-exists, vendor/google_devices/husky/proprietary/device-vendor.mk)
-$(call inherit-product-if-exists, vendor/qorvo/uwb/qm35-hal/Device.mk)
+$(call inherit-product-if-exists, vendor/qorvo/uwb/qm35-hal-r63/Device.mk)
 $(call inherit-product-if-exists, vendor/google_devices/shusky/proprietary/WallpapersHusky.mk)
 
 # display
@@ -205,6 +205,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Set the property only for the controller couldn't support CIS/SCO simultaneously. More detailed in b/242908683.
 PRODUCT_PRODUCT_PROPERTIES += \
 	persist.bluetooth.leaudio.notify.idle.during.call=true
+
+# Support LE Audio dual mic SWB call
+PRODUCT_PRODUCT_PROPERTIES += \
+    bluetooth.leaudio.dual_bidirection_swb.supported=true
 
 # Support One-Handed mode
 PRODUCT_PRODUCT_PROPERTIES += \
