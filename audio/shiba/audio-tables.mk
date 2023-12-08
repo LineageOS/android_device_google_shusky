@@ -21,8 +21,7 @@ AUDIO_TABLE_FOLDER := shiba
 
 ifeq ($(BUILD_AUDIO_AIDL_VERSION),true)
 PRODUCT_COPY_FILES += \
-    device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/aidl_config/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
-    device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/aidl_config/audio_platform_configuration_aidl.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_configuration_aidl.xml \
+    device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/aidl_config/audio_platform_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_configuration.xml \
     device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/aidl_config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
     device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/aidl_config/mixer_paths_aidl.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_aidl.xml
 else

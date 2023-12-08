@@ -58,10 +58,12 @@
        AssertEnabled="true"
        CpLppeCancelDbhOnAgnssProvideLoc="true"
        CpLppeUseAgnssLocForEmptyDbh="true"
+       CpLppHighAccuracyShapeMode="1"
        ReAidingOnHotStart="false"
        ReAidingIntervalSec="1200"
        RuntimeSwLteFilterEnable="true"
        MaxThreadNum="13"
+       SensorsMask="0x244"
   />
 
   <gll

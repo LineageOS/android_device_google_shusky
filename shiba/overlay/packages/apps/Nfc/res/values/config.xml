@@ -20,7 +20,6 @@
     <item>GKWS6</item>
     <item>GZPF0</item>
     <item>GPJ41</item>
-    <item>G9BQD</item>
   </string-array>
   <bool name="tag_intent_app_pref_supported">true</bool>
   <!-- NFC Antenna Location API -->

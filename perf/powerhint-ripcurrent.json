@@ -248,6 +248,36 @@
       "ResetOnInit": true
     },
     {
+      "Name": "CPUUClampMaxFilterEnable",
+      "Path": "/proc/vendor_sched/uclamp_max_filter_enable",
+      "Values": [
+        "1",
+        "0"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
+      "Name": "BGUClampMaxBoost",
+      "Path": "/proc/vendor_sched/bg_uclamp_max",
+      "Values": [
+        "130",
+        "512"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
+      "Name": "Dex2oatUClampMaxBoost",
+      "Path": "/proc/vendor_sched/dex2oat_uclamp_max",
+      "Values": [
+        "-2",
+        "615"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
       "Name": "CAMUClampBoost",
       "Path": "/proc/vendor_sched/cam_uclamp_min",
       "Values": [
@@ -301,6 +331,15 @@
         "0"
       ],
       "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
+      "Name": "FGCpuset",
+      "Path": "/dev/cpuset/foreground/cpus",
+      "Values": [
+        "0-5",
+        "0-7"
+      ],
       "ResetOnInit": true
     },
     {
@@ -388,8 +427,8 @@
       "Name": "NPITaskPacking",
       "Path": "/proc/vendor_sched/npi_packing",
       "Values": [
-        "0",
-        "1"
+        "1",
+        "0"
       ],
       "ResetOnInit": true
     },
@@ -759,6 +798,15 @@
         "20 40"
       ],
       "ResetOnInit": true
+    },
+    {
+      "Name": "SchedLibMaskIn",
+      "Path": "/proc/vendor_sched/sched_lib_mask_in",
+      "Values": [
+        "0x100",
+        "0x0"
+      ],
+      "ResetOnInit": true
     }
   ],
   "Actions": [
@@ -823,6 +871,24 @@
     },
     {
       "PowerHint": "LAUNCH",
+      "Node": "CPUUClampMaxFilterEnable",
+      "Duration": 5000,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "BGUClampMaxBoost",
+      "Duration": 5000,
+      "Value": "512"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "Dex2oatUClampMaxBoost",
+      "Duration": 5000,
+      "Value": "615"
+    },
+    {
+      "PowerHint": "LAUNCH",
       "Node": "TAUClampBoost",
       "Duration": 5000,
       "Value": "765"
@@ -850,12 +916,6 @@
       "Node": "BCIMinFreq",
       "Duration": 5000,
       "Value": "1401000"
-    },
-    {
-      "PowerHint": "LAUNCH",
-      "Node": "NPITaskPacking",
-      "Duration": 5000,
-      "Value": "0"
     },
     {
       "PowerHint": "LAUNCH",
@@ -910,6 +970,12 @@
       "Value": "1"
     },
     {
+      "PowerHint": "LAUNCH",
+      "Node": "SchedLibMaskIn",
+      "Duration": 5000,
+      "Value": "0x100"
+    },
+    {
       "PowerHint": "LAUNCH_EXTEND",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 2000,
@@ -941,6 +1007,24 @@
     },
     {
       "PowerHint": "LAUNCH_EXTEND",
+      "Node": "CPUUClampMaxFilterEnable",
+      "Duration": 2000,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "LAUNCH_EXTEND",
+      "Node": "BGUClampMaxBoost",
+      "Duration": 2000,
+      "Value": "512"
+    },
+    {
+      "PowerHint": "LAUNCH_EXTEND",
+      "Node": "Dex2oatUClampMaxBoost",
+      "Duration": 2000,
+      "Value": "615"
+    },
+    {
+      "PowerHint": "LAUNCH_EXTEND",
       "Node": "CPULittleClusterDownRateLimitUs",
       "Duration": 2000,
       "Value": "5000"
@@ -968,6 +1052,12 @@
       "Node": "FGPreferIdle",
       "Duration": 2000,
       "Value": "1"
+    },
+    {
+      "PowerHint": "LAUNCH_EXTEND",
+      "Node": "SchedLibMaskIn",
+      "Duration": 5000,
+      "Value": "0x100"
     },
     {
       "PowerHint": "LAUNCH_PMU",
@@ -1079,12 +1169,6 @@
     },
     {
       "PowerHint": "CAMERA_LAUNCH",
-      "Node": "NPITaskPacking",
-      "Duration": 1000,
-      "Value": "0"
-    },
-    {
-      "PowerHint": "CAMERA_LAUNCH",
       "Node": "PMU_POLL",
       "Duration": 1000,
       "Value": "0"
@@ -1094,6 +1178,12 @@
       "Node": "CDPreferIdle",
       "Duration": 1000,
       "Value": "1"
+    },
+    {
+      "PowerHint": "CAMERA_LAUNCH",
+      "Node": "FGCpuset",
+      "Duration": 1000,
+      "Value": "0-5"
     },
     {
       "PowerHint": "CAMERA_LAUNCH_EXTENDED",
@@ -1115,15 +1205,15 @@
     },
     {
       "PowerHint": "CAMERA_LAUNCH_EXTENDED",
-      "Node": "NPITaskPacking",
+      "Node": "PMU_POLL",
       "Duration": 2000,
       "Value": "0"
     },
     {
       "PowerHint": "CAMERA_LAUNCH_EXTENDED",
-      "Node": "PMU_POLL",
+      "Node": "FGCpuset",
       "Duration": 2000,
-      "Value": "0"
+      "Value": "0-5"
     },
     {
       "PowerHint": "CAMERA_CAPTURE_CPU_THROTTLE",
@@ -1151,33 +1241,15 @@
     },
     {
       "PowerHint": "CAMERA_SHOT",
-      "Node": "MemFreq",
-      "Duration": 300,
-      "Value": "9999999"
+      "Node": "PMU_POLL",
+      "Duration": 100,
+      "Value": "0"
     },
     {
       "PowerHint": "CAMERA_SHOT",
-      "Node": "CPUBigClusterMaxFreq",
-      "Duration": 300,
-      "Value": "9999999"
-    },
-    {
-      "PowerHint": "CAMERA_SHOT",
-      "Node": "CPUBigClusterMinFreq",
-      "Duration": 300,
-      "Value": "9999999"
-    },
-    {
-      "PowerHint": "CAMERA_SHOT",
-      "Node": "CPUMidClusterMaxFreq",
-      "Duration": 300,
-      "Value": "9999999"
-    },
-    {
-      "PowerHint": "CAMERA_SHOT",
-      "Node": "CPUMidClusterMinFreq",
-      "Duration": 300,
-      "Value": "9999999"
+      "Node": "CAMUClampBoost",
+      "Duration": 100,
+      "Value": "765"
     },
     {
       "PowerHint": "CAMERA_BACKEND_BOOST",
@@ -1438,16 +1510,16 @@
       "Value": "0-8"
     },
     {
-      "PowerHint": "CAMERA_STREAMING_EXTREME",
-      "Node": "NPITaskPacking",
-      "Duration": 0,
-      "Value": "0"
-    },
-    {
       "PowerHint": "CAMERA_STREAMING_HIGH",
       "Node": "PowerHALCameraRunning",
       "Duration": 0,
       "Value": "1"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_HIGH",
+      "Node": "DsuMinFreq",
+      "Duration": 0,
+      "Value": "820000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
@@ -1582,12 +1654,6 @@
       "Value": "4-8"
     },
     {
-      "PowerHint": "CAMERA_STREAMING_HIGH",
-      "Node": "NPITaskPacking",
-      "Duration": 0,
-      "Value": "0"
-    },
-    {
       "PowerHint": "CAMERA_STREAMING_STANDARD",
       "Node": "PowerHALCameraRunning",
       "Duration": 0,
@@ -1708,12 +1774,6 @@
       "Value": "4-8"
     },
     {
-      "PowerHint": "CAMERA_STREAMING_STANDARD",
-      "Node": "NPITaskPacking",
-      "Duration": 0,
-      "Value": "0"
-    },
-    {
       "PowerHint": "CAMERA_STREAMING_LOW",
       "Node": "PowerHALCameraRunning",
       "Duration": 0,
@@ -1784,12 +1844,6 @@
       "Node": "CDMidHighCpusetCpus",
       "Duration": 0,
       "Value": "4-8"
-    },
-    {
-      "PowerHint": "CAMERA_STREAMING_LOW",
-      "Node": "NPITaskPacking",
-      "Duration": 0,
-      "Value": "0"
     },
     {
       "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
@@ -1928,12 +1982,6 @@
       "Node": "PMU_LIT_SPC_THRESHOLD",
       "Duration": 0,
       "Value": "30"
-    },
-    {
-      "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
-      "Node": "NPITaskPacking",
-      "Duration": 0,
-      "Value": "0"
     },
     {
       "PowerHint": "CAMERA_VIDEO_RECORDING",
@@ -2100,6 +2148,12 @@
       "Value": "1"
     },
     {
+      "PowerHint": "LOW_POWER",
+      "Node": "CPUTaperedDVFSHeadroomEnable",
+      "Duration": 0,
+      "Value": "1"
+    },
+    {
       "PowerHint": "DISPLAY_IDLE",
       "Node": "FGPreferIdle",
       "Duration": 0,
@@ -2181,6 +2235,18 @@
       "Node": "FGPreferIdle",
       "Duration": 0,
       "Value": "0"
+    },
+    {
+      "PowerHint": "GAME",
+      "Node": "NPITaskPacking",
+      "Duration": 0,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "GAME",
+      "Node": "SchedLibMaskIn",
+      "Duration": 0,
+      "Value": "0x100"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_LIGHT",
@@ -2277,6 +2343,12 @@
       "Node": "Dex2oatGroup",
       "Duration": 0,
       "Value": "0"
+    },
+    {
+      "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_LIGHT",
+      "Node": "CPUTaperedDVFSHeadroomEnable",
+      "Duration": 0,
+      "Value": "1"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_MODERATE",
@@ -2523,12 +2595,6 @@
       "Node": "CDMidHighCpusetCpus",
       "Duration": 0,
       "Value": "4-8"
-    },
-    {
-      "PowerHint": "CAMERA_PROJECT11",
-      "Node": "NPITaskPacking",
-      "Duration": 0,
-      "Value": "0"
     },
     {
       "PowerHint": "CAMERA_PROJECT11",
