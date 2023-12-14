@@ -35,7 +35,7 @@ $(call inherit-product-if-exists, vendor/google_devices/zuma/prebuilts/device-ve
 $(call inherit-product-if-exists, vendor/google_devices/zuma/proprietary/device-vendor.mk)
 $(call inherit-product-if-exists, vendor/google_devices/shusky/proprietary/husky/device-vendor-husky.mk)
 $(call inherit-product-if-exists, vendor/google_devices/husky/proprietary/device-vendor.mk)
-$(call inherit-product-if-exists, vendor/qorvo/uwb/qm35-hal-r63/Device.mk)
+$(call inherit-product-if-exists, vendor/qorvo/uwb/qm35-hal/Device.mk)
 $(call inherit-product-if-exists, vendor/google_devices/shusky/proprietary/WallpapersHusky.mk)
 
 # display
