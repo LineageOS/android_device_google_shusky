@@ -259,6 +259,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts
 ifneq (,$(filter AP1%,$(RELEASE_PLATFORM_VERSION)))
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts/trusty/24Q1
+else ifneq (,$(filter AP2%,$(RELEASE_PLATFORM_VERSION)))
+PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts/trusty/24Q2
 else
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts/trusty/trunk
 endif
@@ -294,6 +296,8 @@ PRODUCT_VENDOR_PROPERTIES += \
 # Fingerprint HAL
 ifneq (,$(filter AP1%,$(RELEASE_PLATFORM_VERSION)))
 APEX_FPS_TA_DIR := //vendor/google_devices/shusky/prebuilts/firmware/fingerprint/24Q1
+else ifneq (,$(filter AP2%,$(RELEASE_PLATFORM_VERSION)))
+APEX_FPS_TA_DIR := //vendor/google_devices/shusky/prebuilts/firmware/fingerprint/24Q2
 else
 APEX_FPS_TA_DIR := //vendor/google_devices/shusky/prebuilts/firmware/fingerprint/trunk
 endif
@@ -319,6 +323,9 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # Media Performance Class 14
 PRODUCT_PRODUCT_PROPERTIES += ro.odm.build.media_performance_class=34
+
+# Modem
+PRODUCT_PROPERTY_OVERRIDES += persist.vendor.radio.volte_mif_off=true
 
 # config of display brightness dimming
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.0.brightness.dimming.usage?=1
