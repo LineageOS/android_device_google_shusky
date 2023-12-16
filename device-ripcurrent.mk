@@ -67,7 +67,7 @@ PRODUCT_COPY_FILES += \
 	device/google/shusky/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_PRODUCT)/etc/libnfc-nci.conf
 
 PRODUCT_PACKAGES += \
-	NfcNci \
+	$(RELEASE_PACKAGE_NFC_STACK) \
 	Tag \
 	android.hardware.nfc-service.st
 
@@ -96,6 +96,10 @@ PRODUCT_PACKAGES += \
 # declare use of spatial audio
 PRODUCT_PROPERTY_OVERRIDES += \
        ro.audio.spatializer_enabled=true
+
+# DCK properties based on target
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.gms.dck.eligible_wcc=3
 
 # Bluetooth hci_inject test tool
 PRODUCT_PACKAGES_DEBUG += \
@@ -167,6 +171,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PRODUCT_PROPERTIES += \
 	persist.bluetooth.leaudio.notify.idle.during.call=true
 
+# Support LE Audio dual mic SWB call
+PRODUCT_PRODUCT_PROPERTIES += \
+    bluetooth.leaudio.dual_bidirection_swb.supported=true
+
 # Keymaster HAL
 #LOCAL_KEYMASTER_PRODUCT_PACKAGE ?= android.hardware.keymaster@4.1-service
 
@@ -209,6 +217,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts
 ifneq (,$(filter AP1%,$(RELEASE_PLATFORM_VERSION)))
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts/trusty/24Q1
+else ifneq (,$(filter AP2%,$(RELEASE_PLATFORM_VERSION)))
+PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts/trusty/24Q2
 else
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts/trusty/trunk
 endif

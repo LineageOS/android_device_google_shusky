@@ -68,7 +68,7 @@ PRODUCT_COPY_FILES += \
 	device/google/shusky/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_PRODUCT)/etc/libnfc-nci.conf
 
 PRODUCT_PACKAGES += \
-	NfcNci \
+	$(RELEASE_PACKAGE_NFC_STACK) \
 	Tag \
 	android.hardware.nfc-service.st
 
@@ -194,6 +194,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
 	persist.bluetooth.leaudio.notify.idle.during.call=true
 
+# Support LE Audio dual mic SWB call
+PRODUCT_PRODUCT_PROPERTIES += \
+    bluetooth.leaudio.dual_bidirection_swb.supported=true
+
 # Support One-Handed mode
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.support_one_handed_mode=true
@@ -242,6 +246,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts
 ifneq (,$(filter AP1%,$(RELEASE_PLATFORM_VERSION)))
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts/trusty/24Q1
+else ifneq (,$(filter AP2%,$(RELEASE_PLATFORM_VERSION)))
+PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts/trusty/24Q2
 else
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts/trusty/trunk
 endif
@@ -273,6 +279,8 @@ PRODUCT_VENDOR_PROPERTIES += \
 # Fingerprint HAL
 ifneq (,$(filter AP1%,$(RELEASE_PLATFORM_VERSION)))
 APEX_FPS_TA_DIR := //vendor/google_devices/shusky/prebuilts/firmware/fingerprint/24Q1
+else ifneq (,$(filter AP2%,$(RELEASE_PLATFORM_VERSION)))
+APEX_FPS_TA_DIR := //vendor/google_devices/shusky/prebuilts/firmware/fingerprint/24Q2
 else
 APEX_FPS_TA_DIR := //vendor/google_devices/shusky/prebuilts/firmware/fingerprint/trunk
 endif
@@ -289,7 +297,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.udfps.auto_exposure_compensation_supported=true
 
 # Display
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.set_idle_timer_ms=1500
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.set_idle_timer_ms=1000
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.ignore_hdr_camera_layers=true
 # lhbm peak brightness delay: decided by kernel
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.primarydisplay.lhbm.frames_to_reach_peak_brightness=0
@@ -316,6 +324,9 @@ PRODUCT_VENDOR_PROPERTIES += \
 # Media Performance Class 14
 PRODUCT_PRODUCT_PROPERTIES += ro.odm.build.media_performance_class=34
 
+# Modem
+PRODUCT_PROPERTY_OVERRIDES += persist.vendor.radio.volte_mif_off=true
+
 # Display LBE
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.lbe.supported=1
 
@@ -341,7 +352,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # Increment the SVN for any official public releases
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.build.svn=9
+    ro.vendor.build.svn=13
 
 # P23 Devices no longer need rlsservice
 PRODUCT_VENDOR_PROPERTIES += \
@@ -391,3 +402,6 @@ PRODUCT_PACKAGES += shusky_assignable_devices.xml
 # Enable DeviceAsWebcam support
 PRODUCT_VENDOR_PROPERTIES += \
     ro.usb.uvc.enabled=true
+
+PRODUCT_PACKAGES += \
+    NfcOverlayShiba
