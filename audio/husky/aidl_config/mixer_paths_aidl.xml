@@ -830,6 +830,54 @@
     <path name="immersive-playback-0 -> usb" />
   </path>
 
+  <path name="immersive-offloaded-spatializer-playback -> speaker">
+    <ctl name="TDM_0_RX Mixer EP4" value="1" />
+  </path>
+
+  <path name="immersive-offloaded-spatializer-playback-0 -> speaker">
+    <path name="immersive-offloaded-spatializer-playback -> speaker" />
+  </path>
+
+  <path name="immersive-offloaded-spatializer-playback-0 -> speaker-earpiece">
+    <path name="immersive-offloaded-spatializer-playback -> speaker" />
+  </path>
+
+  <path name="immersive-offloaded-spatializer-playback-0 -> speaker-safe">
+    <path name="immersive-offloaded-spatializer-playback -> speaker" />
+  </path>
+
+  <path name="immersive-offloaded-spatializer-playback -> bt">
+    <ctl name="BT_RX Mixer EP4" value="1" />
+  </path>
+
+  <path name="immersive-offloaded-spatializer-playback-0 -> bt">
+    <path name="immersive-offloaded-spatializer-playback -> bt" />
+  </path>
+
+  <path name="immersive-offloaded-spatializer-playback-0 -> bluetooth-a2dp-device">
+    <path name="immersive-offloaded-spatializer-playback -> bt" />
+  </path>
+
+  <path name="immersive-offloaded-spatializer-playback-0 -> bluetooth-a2dp-headphone">
+    <path name="immersive-offloaded-spatializer-playback -> bt" />
+  </path>
+
+  <path name="immersive-offloaded-spatializer-playback-0 -> bluetooth-a2dp-speaker">
+    <path name="immersive-offloaded-spatializer-playback -> bt" />
+  </path>
+
+  <path name="immersive-offloaded-spatializer-playback-0 -> usb">
+    <ctl name="USB_RX Mixer EP4" value="1" />
+  </path>
+
+  <path name="immersive-offloaded-spatializer-playback-0 -> usb-headset">
+    <path name="immersive-offloaded-spatializer-playback-0 -> usb" />
+  </path>
+
+  <path name="immersive-offloaded-spatializer-playback-0 -> usb-device">
+    <path name="immersive-offloaded-spatializer-playback-0 -> usb" />
+  </path>
+
   <path name="haptic-playback -> speaker">
     <ctl name="TDM_0_RX Mixer EP3" value="1" />
     <ctl name="TDM_0_RX Mixer EP8" value="1" />
@@ -986,14 +1034,11 @@
     <ctl name="EP3 TX Mixer BT_TX" value="1" />
   </path>
 
-  <path name="microphones -> sound-trigger-capture-0">
-  </path>
+  <path name="microphones -> sound-trigger-capture-0" />
 
-  <path name="microphones -> sound-trigger-tap-capture-0">
-  </path>
+  <path name="microphones -> sound-trigger-tap-capture-0" />
 
-  <path name="microphones -> hotword-lookback-capture-0">
-  </path>
+  <path name="microphones -> hotword-lookback-capture-0" />
 
   <!-- voice-call dynamic route -->
   <path name="voice-call-downlink-0 -> speaker">
@@ -1167,7 +1212,6 @@
   <path name="speaker (VOICE)">
     <ctl name="ASPTX1 Slot Position" value="1" />
     <ctl name="R ASPTX1 Slot Position" value="0" />
-    <!--<ctl name="R DSP RX2 Source" value="ASPRX2" />-->
     <ctl name="R Main AMP Enable Switch" value="1" />
     <ctl name="Main AMP Enable Switch" value="1" />
     <!-- load Enable FIR -->
@@ -1396,8 +1440,8 @@
   </path>
 
   <path name="adapted-voice-earpiece">
-      <ctl name="Boost Peak Current Limit" value="3.50A" />
-      <ctl name="Digital PCM Volume" value="817" />
+    <ctl name="Boost Peak Current Limit" value="3.50A" />
+    <ctl name="Digital PCM Volume" value="817" />
   </path>
   <path name="adapted-voice-earpiece-battery-throttled">
     <path name="adapted-voice-earpiece" />
