@@ -324,9 +324,6 @@ PRODUCT_VENDOR_PROPERTIES += \
 # Media Performance Class 14
 PRODUCT_PRODUCT_PROPERTIES += ro.odm.build.media_performance_class=34
 
-# Modem
-PRODUCT_PROPERTY_OVERRIDES += persist.vendor.radio.volte_mif_off=true
-
 # config of display brightness dimming
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.0.brightness.dimming.usage?=1
 PRODUCT_VENDOR_PROPERTIES += \
@@ -378,7 +375,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # Increment the SVN for any official public releases
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.build.svn=13
+    ro.vendor.build.svn=15
 
 # WLC userdebug specific
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
