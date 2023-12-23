@@ -44,12 +44,12 @@ product/etc/sysconfig/pixel_experience_2019.xml
 product/etc/sysconfig/pixel_experience_2019_midyear.xml
 product/etc/sysconfig/pixel_experience_2020.xml
 product/etc/sysconfig/pixel_experience_2020_midyear.xml
-product/etc/sysconfig/pixel_experience_2021_midyear.xml
 product/etc/sysconfig/pixel_experience_2021.xml
-product/etc/sysconfig/pixel_experience_2022_midyear.xml
+product/etc/sysconfig/pixel_experience_2021_midyear.xml
 product/etc/sysconfig/pixel_experience_2022.xml
-product/etc/sysconfig/pixel_experience_2023_midyear.xml
+product/etc/sysconfig/pixel_experience_2022_midyear.xml
 product/etc/sysconfig/pixel_experience_2023.xml
+product/etc/sysconfig/pixel_experience_2023_midyear.xml
 
 # Radio
 product/etc/permissions/com.android.sdm.plugins.connmo.xml
@@ -132,9 +132,9 @@ system_ext/priv-app/CarrierSetup/CarrierSetup.apk;PRESIGNED
 system_ext/priv-app/ConnectivityThermalPowerManager/ConnectivityThermalPowerManager.apk
 system_ext/priv-app/EuiccGoogleOverlay/EuiccGoogleOverlay.apk
 system_ext/priv-app/EuiccSupportPixel-P23/EuiccSupportPixel-P23.apk;PRESIGNED
-system_ext/priv-app/EuiccSupportPixel-P23/esim-full-v1.img
 system_ext/priv-app/EuiccSupportPixel-P23/esim-full-v1-m40.img
 system_ext/priv-app/EuiccSupportPixel-P23/esim-full-v1-m41.img
+system_ext/priv-app/EuiccSupportPixel-P23/esim-full-v1.img
 system_ext/priv-app/EuiccSupportPixelPermissions/EuiccSupportPixelPermissions.apk;PRESIGNED
 system_ext/priv-app/RilConfigService/RilConfigService.apk
 system_ext/priv-app/grilservice/grilservice.apk;PRESIGNED
