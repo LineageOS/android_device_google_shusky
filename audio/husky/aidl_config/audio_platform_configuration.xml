@@ -23,7 +23,7 @@
     <feature name="PlaybackThermalThrottle">
       <argument name="PollWaitMs" value="20000" />
       <argument name="ThermistorName" value="VIRTUAL-SKIN-SPEAKER" />
-      <argument name="ThermistorType" value="SKIN" />
+      <argument name="ThermistorType" value="UNKNOWN" />
       <argument name="ThrottlingSeverity" value="MODERATE" />
     </feature>
     <feature name="RuntimeTuningDump" />
