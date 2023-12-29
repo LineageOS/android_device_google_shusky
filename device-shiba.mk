@@ -32,9 +32,9 @@ $(call inherit-product-if-exists, vendor/google_devices/shusky/proprietary/Wallp
 DEVICE_PACKAGE_OVERLAYS += device/google/shusky/shiba/overlay
 CAMERA_PRODUCT ?= shiba
 
-include device/google/shusky/audio/shiba/audio-tables.mk
 include device/google/shusky/camera/camera.mk
 include device/google/zuma/device-shipping-common.mk
+include device/google/shusky/audio/shiba/audio-tables.mk
 include hardware/google/pixel/vibrator/cs40l26/device.mk
 include device/google/gs-common/bcmbt/bluetooth.mk
 include device/google/gs-common/touch/gti/gti.mk
