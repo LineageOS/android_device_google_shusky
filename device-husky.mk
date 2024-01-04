@@ -57,6 +57,10 @@ PRODUCT_COPY_FILES += \
 
 CAMERA_PRODUCT ?= husky
 
+ifeq ($(RELEASE_PIXEL_AIDL_AUDIO_HAL_ZUMA),true)
+USE_AUDIO_HAL_AIDL := true
+endif
+
 include device/google/shusky/camera/camera.mk
 include device/google/shusky/audio/husky/audio-tables.mk
 include device/google/zuma/device-shipping-common.mk

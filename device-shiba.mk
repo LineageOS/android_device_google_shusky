@@ -41,6 +41,10 @@ $(call inherit-product-if-exists, vendor/google_devices/shusky/proprietary/Wallp
 DEVICE_PACKAGE_OVERLAYS += device/google/shusky/shiba/overlay
 CAMERA_PRODUCT ?= shiba
 
+ifeq ($(RELEASE_PIXEL_AIDL_AUDIO_HAL_ZUMA),true)
+USE_AUDIO_HAL_AIDL := true
+endif
+
 include device/google/shusky/camera/camera.mk
 include device/google/shusky/audio/shiba/audio-tables.mk
 include device/google/zuma/device-shipping-common.mk
