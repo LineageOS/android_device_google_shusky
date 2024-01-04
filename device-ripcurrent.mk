@@ -20,6 +20,15 @@ $(call inherit-product-if-exists, vendor/google/products/sources_pixel.mk)
 TARGET_KERNEL_DIR ?= device/google/shusky-kernel
 TARGET_BOARD_KERNEL_HEADERS ?= device/google/shusky-kernel/kernel-headers
 
+ifdef RELEASE_GOOGLE_RIPCURRENT_KERNEL_VERSION
+TARGET_LINUX_KERNEL_VERSION := $(RELEASE_GOOGLE_RIPCURRENT_KERNEL_VERSION)
+endif
+
+ifdef RELEASE_GOOGLE_RIPCURRENT_KERNEL_DIR
+TARGET_KERNEL_DIR := $(RELEASE_GOOGLE_RIPCURRENT_KERNEL_DIR)
+TARGET_BOARD_KERNEL_HEADERS := $(RELEASE_GOOGLE_RIPCURRENT_KERNEL_DIR)/kernel-headers
+endif
+
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
     USE_UWBFIELDTESTQM := true
 endif
