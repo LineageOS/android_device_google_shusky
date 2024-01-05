@@ -20,6 +20,15 @@ $(call inherit-product-if-exists, vendor/google/products/sources_pixel.mk)
 TARGET_KERNEL_DIR ?= device/google/shusky-kernel
 TARGET_BOARD_KERNEL_HEADERS ?= device/google/shusky-kernel/kernel-headers
 
+ifdef RELEASE_GOOGLE_HUSKY_KERNEL_VERSION
+TARGET_LINUX_KERNEL_VERSION := $(RELEASE_GOOGLE_HUSKY_KERNEL_VERSION)
+endif
+
+ifdef RELEASE_GOOGLE_HUSKY_KERNEL_DIR
+TARGET_KERNEL_DIR := $(RELEASE_GOOGLE_HUSKY_KERNEL_DIR)
+TARGET_BOARD_KERNEL_HEADERS := $(RELEASE_GOOGLE_HUSKY_KERNEL_DIR)/kernel-headers
+endif
+
 LOCAL_PATH := device/google/shusky
 
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
@@ -47,6 +56,10 @@ PRODUCT_COPY_FILES += \
     device/google/shusky/husky/display_golden_google-hk3_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_golden_google-hk3_cal0.pb
 
 CAMERA_PRODUCT ?= husky
+
+ifeq ($(RELEASE_PIXEL_AIDL_AUDIO_HAL_ZUMA),true)
+USE_AUDIO_HAL_AIDL := true
+endif
 
 include device/google/shusky/camera/camera.mk
 include device/google/shusky/audio/husky/audio-tables.mk
@@ -192,6 +205,12 @@ PRODUCT_PRODUCT_PROPERTIES += \
 	bluetooth.profile.mcp.server.enabled=true \
 	bluetooth.profile.ccp.server.enabled=true \
 	bluetooth.profile.vcp.controller.enabled=true
+
+ifeq ($(RELEASE_PIXEL_BROADCAST_ENABLED), true)
+PRODUCT_PRODUCT_PROPERTIES += \
+	bluetooth.profile.bap.broadcast.assist.enabled=true \
+	bluetooth.profile.bap.broadcast.source.enabled=true
+endif
 
 # Bluetooth LE Audio enable hardware offloading
 PRODUCT_PRODUCT_PROPERTIES += \
