@@ -339,7 +339,8 @@ PRODUCT_COPY_FILES += \
 	device/google/shusky/shiba/display_colordata_google-bigsurf_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_colordata_google-bigsurf_cal0.pb \
 	device/google/shusky/shiba/display_colordata_google-shoreline_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_colordata_google-shoreline_cal0.pb \
     device/google/shusky/shiba/display_golden_google-bigsurf_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_golden_google-bigsurf_cal0.pb \
-    device/google/shusky/shiba/display_golden_google-shoreline_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_golden_google-shoreline_cal0.pb
+    device/google/shusky/shiba/display_golden_google-shoreline_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_golden_google-shoreline_cal0.pb \
+    device/google/shusky/display_golden_external_display_cal2.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_golden_external_display_cal2.pb
 
 # Camera Vendor property
 PRODUCT_VENDOR_PROPERTIES += \
