@@ -842,6 +842,14 @@
     <path name="immersive-playback -> bt" />
   </path>
 
+  <path name="immersive-playback-0 -> bluetooth-low-energy-headset">
+    <path name="immersive-playback -> bt" />
+  </path>
+
+  <path name="immersive-playback-0 -> bluetooth-low-energy-speaker">
+    <path name="immersive-playback -> bt" />
+  </path>
+
   <path name="immersive-playback-0 -> usb">
     <ctl name="USB_RX Mixer IMSV" value="1" />
   </path>
