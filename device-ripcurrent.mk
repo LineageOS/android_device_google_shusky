@@ -14,12 +14,19 @@
 # limitations under the License.
 #
 
+# Restrict the visibility of Android.bp files to improve build analysis time
+$(call inherit-product-if-exists, vendor/google/products/sources_pixel.mk)
+
 TARGET_KERNEL_DIR ?= device/google/shusky-kernel
-TARGET_BOARD_KERNEL_HEADERS := device/google/shusky-kernel/kernel-headers
+TARGET_BOARD_KERNEL_HEADERS ?= device/google/shusky-kernel/kernel-headers
 
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
     USE_UWBFIELDTESTQM := true
 endif
+ifeq ($(filter factory_ripcurrent, $(TARGET_PRODUCT)),)
+    include device/google/shusky/uwb/uwb_calibration.mk
+endif
+
 
 $(call inherit-product-if-exists, vendor/google_devices/shusky/prebuilts/device-vendor-ripcurrent.mk)
 $(call inherit-product-if-exists, vendor/google_devices/zuma/prebuilts/device-vendor.mk)
@@ -27,17 +34,15 @@ $(call inherit-product-if-exists, vendor/google_devices/zuma/proprietary/device-
 $(call inherit-product-if-exists, vendor/google_devices/shusky/proprietary/ripcurrent/device-vendor-ripcurrent.mk)
 $(call inherit-product-if-exists, vendor/qorvo/uwb/qm35-hal/Device.mk)
 
+CAMERA_PRODUCT ?= ripcurrent
+
 include device/google/shusky/audio/ripcurrent/audio-tables.mk
+include device/google/shusky/camera/camera.mk
 include device/google/zuma/device-shipping-common.mk
 include hardware/google/pixel/vibrator/cs40l26/device-stereo.mk
 include device/google/gs-common/bcmbt/bluetooth.mk
 include device/google/gs-common/gps/brcm/cbd_gps.mk
 include device/google/gs-common/touch/stm/stm20.mk
-
-# go/lyric-soong-variables
-$(call soong_config_set,lyric,camera_hardware,ripcurrent)
-$(call soong_config_set,lyric,tuning_product,ripcurrent)
-$(call soong_config_set,google3a_config,target_device,ripcurrent)
 
 # display
 DEVICE_PACKAGE_OVERLAYS += device/google/shusky/ripcurrent/overlay
@@ -49,10 +54,6 @@ PRODUCT_COPY_FILES += \
 # Recovery files
 PRODUCT_COPY_FILES += \
         device/google/shusky/conf/init.recovery.device.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.ripcurrent.rc
-
-# Camera
-PRODUCT_COPY_FILES += \
-	device/google/shusky/media_profiles_ripcurrent.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
 
 # NFC
 PRODUCT_COPY_FILES += \
@@ -66,7 +67,7 @@ PRODUCT_COPY_FILES += \
 	device/google/shusky/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_PRODUCT)/etc/libnfc-nci.conf
 
 PRODUCT_PACKAGES += \
-	NfcNci \
+	$(RELEASE_PACKAGE_NFC_STACK) \
 	Tag \
 	android.hardware.nfc-service.st
 
@@ -95,6 +96,10 @@ PRODUCT_PACKAGES += \
 # declare use of spatial audio
 PRODUCT_PROPERTY_OVERRIDES += \
        ro.audio.spatializer_enabled=true
+
+# DCK properties based on target
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.gms.dck.eligible_wcc=3
 
 # Bluetooth hci_inject test tool
 PRODUCT_PACKAGES_DEBUG += \
@@ -166,9 +171,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PRODUCT_PROPERTIES += \
 	persist.bluetooth.leaudio.notify.idle.during.call=true
 
-# Not support LE Audio dual mic SWB call based on the current launch strategy
+# Support LE Audio dual mic SWB call
 PRODUCT_PRODUCT_PROPERTIES += \
-    bluetooth.leaudio.dual_bidirection_swb.supported=false
+    bluetooth.leaudio.dual_bidirection_swb.supported=true
 
 # Keymaster HAL
 #LOCAL_KEYMASTER_PRODUCT_PACKAGE ?= android.hardware.keymaster@4.1-service
@@ -210,6 +215,17 @@ PRODUCT_PACKAGES += \
 
 # Trusty liboemcrypto.so
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts
+ifneq (,$(filter AP1%,$(RELEASE_PLATFORM_VERSION)))
+PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts/trusty/24Q1
+else ifneq (,$(filter AP2%,$(RELEASE_PLATFORM_VERSION)))
+PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts/trusty/24Q2
+else
+PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts/trusty/trunk
+endif
+
+# UWB
+PRODUCT_SOONG_NAMESPACES += \
+    device/google/shusky/uwb
 
 # Location
 # SDK build system
@@ -246,7 +262,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 # Vibrator HAL
 ACTUATOR_MODEL := luxshare_ict_081545
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.vibrator.hal.chirp.enabled=0 \
+    persist.vendor.vibrator.hal.chirp.enabled=0 \
     ro.vendor.vibrator.hal.device.mass=0.222 \
     ro.vendor.vibrator.hal.loc.coeff=2.8
 

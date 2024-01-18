@@ -16,7 +16,6 @@
 */
 -->
 <resources>
-    <!-- Whether face auth will immediately stop when the display state is OFF -->
-    <bool name="flag_stop_face_auth_on_display_off">true</bool>
+    <!-- Weather clock smartspace positioning to apply for the weather clock on shiba -->
+    <dimen name="weather_clock_smartspace_translateY">10dp</dimen>
 </resources>
-
