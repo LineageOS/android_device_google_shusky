@@ -882,10 +882,6 @@
     <ctl name="BT_RX Mixer EP4" value="1" />
   </path>
 
-  <path name="immersive-offloaded-spatializer-playback-0 -> bt">
-    <path name="immersive-offloaded-spatializer-playback -> bt" />
-  </path>
-
   <path name="immersive-offloaded-spatializer-playback-0 -> bluetooth-a2dp-device">
     <path name="immersive-offloaded-spatializer-playback -> bt" />
   </path>
@@ -895,6 +891,14 @@
   </path>
 
   <path name="immersive-offloaded-spatializer-playback-0 -> bluetooth-a2dp-speaker">
+    <path name="immersive-offloaded-spatializer-playback -> bt" />
+  </path>
+
+  <path name="immersive-offloaded-spatializer-playback-0 -> bluetooth-low-energy-headset">
+    <path name="immersive-offloaded-spatializer-playback -> bt" />
+  </path>
+
+  <path name="immersive-offloaded-spatializer-playback-0 -> bluetooth-low-energy-speaker">
     <path name="immersive-offloaded-spatializer-playback -> bt" />
   </path>
 
