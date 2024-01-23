@@ -283,6 +283,7 @@
       "Path": "/proc/vendor_sched/groups/cam/uclamp_min",
       "Values": [
         "765",
+        "250",
         "0"
       ],
       "ResetOnInit": true
@@ -1496,6 +1497,12 @@
       "Node": "PowerHALCameraRunning",
       "Duration": 0,
       "Value": "1"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_EXTREME",
+      "Node": "CAMUClampBoost",
+      "Duration": 0,
+      "Value": "250"
     },
     {
       "PowerHint": "CAMERA_STREAMING_EXTREME",
