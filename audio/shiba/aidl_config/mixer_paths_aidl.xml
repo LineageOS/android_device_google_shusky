@@ -1177,6 +1177,10 @@
     <ctl name="Incall Capture Stream0" value="UL_DL" />
   </path>
 
+  <path name="telephony-rx (MIC) -> in-call-capture-0">
+    <ctl name="Incall Capture Stream0" value="DL" />
+  </path>
+
   <path name="telephony-rx (VOICE_DOWNLINK) -> in-call-capture-1">
     <ctl name="Incall Capture Stream1" value="DL" />
   </path>
@@ -1189,6 +1193,10 @@
     <ctl name="Incall Capture Stream1" value="UL_DL" />
   </path>
 
+  <path name="telephony-rx (MIC) -> in-call-capture-1">
+    <ctl name="Incall Capture Stream1" value="DL" />
+  </path>
+
   <path name="telephony-rx (VOICE_DOWNLINK) -> in-call-capture-2">
     <ctl name="Incall Capture Stream2" value="DL" />
   </path>
@@ -1199,6 +1207,10 @@
 
   <path name="telephony-rx (VOICE_CALL) -> in-call-capture-2">
     <ctl name="Incall Capture Stream2" value="UL_DL" />
+  </path>
+
+  <path name="telephony-rx (MIC) -> in-call-capture-2">
+    <ctl name="Incall Capture Stream2" value="DL" />
   </path>
 
   <path name="microphones -> mmap-capture-0">
