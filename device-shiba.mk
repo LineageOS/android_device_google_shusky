@@ -374,7 +374,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # Increment the SVN for any official public releases
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.build.svn=15
+    ro.vendor.build.svn=16
 
 # P23 Devices no longer need rlsservice
 PRODUCT_VENDOR_PROPERTIES += \
