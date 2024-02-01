@@ -800,15 +800,6 @@
         "20 40"
       ],
       "ResetOnInit": true
-    },
-    {
-      "Name": "SchedLibMaskIn",
-      "Path": "/proc/vendor_sched/sched_lib_mask_in",
-      "Values": [
-        "0x100",
-        "0x0"
-      ],
-      "ResetOnInit": true
     }
   ],
   "Actions": [
@@ -972,12 +963,6 @@
       "Value": "1"
     },
     {
-      "PowerHint": "LAUNCH",
-      "Node": "SchedLibMaskIn",
-      "Duration": 5000,
-      "Value": "0x100"
-    },
-    {
       "PowerHint": "LAUNCH_EXTEND",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 2000,
@@ -1054,12 +1039,6 @@
       "Node": "FGPreferIdle",
       "Duration": 2000,
       "Value": "1"
-    },
-    {
-      "PowerHint": "LAUNCH_EXTEND",
-      "Node": "SchedLibMaskIn",
-      "Duration": 5000,
-      "Value": "0x100"
     },
     {
       "PowerHint": "LAUNCH_PMU",
@@ -2374,12 +2353,6 @@
       "Node": "NPITaskPacking",
       "Duration": 0,
       "Value": "1"
-    },
-    {
-      "PowerHint": "GAME",
-      "Node": "SchedLibMaskIn",
-      "Duration": 0,
-      "Value": "0x100"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_LIGHT",
