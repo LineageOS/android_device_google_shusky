@@ -862,56 +862,56 @@
     <path name="immersive-playback-0 -> usb" />
   </path>
 
-  <path name="immersive-offloaded-spatializer-playback -> speaker">
+  <path name="spatializer-offload-playback -> speaker">
     <ctl name="TDM_0_RX Mixer EP4" value="1" />
   </path>
 
-  <path name="immersive-offloaded-spatializer-playback-0 -> speaker">
-    <path name="immersive-offloaded-spatializer-playback -> speaker" />
+  <path name="spatializer-offload-playback-0 -> speaker">
+    <path name="spatializer-offload-playback -> speaker" />
   </path>
 
-  <path name="immersive-offloaded-spatializer-playback-0 -> speaker-earpiece">
-    <path name="immersive-offloaded-spatializer-playback -> speaker" />
+  <path name="spatializer-offload-playback-0 -> speaker-earpiece">
+    <path name="spatializer-offload-playback -> speaker" />
   </path>
 
-  <path name="immersive-offloaded-spatializer-playback-0 -> speaker-safe">
-    <path name="immersive-offloaded-spatializer-playback -> speaker" />
+  <path name="spatializer-offload-playback-0 -> speaker-safe">
+    <path name="spatializer-offload-playback -> speaker" />
   </path>
 
-  <path name="immersive-offloaded-spatializer-playback -> bt">
+  <path name="spatializer-offload-playback -> bt">
     <ctl name="BT_RX Mixer EP4" value="1" />
   </path>
 
-  <path name="immersive-offloaded-spatializer-playback-0 -> bluetooth-a2dp-device">
-    <path name="immersive-offloaded-spatializer-playback -> bt" />
+  <path name="spatializer-offload-playback-0 -> bluetooth-a2dp-device">
+    <path name="spatializer-offload-playback -> bt" />
   </path>
 
-  <path name="immersive-offloaded-spatializer-playback-0 -> bluetooth-a2dp-headphone">
-    <path name="immersive-offloaded-spatializer-playback -> bt" />
+  <path name="spatializer-offload-playback-0 -> bluetooth-a2dp-headphone">
+    <path name="spatializer-offload-playback -> bt" />
   </path>
 
-  <path name="immersive-offloaded-spatializer-playback-0 -> bluetooth-a2dp-speaker">
-    <path name="immersive-offloaded-spatializer-playback -> bt" />
+  <path name="spatializer-offload-playback-0 -> bluetooth-a2dp-speaker">
+    <path name="spatializer-offload-playback -> bt" />
   </path>
 
-  <path name="immersive-offloaded-spatializer-playback-0 -> bluetooth-low-energy-headset">
-    <path name="immersive-offloaded-spatializer-playback -> bt" />
+  <path name="spatializer-offload-playback-0 -> bluetooth-low-energy-headset">
+    <path name="spatializer-offload-playback -> bt" />
   </path>
 
-  <path name="immersive-offloaded-spatializer-playback-0 -> bluetooth-low-energy-speaker">
-    <path name="immersive-offloaded-spatializer-playback -> bt" />
+  <path name="spatializer-offload-playback-0 -> bluetooth-low-energy-speaker">
+    <path name="spatializer-offload-playback -> bt" />
   </path>
 
-  <path name="immersive-offloaded-spatializer-playback-0 -> usb">
+  <path name="spatializer-offload-playback-0 -> usb">
     <ctl name="USB_RX Mixer EP4" value="1" />
   </path>
 
-  <path name="immersive-offloaded-spatializer-playback-0 -> usb-headset">
-    <path name="immersive-offloaded-spatializer-playback-0 -> usb" />
+  <path name="spatializer-offload-playback-0 -> usb-headset">
+    <path name="spatializer-offload-playback-0 -> usb" />
   </path>
 
-  <path name="immersive-offloaded-spatializer-playback-0 -> usb-device">
-    <path name="immersive-offloaded-spatializer-playback-0 -> usb" />
+  <path name="spatializer-offload-playback-0 -> usb-device">
+    <path name="spatializer-offload-playback-0 -> usb" />
   </path>
 
   <path name="haptic-playback -> speaker">
