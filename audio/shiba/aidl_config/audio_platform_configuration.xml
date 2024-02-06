@@ -27,6 +27,7 @@
       <argument name="ThrottlingSeverity" value="MODERATE" />
     </feature>
     <feature name="RuntimeTuningDump" />
+    <!-- <feature name="spatializer-offload" /> -->
   </features>
 
   <voipVolume>
