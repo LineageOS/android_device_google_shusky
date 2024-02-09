@@ -351,6 +351,13 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.build.svn=20
 
+# Set ro.build.version.base_os base version for EMR and SMR releases
+PLATFORM_BASE_OS := ro.build.version.base_os=google/shiba/shiba:14/AP1A.240305.019.A1/11445699:user/release-keys
+
+#Set the device family - in this case <soc>-<devices with similar hardware>
+PRODUCT_SYSTEM_PROPERTIES += ro.build.device_family=zuma-shusky
+
+
 # P23 Devices no longer need rlsservice
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.camera.rls_supported=false

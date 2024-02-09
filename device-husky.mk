@@ -377,6 +377,12 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.build.svn=20
 
+# Set ro.build.version.base_os base version for EMR and SMR releases
+PLATFORM_BASE_OS := ro.build.version.base_os=google/husky/husky:14/AP1A.240305.019.A1/11445699:user/release-keys
+
+#Set the device family - in this case <soc>-<devices with similar hardware>
+PRODUCT_SYSTEM_PROPERTIES += ro.build.device_family=zuma-shusky
+
 # WLC userdebug specific
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
     PRODUCT_COPY_FILES += \
