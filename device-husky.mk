@@ -373,10 +373,6 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.vibrator.hal.dbc.txlvlholdoffms=0 \
     ro.vendor.vibrator.hal.pm.activetimeout=5
 
-# Increment the SVN for any official public releases
-PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.build.svn=20
-
 # WLC userdebug specific
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
     PRODUCT_COPY_FILES += \
