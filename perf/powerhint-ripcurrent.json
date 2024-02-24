@@ -1197,6 +1197,12 @@
     },
     {
       "PowerHint": "DISPLAY_INACTIVE",
+      "Node": "ReducePreferIdle",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "DISPLAY_INACTIVE",
       "Node": "FGPreferIdle",
       "Duration": 0,
       "Value": "0"
@@ -1581,6 +1587,12 @@
     },
     {
       "PowerHint": "CAMERA_STREAMING_EXTREME",
+      "Node": "ReducePreferIdle",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_EXTREME",
       "Node": "CDHighCpusetCpus",
       "Duration": 0,
       "Value": "8"
@@ -1726,6 +1738,12 @@
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
       "Node": "TAPreferIdle",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_HIGH",
+      "Node": "ReducePreferIdle",
       "Duration": 0,
       "Value": "0"
     },
@@ -1978,6 +1996,12 @@
     {
       "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
       "Node": "TAPreferIdle",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
+      "Node": "ReducePreferIdle",
       "Duration": 0,
       "Value": "0"
     },
@@ -2333,6 +2357,12 @@
     {
       "PowerHint": "GAME",
       "Node": "TAPreferIdle",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "GAME",
+      "Node": "ReducePreferIdle",
       "Duration": 0,
       "Value": "0"
     },
