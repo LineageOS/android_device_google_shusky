@@ -42,7 +42,6 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PACKAGES += \
     libGralloc4Wrapper \
-    libcamera2ndk_vendor \
     pixel-power-ext-V1-ndk.vendor
 
 # Codec2
@@ -109,12 +108,17 @@ PRODUCT_PACKAGES += \
     nos_app_avb \
     nos_app_identity \
     nos_app_keymaster \
+    nos_app_keymaster_ctdl \
     nos_app_weaver \
     pixelpowerstats_provider_aidl_interface-cpp.vendor
 
+# Radio
+PRODUCT_PACKAGES += \
+    modem_clock_manager.vendor \
+    modem_clock_manager_impl.vendor
+
 # Sensors
 PRODUCT_PACKAGES += \
-    android.frameworks.sensorservice@1.0.vendor \
     android.hardware.sensors@1.0.vendor \
     android.hardware.sensors@2.0-ScopedWakelock.vendor \
     android.hardware.sensors@2.0.vendor \
@@ -125,7 +129,6 @@ PRODUCT_PACKAGES += \
 # Trusty
 PRODUCT_PACKAGES += \
     android.trusty.stats.nw.setter-cpp.vendor \
-    lib_sensor_listener \
     libbinder_trusty \
     libtrusty_metrics
 
@@ -134,15 +137,10 @@ PRODUCT_PACKAGES += \
     android.frameworks.stats-V1-cpp.vendor \
     android.frameworks.stats-V1-ndk.vendor \
     android.hardware.authsecret-V1-ndk.vendor \
-    android.hardware.biometrics.common-V3-ndk.vendor \
-    android.hardware.biometrics.face-V3-ndk.vendor \
-    android.hardware.biometrics.face@1.0.vendor \
-    android.hardware.biometrics.fingerprint-V3-ndk.vendor \
     android.hardware.gnss-V3-ndk.vendor \
     android.hardware.health-V1-ndk.vendor \
     android.hardware.input.common-V1-ndk.vendor \
     android.hardware.input.processor-V1-ndk.vendor \
-    android.hardware.keymaster-V4-ndk.vendor \
     android.hardware.keymaster@3.0.vendor \
     android.hardware.keymaster@4.0.vendor \
     android.hardware.keymaster@4.1.vendor \
@@ -152,9 +150,6 @@ PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.2.vendor \
     android.hardware.neuralnetworks@1.3.vendor \
     android.hardware.oemlock-V1-ndk.vendor \
-    android.hardware.power@1.0.vendor \
-    android.hardware.power@1.1.vendor \
-    android.hardware.power@1.2.vendor \
     android.hardware.radio-V2-ndk.vendor \
     android.hardware.radio.config-V2-ndk.vendor \
     android.hardware.radio.config@1.0.vendor \
@@ -180,6 +175,5 @@ PRODUCT_PACKAGES += \
     android.hardware.thermal@2.0.vendor \
     android.hardware.weaver-V2-ndk.vendor \
     android.hardware.wifi-V1-ndk.vendor \
-    com.google.hardware.pixel.display-V4-ndk.vendor \
     com.google.hardware.pixel.display-V9-ndk.vendor \
     hardware.google.ril_ext-V1-ndk.vendor
