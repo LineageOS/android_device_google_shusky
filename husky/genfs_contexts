@@ -1,18 +1,7 @@
 # Haptics
-genfscon sysfs /devices/platform/10c80000.hsi2c/i2c-6/6-0043            u:object_r:sysfs_vibrator:s0
-genfscon sysfs /devices/platform/10c80000.hsi2c/i2c-5/5-0043            u:object_r:sysfs_vibrator:s0
-genfscon sysfs /devices/platform/10c80000.hsi2c/i2c-4/4-0043            u:object_r:sysfs_vibrator:s0
+genfscon sysfs /devices/platform/10c80000.hsi2c/i2c-0/0-0043            u:object_r:sysfs_vibrator:s0
 
 # WLC
-genfscon sysfs /devices/platform/10c90000.hsi2c/i2c-0/0-003c                            u:object_r:sysfs_wlc:s0
-genfscon sysfs /devices/platform/10c90000.hsi2c/i2c-1/1-003c                            u:object_r:sysfs_wlc:s0
-genfscon sysfs /devices/platform/10c90000.hsi2c/i2c-2/2-003c                            u:object_r:sysfs_wlc:s0
-genfscon sysfs /devices/platform/10c90000.hsi2c/i2c-3/3-003c                            u:object_r:sysfs_wlc:s0
-genfscon sysfs /devices/platform/10c90000.hsi2c/i2c-4/4-003c                            u:object_r:sysfs_wlc:s0
-genfscon sysfs /devices/platform/10c90000.hsi2c/i2c-5/5-003c                            u:object_r:sysfs_wlc:s0
-genfscon sysfs /devices/platform/10c90000.hsi2c/i2c-6/6-003c                            u:object_r:sysfs_wlc:s0
-genfscon sysfs /devices/platform/10c90000.hsi2c/i2c-7/7-003c                            u:object_r:sysfs_wlc:s0
-genfscon sysfs /devices/platform/10c90000.hsi2c/i2c-8/8-003c                            u:object_r:sysfs_wlc:s0
 genfscon sysfs /devices/platform/10c90000.hsi2c/i2c-9/9-003c                            u:object_r:sysfs_wlc:s0
 
 # GPS
