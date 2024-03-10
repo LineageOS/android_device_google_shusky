@@ -4,75 +4,75 @@
             "Name":"battery",
             "Type":"BATTERY",
             "HotThreshold":[
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
+                "NaN",
+                "NaN",
+                "NaN",
+                "NaN",
+                "NaN",
+                "NaN",
                 "60.0"
             ],
-            "VrThreshold":"NAN",
+            "VrThreshold":"NaN",
             "Multiplier":0.001
         },
         {
             "Name":"LITTLE",
             "Type":"CPU",
             "HotThreshold":[
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
+                "NaN",
+                "NaN",
+                "NaN",
+                "NaN",
+                "NaN",
+                "NaN",
                 115.0
             ],
-            "VrThreshold":"NAN",
+            "VrThreshold":"NaN",
             "Multiplier":0.001
         },
         {
             "Name":"MID",
             "Type":"CPU",
             "HotThreshold":[
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
+                "NaN",
+                "NaN",
+                "NaN",
+                "NaN",
+                "NaN",
+                "NaN",
                 115.0
             ],
-            "VrThreshold":"NAN",
+            "VrThreshold":"NaN",
             "Multiplier":0.001
         },
         {
             "Name":"G3D",
             "Type":"GPU",
             "HotThreshold":[
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
+                "NaN",
+                "NaN",
+                "NaN",
+                "NaN",
+                "NaN",
+                "NaN",
                 115.0
             ],
-            "VrThreshold":"NAN",
+            "VrThreshold":"NaN",
             "Multiplier":0.001
         },
         {
             "Name":"battery_cycle",
             "Type":"BCL_VOLTAGE",
             "HotThreshold":[
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN"
+                "NaN",
+                "NaN",
+                "NaN",
+                "NaN",
+                "NaN",
+                "NaN",
+                "NaN"
             ],
-            "VrThreshold":"NAN",
+            "VrThreshold":"NaN",
             "Multiplier":1,
             "Monitor":false
         },
@@ -93,15 +93,15 @@
                 "1000"
             ],
             "HotThreshold":[
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
+                "NaN",
+                "NaN",
+                "NaN",
+                "NaN",
+                "NaN",
                 3.00,
-                "NAN"
+                "NaN"
             ],
-            "VrThreshold":"NAN",
+            "VrThreshold":"NaN",
             "Multiplier":1,
             "Monitor":true
         },
@@ -122,15 +122,15 @@
                 "1000"
             ],
             "HotThreshold":[
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
+                "NaN",
+                "NaN",
+                "NaN",
+                "NaN",
                 3.00,
-                "NAN",
-                "NAN"
+                "NaN",
+                "NaN"
             ],
-            "VrThreshold":"NAN",
+            "VrThreshold":"NaN",
             "Multiplier":1,
             "Monitor":true,
             "SendPowerHint":true
@@ -139,28 +139,28 @@
             "Name":"soc",
             "Type":"BCL_PERCENTAGE",
             "HotThreshold":[
-                "NAN",
+                "NaN",
                 80,
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN"
+                "NaN",
+                "NaN",
+                "NaN",
+                "NaN",
+                "NaN"
             ],
-            "VrThreshold":"NAN",
+            "VrThreshold":"NaN",
             "Multiplier":1
         },
         {
             "Name":"batoilo",
             "Type":"BCL_CURRENT",
             "HotThreshold":[
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
+                "NaN",
+                "NaN",
+                "NaN",
+                "NaN",
                 5000,
-                "NAN",
-                "NAN"
+                "NaN",
+                "NaN"
             ],
             "HotHysteresis":[
                 0.0,
@@ -171,7 +171,7 @@
                 0.0,
                 0.0
             ],
-            "VrThreshold":"NAN",
+            "VrThreshold":"NaN",
             "Multiplier":1,
             "Monitor":true,
             "PollingDelay":0,
@@ -202,15 +202,15 @@
                 "80"
             ],
             "HotThreshold":[
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
+                "NaN",
+                "NaN",
+                "NaN",
+                "NaN",
                 2.0,
-                "NAN",
-                "NAN"
+                "NaN",
+                "NaN"
             ],
-            "VrThreshold":"NAN",
+            "VrThreshold":"NaN",
             "Multiplier":1,
             "Monitor":true
         },
@@ -218,13 +218,13 @@
             "Name":"vdroop1",
             "Type":"BCL_VOLTAGE",
             "HotThreshold":[
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
+                "NaN",
+                "NaN",
+                "NaN",
+                "NaN",
                 1000,
-                "NAN",
-                "NAN"
+                "NaN",
+                "NaN"
             ],
             "HotHysteresis":[
                 0.0,
@@ -235,7 +235,7 @@
                 0.0,
                 0.0
             ],
-            "VrThreshold":"NAN",
+            "VrThreshold":"NaN",
             "Multiplier":1,
             "Monitor":true,
             "PollingDelay":0,
@@ -255,13 +255,13 @@
             "Name":"vdroop2",
             "Type":"BCL_VOLTAGE",
             "HotThreshold":[
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
+                "NaN",
+                "NaN",
+                "NaN",
+                "NaN",
                 1200,
-                "NAN",
-                "NAN"
+                "NaN",
+                "NaN"
             ],
             "HotHysteresis":[
                 0.0,
@@ -272,7 +272,7 @@
                 0.0,
                 0.0
             ],
-            "VrThreshold":"NAN",
+            "VrThreshold":"NaN",
             "Multiplier":1,
             "Monitor":true,
             "PollingDelay":0,
@@ -292,13 +292,13 @@
             "Name":"smpl_gm",
             "Type":"BCL_VOLTAGE",
             "HotThreshold":[
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
+                "NaN",
+                "NaN",
+                "NaN",
+                "NaN",
                 1100,
-                "NAN",
-                "NAN"
+                "NaN",
+                "NaN"
             ],
             "HotHysteresis":[
                 0.0,
@@ -309,7 +309,7 @@
                 0.0,
                 0.0
             ],
-            "VrThreshold":"NAN",
+            "VrThreshold":"NaN",
             "Multiplier":1,
             "Monitor":true,
             "PollingDelay":0,
@@ -329,13 +329,13 @@
             "Name":"ocp_cpu2",
             "Type":"BCL_CURRENT",
             "HotThreshold":[
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
+                "NaN",
+                "NaN",
+                "NaN",
+                "NaN",
                 12000,
-                "NAN",
-                "NAN"
+                "NaN",
+                "NaN"
             ],
             "HotHysteresis":[
                 0.0,
@@ -346,20 +346,20 @@
                 0.0,
                 0.0
             ],
-            "VrThreshold":"NAN",
+            "VrThreshold":"NaN",
             "Multiplier":1
         },
         {
             "Name":"ocp_tpu",
             "Type":"BCL_CURRENT",
             "HotThreshold":[
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
+                "NaN",
+                "NaN",
+                "NaN",
+                "NaN",
                 10500,
-                "NAN",
-                "NAN"
+                "NaN",
+                "NaN"
             ],
             "HotHysteresis":[
                 0.0,
@@ -370,20 +370,20 @@
                 0.0,
                 0.0
             ],
-            "VrThreshold":"NAN",
+            "VrThreshold":"NaN",
             "Multiplier":1
         },
         {
             "Name":"ocp_gpu",
             "Type":"BCL_CURRENT",
             "HotThreshold":[
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
+                "NaN",
+                "NaN",
+                "NaN",
+                "NaN",
                 12000,
-                "NAN",
-                "NAN"
+                "NaN",
+                "NaN"
             ],
             "HotHysteresis":[
                 0.0,
@@ -394,20 +394,20 @@
                 0.0,
                 0.0
             ],
-            "VrThreshold":"NAN",
+            "VrThreshold":"NaN",
             "Multiplier":1
         },
         {
             "Name":"soft_ocp_cpu2",
             "Type":"BCL_CURRENT",
             "HotThreshold":[
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
+                "NaN",
+                "NaN",
+                "NaN",
+                "NaN",
                 9000,
-                "NAN",
-                "NAN"
+                "NaN",
+                "NaN"
             ],
             "HotHysteresis":[
                 0.0,
@@ -418,20 +418,20 @@
                 0.0,
                 0.0
             ],
-            "VrThreshold":"NAN",
+            "VrThreshold":"NaN",
             "Multiplier":1
         },
         {
             "Name":"soft_ocp_tpu",
             "Type":"BCL_CURRENT",
             "HotThreshold":[
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
+                "NaN",
+                "NaN",
+                "NaN",
+                "NaN",
                 8500,
-                "NAN",
-                "NAN"
+                "NaN",
+                "NaN"
             ],
             "HotHysteresis":[
                 0.0,
@@ -442,20 +442,20 @@
                 0.0,
                 0.0
             ],
-            "VrThreshold":"NAN",
+            "VrThreshold":"NaN",
             "Multiplier":1
         },
         {
             "Name":"soft_ocp_gpu",
             "Type":"BCL_CURRENT",
             "HotThreshold":[
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
+                "NaN",
+                "NaN",
+                "NaN",
+                "NaN",
                 9000,
-                "NAN",
-                "NAN"
+                "NaN",
+                "NaN"
             ],
             "HotHysteresis":[
                 0.0,
@@ -466,22 +466,22 @@
                 0.0,
                 0.0
             ],
-            "VrThreshold":"NAN",
+            "VrThreshold":"NaN",
             "Multiplier":1
         },
         {
             "Name":"TPU",
             "Type":"NPU",
             "HotThreshold":[
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
-                "NAN",
+                "NaN",
+                "NaN",
+                "NaN",
+                "NaN",
+                "NaN",
+                "NaN",
                 115.0
             ],
-            "VrThreshold":"NAN",
+            "VrThreshold":"NaN",
             "Multiplier":0.001
         }
     ],

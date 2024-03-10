@@ -136,7 +136,7 @@
     <bool translatable="false" name="config_wifiUseHalApiToDisableFwRoaming">true</bool>
 
     <!-- Indicate the driver doesn't support NL80211 Reg changed event -->
-    <bool translatable="false" name="config_wifiDriverSupportedNl80211RegChangedEvent">false</bool>
+    <bool translatable="false" name="config_wifiDriverSupportedNl80211RegChangedEvent">true</bool>
 
     <!-- boolean indicating whether or not to disable shutdown idle instance timer in the bridged mode when connected to a power source -->
     <bool translatable="false" name ="config_wifiFrameworkSoftApDisableBridgedModeShutdownIdleInstanceWhenCharging">true</bool>
@@ -171,4 +171,7 @@
 
     <!-- boolean indicating whether the caller thread needs to wait for destroyed listeners -->
     <bool translatable="false" name ="config_wifiWaitForDestroyedListeners">true</bool>
+
+        <!-- Enable aggregation of Wifi link layer radio stats from all radios -->
+    <bool translatable="false" name="config_wifiLinkLayerAllRadiosStatsAggregationEnabled">true</bool>
 </resources>

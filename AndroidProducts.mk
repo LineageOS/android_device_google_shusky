@@ -19,15 +19,19 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/aosp_ripcurrent_fullmte.mk \
     $(LOCAL_DIR)/factory_ripcurrent.mk \
     $(LOCAL_DIR)/aosp_husky.mk \
+    $(LOCAL_DIR)/aosp_husky_61_pgagnostic.mk \
     $(LOCAL_DIR)/aosp_husky_fullmte.mk \
+    $(LOCAL_DIR)/aosp_husky_pgagnostic.mk \
     $(LOCAL_DIR)/factory_husky.mk \
     $(LOCAL_DIR)/aosp_shiba.mk \
+    $(LOCAL_DIR)/aosp_shiba_61_pgagnostic.mk \
     $(LOCAL_DIR)/aosp_shiba_fullmte.mk \
+    $(LOCAL_DIR)/aosp_shiba_pgagnostic.mk \
     $(LOCAL_DIR)/factory_shiba.mk \
     $(LOCAL_DIR)/lineage_husky.mk \
     $(LOCAL_DIR)/lineage_shiba.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_ripcurrent-userdebug \
-    aosp_husky-userdebug \
-    aosp_shiba-userdebug
+    aosp_ripcurrent-trunk_staging-userdebug \
+    aosp_husky-trunk_staging-userdebug \
+    aosp_shiba-trunk_staging-userdebug

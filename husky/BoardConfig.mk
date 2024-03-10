@@ -24,7 +24,24 @@ BOARD_KERNEL_CMDLINE += samsung_iommu_v9.load_sequential=1
 
 TARGET_BOARD_INFO_FILE := device/google/shusky/board-info.txt
 TARGET_BOOTLOADER_BOARD_NAME := husky
-TARGET_SCREEN_DENSITY := 480
+
+RELEASE_GOOGLE_PRODUCT_RADIO_DIR := $(RELEASE_GOOGLE_HUSKY_RADIO_DIR)
+RELEASE_GOOGLE_PRODUCT_RADIOCFG_DIR := $(RELEASE_GOOGLE_HUSKY_RADIOCFG_DIR)
+ifneq (,$(filter AP1%,$(RELEASE_PLATFORM_VERSION)))
+RELEASE_GOOGLE_PRODUCT_BOOTLOADER_DIR := bootloader/24Q1
+else ifneq (,$(filter AP2%,$(RELEASE_PLATFORM_VERSION)))
+RELEASE_GOOGLE_PRODUCT_BOOTLOADER_DIR := bootloader/24Q2
+else
+RELEASE_GOOGLE_PRODUCT_BOOTLOADER_DIR := bootloader/trunk
+endif
+
+
+ifdef PHONE_CAR_BOARD_PRODUCT
+    include vendor/auto/embedded/products/$(PHONE_CAR_BOARD_PRODUCT)/BoardConfig.mk
+else
+    TARGET_SCREEN_DENSITY := 480 
+endif
+
 BOARD_USES_GENERIC_AUDIO := true
 USES_DEVICE_GOOGLE_SHUSKY := true
 BOARD_KERNEL_CMDLINE += swiotlb=noforce
@@ -41,5 +58,14 @@ include device/google/zuma/BoardConfig-common.mk
 -include vendor/google_devices/husky/proprietary/BoardConfigVendor.mk
 include device/google/shusky/sepolicy/husky-sepolicy.mk
 include device/google/shusky/wifi/BoardConfig-wifi.mk
+
+# Android Virtualization Framework (AVF) team is using husky with hypervisor in
+# nvhe mode as a development platform to build infrastructure that supports
+# assigning devices to guest VMs.
+#
+# TODO(b/278008514): remove this once we have builds from our kernel branch.
+ifeq ($(HUSKY_ENABLE_DEVICE_ASSIGNMENT), true)
+BOARD_KERNEL_CMDLINE += kvm-arm.mode=nvhe
+endif
 
 include device/google/shusky/husky/BoardConfigLineage.mk
