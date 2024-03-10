@@ -25,8 +25,8 @@ TARGET_SCREEN_WIDTH := 1344
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_PRODUCT=husky \
-    PRIVATE_BUILD_DESC="husky-user 14 UQ1A.240205.004 11269751 release-keys"
+    PRIVATE_BUILD_DESC="husky-user 14 AP1A.240305.019.A1 11445699 release-keys"
 
-BUILD_FINGERPRINT := google/husky/husky:14/UQ1A.240205.004/11269751:user/release-keys
+BUILD_FINGERPRINT := google/husky/husky:14/AP1A.240305.019.A1/11445699:user/release-keys
 
 $(call inherit-product, vendor/google/husky/husky-vendor.mk)
