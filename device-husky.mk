@@ -44,7 +44,7 @@ $(call inherit-product-if-exists, vendor/google_devices/zuma/prebuilts/device-ve
 $(call inherit-product-if-exists, vendor/google_devices/zuma/proprietary/device-vendor.mk)
 $(call inherit-product-if-exists, vendor/google_devices/shusky/proprietary/husky/device-vendor-husky.mk)
 $(call inherit-product-if-exists, vendor/google_devices/husky/proprietary/device-vendor.mk)
-$(call inherit-product-if-exists, vendor/qorvo/uwb/qm35-hal-r63/Device.mk)
+$(call inherit-product-if-exists, vendor/qorvo/uwb/qm35-hal/Device.mk)
 $(call inherit-product-if-exists, vendor/google_devices/shusky/proprietary/WallpapersHusky.mk)
 
 # display
@@ -404,7 +404,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # Increment the SVN for any official public releases
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.build.svn=20
+    ro.vendor.build.svn=21
 
 # WLC userdebug specific
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
