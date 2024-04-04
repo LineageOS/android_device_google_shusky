@@ -367,9 +367,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.lbe.supported=1
 
 # blocking zone for min idle refresh rate
 PRODUCT_VENDOR_PROPERTIES += \
-    vendor.primarydisplay.min_idle_refresh_rate.default=1 \
-    vendor.primarydisplay.min_idle_refresh_rate.blocking_zone=10 \
-    vendor.primarydisplay.min_idle_refresh_rate.blocking_zone_dbv=492
+    ro.vendor.primarydisplay.blocking_zone.min_refresh_rate_by_nits=15:10,:1
 
 # Display ACL
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.0.brightness.acl.default=0
