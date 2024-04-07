@@ -3,6 +3,7 @@
 # product partition
 
 # AiAi
+product/priv-app/AICorePrebuilt/AICorePrebuilt.apk;PRESIGNED
 product/priv-app/DeviceIntelligenceNetworkPrebuilt/DeviceIntelligenceNetworkPrebuilt.apk;PRESIGNED
 product/priv-app/DevicePersonalizationPrebuiltPixel2023/DevicePersonalizationPrebuiltPixel2023.apk;PRESIGNED
 
