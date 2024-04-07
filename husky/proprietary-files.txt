@@ -18,6 +18,11 @@ product/etc/firmware/music_detector.sound_model_tflite
 product/etc/permissions/androidx.camera.extensions.impl.xml
 product/priv-app/PixelCameraServicesHK3/PixelCameraServicesHK3.apk;PRESIGNED
 
+# Camera services
+product/etc/permissions/com.google.pixel.camera.connectivity.impl.xml
+product/etc/permissions/com.google.pixel.camera.services.cameraidremapper.impl.xml
+product/etc/permissions/com.google.pixel.camera.services.lyricconfigprovider.impl.xml
+
 # Felica
 product/etc/felica/common.cfg
 product/etc/felica/mfm.cfg
@@ -90,6 +95,13 @@ system_ext/etc/permissions/com.google.android.camera.extensions.xml
 system_ext/etc/permissions/com.google.android.camerax.extensions.xml
 system_ext/framework/com.google.android.camera.extensions.jar
 system_ext/framework/com.google.android.camerax.extensions.jar
+
+# Camera services
+system_ext/app/PersistentBackgroundCameraServices/PersistentBackgroundCameraServices.apk
+system_ext/etc/vintf/manifest/com.google.pixel.camera.services@1.0-service-google.xml
+system_ext/framework/com.google.pixel.camera.connectivity.jar
+system_ext/framework/com.google.pixel.camera.services.cameraidremapper.jar
+system_ext/framework/com.google.pixel.camera.services.lyricconfigprovider.jar
 
 # Display
 system_ext/lib64/libpixeldisplaymanager_jni.so
