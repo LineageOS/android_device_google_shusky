@@ -191,6 +191,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.leaudio.dual_bidirection_swb.supported=true
 
+# Support LE & Classic concurrent encryption (b/330704060)
+PRODUCT_PRODUCT_PROPERTIES += \
+    bluetooth.ble.allow_enc_with_bredr=true
+
 # Keymaster HAL
 #LOCAL_KEYMASTER_PRODUCT_PACKAGE ?= android.hardware.keymaster@4.1-service
 
