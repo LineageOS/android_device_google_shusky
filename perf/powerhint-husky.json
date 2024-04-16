@@ -2992,6 +2992,7 @@
       "HBoostOffMissedCycles": 5,
       "HBoostPidPuFactor": 0.5,
       "HBoostUclampMin": 722,
+      "JunkCheckTimeFactor": 1.2,
       "LowFrameRateThreshold": 25,
       "MaxRecordsNum": 300
     },
@@ -3026,6 +3027,7 @@
       "HBoostOffMissedCycles": 5,
       "HBoostPidPuFactor": 0.5,
       "HBoostUclampMin": 722,
+      "JunkCheckTimeFactor": 1.2,
       "LowFrameRateThreshold": 25,
       "MaxRecordsNum": 300
     },
@@ -3060,6 +3062,7 @@
       "HBoostOffMissedCycles": 5,
       "HBoostPidPuFactor": 0.5,
       "HBoostUclampMin": 722,
+      "JunkCheckTimeFactor": 1.2,
       "LowFrameRateThreshold": 25,
       "MaxRecordsNum": 300
     },
