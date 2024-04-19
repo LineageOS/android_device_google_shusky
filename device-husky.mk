@@ -279,15 +279,6 @@ PRODUCT_PACKAGES += \
 
 # Trusty liboemcrypto.so
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts
-ifneq (,$(filter AP1%,$(RELEASE_PLATFORM_VERSION)))
-PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts/trusty/24Q1
-else ifneq (,$(filter AP2%,$(RELEASE_PLATFORM_VERSION)))
-PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts/trusty/24Q2
-else ifneq (,$(filter AP3%,$(RELEASE_PLATFORM_VERSION)))
-PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts/trusty/24Q3
-else
-PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts/trusty/trunk
-endif
 
 # UWB
 PRODUCT_SOONG_NAMESPACES += \
@@ -318,16 +309,8 @@ PRODUCT_VENDOR_PROPERTIES += \
 	persist.device_config.configuration.disable_rescue_party=true
 
 # Fingerprint HAL
-ifneq (,$(filter AP1%,$(RELEASE_PLATFORM_VERSION)))
-APEX_FPS_TA_DIR := //vendor/google_devices/shusky/prebuilts/firmware/fingerprint/24Q1
-else ifneq (,$(filter AP2%,$(RELEASE_PLATFORM_VERSION)))
-APEX_FPS_TA_DIR := //vendor/google_devices/shusky/prebuilts/firmware/fingerprint/24Q2
-else ifneq (,$(filter AP3%,$(RELEASE_PLATFORM_VERSION)))
-APEX_FPS_TA_DIR := //vendor/google_devices/shusky/prebuilts/firmware/fingerprint/24Q3
-else
-APEX_FPS_TA_DIR := //vendor/google_devices/shusky/prebuilts/firmware/fingerprint/trunk
-endif
 GOODIX_CONFIG_BUILD_VERSION := g7_trusty
+APEX_FPS_TA_DIR := //vendor/google_devices/shusky/prebuilts
 $(call inherit-product-if-exists, vendor/goodix/udfps/configuration/udfps_common.mk)
 ifeq ($(filter factory%, $(TARGET_PRODUCT)),)
 $(call inherit-product-if-exists, vendor/goodix/udfps/configuration/udfps_shipping.mk)
