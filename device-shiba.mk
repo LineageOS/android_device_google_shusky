@@ -105,7 +105,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Enable Bluetooth AutoOn feature
 PRODUCT_PRODUCT_PROPERTIES += \
-    bluetooth.server.automatic_turn_on=false
+    bluetooth.server.automatic_turn_on=true
 
 # Bluetooth Tx power caps
 PRODUCT_COPY_FILES += \
