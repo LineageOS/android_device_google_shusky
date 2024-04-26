@@ -15,3 +15,6 @@
 #
 
 $(call inherit-product, device/google/shusky/device-shiba.mk)
+
+# preloaded_nanoapps.json
+PRODUCT_SOONG_NAMESPACES += vendor/google_contexthub/devices/p23_common

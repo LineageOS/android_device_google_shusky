@@ -15,3 +15,6 @@
 #
 
 $(call inherit-product, device/google/shusky/device-husky.mk)
+
+# preloaded_nanoapps.json
+PRODUCT_SOONG_NAMESPACES += vendor/google_contexthub/devices/p23_common

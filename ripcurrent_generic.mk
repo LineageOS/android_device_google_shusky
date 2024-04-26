@@ -15,3 +15,6 @@
 #
 
 $(call inherit-product, device/google/shusky/device-ripcurrent.mk)
+
+# preloaded_nanoapps.json
+PRODUCT_SOONG_NAMESPACES += vendor/google_contexthub/devices/p23_common
