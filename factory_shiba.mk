@@ -35,3 +35,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Factory binaries of camera
 PRODUCT_PACKAGES += fatp_hk3sb3_wide_hat_tool fatp_sb3_ultrawide_hat_tool factory_hk3sb3_main_cam_decompress_test sb3_ultrawide_af_fw_update
+
+# preloaded_nanoapps.json
+PRODUCT_SOONG_NAMESPACES += vendor/google_contexthub/devices/factory

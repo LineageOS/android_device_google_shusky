@@ -219,6 +219,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.leaudio.dual_bidirection_swb.supported=true
 
+# Support LE & Classic concurrent encryption (b/330704060)
+PRODUCT_PRODUCT_PROPERTIES += \
+    bluetooth.ble.allow_enc_with_bredr=true
+
 # Support One-Handed mode
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.support_one_handed_mode=true
@@ -424,3 +428,5 @@ PRODUCT_PACKAGES += \
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 $(call inherit-product-if-exists, device/google/common/etm/device-userdebug-modules.mk)
 endif
+
+PRODUCT_NO_BIONIC_PAGE_SIZE_MACRO := true
