@@ -31,6 +31,12 @@ ifeq ($(filter factory_husky, $(TARGET_PRODUCT)),)
     include device/google/shusky/uwb/uwb_calibration.mk
 endif
 
+DEVICE_PAGE_AGNOSTIC ?= $(if $(filter %_pgagnostic,$(TARGET_PRODUCT)),true,false)
+
+ifeq ($(DEVICE_PAGE_AGNOSTIC),true)
+TARGET_USERDATAIMAGE_FILE_SYSTEM_TYPE := ext4
+TARGET_KERNEL_DIR := $(RELEASE_KERNEL_HUSKY_DIR)/16kb
+endif
 
 $(call inherit-product-if-exists, vendor/google_devices/shusky/prebuilts/device-vendor-husky.mk)
 $(call inherit-product-if-exists, vendor/google_devices/zuma/prebuilts/device-vendor.mk)
