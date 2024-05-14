@@ -28,7 +28,7 @@ DEVICE_PAGE_AGNOSTIC ?= $(if $(filter %_pgagnostic,$(TARGET_PRODUCT)),true,false
 
 ifeq ($(DEVICE_PAGE_AGNOSTIC),true)
 TARGET_USERDATAIMAGE_FILE_SYSTEM_TYPE := ext4
-TARGET_KERNEL_DIR := $(RELEASE_KERNEL_HUSKY_DIR)/16kb
+TARGET_KERNEL_DIR := $(RELEASE_KERNEL_SHIBA_DIR)/16kb
 endif
 
 $(call inherit-product-if-exists, vendor/google_devices/shusky/prebuilts/device-vendor-shiba.mk)
