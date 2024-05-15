@@ -30,6 +30,8 @@ ifeq ($(DEVICE_PAGE_AGNOSTIC),true)
 TARGET_USERDATAIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_KERNEL_DIR := $(RELEASE_KERNEL_SHIBA_DIR)/16kb
 TARGET_RW_FILE_SYSTEM_TYPE := ext4
+else
+PRODUCT_16K_DEVELOPER_OPTION := $(RELEASE_GOOGLE_SHIBA_16K_DEVELOPER_OPTION)
 endif
 
 $(call inherit-product-if-exists, vendor/google_devices/shusky/prebuilts/device-vendor-shiba.mk)
