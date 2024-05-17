@@ -16,7 +16,7 @@
 
 ifeq ($(PRODUCT_16K_DEVELOPER_OPTION),true)
 # Configures the 16kb kernel and modules for OTA updates.
-TARGET_KERNEL_DIR_16K := $(RELEASE_KERNEL_HUSKY_DIR)/16kb
+TARGET_KERNEL_DIR_16K := $(TARGET_KERNEL_DIR)/16kb
 BOARD_KERNEL_PATH_16K := $(TARGET_KERNEL_DIR_16K)/Image.lz4
 
 BOARD_KERNEL_MODULES_16K += $(file < $(TARGET_KERNEL_DIR_16K)/vendor_kernel_boot.modules.load)
