@@ -59,7 +59,7 @@
        CpLppeUseAgnssLocForEmptyDbh="true"
        CpLppHighAccuracyShapeMode="1"
        ReAidingOnHotStart="false"
-       ReAidingIntervalSec="1200"
+       ReAidingIntervalSec="3600"
        RuntimeSwLteFilterEnable="true"
        MaxThreadNum="13"
        SensorsMask="0x244"
@@ -92,6 +92,8 @@
 
        EnableB1C="false"
        EnableCoex="true"
+
+       RTICacheTimeoutSec="3600"
   />
 
   <gll_features

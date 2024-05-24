@@ -175,17 +175,7 @@
             "Multiplier":1,
             "Monitor":true,
             "PollingDelay":0,
-            "PassiveDelay":1000,
-            "BindedCdevInfo": [
-                {
-                    "CdevRequest": "thermal-cpufreq-2",
-                    "LimitInfo": [0, 0, 0, 0, 7, 7, 7]
-                },
-                {
-                    "CdevRequest": "thermal-gpufreq-0",
-                    "LimitInfo": [0, 0, 0, 0, 3, 3, 3]
-                }
-            ]
+            "PassiveDelay":1000
         },
         {
             "Name":"BCL_AUDIO_BAACL",
@@ -239,17 +229,7 @@
             "Multiplier":1,
             "Monitor":true,
             "PollingDelay":0,
-            "PassiveDelay":1000,
-            "BindedCdevInfo": [
-                {
-                    "CdevRequest": "thermal-cpufreq-2",
-                    "LimitInfo": [0, 0, 0, 0, 7, 10, 10]
-                },
-                {
-                    "CdevRequest": "thermal-gpufreq-0",
-                    "LimitInfo": [0, 0, 0, 0, 2, 2, 2]
-                }
-            ]
+            "PassiveDelay":1000
         },
         {
             "Name":"vdroop2",
@@ -276,17 +256,7 @@
             "Multiplier":1,
             "Monitor":true,
             "PollingDelay":0,
-            "PassiveDelay":1000,
-            "BindedCdevInfo": [
-                {
-                    "CdevRequest": "thermal-cpufreq-2",
-                    "LimitInfo": [0, 0, 0, 0, 7, 10, 10]
-                },
-                {
-                    "CdevRequest": "thermal-gpufreq-0",
-                    "LimitInfo": [0, 0, 0, 0, 4, 4, 4]
-                }
-            ]
+            "PassiveDelay":1000
         },
         {
             "Name":"smpl_gm",
@@ -313,161 +283,7 @@
             "Multiplier":1,
             "Monitor":true,
             "PollingDelay":0,
-            "PassiveDelay":1000,
-            "BindedCdevInfo": [
-                {
-                    "CdevRequest": "thermal-cpufreq-2",
-                    "LimitInfo": [0, 0, 0, 0, 7, 10, 10]
-                },
-                {
-                    "CdevRequest": "thermal-gpufreq-0",
-                    "LimitInfo": [0, 0, 0, 0, 3, 3, 3]
-                }
-            ]
-        },
-        {
-            "Name":"ocp_cpu2",
-            "Type":"BCL_CURRENT",
-            "HotThreshold":[
-                "NaN",
-                "NaN",
-                "NaN",
-                "NaN",
-                12000,
-                "NaN",
-                "NaN"
-            ],
-            "HotHysteresis":[
-                0.0,
-                0.0,
-                0.0,
-                0.0,
-                100,
-                0.0,
-                0.0
-            ],
-            "VrThreshold":"NaN",
-            "Multiplier":1
-        },
-        {
-            "Name":"ocp_tpu",
-            "Type":"BCL_CURRENT",
-            "HotThreshold":[
-                "NaN",
-                "NaN",
-                "NaN",
-                "NaN",
-                10500,
-                "NaN",
-                "NaN"
-            ],
-            "HotHysteresis":[
-                0.0,
-                0.0,
-                0.0,
-                0.0,
-                100,
-                0.0,
-                0.0
-            ],
-            "VrThreshold":"NaN",
-            "Multiplier":1
-        },
-        {
-            "Name":"ocp_gpu",
-            "Type":"BCL_CURRENT",
-            "HotThreshold":[
-                "NaN",
-                "NaN",
-                "NaN",
-                "NaN",
-                12000,
-                "NaN",
-                "NaN"
-            ],
-            "HotHysteresis":[
-                0.0,
-                0.0,
-                0.0,
-                0.0,
-                100,
-                0.0,
-                0.0
-            ],
-            "VrThreshold":"NaN",
-            "Multiplier":1
-        },
-        {
-            "Name":"soft_ocp_cpu2",
-            "Type":"BCL_CURRENT",
-            "HotThreshold":[
-                "NaN",
-                "NaN",
-                "NaN",
-                "NaN",
-                9000,
-                "NaN",
-                "NaN"
-            ],
-            "HotHysteresis":[
-                0.0,
-                0.0,
-                0.0,
-                0.0,
-                100,
-                0.0,
-                0.0
-            ],
-            "VrThreshold":"NaN",
-            "Multiplier":1
-        },
-        {
-            "Name":"soft_ocp_tpu",
-            "Type":"BCL_CURRENT",
-            "HotThreshold":[
-                "NaN",
-                "NaN",
-                "NaN",
-                "NaN",
-                8500,
-                "NaN",
-                "NaN"
-            ],
-            "HotHysteresis":[
-                0.0,
-                0.0,
-                0.0,
-                0.0,
-                100,
-                0.0,
-                0.0
-            ],
-            "VrThreshold":"NaN",
-            "Multiplier":1
-        },
-        {
-            "Name":"soft_ocp_gpu",
-            "Type":"BCL_CURRENT",
-            "HotThreshold":[
-                "NaN",
-                "NaN",
-                "NaN",
-                "NaN",
-                9000,
-                "NaN",
-                "NaN"
-            ],
-            "HotHysteresis":[
-                0.0,
-                0.0,
-                0.0,
-                0.0,
-                100,
-                0.0,
-                0.0
-            ],
-            "VrThreshold":"NaN",
-            "Multiplier":1
+            "PassiveDelay":1000
         },
         {
             "Name":"TPU",

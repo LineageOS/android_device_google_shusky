@@ -17,7 +17,7 @@
 AUDIO_TABLE_FOLDER := shiba
 
 # Choose AIDL config by build flag.
-ifeq ($(RELEASE_PIXEL_AIDL_AUDIO_HAL),true)
+ifeq ($(USE_AUDIO_HAL_AIDL),true)
 PRODUCT_SOONG_NAMESPACES += device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/aidl_config
 PRODUCT_PACKAGES += audio_aidl_configs
 
@@ -31,7 +31,7 @@ PRODUCT_COPY_FILES += \
     device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/config/sound_trigger_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_configuration.xml \
     device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
     device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/config/audio_policy_configuration_le_offload_disabled.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration_le_offload_disabled.xml \
-    frameworks/av/services/audiopolicy/config/bluetooth_with_le_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration_7_0.xml
+    device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/config/bluetooth_with_le_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration_7_0.xml
 
 # AudioEffectHAL Configuration
 PRODUCT_COPY_FILES += \
