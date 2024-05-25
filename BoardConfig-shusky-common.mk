@@ -29,4 +29,5 @@ BOARD_KERNEL_MODULES_16K := $(filter-out %/bcm_dbg.ko,$(BOARD_KERNEL_MODULES_16K
 BOARD_KERNEL_MODULES_LOAD_16K := $(foreach module,$(BOARD_KERNEL_MODULES_16K),$(notdir $(module)))
 
 BOARD_16K_OTA_USE_INCREMENTAL := true
+BOARD_16K_OTA_MOVE_VENDOR := true
 endif
