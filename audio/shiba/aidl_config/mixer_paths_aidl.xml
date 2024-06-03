@@ -1410,7 +1410,7 @@
     <path name="bluetooth-sco-headset-microphones" />
   </path>
 
-  <path name="usb-headset-microphones">
+  <path name="usb-microphones">
     <ctl name="BUILDIN MIC ID CAPTURE LIST" id="0" value="0" />
     <ctl name="BUILDIN MIC ID CAPTURE LIST" id="1" value="3" />
     <ctl name="BUILDIN MIC ID CAPTURE LIST" id="2" value="2" />
@@ -1418,6 +1418,14 @@
     <ctl name="Audio Capture Mic Source" value="USB_MIC" />
     <ctl name="Voice Call Mic Source" value="USB_MIC" />
     <ctl name="MIC Record Soft Gain (dB)" value="0" />
+  </path>
+
+  <path name="usb-headset-microphones">
+    <path name="usb-microphones" />
+  </path>
+
+  <path name="usb-device-microphones">
+    <path name="usb-microphones" />
   </path>
 
   <!-- cs35l41 specific path to load firmware in cs35l41.c -->

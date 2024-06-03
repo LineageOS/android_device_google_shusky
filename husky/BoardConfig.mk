@@ -18,6 +18,7 @@
 BOARD_BOOTCONFIG += androidboot.load_modules_parallel=true
 
 # The modules which need to be loaded in sequential
+BOARD_KERNEL_CMDLINE += fips140.load_sequential=1
 BOARD_KERNEL_CMDLINE += exynos_drm.load_sequential=1
 BOARD_KERNEL_CMDLINE += g2d.load_sequential=1
 BOARD_KERNEL_CMDLINE += samsung_iommu_v9.load_sequential=1
@@ -27,14 +28,9 @@ TARGET_BOOTLOADER_BOARD_NAME := husky
 
 RELEASE_GOOGLE_PRODUCT_RADIO_DIR := $(RELEASE_GOOGLE_HUSKY_RADIO_DIR)
 RELEASE_GOOGLE_PRODUCT_RADIOCFG_DIR := $(RELEASE_GOOGLE_HUSKY_RADIOCFG_DIR)
-ifneq (,$(filter AP1%,$(RELEASE_PLATFORM_VERSION)))
-RELEASE_GOOGLE_PRODUCT_BOOTLOADER_DIR := bootloader/24Q1
-else ifneq (,$(filter AP2% AP3%,$(RELEASE_PLATFORM_VERSION)))
-RELEASE_GOOGLE_PRODUCT_BOOTLOADER_DIR := bootloader/24Q2
-else
-RELEASE_GOOGLE_PRODUCT_BOOTLOADER_DIR := bootloader/trunk
-endif
-
+RELEASE_GOOGLE_BOOTLOADER_HUSKY_DIR ?= pdk# Keep this for pdk TODO: b/327119000
+RELEASE_GOOGLE_PRODUCT_BOOTLOADER_DIR := bootloader/$(RELEASE_GOOGLE_BOOTLOADER_HUSKY_DIR)
+$(call soong_config_set,shusky_bootloader,prebuilt_dir,$(RELEASE_GOOGLE_BOOTLOADER_HUSKY_DIR))
 
 ifdef PHONE_CAR_BOARD_PRODUCT
     include vendor/auto/embedded/products/$(PHONE_CAR_BOARD_PRODUCT)/BoardConfig.mk
@@ -51,6 +47,7 @@ BOARD_KERNEL_CMDLINE += disable_dma32=on
 WIFI_FEATURE_REAR_CAMERA_SAR := true
 $(call soong_config_set,wifi,feature_rear_camera_sar,$(WIFI_FEATURE_REAR_CAMERA_SAR))
 
+include device/google/shusky/BoardConfig-shusky-common.mk
 include device/google/shusky/device-shusky-common.mk
 
 include device/google/zuma/BoardConfig-common.mk
@@ -59,11 +56,6 @@ include device/google/zuma/BoardConfig-common.mk
 include device/google/shusky-sepolicy/husky-sepolicy.mk
 include device/google/shusky/wifi/BoardConfig-wifi.mk
 
-# Android Virtualization Framework (AVF) team is using husky with hypervisor in
-# nvhe mode as a development platform to build infrastructure that supports
-# assigning devices to guest VMs.
-#
-# TODO(b/278008514): remove this once we have builds from our kernel branch.
-ifeq ($(HUSKY_ENABLE_DEVICE_ASSIGNMENT), true)
-BOARD_KERNEL_CMDLINE += kvm-arm.mode=nvhe
+ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+-include device/google/common/etm/5_15/BoardUserdebugModules.mk
 endif

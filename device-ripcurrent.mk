@@ -17,17 +17,9 @@
 # Restrict the visibility of Android.bp files to improve build analysis time
 $(call inherit-product-if-exists, vendor/google/products/sources_pixel.mk)
 
-TARGET_KERNEL_DIR ?= device/google/shusky-kernel
-TARGET_BOARD_KERNEL_HEADERS ?= device/google/shusky-kernel/kernel-headers
-
-ifdef RELEASE_GOOGLE_RIPCURRENT_KERNEL_VERSION
-TARGET_LINUX_KERNEL_VERSION := $(RELEASE_GOOGLE_RIPCURRENT_KERNEL_VERSION)
-endif
-
-ifdef RELEASE_GOOGLE_RIPCURRENT_KERNEL_DIR
-TARGET_KERNEL_DIR := $(RELEASE_GOOGLE_RIPCURRENT_KERNEL_DIR)
-TARGET_BOARD_KERNEL_HEADERS := $(RELEASE_GOOGLE_RIPCURRENT_KERNEL_DIR)/kernel-headers
-endif
+TARGET_LINUX_KERNEL_VERSION := $(RELEASE_KERNEL_RIPCURRENT_VERSION)
+TARGET_KERNEL_DIR ?= $(RELEASE_KERNEL_RIPCURRENT_DIR)
+TARGET_BOARD_KERNEL_HEADERS ?= $(RELEASE_KERNEL_RIPCURRENT_DIR)/kernel-headers
 
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
     USE_UWBFIELDTESTQM := true
@@ -191,6 +183,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.leaudio.dual_bidirection_swb.supported=true
 
+# Support LE & Classic concurrent encryption (b/330704060)
+PRODUCT_PRODUCT_PROPERTIES += \
+    bluetooth.ble.allow_enc_with_bredr=true
+
 # Keymaster HAL
 #LOCAL_KEYMASTER_PRODUCT_PACKAGE ?= android.hardware.keymaster@4.1-service
 
@@ -231,13 +227,6 @@ PRODUCT_PACKAGES += \
 
 # Trusty liboemcrypto.so
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts
-ifneq (,$(filter AP1%,$(RELEASE_PLATFORM_VERSION)))
-PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts/trusty/24Q1
-else ifneq (,$(filter AP2% AP3%,$(RELEASE_PLATFORM_VERSION)))
-PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts/trusty/24Q2
-else
-PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts/trusty/trunk
-endif
 
 # UWB
 PRODUCT_SOONG_NAMESPACES += \
@@ -276,6 +265,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.camera.front_720P_always_binning=true
 
 # Vibrator HAL
+$(call soong_config_set,haptics,kernel_ver,v$(subst .,_,$(TARGET_LINUX_KERNEL_VERSION)))
 ACTUATOR_MODEL := luxshare_ict_081545
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.vibrator.hal.chirp.enabled=0 \

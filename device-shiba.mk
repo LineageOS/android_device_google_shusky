@@ -17,20 +17,22 @@
 # Restrict the visibility of Android.bp files to improve build analysis time
 $(call inherit-product-if-exists, vendor/google/products/sources_pixel.mk)
 
-ifdef RELEASE_GOOGLE_SHIBA_KERNEL_VERSION
-TARGET_LINUX_KERNEL_VERSION := $(RELEASE_GOOGLE_SHIBA_KERNEL_VERSION)
-endif
-
-ifdef RELEASE_GOOGLE_SHIBA_KERNEL_DIR
+TARGET_LINUX_KERNEL_VERSION := $(RELEASE_KERNEL_SHIBA_VERSION)
 # Keeps flexibility for kasan and ufs builds
-TARGET_KERNEL_DIR ?= $(RELEASE_GOOGLE_SHIBA_KERNEL_DIR)
-TARGET_BOARD_KERNEL_HEADERS ?= $(RELEASE_GOOGLE_SHIBA_KERNEL_DIR)/kernel-headers
-else
-TARGET_KERNEL_DIR ?= device/google/shusky-kernel
-TARGET_BOARD_KERNEL_HEADERS ?= device/google/shusky-kernel/kernel-headers
-endif
+TARGET_KERNEL_DIR ?= $(RELEASE_KERNEL_SHIBA_DIR)
+TARGET_BOARD_KERNEL_HEADERS ?= $(RELEASE_KERNEL_SHIBA_DIR)/kernel-headers
 
 LOCAL_PATH := device/google/shusky
+
+DEVICE_PAGE_AGNOSTIC ?= $(if $(filter %_pgagnostic,$(TARGET_PRODUCT)),true,false)
+
+ifeq ($(DEVICE_PAGE_AGNOSTIC),true)
+TARGET_USERDATAIMAGE_FILE_SYSTEM_TYPE := ext4
+TARGET_KERNEL_DIR := $(RELEASE_KERNEL_SHIBA_DIR)/16kb
+TARGET_RW_FILE_SYSTEM_TYPE := ext4
+else
+PRODUCT_16K_DEVELOPER_OPTION := $(RELEASE_GOOGLE_SHIBA_16K_DEVELOPER_OPTION)
+endif
 
 $(call inherit-product-if-exists, vendor/google_devices/shusky/prebuilts/device-vendor-shiba.mk)
 $(call inherit-product-if-exists, vendor/google_devices/zuma/prebuilts/device-vendor.mk)
@@ -227,6 +229,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.leaudio.dual_bidirection_swb.supported=true
 
+# Support LE & Classic concurrent encryption (b/330704060)
+PRODUCT_PRODUCT_PROPERTIES += \
+    bluetooth.ble.allow_enc_with_bredr=true
+
 # Support One-Handed mode
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.support_one_handed_mode=true
@@ -273,13 +279,6 @@ PRODUCT_PACKAGES += \
 
 # Trusty liboemcrypto.so
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts
-ifneq (,$(filter AP1%,$(RELEASE_PLATFORM_VERSION)))
-PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts/trusty/24Q1
-else ifneq (,$(filter AP2% AP3%,$(RELEASE_PLATFORM_VERSION)))
-PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts/trusty/24Q2
-else
-PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts/trusty/trunk
-endif
 
 # Location
 # SDK build system
@@ -306,14 +305,8 @@ PRODUCT_VENDOR_PROPERTIES += \
 	persist.device_config.configuration.disable_rescue_party=true
 
 # Fingerprint HAL
-ifneq (,$(filter AP1%,$(RELEASE_PLATFORM_VERSION)))
-APEX_FPS_TA_DIR := //vendor/google_devices/shusky/prebuilts/firmware/fingerprint/24Q1
-else ifneq (,$(filter AP2% AP3%,$(RELEASE_PLATFORM_VERSION)))
-APEX_FPS_TA_DIR := //vendor/google_devices/shusky/prebuilts/firmware/fingerprint/24Q2
-else
-APEX_FPS_TA_DIR := //vendor/google_devices/shusky/prebuilts/firmware/fingerprint/trunk
-endif
 GOODIX_CONFIG_BUILD_VERSION := g7_trusty
+APEX_FPS_TA_DIR := //vendor/google_devices/shusky/prebuilts
 $(call inherit-product-if-exists, vendor/goodix/udfps/configuration/udfps_common.mk)
 ifeq ($(filter factory%, $(TARGET_PRODUCT)),)
 $(call inherit-product-if-exists, vendor/goodix/udfps/configuration/udfps_shipping.mk)
@@ -358,6 +351,7 @@ PRODUCT_PRODUCT_PROPERTIES += ro.odm.build.media_performance_class=34
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.lbe.supported=1
 
 # Vibrator HAL
+$(call soong_config_set,haptics,kernel_ver,v$(subst .,_,$(TARGET_LINUX_KERNEL_VERSION)))
 ACTUATOR_MODEL := luxshare_ict_081545
 ADAPTIVE_HAPTICS_FEATURE := adaptive_haptics_v1
 PRODUCT_VENDOR_PROPERTIES += \
@@ -379,7 +373,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # Increment the SVN for any official public releases
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.build.svn=22
+    ro.vendor.build.svn=26
 
 # P23 Devices no longer need rlsservice
 PRODUCT_VENDOR_PROPERTIES += \
@@ -441,3 +435,9 @@ PRODUCT_PACKAGES += \
     NoCutoutOverlay \
     AvoidAppsInCutoutOverlay
 
+# ETM
+ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+$(call inherit-product-if-exists, device/google/common/etm/device-userdebug-modules.mk)
+endif
+
+PRODUCT_NO_BIONIC_PAGE_SIZE_MACRO := true

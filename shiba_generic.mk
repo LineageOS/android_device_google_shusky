@@ -1,5 +1,5 @@
 #
-# Copyright 2023 The Android Open-Source Project
+# Copyright 2024 The Android Open-Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,13 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-$(call inherit-product, device/google/shusky/aosp_husky.mk)
 
-PRODUCT_NAME := aosp_husky_pgagnostic
-PRODUCT_MODEL := AOSP page-size agnostic Husky 16KB ELF
+$(call inherit-product, device/google/shusky/device-shiba.mk)
 
-PRODUCT_NO_BIONIC_PAGE_SIZE_MACRO := true
-PRODUCT_MAX_PAGE_SIZE_SUPPORTED := 16384
-
-TARGET_USERDATAIMAGE_FILE_SYSTEM_TYPE := ext4
-
+# preloaded_nanoapps.json
+PRODUCT_SOONG_NAMESPACES += vendor/google_contexthub/devices/p23_common

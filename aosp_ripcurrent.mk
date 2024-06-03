@@ -20,7 +20,7 @@ USE_SWIFTSHADER := true
 BOARD_USES_SWIFTSHADER := true
 
 $(call inherit-product, device/google/zuma/aosp_common.mk)
-$(call inherit-product, device/google/shusky/device-ripcurrent.mk)
+$(call inherit-product, device/google/shusky/ripcurrent_generic.mk)
 
 PRODUCT_NAME := aosp_ripcurrent
 PRODUCT_DEVICE := ripcurrent
