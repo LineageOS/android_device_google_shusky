@@ -111,7 +111,17 @@
         "2000",
         "500"
       ],
-      "DefaultIndex": 0,
+      "DefaultIndex": 2,
+      "ResetOnInit": true
+    },
+    {
+      "Name": "CPULittleClusterResponseTimeMs",
+      "Path": "/sys/devices/system/cpu/cpu0/cpufreq/sched_pixel/response_time_ms",
+      "Values": [
+        "8",
+        "13"
+      ],
+      "DefaultIndex": 1,
       "ResetOnInit": true
     },
     {
@@ -148,7 +158,17 @@
         "2000",
         "500"
       ],
-      "DefaultIndex": 0,
+      "DefaultIndex": 3,
+      "ResetOnInit": true
+    },
+    {
+      "Name": "CPUMidClusterResponseTimeMs",
+      "Path": "/sys/devices/system/cpu/cpu4/cpufreq/sched_pixel/response_time_ms",
+      "Values": [
+        "51",
+        "56"
+      ],
+      "DefaultIndex": 1,
       "ResetOnInit": true
     },
     {
@@ -185,7 +205,17 @@
         "2000",
         "500"
       ],
-      "DefaultIndex": 0,
+      "DefaultIndex": 3,
+      "ResetOnInit": true
+    },
+    {
+      "Name": "CPUBigClusterResponseTimeMs",
+      "Path": "/sys/devices/system/cpu/cpu8/cpufreq/sched_pixel/response_time_ms",
+      "Values": [
+        "167",
+        "170"
+      ],
+      "DefaultIndex": 1,
       "ResetOnInit": true
     },
     {
@@ -264,6 +294,70 @@
         "1"
       ],
       "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
+      "Name": "AutoMigrationMarginsEnable",
+      "Path": "/proc/vendor_sched/auto_migration_margins_enable",
+      "Values": [
+        "0",
+        "1"
+      ],
+      "DefaultIndex": 1,
+      "ResetOnInit": true
+    },
+    {
+      "Name": "AutoDvfsHeadroomEnable",
+      "Path": "/proc/vendor_sched/auto_dvfs_headroom_enable",
+      "Values": [
+        "0",
+        "1"
+      ],
+      "DefaultIndex": 1,
+      "ResetOnInit": true
+    },
+    {
+      "Name": "TARampupMultiplier",
+      "Path": "/proc/vendor_sched/groups/ta/rampup_multiplier",
+      "Values": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "DefaultIndex": 1,
+      "ResetOnInit": true
+    },
+    {
+      "Name": "AdpfRampupMultiplier",
+      "Path": "/proc/vendor_sched/adpf_rampup_multiplier",
+      "Values": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "DefaultIndex": 4,
+      "ResetOnInit": true
+    },
+    {
+      "Name": "PerTaskMaxIowaitBoost",
+      "Path": "/proc/vendor_sched/per_task_iowait_boost_max_value",
+      "Values": [
+        "0",
+        "512"
+      ],
+      "DefaultIndex": 1,
       "ResetOnInit": true
     },
     {
@@ -1120,6 +1214,12 @@
       "Value": "1"
     },
     {
+      "PowerHint": "LAUNCH",
+      "Node": "TARampupMultiplier",
+      "Duration": 5000,
+      "Value": "4"
+    },
+    {
       "PowerHint": "LAUNCH_EXTEND",
       "Node": "CPUSkipMask",
       "Duration": 2000,
@@ -1208,6 +1308,12 @@
       "Node": "AutoPreferIdle",
       "Duration": 2000,
       "Value": "0"
+    },
+    {
+      "PowerHint": "LAUNCH_EXTEND",
+      "Node": "TARampupMultiplier",
+      "Duration": 2000,
+      "Value": "4"
     },
     {
       "PowerHint": "LAUNCH_PMU",
@@ -1413,6 +1519,12 @@
     {
       "PowerHint": "DISPLAY_INACTIVE",
       "Node": "FGPreferIdle",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "DISPLAY_INACTIVE",
+      "Node": "PerTaskMaxIowaitBoost",
       "Duration": 0,
       "Value": "0"
     },
@@ -1838,6 +1950,42 @@
     },
     {
       "PowerHint": "CAMERA_STREAMING_EXTREME",
+      "Node": "AutoMigrationMarginsEnable",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_EXTREME",
+      "Node": "AutoDvfsHeadroomEnable",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_EXTREME",
+      "Node": "PerTaskMaxIowaitBoost",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_EXTREME",
+      "Node": "CPULittleClusterDownRateLimitUs",
+      "Duration": 0,
+      "Value": "5000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_EXTREME",
+      "Node": "CPUMidClusterDownRateLimitUs",
+      "Duration": 0,
+      "Value": "20000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_EXTREME",
+      "Node": "CPUBigClusterDownRateLimitUs",
+      "Duration": 0,
+      "Value": "20000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_EXTREME",
       "Node": "CPUDVFSHeadroom",
       "Duration": 0,
       "Value": "1100"
@@ -1997,6 +2145,42 @@
       "Node": "EM_Profile",
       "Duration": 0,
       "Value": "cam2"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_HIGH",
+      "Node": "AutoMigrationMarginsEnable",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_HIGH",
+      "Node": "AutoDvfsHeadroomEnable",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_HIGH",
+      "Node": "PerTaskMaxIowaitBoost",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_HIGH",
+      "Node": "CPULittleClusterDownRateLimitUs",
+      "Duration": 0,
+      "Value": "5000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_HIGH",
+      "Node": "CPUMidClusterDownRateLimitUs",
+      "Duration": 0,
+      "Value": "20000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_HIGH",
+      "Node": "CPUBigClusterDownRateLimitUs",
+      "Duration": 0,
+      "Value": "20000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
@@ -2192,6 +2376,42 @@
     },
     {
       "PowerHint": "CAMERA_STREAMING_STANDARD",
+      "Node": "AutoMigrationMarginsEnable",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_STANDARD",
+      "Node": "AutoDvfsHeadroomEnable",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_STANDARD",
+      "Node": "PerTaskMaxIowaitBoost",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_STANDARD",
+      "Node": "CPULittleClusterDownRateLimitUs",
+      "Duration": 0,
+      "Value": "5000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_STANDARD",
+      "Node": "CPUMidClusterDownRateLimitUs",
+      "Duration": 0,
+      "Value": "20000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_STANDARD",
+      "Node": "CPUBigClusterDownRateLimitUs",
+      "Duration": 0,
+      "Value": "20000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_STANDARD",
       "Node": "CPUUtilThreshold",
       "Duration": 0,
       "Value": "1280"
@@ -2279,6 +2499,42 @@
       "Node": "AutoPreferIdle",
       "Duration": 0,
       "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_LOW",
+      "Node": "AutoMigrationMarginsEnable",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_LOW",
+      "Node": "AutoDvfsHeadroomEnable",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_LOW",
+      "Node": "PerTaskMaxIowaitBoost",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_LOW",
+      "Node": "CPULittleClusterDownRateLimitUs",
+      "Duration": 0,
+      "Value": "5000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_LOW",
+      "Node": "CPUMidClusterDownRateLimitUs",
+      "Duration": 0,
+      "Value": "20000"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_LOW",
+      "Node": "CPUBigClusterDownRateLimitUs",
+      "Duration": 0,
+      "Value": "20000"
     },
     {
       "PowerHint": "CAMERA_STREAMING_LOW",
@@ -2489,6 +2745,24 @@
       "Node": "CPUUtilThreshold",
       "Duration": 0,
       "Value": "1100"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
+      "Node": "AutoMigrationMarginsEnable",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
+      "Node": "AutoDvfsHeadroomEnable",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
+      "Node": "PerTaskMaxIowaitBoost",
+      "Duration": 0,
+      "Value": "0"
     },
     {
       "PowerHint": "CAMERA_STREAMING_VIDEO_CALL",
@@ -2762,6 +3036,36 @@
       "EnableProperty": "vendor.powerhal.mode.aa"
     },
     {
+      "PowerHint": "DISPLAY_IDLE",
+      "Node": "TARampupMultiplier",
+      "Duration": 0,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "DISPLAY_IDLE",
+      "Node": "AdpfRampupMultiplier",
+      "Duration": 0,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "DISPLAY_IDLE",
+      "Node": "CPULittleClusterResponseTimeMs",
+      "Duration": 0,
+      "Value": "13"
+    },
+    {
+      "PowerHint": "DISPLAY_IDLE",
+      "Node": "CPUMidClusterResponseTimeMs",
+      "Duration": 0,
+      "Value": "56"
+    },
+    {
+      "PowerHint": "DISPLAY_IDLE",
+      "Node": "CPUBigClusterResponseTimeMs",
+      "Duration": 0,
+      "Value": "170"
+    },
+    {
       "PowerHint": "DISPLAY_UPDATE_IMMINENT",
       "Node": "CPULittleClusterDownRateLimitUs",
       "Duration": 50,
@@ -2862,6 +3166,54 @@
       "Node": "NPITaskPacking",
       "Duration": 0,
       "Value": "1"
+    },
+    {
+      "PowerHint": "GAME",
+      "Node": "AutoMigrationMarginsEnable",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "GAME",
+      "Node": "AutoDvfsHeadroomEnable",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "GAME",
+      "Node": "TARampupMultiplier",
+      "Duration": 0,
+      "Value": "1"
+    },
+    {
+      "PowerHint": "GAME",
+      "Node": "AdpfRampupMultiplier",
+      "Duration": 0,
+      "Value": "2"
+    },
+    {
+      "PowerHint": "GAME",
+      "Node": "CPULittleClusterResponseTimeMs",
+      "Duration": 0,
+      "Value": "8"
+    },
+    {
+      "PowerHint": "GAME",
+      "Node": "CPUMidClusterResponseTimeMs",
+      "Duration": 0,
+      "Value": "51"
+    },
+    {
+      "PowerHint": "GAME",
+      "Node": "CPUBigClusterResponseTimeMs",
+      "Duration": 0,
+      "Value": "167"
+    },
+    {
+      "PowerHint": "GAME",
+      "Node": "PerTaskMaxIowaitBoost",
+      "Duration": 0,
+      "Value": "0"
     },
     {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_LIGHT",
@@ -3048,6 +3400,42 @@
       "Node": "PMQoSCpuDmaLatency",
       "Duration": 2000,
       "Value": "44"
+    },
+    {
+      "PowerHint": "CAMERA_PROJECT11",
+      "Node": "AutoMigrationMarginsEnable",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_PROJECT11",
+      "Node": "AutoDvfsHeadroomEnable",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_PROJECT11",
+      "Node": "PerTaskMaxIowaitBoost",
+      "Duration": 0,
+      "Value": "0"
+    },
+    {
+      "PowerHint": "CAMERA_PROJECT11",
+      "Node": "CPULittleClusterDownRateLimitUs",
+      "Duration": 0,
+      "Value": "5000"
+    },
+    {
+      "PowerHint": "CAMERA_PROJECT11",
+      "Node": "CPUMidClusterDownRateLimitUs",
+      "Duration": 0,
+      "Value": "20000"
+    },
+    {
+      "PowerHint": "CAMERA_PROJECT11",
+      "Node": "CPUBigClusterDownRateLimitUs",
+      "Duration": 0,
+      "Value": "20000"
     },
     {
       "PowerHint": "CAMERA_PROJECT11",
