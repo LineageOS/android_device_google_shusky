@@ -283,6 +283,8 @@
     <!-- MMS user agent profile url -->
     <string name="config_mms_user_agent_profile_url" translatable="false">http://www.gstatic.com/android/sms/GKWS6.xml</string>
 
+    <bool name="config_safe_sound_dosage_enabled">true</bool>
+
     <!-- The max vibration strength allowed in audio haptic channels. -->
     <item name="config_hapticChannelMaxVibrationAmplitude" format="float" type="dimen">0.335</item>
 

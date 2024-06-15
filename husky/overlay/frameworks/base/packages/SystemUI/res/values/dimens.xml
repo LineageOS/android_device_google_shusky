@@ -28,4 +28,7 @@
     <dimen name="lock_icon_padding">57px</dimen>
 
     <dimen name="udfps_burn_in_offset_y">19px</dimen>
+
+     <!-- Pixel pitch of the device. um/px -->
+    <item name="pixel_pitch" format="float" type="dimen">51.9</item>
 </resources>

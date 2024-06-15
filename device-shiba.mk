@@ -20,6 +20,15 @@ $(call inherit-product-if-exists, vendor/google/products/sources_pixel.mk)
 TARGET_KERNEL_DIR ?= device/google/shusky-kernel
 TARGET_BOARD_KERNEL_HEADERS ?= device/google/shusky-kernel/kernel-headers
 
+ifdef RELEASE_GOOGLE_SHIBA_KERNEL_VERSION
+TARGET_LINUX_KERNEL_VERSION := $(RELEASE_GOOGLE_SHIBA_KERNEL_VERSION)
+endif
+
+ifdef RELEASE_GOOGLE_SHIBA_KERNEL_DIR
+TARGET_KERNEL_DIR := $(RELEASE_GOOGLE_SHIBA_KERNEL_DIR)
+TARGET_BOARD_KERNEL_HEADERS := $(RELEASE_GOOGLE_SHIBA_KERNEL_DIR)/kernel-headers
+endif
+
 LOCAL_PATH := device/google/shusky
 
 $(call inherit-product-if-exists, vendor/google_devices/shusky/prebuilts/device-vendor-shiba.mk)
@@ -32,8 +41,12 @@ $(call inherit-product-if-exists, vendor/google_devices/shusky/proprietary/Wallp
 DEVICE_PACKAGE_OVERLAYS += device/google/shusky/shiba/overlay
 CAMERA_PRODUCT ?= shiba
 
-include device/google/shusky/audio/shiba/audio-tables.mk
+ifeq ($(RELEASE_PIXEL_AIDL_AUDIO_HAL_ZUMA),true)
+USE_AUDIO_HAL_AIDL := true
+endif
+
 include device/google/shusky/camera/camera.mk
+include device/google/shusky/audio/shiba/audio-tables.mk
 include device/google/zuma/device-shipping-common.mk
 include hardware/google/pixel/vibrator/cs40l26/device.mk
 include device/google/gs-common/bcmbt/bluetooth.mk
@@ -113,6 +126,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
        ro.audio.spatializer_enabled=true
 
+# Sound Dose
+PRODUCT_PACKAGES += \
+	android.hardware.audio.sounddose-vendor-impl \
+	audio_sounddose_aoc
+
 # Audio CCA property
 PRODUCT_PROPERTY_OVERRIDES += \
 	persist.vendor.audio.cca.enabled=false
@@ -172,13 +190,19 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # Bluetooth LE Audio
 PRODUCT_PRODUCT_PROPERTIES += \
-	ro.bluetooth.leaudio_switcher.supported=true \
-	bluetooth.profile.bap.unicast.client.enabled=true \
-	bluetooth.profile.csip.set_coordinator.enabled=true \
-	bluetooth.profile.hap.client.enabled=true \
-	bluetooth.profile.mcp.server.enabled=true \
-	bluetooth.profile.ccp.server.enabled=true \
-	bluetooth.profile.vcp.controller.enabled=true
+	ro.bluetooth.leaudio_switcher.supported?=true \
+	bluetooth.profile.bap.unicast.client.enabled?=true \
+	bluetooth.profile.csip.set_coordinator.enabled?=true \
+	bluetooth.profile.hap.client.enabled?=true \
+	bluetooth.profile.mcp.server.enabled?=true \
+	bluetooth.profile.ccp.server.enabled?=true \
+	bluetooth.profile.vcp.controller.enabled?=true
+
+ifeq ($(RELEASE_PIXEL_BROADCAST_ENABLED), true)
+PRODUCT_PRODUCT_PROPERTIES += \
+	bluetooth.profile.bap.broadcast.assist.enabled=true \
+	bluetooth.profile.bap.broadcast.source.enabled=true
+endif
 
 # Bluetooth LE Audio enable hardware offloading
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -191,7 +215,7 @@ PRODUCT_COPY_FILES += \
 
 # LE Audio Unicast Allowlist
 PRODUCT_PRODUCT_PROPERTIES += \
-    persist.bluetooth.leaudio.allow_list=SM-R510
+    persist.bluetooth.leaudio.allow_list=SM-R510,WF-1000XM5
 
 # Bluetooth LE Audio CIS handover to SCO
 # Set the property only for the controller couldn't support CIS/SCO simultaneously. More detailed in b/242908683.
@@ -250,7 +274,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts
 ifneq (,$(filter AP1%,$(RELEASE_PLATFORM_VERSION)))
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts/trusty/24Q1
-else ifneq (,$(filter AP2%,$(RELEASE_PLATFORM_VERSION)))
+else ifneq (,$(filter AP2% AP3%,$(RELEASE_PLATFORM_VERSION)))
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts/trusty/24Q2
 else
 PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts/trusty/trunk
@@ -283,7 +307,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 # Fingerprint HAL
 ifneq (,$(filter AP1%,$(RELEASE_PLATFORM_VERSION)))
 APEX_FPS_TA_DIR := //vendor/google_devices/shusky/prebuilts/firmware/fingerprint/24Q1
-else ifneq (,$(filter AP2%,$(RELEASE_PLATFORM_VERSION)))
+else ifneq (,$(filter AP2% AP3%,$(RELEASE_PLATFORM_VERSION)))
 APEX_FPS_TA_DIR := //vendor/google_devices/shusky/prebuilts/firmware/fingerprint/24Q2
 else
 APEX_FPS_TA_DIR := //vendor/google_devices/shusky/prebuilts/firmware/fingerprint/trunk
@@ -319,7 +343,8 @@ PRODUCT_COPY_FILES += \
 	device/google/shusky/shiba/display_colordata_google-bigsurf_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_colordata_google-bigsurf_cal0.pb \
 	device/google/shusky/shiba/display_colordata_google-shoreline_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_colordata_google-shoreline_cal0.pb \
     device/google/shusky/shiba/display_golden_google-bigsurf_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_golden_google-bigsurf_cal0.pb \
-    device/google/shusky/shiba/display_golden_google-shoreline_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_golden_google-shoreline_cal0.pb
+    device/google/shusky/shiba/display_golden_google-shoreline_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_golden_google-shoreline_cal0.pb \
+    device/google/shusky/display_golden_external_display_cal2.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_golden_external_display_cal2.pb
 
 # Camera Vendor property
 PRODUCT_VENDOR_PROPERTIES += \
@@ -353,7 +378,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # Increment the SVN for any official public releases
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.build.svn=23
+    ro.vendor.build.svn=26
 
 # P23 Devices no longer need rlsservice
 PRODUCT_VENDOR_PROPERTIES += \
@@ -406,3 +431,12 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 PRODUCT_PACKAGES += \
     NfcOverlayShiba
+
+# Set support hide display cutout feature
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.support_hide_display_cutout=true
+
+PRODUCT_PACKAGES += \
+    NoCutoutOverlay \
+    AvoidAppsInCutoutOverlay
+

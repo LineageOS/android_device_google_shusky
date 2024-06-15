@@ -18,5 +18,5 @@ $(call inherit-product, device/google/shusky/aosp_shiba.mk)
 PRODUCT_NAME := aosp_shiba_pgagnostic
 PRODUCT_MODEL := AOSP page-size agnostic Shiba 64K ELF
 
-PRODUCT_PAGE_SIZE_AGNOSTIC := true
+PRODUCT_NO_BIONIC_PAGE_SIZE_MACRO := true
 PRODUCT_MAX_PAGE_SIZE_SUPPORTED := 65536

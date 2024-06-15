@@ -249,7 +249,7 @@
         "1280",
         "1100"
       ],
-      "DefaultIndex": 0,
+      "DefaultIndex": 1,
       "ResetOnInit": true
     },
     {
@@ -297,6 +297,7 @@
       "Path": "/proc/vendor_sched/groups/cam/uclamp_min",
       "Values": [
         "765",
+        "250",
         "0"
       ],
       "ResetOnInit": true
@@ -777,15 +778,6 @@
         "20 40"
       ],
       "ResetOnInit": true
-    },
-    {
-      "Name": "SchedLibMaskIn",
-      "Path": "/proc/vendor_sched/sched_lib_mask_in",
-      "Values": [
-        "0x100",
-        "0x0"
-      ],
-      "ResetOnInit": true
     }
   ],
   "Actions": [
@@ -949,12 +941,6 @@
       "Value": "1"
     },
     {
-      "PowerHint": "LAUNCH",
-      "Node": "SchedLibMaskIn",
-      "Duration": 5000,
-      "Value": "0x100"
-    },
-    {
       "PowerHint": "LAUNCH_EXTEND",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 2000,
@@ -1031,12 +1017,6 @@
       "Node": "FGPreferIdle",
       "Duration": 2000,
       "Value": "1"
-    },
-    {
-      "PowerHint": "LAUNCH_EXTEND",
-      "Node": "SchedLibMaskIn",
-      "Duration": 5000,
-      "Value": "0x100"
     },
     {
       "PowerHint": "LAUNCH_PMU",
@@ -1638,6 +1618,12 @@
     },
     {
       "PowerHint": "CAMERA_STREAMING_EXTREME",
+      "Node": "CAMUClampBoost",
+      "Duration": 0,
+      "Value": "250"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_EXTREME",
       "Node": "PMU_LIT_LIMIT_FREQ",
       "Duration": 0,
       "Value": "1098000"
@@ -1926,6 +1912,12 @@
     },
     {
       "PowerHint": "CAMERA_STREAMING_STANDARD",
+      "Node": "CPUDVFSHeadroom",
+      "Duration": 0,
+      "Value": "1280"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_STANDARD",
       "Node": "PowerHALCameraRunning",
       "Duration": 0,
       "Value": "1"
@@ -2061,6 +2053,12 @@
       "Node": "VIRTUAL-SKIN-CPU-HIGH",
       "Duration": 0,
       "Value": "camera"
+    },
+    {
+      "PowerHint": "CAMERA_STREAMING_LOW",
+      "Node": "CPUDVFSHeadroom",
+      "Duration": 0,
+      "Value": "1280"
     },
     {
       "PowerHint": "CAMERA_STREAMING_LOW",
@@ -2604,12 +2602,6 @@
       "Value": "1"
     },
     {
-      "PowerHint": "GAME",
-      "Node": "SchedLibMaskIn",
-      "Duration": 0,
-      "Value": "0x100"
-    },
-    {
       "PowerHint": "THERMAL_VIRTUAL-SKIN-HINT_LIGHT",
       "Node": "PMU_POLL",
       "Duration": 0,
@@ -2939,7 +2931,7 @@
       "Name": "REFRESH_120FPS",
       "PID_On": true,
       "PID_Po": 2.0,
-      "PID_Pu": 1.0,
+      "PID_Pu": 0.6,
       "PID_I": 0.0,
       "PID_I_Init": 200,
       "PID_I_High": 512,
