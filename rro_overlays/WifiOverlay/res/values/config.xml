@@ -141,11 +141,6 @@
     <!-- boolean indicating whether or not to disable shutdown idle instance timer in the bridged mode when connected to a power source -->
     <bool translatable="false" name ="config_wifiFrameworkSoftApDisableBridgedModeShutdownIdleInstanceWhenCharging">true</bool>
 
-    <!-- Indicate whether the verbose logging is always on -->
-    <!-- 0: verbose logging controlled by user
-         1: verbose logging on by default for userdebug
-         2: verbose logging on by default for all builds -->
-    <integer translatable="false" name="config_wifiVerboseLoggingAlwaysOnLevel">1</integer>
     <!-- Boolean indicating whether DTIM multiplier configuration is enabled. DTIM multiplier value
         is when the system is in the suspended mode -->
     <bool translatable="false" name="config_wifiDtimMultiplierConfigEnabled">true</bool>
