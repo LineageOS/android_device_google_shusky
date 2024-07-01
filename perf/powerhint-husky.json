@@ -718,7 +718,7 @@
       "Values": [
         "50",
         "30",
-        "20",
+        "23",
         "18"
       ],
       "DefaultIndex": 0
@@ -1891,7 +1891,7 @@
       "PowerHint": "CAMERA_STREAMING_HIGH",
       "Node": "PMU_MID_SPC_THRESHOLD",
       "Duration": 0,
-      "Value": "20"
+      "Value": "23"
     },
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
