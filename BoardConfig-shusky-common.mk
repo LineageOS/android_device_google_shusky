@@ -14,7 +14,11 @@
 # limitations under the License.
 #
 
-ifeq ($(PRODUCT_16K_DEVELOPER_OPTION),true)
+ifeq ($(TARGET_BOOTS_16K),true)
+# Configures the 16kb kernel directory.
+TARGET_KERNEL_DIR := $(TARGET_KERNEL_DIR)/16kb
+
+else ifeq ($(PRODUCT_16K_DEVELOPER_OPTION),true)
 # Configures the 16kb kernel and modules for OTA updates.
 TARGET_KERNEL_DIR_16K := $(TARGET_KERNEL_DIR)/16kb
 BOARD_KERNEL_PATH_16K := $(TARGET_KERNEL_DIR_16K)/Image.lz4
