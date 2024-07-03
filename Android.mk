@@ -27,14 +27,4 @@ LOCAL_PATH := $(call my-dir)
 
 ifneq (,$(filter $(TARGET_DEVICE),ripcurrent husky shiba))
   include $(call all-makefiles-under,$(LOCAL_PATH))
-
-DISPLAY_LIBS := libpixeldisplaymanager_jni.so
-DISPLAY_SYMLINKS := $(addprefix $(TARGET_OUT_SYSTEM_EXT)/priv-app/PixelDisplayService/lib/arm64/,$(notdir $(DISPLAY_LIBS)))
-$(DISPLAY_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@echo "PixelDisplayService lib link: $@"
-	@mkdir -p $(dir $@)
-	@rm -rf $@
-	$(hide) ln -sf /system_ext/lib64/$(notdir $@) $@
-
-ALL_DEFAULT_INSTALLED_MODULES += $(DISPLAY_SYMLINKS)
 endif

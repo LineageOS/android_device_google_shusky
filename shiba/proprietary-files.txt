@@ -89,7 +89,7 @@ system_ext/framework/com.google.android.camera.extensions.jar
 system_ext/framework/com.google.android.camerax.extensions.jar
 
 # Display
-system_ext/lib64/libpixeldisplaymanager_jni.so
+system_ext/lib64/libpixeldisplaymanager_jni.so;SYMLINK=system_ext/priv-app/PixelDisplayService/lib/arm64/libpixeldisplaymanager_jni.so
 system_ext/priv-app/PixelDisplayService/PixelDisplayService.apk
 
 # Edge TPU
