@@ -382,6 +382,24 @@ endif
 PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.build.svn=$(TARGET_SVN)
 
+# Set device family property for SMR
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.device_family=HK3SB3AK3
+
+# Set build properties for SMR builds
+ifeq ($(RELEASE_IS_SMR), true)
+    ifneq (,$(RELEASE_BASE_OS_SHIBA))
+        PRODUCT_BASE_OS := $(RELEASE_BASE_OS_SHIBA)
+    endif
+endif
+
+# Set build properties for EMR builds
+ifeq ($(RELEASE_IS_EMR), true)
+    ifneq (,$(RELEASE_BASE_OS_SHIBA))
+        PRODUCT_PROPERTY_OVERRIDES += \
+        ro.build.version.emergency_base_os=$(RELEASE_BASE_OS_SHIBA)
+    endif
+endif
 # P23 Devices no longer need rlsservice
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.camera.rls_supported=false
