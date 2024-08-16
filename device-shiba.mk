@@ -24,11 +24,7 @@ TARGET_BOARD_KERNEL_HEADERS ?= $(RELEASE_KERNEL_SHIBA_DIR)/kernel-headers
 
 LOCAL_PATH := device/google/shusky
 
-ifeq ($(PRODUCT_BOOTS_16K),true)
-TARGET_USERDATAIMAGE_FILE_SYSTEM_TYPE := ext4
-TARGET_KERNEL_DIR := $(RELEASE_KERNEL_SHIBA_DIR)/16kb
-TARGET_RW_FILE_SYSTEM_TYPE := ext4
-else
+ifneq ($(TARGET_BOOTS_16K),true)
 PRODUCT_16K_DEVELOPER_OPTION := $(RELEASE_GOOGLE_SHIBA_16K_DEVELOPER_OPTION)
 endif
 
@@ -382,10 +378,39 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.vibrator.hal.dbc.txlvlholdoffms=0 \
     ro.vendor.vibrator.hal.pm.activetimeout=5
 
-# Increment the SVN for any official public releases
+# Override Output Distortion Gain
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.build.svn=32
+    vendor.audio.hapticgenerator.distortion.output.gain=0.38
 
+# Increment the SVN for any official public releases
+ifdef RELEASE_SVN_SHIBA
+TARGET_SVN ?= $(RELEASE_SVN_SHIBA)
+else
+# Set this for older releases that don't use build flag
+TARGET_SVN ?= 38
+endif
+
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.vendor.build.svn=$(TARGET_SVN)
+
+# Set device family property for SMR
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.device_family=HK3SB3AK3
+
+# Set build properties for SMR builds
+ifeq ($(RELEASE_IS_SMR), true)
+    ifneq (,$(RELEASE_BASE_OS_SHIBA))
+        PRODUCT_BASE_OS := $(RELEASE_BASE_OS_SHIBA)
+    endif
+endif
+
+# Set build properties for EMR builds
+ifeq ($(RELEASE_IS_EMR), true)
+    ifneq (,$(RELEASE_BASE_OS_SHIBA))
+        PRODUCT_PROPERTY_OVERRIDES += \
+        ro.build.version.emergency_base_os=$(RELEASE_BASE_OS_SHIBA)
+    endif
+endif
 # P23 Devices no longer need rlsservice
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.camera.rls_supported=false
@@ -453,3 +478,18 @@ endif
 
 PRODUCT_NO_BIONIC_PAGE_SIZE_MACRO := true
 PRODUCT_CHECK_PREBUILT_MAX_PAGE_SIZE := true
+
+# Bluetooth device id
+PRODUCT_PRODUCT_PROPERTIES += \
+    bluetooth.device_id.product_id=20492
+
+# Set support for LEA multicodec
+PRODUCT_PRODUCT_PROPERTIES += \
+    bluetooth.core.le_audio.codec_extension_aidl.enabled=true
+
+# LE Audio configuration scenarios
+PRODUCT_COPY_FILES += \
+    device/google/caimito/bluetooth/audio_set_scenarios.json:$(TARGET_COPY_OUT_VENDOR)/etc/aidl/le_audio/aidl_audio_set_scenarios.json
+
+PRODUCT_COPY_FILES += \
+    device/google/caimito/bluetooth/audio_set_configurations.json:$(TARGET_COPY_OUT_VENDOR)/etc/aidl/le_audio/aidl_audio_set_configurations.json
