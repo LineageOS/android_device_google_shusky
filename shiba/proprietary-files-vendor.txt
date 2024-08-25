@@ -1524,7 +1524,7 @@ vendor/lib64/libExynosC2Vp8Enc.so;DISABLE_CHECKELF
 vendor/lib64/libExynosC2Vp9Dec.so;DISABLE_CHECKELF
 vendor/lib64/libExynosC2Vp9Enc.so;DISABLE_CHECKELF
 vendor/lib64/libOpenCL-pixel.so
--vendor/lib64/libOpenCL.so
+vendor/lib64/libOpenCL.so
 vendor/lib64/lib_aion_buffer.so
 vendor/lib64/lib_jpg_encoder.so
 vendor/lib64/lib_reader.so
