@@ -377,8 +377,15 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.vibrator.hal.pm.activetimeout=5
 
 # Increment the SVN for any official public releases
+ifdef RELEASE_SVN_SHIBA
+TARGET_SVN ?= $(RELEASE_SVN_SHIBA)
+else
+# Set this for older releases that don't use build flag
+TARGET_SVN ?= 36
+endif
+
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.build.svn=30
+    ro.vendor.build.svn=$(TARGET_SVN)
 
 # P23 Devices no longer need rlsservice
 PRODUCT_VENDOR_PROPERTIES += \

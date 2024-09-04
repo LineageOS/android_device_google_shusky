@@ -403,8 +403,15 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.vibrator.hal.pm.activetimeout=5
 
 # Increment the SVN for any official public releases
+ifdef RELEASE_SVN_HUSKY
+TARGET_SVN ?= $(RELEASE_SVN_HUSKY)
+else
+# Set this for older releases that don't use build flag
+TARGET_SVN ?= 36
+endif
+
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.build.svn=30
+    ro.vendor.build.svn=$(TARGET_SVN)
 
 # WLC userdebug specific
 ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
