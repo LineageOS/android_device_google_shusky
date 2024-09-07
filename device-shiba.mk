@@ -464,9 +464,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.camera.exif_reveal_make_model=true
 
-# AVF assignable devices xml
-PRODUCT_PACKAGES += shusky_assignable_devices.xml
-
 # Enable DeviceAsWebcam support
 PRODUCT_VENDOR_PROPERTIES += \
     ro.usb.uvc.enabled=true
@@ -491,8 +488,9 @@ PRODUCT_NO_BIONIC_PAGE_SIZE_MACRO := true
 PRODUCT_CHECK_PREBUILT_MAX_PAGE_SIZE := true
 
 # Bluetooth device id
+# Shiba: 0x410E
 PRODUCT_PRODUCT_PROPERTIES += \
-    bluetooth.device_id.product_id=20492
+    bluetooth.device_id.product_id=16654
 
 # Set support for LEA multicodec
 PRODUCT_PRODUCT_PROPERTIES += \

@@ -31,5 +31,6 @@ include device/google/shusky/device-shusky-common.mk
 
 include device/google/zuma/BoardConfig-common.mk
 -include vendor/google_devices/zuma/prebuilts/BoardConfigVendor.mk
+include device/google/gs-common/check_current_prebuilt/check_current_prebuilt.mk
 include device/google/shusky-sepolicy/ripcurrent-sepolicy.mk
 include device/google/shusky/wifi/BoardConfig-wifi.mk
