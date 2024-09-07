@@ -110,7 +110,6 @@ system_ext/etc/permissions/com.android.qns.xml
 system_ext/etc/permissions/com.shannon.imsservice.xml
 system_ext/etc/permissions/com.shannon.rcsservice.xml
 system_ext/lib64/libmediaadaptor.so
-system_ext/lib64/vendor.google.whitechapel.audio.audioext@4.0.so
 system_ext/priv-app/PixelQualifiedNetworksService/PixelQualifiedNetworksService.apk
 system_ext/priv-app/ShannonIms/ShannonIms.apk;PRESIGNED
 system_ext/priv-app/ShannonRcs/ShannonRcs.apk;PRESIGNED
