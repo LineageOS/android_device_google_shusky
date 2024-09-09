@@ -1494,8 +1494,8 @@ vendor/lib64/audio_usb_aoc.so
 vendor/lib64/audio_waves_aoc.so
 vendor/lib64/com.google.edgetpu.dba-V1-ndk.so
 vendor/lib64/com.google.edgetpu.tachyon-V1-ndk.so
-vendor/lib64/com.google.edgetpu_app_service-V3-ndk.so;MODULE=com.google.edgetpu_app_service-V3-ndk-vendor
-vendor/lib64/com.google.edgetpu_vendor_service-V2-ndk.so;MODULE=com.google.edgetpu_vendor_service-V2-ndk-vendor
+vendor/lib64/com.google.edgetpu_app_service-V3-ndk.so;MODULE_SUFFIX=-vendor
+vendor/lib64/com.google.edgetpu_vendor_service-V2-ndk.so;MODULE_SUFFIX=-vendor
 vendor/lib64/com.google.input-V2-ndk.so
 vendor/lib64/com.google.input-V3-ndk.so
 vendor/lib64/com.google.pixel.modem.logmasklibrary-V1-ndk.so
