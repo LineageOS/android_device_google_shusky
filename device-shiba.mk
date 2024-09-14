@@ -130,18 +130,30 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.bluetooth.finder.supported=true
 
+ifeq ($(USE_AUDIO_HAL_AIDL),true)
+# AIDL
+
+# declare use of stereo spatialization
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.audio.stereo_spatialization_enabled=true
+
+else
+# HIDL
+
 # Spatial Audio
 PRODUCT_PACKAGES += \
 	libspatialaudio
-
-# declare use of spatial audio
-PRODUCT_PROPERTY_OVERRIDES += \
-       ro.audio.spatializer_enabled=true
 
 # Sound Dose
 PRODUCT_PACKAGES += \
 	android.hardware.audio.sounddose-vendor-impl \
 	audio_sounddose_aoc
+
+endif
+
+# declare use of spatial audio
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.audio.spatializer_enabled=true
 
 # Audio CCA property
 PRODUCT_PROPERTY_OVERRIDES += \
