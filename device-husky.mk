@@ -528,7 +528,10 @@ $(call inherit-product-if-exists, device/google/common/etm/device-userdebug-modu
 endif
 
 PRODUCT_NO_BIONIC_PAGE_SIZE_MACRO := true
+
+ifneq ($(wildcard vendor/arm/mali/valhall),)
 PRODUCT_CHECK_PREBUILT_MAX_PAGE_SIZE := true
+endif
 
 # Bluetooth device id
 # Husky: 0x410D
