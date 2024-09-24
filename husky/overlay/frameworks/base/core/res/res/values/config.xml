@@ -32,6 +32,15 @@
     <!-- Minimum screen brightness allowed by the power manager. -->
     <integer name="config_screenBrightnessDim">6</integer>
 
+    <!-- Default strength, in percentage, of bright color reduction when activated. -->
+    <integer name="config_reduceBrightColorsStrengthDefault">35</integer>
+
+    <!-- Minimum strength, in percentage, supported by bright color reduction. -->
+    <integer name="config_reduceBrightColorsStrengthMin">25</integer>
+
+    <!-- Maximum strength, in percentage, supported by bright color reduction. -->
+    <integer name="config_reduceBrightColorsStrengthMax">50</integer>
+
     <!-- If this is true, the udfps vote is ignored. -->
     <bool name="config_ignoreUdfpsVote">true</bool>
 
