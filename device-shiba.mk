@@ -58,7 +58,7 @@ include device/google/shusky/audio/shiba/audio-tables.mk
 include device/google/zuma/device-shipping-common.mk
 include hardware/google/pixel/vibrator/cs40l26/device.mk
 include device/google/gs-common/bcmbt/bluetooth.mk
-include device/google/gs-common/touch/gti/gti.mk
+include device/google/gs-common/touch/gti/predump_gti.mk
 
 # Init files
 PRODUCT_COPY_FILES += \
