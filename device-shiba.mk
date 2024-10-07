@@ -17,6 +17,17 @@
 # Restrict the visibility of Android.bp files to improve build analysis time
 $(call inherit-product-if-exists, vendor/google/products/sources_pixel.mk)
 
+ifdef RELEASE_GOOGLE_SHIBA_RADIO_DIR
+RELEASE_GOOGLE_PRODUCT_RADIO_DIR := $(RELEASE_GOOGLE_SHIBA_RADIO_DIR)
+endif
+ifdef RELEASE_GOOGLE_SHIBA_RADIOCFG_DIR
+RELEASE_GOOGLE_PRODUCT_RADIOCFG_DIR := $(RELEASE_GOOGLE_SHIBA_RADIOCFG_DIR)
+endif
+RELEASE_GOOGLE_BOOTLOADER_SHIBA_DIR ?= pdk# Keep this for pdk TODO: b/327119000
+RELEASE_GOOGLE_PRODUCT_BOOTLOADER_DIR := bootloader/$(RELEASE_GOOGLE_BOOTLOADER_SHIBA_DIR)
+$(call soong_config_set,shusky_bootloader,prebuilt_dir,$(RELEASE_GOOGLE_BOOTLOADER_SHIBA_DIR))
+
+
 TARGET_LINUX_KERNEL_VERSION := $(RELEASE_KERNEL_SHIBA_VERSION)
 # Keeps flexibility for kasan and ufs builds
 TARGET_KERNEL_DIR ?= $(RELEASE_KERNEL_SHIBA_DIR)
@@ -45,9 +56,8 @@ endif
 include device/google/shusky/camera/camera.mk
 include device/google/shusky/audio/shiba/audio-tables.mk
 include device/google/zuma/device-shipping-common.mk
-include hardware/google/pixel/vibrator/cs40l26/device.mk
 include device/google/gs-common/bcmbt/bluetooth.mk
-include device/google/gs-common/touch/gti/gti.mk
+include device/google/gs-common/touch/gti/predump_gti.mk
 
 # Init files
 PRODUCT_COPY_FILES += \
@@ -119,18 +129,26 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.bluetooth.finder.supported=true
 
+ifeq ($(USE_AUDIO_HAL_AIDL),true)
+# AIDL
+
+else
+# HIDL
+
 # Spatial Audio
 PRODUCT_PACKAGES += \
 	libspatialaudio
-
-# declare use of spatial audio
-PRODUCT_PROPERTY_OVERRIDES += \
-       ro.audio.spatializer_enabled=true
 
 # Sound Dose
 PRODUCT_PACKAGES += \
 	android.hardware.audio.sounddose-vendor-impl \
 	audio_sounddose_aoc
+
+endif
+
+# declare use of spatial audio
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.audio.spatializer_enabled=true
 
 # Audio CCA property
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -453,9 +471,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.camera.exif_reveal_make_model=true
 
-# AVF assignable devices xml
-PRODUCT_PACKAGES += shusky_assignable_devices.xml
-
 # Enable DeviceAsWebcam support
 PRODUCT_VENDOR_PROPERTIES += \
     ro.usb.uvc.enabled=true
@@ -477,11 +492,15 @@ $(call inherit-product-if-exists, device/google/common/etm/device-userdebug-modu
 endif
 
 PRODUCT_NO_BIONIC_PAGE_SIZE_MACRO := true
+
+ifneq ($(wildcard vendor/arm/mali/valhall),)
 PRODUCT_CHECK_PREBUILT_MAX_PAGE_SIZE := true
+endif
 
 # Bluetooth device id
+# Shiba: 0x410E
 PRODUCT_PRODUCT_PROPERTIES += \
-    bluetooth.device_id.product_id=20492
+    bluetooth.device_id.product_id=16654
 
 # Set support for LEA multicodec
 PRODUCT_PRODUCT_PROPERTIES += \

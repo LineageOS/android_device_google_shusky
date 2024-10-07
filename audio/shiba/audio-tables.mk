@@ -82,3 +82,13 @@ PRODUCT_COPY_FILES += \
     device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/tuning/waves/tests/test_preset.mps:$(TARGET_COPY_OUT_VENDOR)/etc/test_preset.mps
 
 endif
+
+ifeq ($(USE_AUDIO_HAL_AIDL),true)
+# Offload spatializer config
+PRODUCT_COPY_FILES += \
+    device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/tuning/spatializer/base:$(TARGET_COPY_OUT_VENDOR)/etc/spatializer/base \
+    device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/tuning/spatializer/mode_2_ch:$(TARGET_COPY_OUT_VENDOR)/etc/spatializer/mode_2_ch \
+    device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/tuning/spatializer/mode_6_ch:$(TARGET_COPY_OUT_VENDOR)/etc/spatializer/mode_6_ch \
+    device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/tuning/spatializer/mode_xaural:$(TARGET_COPY_OUT_VENDOR)/etc/spatializer/mode_xaural \
+
+endif

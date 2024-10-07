@@ -17,6 +17,11 @@
 # Restrict the visibility of Android.bp files to improve build analysis time
 $(call inherit-product-if-exists, vendor/google/products/sources_pixel.mk)
 
+RELEASE_GOOGLE_BOOTLOADER_RIPCURRENT_DIR ?= pdk# Keep this for pdk TODO: b/327119000
+RELEASE_GOOGLE_PRODUCT_BOOTLOADER_DIR := bootloader/$(RELEASE_GOOGLE_BOOTLOADER_RIPCURRENT_DIR)
+$(call soong_config_set,shusky_bootloader,prebuilt_dir,$(RELEASE_GOOGLE_BOOTLOADER_RIPCURRENT_DIR))
+
+
 TARGET_LINUX_KERNEL_VERSION := $(RELEASE_KERNEL_RIPCURRENT_VERSION)
 TARGET_KERNEL_DIR ?= $(RELEASE_KERNEL_RIPCURRENT_DIR)
 TARGET_BOARD_KERNEL_HEADERS ?= $(RELEASE_KERNEL_RIPCURRENT_DIR)/kernel-headers
@@ -40,7 +45,6 @@ CAMERA_PRODUCT ?= ripcurrent
 include device/google/shusky/audio/ripcurrent/audio-tables.mk
 include device/google/shusky/camera/camera.mk
 include device/google/zuma/device-shipping-common.mk
-include hardware/google/pixel/vibrator/cs40l26/device-stereo.mk
 include device/google/gs-common/bcmbt/bluetooth.mk
 include device/google/gs-common/gps/brcm/cbd_gps.mk
 include device/google/gs-common/touch/stm/stm20.mk
