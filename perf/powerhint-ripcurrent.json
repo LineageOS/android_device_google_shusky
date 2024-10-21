@@ -1929,7 +1929,7 @@
       "PowerHint": "CAMERA_STREAMING_HIGH",
       "Node": "CDPreferHighCap",
       "Duration": 0,
-      "Value": "0"
+      "Value": "1"
     },
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
