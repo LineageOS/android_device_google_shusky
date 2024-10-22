@@ -31,11 +31,7 @@ ifeq ($(filter factory_husky, $(TARGET_PRODUCT)),)
     include device/google/shusky/uwb/uwb_calibration.mk
 endif
 
-ifeq ($(PRODUCT_BOOTS_16K),true)
-TARGET_USERDATAIMAGE_FILE_SYSTEM_TYPE := ext4
-TARGET_KERNEL_DIR := $(RELEASE_KERNEL_HUSKY_DIR)/16kb
-TARGET_RW_FILE_SYSTEM_TYPE := ext4
-else
+ifneq ($(TARGET_BOOTS_16K),true)
 PRODUCT_16K_DEVELOPER_OPTION := $(RELEASE_GOOGLE_HUSKY_16K_DEVELOPER_OPTION)
 endif
 
