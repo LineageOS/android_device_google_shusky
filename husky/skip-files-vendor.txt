@@ -1026,6 +1026,10 @@ bin/dump/dump_gsc.sh
 lib64/libevent.so
 lib64/libion.so
 
+# Odex
+framework/oat/arm64/com.google.android.camera.experimental2023.odex
+framework/oat/arm64/com.google.android.camera.experimental2023.vdex
+
 # Completely skip files that are not required
 
 # Google
