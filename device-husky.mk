@@ -225,11 +225,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
 	bluetooth.profile.ccp.server.enabled?=true \
 	bluetooth.profile.vcp.controller.enabled?=true
 
-ifeq ($(RELEASE_PIXEL_BROADCAST_ENABLED), true)
+# Bluetooth LE Audio Broadcast
 PRODUCT_PRODUCT_PROPERTIES += \
 	bluetooth.profile.bap.broadcast.assist.enabled=true \
 	bluetooth.profile.bap.broadcast.source.enabled=true
-endif
 
 # Bluetooth LE Audio enable hardware offloading
 PRODUCT_PRODUCT_PROPERTIES += \
