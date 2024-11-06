@@ -48,6 +48,7 @@
        LtoSyncThresholdDays="1"
 
        GnssYearOfHardware="2020"
+       CpEarlyFixGuardTimeSec="1"
        CpGuardTimeSec="2"
        CpLppGuardTimeSec="2"
        IgnoreInjectedSystemTime="true"
@@ -97,6 +98,8 @@
   />
 
   <gll_features
+       EnableQzsAutoSwitch="false"
+       EnableGloAutoSwitch="false"
        EnableNicAutoSwitch="true"
        EnableNavic="true"
   />
