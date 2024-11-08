@@ -717,13 +717,23 @@
             "Multiplier":1
         },
         {
-            "Name":"IS_WLC",
+            "Name":"WLC_CHECK",
             "Type":"UNKNOWN",
             "Hidden":true,
             "VirtualSensor":true,
             "Formula":"COUNT_THRESHOLD",
-            "Combination":["thb_hda"],
-            "Coefficient":[1],
+            "Combination":["thb_hda", "thb_hda"],
+            "Coefficient":[1, -51],
+            "Multiplier":1
+        },
+        {
+            "Name":"NO_WLC",
+            "Type":"UNKNOWN",
+            "Hidden":true,
+            "VirtualSensor":true,
+            "Formula":"COUNT_THRESHOLD",
+            "Combination":["WLC_CHECK"],
+            "Coefficient":[-2],
             "Multiplier":1
         },
         {
@@ -743,8 +753,9 @@
             "VirtualSensor":true,
             "TriggerSensor":["north_therm", "cam_therm", "soc_therm", "charge_therm", "disp_therm", "quiet_therm", "usb_pwr_therm"],
             "Formula":"WEIGHTED_AVG",
-            "Combination":["VIRTUAL-SKIN-CHARGE", "IS_WLC"],
-            "Coefficient":[1.0, -1000000],
+            "Combination":["VIRTUAL-SKIN-CHARGE"],
+            "Coefficient":["NO_WLC"],
+            "CoefficientType": ["SENSOR"],
             "HotThreshold":["NaN", 34.0, 38.0, 41.0, 45.0, 47.0, 55.0],
             "HotHysteresis":[0.0, 1.9, 3.9, 2.9, 3.9, 1.9, 1.9],
             "Multiplier":0.001,
