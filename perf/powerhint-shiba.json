@@ -2786,7 +2786,7 @@
       "PowerHint": "GAME",
       "Node": "AutoPreferIdle",
       "Duration": 0,
-      "Value": "1"
+      "Value": "0"
     },
     {
       "PowerHint": "GAME",
