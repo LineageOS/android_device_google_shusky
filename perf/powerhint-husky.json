@@ -97,6 +97,7 @@
       "Values": [
         "9999999",
         "1548000",
+        "1425000",
         "1197000",
         "0"
       ],
@@ -136,6 +137,7 @@
         "9999999",
         "2245000",
         "2130000",
+        "1572000",
         "1836000",
         "0"
       ],
@@ -177,6 +179,7 @@
         "2687000",
         "2363000",
         "2147000",
+        "1745000",
         "1885000",
         "0"
       ],
@@ -2624,37 +2627,37 @@
       "PowerHint": "FIXED_PERFORMANCE",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 0,
-      "Value": "9999999"
+      "Value": "1745000"
     },
     {
       "PowerHint": "FIXED_PERFORMANCE",
       "Node": "CPUBigClusterMinFreq",
       "Duration": 0,
-      "Value": "9999999"
+      "Value": "1745000"
     },
     {
       "PowerHint": "FIXED_PERFORMANCE",
       "Node": "CPUMidClusterMaxFreq",
       "Duration": 0,
-      "Value": "9999999"
+      "Value": "1572000"
     },
     {
       "PowerHint": "FIXED_PERFORMANCE",
       "Node": "CPUMidClusterMinFreq",
       "Duration": 0,
-      "Value": "9999999"
+      "Value": "1572000"
     },
     {
       "PowerHint": "FIXED_PERFORMANCE",
       "Node": "CPULittleClusterMaxFreq",
       "Duration": 0,
-      "Value": "9999999"
+      "Value": "1425000"
     },
     {
       "PowerHint": "FIXED_PERFORMANCE",
       "Node": "CPULittleClusterMinFreq",
       "Duration": 0,
-      "Value": "9999999"
+      "Value": "1425000"
     },
     {
       "PowerHint": "LOW_POWER_LITTLE_CLUSTER_50",
