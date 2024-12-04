@@ -229,7 +229,7 @@ PRODUCT_COPY_FILES += \
 
 # LE Audio Unicast Allowlist
 PRODUCT_PRODUCT_PROPERTIES += \
-    persist.bluetooth.leaudio.allow_list=SM-R510,WF-1000XM5
+    persist.bluetooth.leaudio.allow_list=SM-R510,WF-1000XM5,SM-R630
 
 # Bluetooth LE Audio CIS handover to SCO
 # Set the property only for the controller couldn't support CIS/SCO simultaneously. More detailed in b/242908683.
