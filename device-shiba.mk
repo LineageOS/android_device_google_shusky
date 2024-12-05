@@ -229,7 +229,7 @@ PRODUCT_COPY_FILES += \
 
 # LE Audio Unicast Allowlist
 PRODUCT_PRODUCT_PROPERTIES += \
-    persist.bluetooth.leaudio.allow_list=SM-R510,WF-1000XM5
+    persist.bluetooth.leaudio.allow_list=SM-R510,WF-1000XM5,SM-R630
 
 # Bluetooth LE Audio CIS handover to SCO
 # Set the property only for the controller couldn't support CIS/SCO simultaneously. More detailed in b/242908683.
@@ -386,14 +386,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.vibrator.hal.context.scale=60 \
     persist.vendor.vibrator.hal.context.fade=true \
     persist.vendor.vibrator.hal.context.cooldowntime=1600 \
-    persist.vendor.vibrator.hal.context.settlingtime=5000 \
-    ro.vendor.vibrator.hal.dbc.enable=true \
-    ro.vendor.vibrator.hal.dbc.envrelcoef=8353728 \
-    ro.vendor.vibrator.hal.dbc.riseheadroom=1909602 \
-    ro.vendor.vibrator.hal.dbc.fallheadroom=1909602 \
-    ro.vendor.vibrator.hal.dbc.txlvlthreshfs=2516583 \
-    ro.vendor.vibrator.hal.dbc.txlvlholdoffms=0 \
-    ro.vendor.vibrator.hal.pm.activetimeout=5
+    persist.vendor.vibrator.hal.context.settlingtime=5000
 
 # Override Output Distortion Gain
 PRODUCT_VENDOR_PROPERTIES += \
