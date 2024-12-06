@@ -227,8 +227,8 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # Bluetooth LE Audio Broadcast
 PRODUCT_PRODUCT_PROPERTIES += \
-	bluetooth.profile.bap.broadcast.assist.enabled=true \
-	bluetooth.profile.bap.broadcast.source.enabled=true
+	bluetooth.profile.bap.broadcast.assist.enabled?=true \
+	bluetooth.profile.bap.broadcast.source.enabled?=true
 
 # Bluetooth LE Audio enable hardware offloading
 PRODUCT_PRODUCT_PROPERTIES += \
