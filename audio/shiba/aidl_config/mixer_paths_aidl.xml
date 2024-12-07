@@ -1480,7 +1480,7 @@
   <path name="adapted-voice-speaker">
     <ctl name="R Boost Peak Current Limit" value="3.50A" />
     <ctl name="Boost Peak Current Limit" value="3.50A" />
-    <ctl name="Digital PCM Volume" value="800" />
+    <ctl name="Digital PCM Volume" value="817" />
     <ctl name="R Digital PCM Volume" value="817" />
   </path>
   <path name="adapted-voice-speaker-battery-throttled">
