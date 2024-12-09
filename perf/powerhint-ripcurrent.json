@@ -947,6 +947,13 @@
     },
     {
       "PowerHint": "LAUNCH",
+      "Node": "TAPreferredIdleMaskMid",
+      "Duration": 5000,
+      "Value": "0x1ff",
+      "EnableProperty": "vendor.powerhal.apf_disabled"
+    },
+    {
+      "PowerHint": "LAUNCH",
       "Node": "ReducePreferIdle",
       "Duration": 5000,
       "Value": "0"
@@ -1003,6 +1010,13 @@
       "Node": "Dex2oatUClampMaxBoost",
       "Duration": 5000,
       "Value": "615"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "TAUClampBoost",
+      "Duration": 5000,
+      "Value": "765",
+      "EnableProperty": "vendor.powerhal.apf_disabled"
     },
     {
       "PowerHint": "LAUNCH",
@@ -1078,37 +1092,43 @@
       "PowerHint": "LAUNCH",
       "Node": "TAAutoPreferFit",
       "Duration": 5000,
-      "Value": "1"
+      "Value": "1",
+      "EnableProperty": "vendor.powerhal.apf_enabled"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "TAUclampMinOnNiceEnable",
       "Duration": 5000,
-      "Value": "1"
+      "Value": "1",
+      "EnableProperty": "vendor.powerhal.apf_enabled"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "TAUclampMinOnNiceHighValue",
-       "Duration": 5000,
-       "Value": "765"
+      "Duration": 5000,
+      "Value": "765",
+      "EnableProperty": "vendor.powerhal.apf_enabled"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "TAUclampMinOnNiceHighPrio",
       "Duration": 5000,
-      "Value": "110"
+      "Value": "110",
+      "EnableProperty": "vendor.powerhal.apf_enabled"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "TAUclampMinOnNiceMidValue",
-       "Duration": 5000,
-       "Value": "570"
+      "Duration": 5000,
+      "Value": "570",
+      "EnableProperty": "vendor.powerhal.apf_enabled"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "TAUclampMinOnNiceMidPrio",
       "Duration": 5000,
-      "Value": "139"
+      "Value": "139",
+      "EnableProperty": "vendor.powerhal.apf_enabled"
     },
     {
       "PowerHint": "LAUNCH",
