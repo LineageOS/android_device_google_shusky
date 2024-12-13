@@ -26,12 +26,6 @@ BOARD_KERNEL_CMDLINE += samsung_iommu_v9.load_sequential=1
 TARGET_BOARD_INFO_FILE := device/google/shusky/board-info.txt
 TARGET_BOOTLOADER_BOARD_NAME := shiba
 
-RELEASE_GOOGLE_PRODUCT_RADIO_DIR := $(RELEASE_GOOGLE_SHIBA_RADIO_DIR)
-RELEASE_GOOGLE_PRODUCT_RADIOCFG_DIR := $(RELEASE_GOOGLE_HUSKY_RADIOCFG_DIR)
-RELEASE_GOOGLE_BOOTLOADER_SHIBA_DIR ?= pdk# Keep this for pdk TODO: b/327119000
-RELEASE_GOOGLE_PRODUCT_BOOTLOADER_DIR := bootloader/$(RELEASE_GOOGLE_BOOTLOADER_SHIBA_DIR)
-$(call soong_config_set,shusky_bootloader,prebuilt_dir,$(RELEASE_GOOGLE_BOOTLOADER_SHIBA_DIR))
-
 ifdef PHONE_CAR_BOARD_PRODUCT
     include vendor/auto/embedded/products/$(PHONE_CAR_BOARD_PRODUCT)/BoardConfig.mk
 else
@@ -47,6 +41,7 @@ include device/google/shusky/device-shusky-common.mk
 
 include device/google/zuma/BoardConfig-common.mk
 -include vendor/google_devices/zuma/prebuilts/BoardConfigVendor.mk
+include device/google/gs-common/check_current_prebuilt/check_current_prebuilt.mk
 -include vendor/google_devices/shiba/proprietary/BoardConfigVendor.mk
 include device/google/shusky-sepolicy/shiba-sepolicy.mk
 include device/google/shusky/wifi/BoardConfig-wifi.mk

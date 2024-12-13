@@ -17,6 +17,17 @@
 # Restrict the visibility of Android.bp files to improve build analysis time
 $(call inherit-product-if-exists, vendor/google/products/sources_pixel.mk)
 
+ifdef RELEASE_GOOGLE_HUSKY_RADIO_DIR
+RELEASE_GOOGLE_PRODUCT_RADIO_DIR := $(RELEASE_GOOGLE_HUSKY_RADIO_DIR)
+endif
+ifdef RELEASE_GOOGLE_HUSKY_RADIOCFG_DIR
+RELEASE_GOOGLE_PRODUCT_RADIOCFG_DIR := $(RELEASE_GOOGLE_HUSKY_RADIOCFG_DIR)
+endif
+RELEASE_GOOGLE_BOOTLOADER_HUSKY_DIR ?= pdk# Keep this for pdk TODO: b/327119000
+RELEASE_GOOGLE_PRODUCT_BOOTLOADER_DIR := bootloader/$(RELEASE_GOOGLE_BOOTLOADER_HUSKY_DIR)
+$(call soong_config_set,shusky_bootloader,prebuilt_dir,$(RELEASE_GOOGLE_BOOTLOADER_HUSKY_DIR))
+
+
 TARGET_LINUX_KERNEL_VERSION := $(RELEASE_KERNEL_HUSKY_VERSION)
 # Keeps flexibility for kasan and ufs builds
 TARGET_KERNEL_DIR ?= $(RELEASE_KERNEL_HUSKY_DIR)
@@ -131,18 +142,30 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.bluetooth.finder.supported=true
 
+ifeq ($(USE_AUDIO_HAL_AIDL),true)
+# AIDL
+
+# declare use of stereo spatialization
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.audio.stereo_spatialization_enabled=true
+
+else
+# HIDL
+
 # Spatial Audio
 PRODUCT_PACKAGES += \
 	libspatialaudio
-
-# declare use of spatial audio
-PRODUCT_PROPERTY_OVERRIDES += \
-       ro.audio.spatializer_enabled=true
 
 # Sound Dose
 PRODUCT_PACKAGES += \
 	android.hardware.audio.sounddose-vendor-impl \
 	audio_sounddose_aoc
+
+endif
+
+# declare use of spatial audio
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.audio.spatializer_enabled=true
 
 # Audio CCA property
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -298,16 +321,29 @@ include device/google/gs-common/gps/brcm/device.mk
 PRODUCT_COPY_FILES += \
        device/google/shusky/location/gps.cer:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.cer
 
+# Location
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+    PRODUCT_COPY_FILES += \
+        device/google/shusky/location/lhd.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/lhd.conf \
+        device/google/shusky/location/scd.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/scd.conf
+    ifneq (,$(filter 6.1, $(TARGET_LINUX_KERNEL_VERSION)))
         PRODUCT_COPY_FILES += \
-            device/google/shusky/location/lhd.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/lhd.conf \
-            device/google/shusky/location/scd.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/scd.conf \
+            device/google/shusky/location/gps.6.1.xml.hk3:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
+    else
+        PRODUCT_COPY_FILES += \
             device/google/shusky/location/gps.xml.hk3:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
+    endif
 else
+    PRODUCT_COPY_FILES += \
+        device/google/shusky/location/lhd_user.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/lhd.conf \
+        device/google/shusky/location/scd_user.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/scd.conf
+    ifneq (,$(filter 6.1, $(TARGET_LINUX_KERNEL_VERSION)))
         PRODUCT_COPY_FILES += \
-            device/google/shusky/location/lhd_user.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/lhd.conf \
-            device/google/shusky/location/scd_user.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/scd.conf \
+            device/google/shusky/location/gps_user.6.1.xml.hk3:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
+    else
+        PRODUCT_COPY_FILES += \
             device/google/shusky/location/gps_user.xml.hk3:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
+    endif
 endif
 
 # Set zram size
@@ -388,17 +424,39 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.vibrator.hal.dbc.txlvlholdoffms=0 \
     ro.vendor.vibrator.hal.pm.activetimeout=5
 
+# Override Output Distortion Gain
+PRODUCT_VENDOR_PROPERTIES += \
+    vendor.audio.hapticgenerator.distortion.output.gain=0.38
+
 # Increment the SVN for any official public releases
 ifdef RELEASE_SVN_HUSKY
 TARGET_SVN ?= $(RELEASE_SVN_HUSKY)
 else
 # Set this for older releases that don't use build flag
-TARGET_SVN ?= 35
+TARGET_SVN ?= 38
 endif
 
 PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.build.svn=$(TARGET_SVN)
 
+# Set device family property for SMR
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.device_family=HK3SB3AK3
+
+# Set build properties for SMR builds
+ifeq ($(RELEASE_IS_SMR), true)
+    ifneq (,$(RELEASE_BASE_OS_HUSKY))
+        PRODUCT_BASE_OS := $(RELEASE_BASE_OS_HUSKY)
+    endif
+endif
+
+# Set build properties for EMR builds
+ifeq ($(RELEASE_IS_EMR), true)
+    ifneq (,$(RELEASE_BASE_OS_HUSKY))
+        PRODUCT_PROPERTY_OVERRIDES += \
+        ro.build.version.emergency_base_os=$(RELEASE_BASE_OS_HUSKY)
+    endif
+endif
 # WLC userdebug specific
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
     PRODUCT_COPY_FILES += \
@@ -449,9 +507,6 @@ PRODUCT_PRODUCT_PROPERTIES ?= \
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.camera.exif_reveal_make_model=true
 
-# AVF assignable devices xml
-PRODUCT_PACKAGES += shusky_assignable_devices.xml
-
 # Enable DeviceAsWebcam support
 PRODUCT_VENDOR_PROPERTIES += \
     ro.usb.uvc.enabled=true
@@ -473,4 +528,23 @@ $(call inherit-product-if-exists, device/google/common/etm/device-userdebug-modu
 endif
 
 PRODUCT_NO_BIONIC_PAGE_SIZE_MACRO := true
+
+ifneq ($(wildcard vendor/arm/mali/valhall),)
 PRODUCT_CHECK_PREBUILT_MAX_PAGE_SIZE := true
+endif
+
+# Bluetooth device id
+# Husky: 0x410D
+PRODUCT_PRODUCT_PROPERTIES += \
+    bluetooth.device_id.product_id=16653
+
+# Set support for LEA multicodec
+PRODUCT_PRODUCT_PROPERTIES += \
+    bluetooth.core.le_audio.codec_extension_aidl.enabled=true
+
+# LE Audio configuration scenarios
+PRODUCT_COPY_FILES += \
+    device/google/shusky/bluetooth/audio_set_scenarios.json:$(TARGET_COPY_OUT_VENDOR)/etc/aidl/le_audio/aidl_audio_set_scenarios.json
+
+PRODUCT_COPY_FILES += \
+    device/google/shusky/bluetooth/audio_set_configurations.json:$(TARGET_COPY_OUT_VENDOR)/etc/aidl/le_audio/aidl_audio_set_configurations.json
