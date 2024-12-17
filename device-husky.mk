@@ -162,6 +162,13 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.audio.spatializer_enabled=true
 
+# HdMic Audio
+PRODUCT_SOONG_NAMESPACES += device/google/shusky/audio/husky/prebuilt/libspeechenhancer
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.app.audio.gsenet.version=1
+PRODUCT_PACKAGES += \
+    libspeechenhancer
+
 # Audio CCA property
 PRODUCT_PROPERTY_OVERRIDES += \
 	persist.vendor.audio.cca.enabled=false
