@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1bc1ebaa_94ba9763",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2024-12-31T09:42:13Z",
+      "side": 1,
+      "message": "sha1sums match between shusky and caimito for these files.",
+      "revId": "8b082b1f33bdaf5438e6fe990c6f0871b5cb0841",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
