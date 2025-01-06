@@ -279,3 +279,8 @@ PRODUCT_VENDOR_PROPERTIES += \
 # PKVM Memory Reclaim
 PRODUCT_VENDOR_PROPERTIES += \
     hypervisor.memory_reclaim.supported=1
+
+# Enable APF by default
+PRODUCT_VENDOR_PROPERTIES += \
+    vendor.powerhal.apf_disabled=false \
+    vendor.powerhal.apf_enabled=true
