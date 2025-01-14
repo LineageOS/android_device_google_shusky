@@ -309,6 +309,7 @@ PRODUCT_SOONG_NAMESPACES += \
 # WiFi Overlay
 PRODUCT_PACKAGES += \
 	UwbOverlayHK3 \
+	UwbOverlayHK3Gsi \
 	WifiOverlay2023 \
 	PixelWifiOverlay2023
 
