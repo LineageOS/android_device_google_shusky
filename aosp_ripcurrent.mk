@@ -27,6 +27,3 @@ PRODUCT_DEVICE := ripcurrent
 PRODUCT_MODEL := AOSP on ripcurrent
 PRODUCT_BRAND := Android
 PRODUCT_MANUFACTURER := Google
-
-DEVICE_MANIFEST_FILE := \
-	device/google/shusky/manifest.xml
