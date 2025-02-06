@@ -27,6 +27,3 @@ PRODUCT_DEVICE := shiba
 PRODUCT_MODEL := AOSP on shiba
 PRODUCT_BRAND := Android
 PRODUCT_MANUFACTURER := Google
-
-DEVICE_MANIFEST_FILE := \
-	device/google/shusky/manifest.xml
