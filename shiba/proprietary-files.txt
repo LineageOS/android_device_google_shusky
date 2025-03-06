@@ -64,7 +64,7 @@ product/etc/permissions/com.android.sdm.plugins.dcmo.xml
 product/etc/permissions/com.android.sdm.plugins.diagmon.xml
 product/lib64/libdmengine.so;SYMLINK=product/priv-app/DMService/lib/arm64/libdmengine.so
 product/lib64/libdmjavaplugin.so;SYMLINK=product/priv-app/DMService/lib/arm64/libdmjavaplugin.so
-product/priv-app/CarrierSettings_signed_49.0.645958608/CarrierSettings_signed_49.0.645958608.apk;PRESIGNED
+product/priv-app/CarrierSettings_signed_51.0.707712815/CarrierSettings_signed_51.0.707712815.apk;PRESIGNED
 product/priv-app/CarrierWifi/CarrierWifi.apk;PRESIGNED
 product/priv-app/ConnMO/ConnMO.apk
 product/priv-app/DCMO/DCMO.apk
@@ -91,6 +91,10 @@ product/priv-app/WfcActivation/WfcActivation.apk;PRESIGNED
 system/bin/oem-iptables-init.sh
 
 # system_ext partition
+
+# Audio
+system_ext/bin/hw/vendor.google.whitechapel.audio.hal.parserservice
+system_ext/etc/init/vendor.google.whitechapel.audio.hal.parserservice.rc
 
 # Camera extensions
 system_ext/etc/permissions/com.google.android.camera.extensions.xml
@@ -119,7 +123,6 @@ system_ext/etc/public.libraries-google.txt
 system_ext/etc/vintf/manifest/vendor.google.edgetpu_app_service@1.0-service.xml
 system_ext/lib64/com.google.edgetpu_app_service-V4-ndk.so
 system_ext/lib64/com.google.edgetpu_vendor_service-V2-ndk.so
-system_ext/lib64/libedgetpu_dba.google.so
 
 # Hotword
 system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
@@ -132,7 +135,7 @@ system_ext/etc/permissions/com.shannon.rcsservice.xml
 system_ext/lib64/libmediaadaptor.so
 system_ext/lib64/libpixelimsmedia.so
 system_ext/lib64/vendor.google.whitechapel.audio.audioext@4.0.so
-system_ext/lib64/vendor.google.whitechapel.audio.extension-V3-ndk.so
+system_ext/lib64/vendor.google.whitechapel.audio.extension-V4-ndk.so
 system_ext/priv-app/PixelImsMediaService/PixelImsMediaService.apk
 system_ext/priv-app/PixelQualifiedNetworksService/PixelQualifiedNetworksService.apk
 system_ext/priv-app/ShannonIms/ShannonIms.apk;PRESIGNED
