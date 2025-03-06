@@ -31,6 +31,10 @@ include device/google/gs-common/wireless_charger/wireless_charger.mk
 PRODUCT_PACKAGES += \
     libexynosv4l2
 
+# GNSS
+PRODUCT_PACKAGES += \
+    android.hardware.sensors-V2-ndk.vendor:64
+
 # Graphics
 PRODUCT_PACKAGES += \
     libEGL_angle \
