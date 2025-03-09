@@ -41,6 +41,7 @@ on post-fs-data
 # Bluetooth
 on post-fs-data
     chown bluetooth system /proc/bluetooth/timesync
+    chown bluetooth system /proc/bluetooth/sleep/wakelock_ctrl
 
 # Start the twoshay touch service
 on property:vendor.device.modules.ready=1

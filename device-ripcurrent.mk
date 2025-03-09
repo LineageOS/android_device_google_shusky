@@ -45,7 +45,6 @@ CAMERA_PRODUCT ?= ripcurrent
 include device/google/shusky/audio/ripcurrent/audio-tables.mk
 include device/google/shusky/camera/camera.mk
 include device/google/zuma/device-shipping-common.mk
-include hardware/google/pixel/vibrator/cs40l26/device-stereo.mk
 include device/google/gs-common/bcmbt/bluetooth.mk
 include device/google/gs-common/gps/brcm/cbd_gps.mk
 include device/google/gs-common/touch/stm/stm20.mk
@@ -280,3 +279,8 @@ PRODUCT_VENDOR_PROPERTIES += \
 # PKVM Memory Reclaim
 PRODUCT_VENDOR_PROPERTIES += \
     hypervisor.memory_reclaim.supported=1
+
+# Enable APF by default
+PRODUCT_VENDOR_PROPERTIES += \
+    vendor.powerhal.apf_disabled=false \
+    vendor.powerhal.apf_enabled=true

@@ -72,10 +72,9 @@ endif
 include device/google/shusky/camera/camera.mk
 include device/google/shusky/audio/husky/audio-tables.mk
 include device/google/zuma/device-shipping-common.mk
-include hardware/google/pixel/vibrator/cs40l26/device.mk
 include device/google/gs-common/bcmbt/bluetooth.mk
-include device/google/gs-common/touch/stm/stm20.mk
-include device/google/gs-common/touch/gti/gti.mk
+include device/google/gs-common/touch/stm/predump_stm20.mk
+include device/google/gs-common/touch/gti/predump_gti.mk
 include device/google/gs-common/touch/touchinspector/touchinspector.mk
 
 # Init files
@@ -144,10 +143,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 ifeq ($(USE_AUDIO_HAL_AIDL),true)
 # AIDL
-
-# declare use of stereo spatialization
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.audio.stereo_spatialization_enabled=true
 
 else
 # HIDL
@@ -230,11 +225,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
 	bluetooth.profile.ccp.server.enabled?=true \
 	bluetooth.profile.vcp.controller.enabled?=true
 
-ifeq ($(RELEASE_PIXEL_BROADCAST_ENABLED), true)
+# Bluetooth LE Audio Broadcast
 PRODUCT_PRODUCT_PROPERTIES += \
 	bluetooth.profile.bap.broadcast.assist.enabled=true \
 	bluetooth.profile.bap.broadcast.source.enabled=true
-endif
 
 # Bluetooth LE Audio enable hardware offloading
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -247,7 +241,7 @@ PRODUCT_COPY_FILES += \
 
 # LE Audio Unicast Allowlist
 PRODUCT_PRODUCT_PROPERTIES += \
-    persist.bluetooth.leaudio.allow_list=SM-R510,WF-1000XM5
+    persist.bluetooth.leaudio.allow_list=SM-R510,WF-1000XM5,SM-R630
 
 # Bluetooth LE Audio CIS handover to SCO
 # Set the property only for the controller couldn't support CIS/SCO simultaneously. More detailed in b/242908683.
@@ -415,14 +409,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.vibrator.hal.context.scale=60 \
     persist.vendor.vibrator.hal.context.fade=true \
     persist.vendor.vibrator.hal.context.cooldowntime=1600 \
-    persist.vendor.vibrator.hal.context.settlingtime=5000 \
-    ro.vendor.vibrator.hal.dbc.enable=true \
-    ro.vendor.vibrator.hal.dbc.envrelcoef=8353728 \
-    ro.vendor.vibrator.hal.dbc.riseheadroom=1909602 \
-    ro.vendor.vibrator.hal.dbc.fallheadroom=1909602 \
-    ro.vendor.vibrator.hal.dbc.txlvlthreshfs=2516583 \
-    ro.vendor.vibrator.hal.dbc.txlvlholdoffms=0 \
-    ro.vendor.vibrator.hal.pm.activetimeout=5
+    persist.vendor.vibrator.hal.context.settlingtime=5000
 
 # Override Output Distortion Gain
 PRODUCT_VENDOR_PROPERTIES += \
@@ -548,3 +535,8 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     device/google/shusky/bluetooth/audio_set_configurations.json:$(TARGET_COPY_OUT_VENDOR)/etc/aidl/le_audio/aidl_audio_set_configurations.json
+
+# Enable APF by default
+PRODUCT_VENDOR_PROPERTIES += \
+    vendor.powerhal.apf_disabled=false \
+    vendor.powerhal.apf_enabled=true
