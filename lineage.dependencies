@@ -4,8 +4,8 @@
     "target_path": "device/google/zuma"
   },
   {
-    "repository": "device/google/shusky-kernels/5.15",
-    "target_path": "device/google/shusky-kernels/5.15",
+    "repository": "device/google/shusky-kernels/6.1",
+    "target_path": "device/google/shusky-kernels/6.1",
     "remote": "aosp-shusky"
   }
 ]
