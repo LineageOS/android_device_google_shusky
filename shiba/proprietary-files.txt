@@ -3,9 +3,9 @@
 # product partition
 
 # AiAi
-product/priv-app/AICorePrebuilt/AICorePrebuilt.apk;PRESIGNED
-product/priv-app/DeviceIntelligenceNetworkPrebuilt-U.32_V.7_playstore_astrea_20240725.00_RC01/DeviceIntelligenceNetworkPrebuilt-U.32_V.7_playstore_astrea_20240725.00_RC01.apk;PRESIGNED
-product/priv-app/DevicePersonalizationPrebuiltPixel2023-U.32_V.7_playstore_aiai_20240725.00_RC08/DevicePersonalizationPrebuiltPixel2023-U.32_V.7_playstore_aiai_20240725.00_RC08.apk;PRESIGNED
+product/priv-app/AICorePrebuilt-aicore_20250130.00_RC01/AICorePrebuilt-aicore_20250130.00_RC01.apk;PRESIGNED
+product/priv-app/DeviceIntelligenceNetworkPrebuilt-astrea_20240329.00_RC02/DeviceIntelligenceNetworkPrebuilt-astrea_20240329.00_RC02.apk;PRESIGNED
+product/priv-app/DevicePersonalizationPrebuiltPixel2023-bfinal_aiai_20250217.00_RC08/DevicePersonalizationPrebuiltPixel2023-bfinal_aiai_20250217.00_RC08.apk;PRESIGNED
 
 # Audio
 product/etc/ambient/matcher_tah.leveldb
@@ -64,7 +64,7 @@ product/etc/permissions/com.android.sdm.plugins.dcmo.xml
 product/etc/permissions/com.android.sdm.plugins.diagmon.xml
 product/lib64/libdmengine.so;SYMLINK=product/priv-app/DMService/lib/arm64/libdmengine.so
 product/lib64/libdmjavaplugin.so;SYMLINK=product/priv-app/DMService/lib/arm64/libdmjavaplugin.so
-product/priv-app/CarrierSettings_signed_51.0.707712815/CarrierSettings_signed_51.0.707712815.apk;PRESIGNED
+product/priv-app/CarrierSettings_signed_53.0.733201674/CarrierSettings_signed_53.0.733201674.apk;PRESIGNED
 product/priv-app/CarrierWifi/CarrierWifi.apk;PRESIGNED
 product/priv-app/ConnMO/ConnMO.apk
 product/priv-app/DCMO/DCMO.apk
@@ -84,11 +84,6 @@ product/etc/sysconfig/allowlist_com.android.omadm.service.xml
 product/priv-app/AppDirectedSMSService/AppDirectedSMSService.apk;PRESIGNED
 product/priv-app/OemDmTrigger/OemDmTrigger.apk
 product/priv-app/WfcActivation/WfcActivation.apk;PRESIGNED
-
-# system partition
-
-# IMS
-system/bin/oem-iptables-init.sh
 
 # system_ext partition
 
@@ -135,7 +130,7 @@ system_ext/etc/permissions/com.shannon.rcsservice.xml
 system_ext/lib64/libmediaadaptor.so
 system_ext/lib64/libpixelimsmedia.so
 system_ext/lib64/vendor.google.whitechapel.audio.audioext@4.0.so
-system_ext/lib64/vendor.google.whitechapel.audio.extension-V4-ndk.so
+system_ext/lib64/vendor.google.whitechapel.audio.extension-V5-ndk.so
 system_ext/priv-app/PixelImsMediaService/PixelImsMediaService.apk
 system_ext/priv-app/PixelQualifiedNetworksService/PixelQualifiedNetworksService.apk
 system_ext/priv-app/ShannonIms/ShannonIms.apk;PRESIGNED
