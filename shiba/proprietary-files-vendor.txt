@@ -1943,6 +1943,7 @@ vendor/lib64/libsitril-client.so
 vendor/lib64/libsitril-gps.so
 vendor/lib64/libsitril-ims.so
 vendor/lib64/libsitril.so
+vendor/lib64/libspeechenhancer.so
 vendor/lib64/libstpreprocess21.so
 vendor/lib64/libstreset23.so
 vendor/lib64/libsueznanoappclients.so

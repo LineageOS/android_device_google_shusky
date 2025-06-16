@@ -54,6 +54,12 @@ blob_fixups: blob_fixups_user_type = {
         .patch_file('osaifu-keitai.patch'),
     'vendor/etc/init/init.modem_logging_control.rc': blob_fixup()
         .regex_replace(' && property:ro.debuggable=0', ''),
+    'vendor/lib64/libspeechenhancer.so': blob_fixup()
+        .clear_symbol_version('AHardwareBuffer_allocate')
+        .clear_symbol_version('AHardwareBuffer_describe')
+        .clear_symbol_version('AHardwareBuffer_lock')
+        .clear_symbol_version('AHardwareBuffer_release')
+        .clear_symbol_version('AHardwareBuffer_unlock'),
 }  # fmt: skip
 
 extract_fns: extract_fns_user_type = {
