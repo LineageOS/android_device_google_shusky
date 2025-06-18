@@ -44,9 +44,7 @@ $(call soong_config_set,wifi,feature_rear_camera_sar,$(WIFI_FEATURE_REAR_CAMERA_
 include device/google/shusky/device-shusky-common.mk
 
 include device/google/zuma/BoardConfig-common.mk
--include vendor/google_devices/zuma/prebuilts/BoardConfigVendor.mk
 include device/google/gs-common/check_current_prebuilt/check_current_prebuilt.mk
--include vendor/google_devices/husky/proprietary/BoardConfigVendor.mk
 include device/google/shusky/sepolicy/husky-sepolicy.mk
 include device/google/shusky/wifi/BoardConfig-wifi.mk
 

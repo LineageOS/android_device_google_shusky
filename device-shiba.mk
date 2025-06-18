@@ -14,9 +14,6 @@
 # limitations under the License.
 #
 
-# Restrict the visibility of Android.bp files to improve build analysis time
-$(call inherit-product-if-exists, vendor/google/products/sources_pixel.mk)
-
 ifdef RELEASE_GOOGLE_SHIBA_RADIO_DIR
 RELEASE_GOOGLE_PRODUCT_RADIO_DIR := $(RELEASE_GOOGLE_SHIBA_RADIO_DIR)
 endif
@@ -38,13 +35,6 @@ LOCAL_PATH := device/google/shusky
 ifneq ($(TARGET_BOOTS_16K),true)
 PRODUCT_16K_DEVELOPER_OPTION := $(RELEASE_GOOGLE_SHIBA_16K_DEVELOPER_OPTION)
 endif
-
-$(call inherit-product-if-exists, vendor/google_devices/shusky/prebuilts/device-vendor-shiba.mk)
-$(call inherit-product-if-exists, vendor/google_devices/zuma/prebuilts/device-vendor.mk)
-$(call inherit-product-if-exists, vendor/google_devices/zuma/proprietary/device-vendor.mk)
-$(call inherit-product-if-exists, vendor/google_devices/shusky/proprietary/shiba/device-vendor-shiba.mk)
-$(call inherit-product-if-exists, vendor/google_devices/shiba/proprietary/device-vendor.mk)
-$(call inherit-product-if-exists, vendor/google_devices/shusky/proprietary/WallpapersShiba.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/google/shusky/shiba/overlay
 CAMERA_PRODUCT ?= shiba
@@ -276,9 +266,6 @@ PRODUCT_PACKAGES += \
 	WifiOverlay2023 \
 	PixelWifiOverlay2023
 
-# Trusty liboemcrypto.so
-PRODUCT_SOONG_NAMESPACES += vendor/google_devices/shusky/prebuilts
-
 # Location
 # SDK build system
 include device/google/gs-common/gps/brcm/device.mk
@@ -302,12 +289,6 @@ endif
 PRODUCT_VENDOR_PROPERTIES += \
 	vendor.zram.size=50p \
 	persist.device_config.configuration.disable_rescue_party=true
-
-# Fingerprint HAL
-GOODIX_CONFIG_BUILD_VERSION := g7_trusty
-APEX_FPS_TA_DIR := //vendor/google_devices/shusky/prebuilts
-$(call inherit-product-if-exists, vendor/goodix/udfps/configuration/udfps_common.mk)
-$(call inherit-product-if-exists, vendor/goodix/udfps/configuration/udfps_shipping.mk)
 
 # Fingerprint exposure compensation
 PRODUCT_VENDOR_PROPERTIES += \
@@ -444,10 +425,6 @@ PRODUCT_PACKAGES += \
     AvoidAppsInCutoutOverlay
 
 PRODUCT_NO_BIONIC_PAGE_SIZE_MACRO := true
-
-ifneq ($(wildcard vendor/arm/mali/valhall),)
-PRODUCT_CHECK_PREBUILT_MAX_PAGE_SIZE := true
-endif
 
 # Bluetooth device id
 # Shiba: 0x410E
