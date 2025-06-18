@@ -60,29 +60,6 @@ PRODUCT_COPY_FILES += \
     device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/tuning/waves/waves_config.ini:$(TARGET_COPY_OUT_VENDOR)/etc/waves_config.ini \
     device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/tuning/waves/waves_preset.mps:$(TARGET_COPY_OUT_VENDOR)/etc/waves_preset.mps
 
-# userdebug specific
-ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
-PRODUCT_COPY_FILES += \
-    device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/tuning/fortemedia/BLUETOOTH.mods:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/BLUETOOTH.mods \
-    device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/tuning/fortemedia/HANDSFREE.mods:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/HANDSFREE.mods \
-    device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/tuning/fortemedia/HANDSET.mods:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/HANDSET.mods \
-    device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/tuning/fortemedia/HEADSET.mods:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/HEADSET.mods
-
-#Bluenote files
-PRODUCT_COPY_FILES += \
-    device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/tuning/bluenote/template.xml:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/template.xml \
-    device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/tuning/bluenote/tuning_constraints_combination.xml:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/tuning_constraints_combination.xml
-
-# Mixer Path Configuration for Audio Speaker Calibration Tool crus_sp_cal
-PRODUCT_COPY_FILES += \
-    device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/cs35l41/crus_sp_cal_mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/crus_sp_cal_mixer_paths.xml
-
-PRODUCT_COPY_FILES += \
-    device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/tuning/waves/tests/test_config.ini:$(TARGET_COPY_OUT_VENDOR)/etc/test_config.ini \
-    device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/tuning/waves/tests/test_preset.mps:$(TARGET_COPY_OUT_VENDOR)/etc/test_preset.mps
-
-endif
-
 ifeq ($(USE_AUDIO_HAL_AIDL),true)
 # Offload spatializer config
 PRODUCT_COPY_FILES += \

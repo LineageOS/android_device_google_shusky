@@ -163,40 +163,20 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.gms.dck.eligible_wcc=2 \
     ro.gms.dck.se_capability=1
 
-# Bluetooth hci_inject test tool
-PRODUCT_PACKAGES_ENG += \
-    hci_inject
-
 # Bluetooth OPUS codec
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.opus.enabled=true
-
-# Bluetooth SAR test tool
-PRODUCT_PACKAGES_ENG += \
-    sar_test
-
-# Bluetooth EWP test tool
-PRODUCT_PACKAGES_ENG += \
-    ewp_tool
 
 # Bluetooth AAC VBR
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.a2dp_aac.vbr_supported=true
 
 # Override BQR mask to enable LE Audio Choppy report, remove BTRT logging
-ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
-PRODUCT_PRODUCT_PROPERTIES += \
-    persist.bluetooth.bqr.event_mask=295262 \
-    persist.bluetooth.bqr.vnd_quality_mask=29 \
-    persist.bluetooth.bqr.vnd_trace_mask=0 \
-    persist.bluetooth.vendor.btsnoop=true
-else
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.bqr.event_mask=295262 \
     persist.bluetooth.bqr.vnd_quality_mask=16 \
     persist.bluetooth.bqr.vnd_trace_mask=0 \
     persist.bluetooth.vendor.btsnoop=false
-endif
 
 # Spatial Audio
 PRODUCT_PACKAGES += \
@@ -307,28 +287,15 @@ PRODUCT_COPY_FILES += \
        device/google/shusky/location/gps.cer:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.cer
 
 # Location
-ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
+PRODUCT_COPY_FILES += \
+    device/google/shusky/location/lhd_user.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/lhd.conf \
+    device/google/shusky/location/scd_user.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/scd.conf
+ifneq (,$(filter 6.1, $(TARGET_LINUX_KERNEL_VERSION)))
     PRODUCT_COPY_FILES += \
-        device/google/shusky/location/lhd.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/lhd.conf \
-        device/google/shusky/location/scd.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/scd.conf
-    ifneq (,$(filter 6.1, $(TARGET_LINUX_KERNEL_VERSION)))
-        PRODUCT_COPY_FILES += \
-            device/google/shusky/location/gps.6.1.xml.sb3:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
-    else
-        PRODUCT_COPY_FILES += \
-            device/google/shusky/location/gps.xml.sb3:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
-    endif
+        device/google/shusky/location/gps_user.6.1.xml.sb3:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
 else
     PRODUCT_COPY_FILES += \
-        device/google/shusky/location/lhd_user.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/lhd.conf \
-        device/google/shusky/location/scd_user.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/scd.conf
-    ifneq (,$(filter 6.1, $(TARGET_LINUX_KERNEL_VERSION)))
-        PRODUCT_COPY_FILES += \
-            device/google/shusky/location/gps_user.6.1.xml.sb3:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
-    else
-        PRODUCT_COPY_FILES += \
-            device/google/shusky/location/gps_user.xml.sb3:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
-    endif
+        device/google/shusky/location/gps_user.xml.sb3:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
 endif
 
 # Set zram size
@@ -429,12 +396,6 @@ endif
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.camera.rls_supported=false
 
-# WLC userdebug specific
-ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
-    PRODUCT_COPY_FILES += \
-        device/google/zuma/init.hardware.wlc.rc.userdebug:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.wlc.rc
-endif
-
 # Setup Wizard device-specific settings
 PRODUCT_PRODUCT_PROPERTIES += \
     setupwizard.feature.enable_quick_start_flow=true \
@@ -481,11 +442,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PACKAGES += \
     NoCutoutOverlay \
     AvoidAppsInCutoutOverlay
-
-# ETM
-ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
-$(call inherit-product-if-exists, device/google/common/etm/device-userdebug-modules.mk)
-endif
 
 PRODUCT_NO_BIONIC_PAGE_SIZE_MACRO := true
 
