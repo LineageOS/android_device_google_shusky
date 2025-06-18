@@ -1,1 +1,1 @@
-require board=ripcurrent|husky|shiba
+require board=husky|shiba

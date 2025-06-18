@@ -20,7 +20,7 @@ USE_SWIFTSHADER := true
 BOARD_USES_SWIFTSHADER := true
 
 $(call inherit-product, device/google/zuma/aosp_common.mk)
-$(call inherit-product, device/google/shusky/husky_generic.mk)
+$(call inherit-product, device/google/shusky/device-husky.mk)
 
 PRODUCT_NAME := aosp_husky
 PRODUCT_DEVICE := husky

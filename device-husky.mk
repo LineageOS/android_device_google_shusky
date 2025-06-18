@@ -38,9 +38,8 @@ LOCAL_PATH := device/google/shusky
 ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
     USE_UWBFIELDTESTQM := true
 endif
-ifeq ($(filter factory_husky, $(TARGET_PRODUCT)),)
-    include device/google/shusky/uwb/uwb_calibration.mk
-endif
+
+include device/google/shusky/uwb/uwb_calibration.mk
 
 ifneq ($(TARGET_BOOTS_16K),true)
 PRODUCT_16K_DEVELOPER_OPTION := $(RELEASE_GOOGLE_HUSKY_16K_DEVELOPER_OPTION)
@@ -358,11 +357,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 GOODIX_CONFIG_BUILD_VERSION := g7_trusty
 APEX_FPS_TA_DIR := //vendor/google_devices/shusky/prebuilts
 $(call inherit-product-if-exists, vendor/goodix/udfps/configuration/udfps_common.mk)
-ifeq ($(filter factory%, $(TARGET_PRODUCT)),)
 $(call inherit-product-if-exists, vendor/goodix/udfps/configuration/udfps_shipping.mk)
-else
-$(call inherit-product-if-exists, vendor/goodix/udfps/configuration/udfps_factory.mk)
-endif
 
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.udfps.als_feed_forward_supported=true \
