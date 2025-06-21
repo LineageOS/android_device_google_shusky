@@ -1035,5 +1035,10 @@ framework/oat/arm64/com.google.android.camera.experimental2023.vdex
 
 # Completely skip files that are not required
 
+# Flood control
+bin/flood.control.hal
+etc/init/init.flood.control.rc
+etc/vintf/manifest/flood_control.xml
+
 # Google
 etc/default-permissions/default-permissions_talkback.xml
