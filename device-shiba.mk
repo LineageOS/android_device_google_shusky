@@ -150,6 +150,13 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.audio.spatializer_enabled=true
 
+# HdMic Audio
+PRODUCT_SOONG_NAMESPACES += device/google/shusky/audio/shiba/prebuilt/libspeechenhancer
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.app.audio.gsenet.version=1
+PRODUCT_PACKAGES += \
+    libspeechenhancer
+
 # Audio CCA property
 PRODUCT_PROPERTY_OVERRIDES += \
 	persist.vendor.audio.cca.enabled=false
@@ -182,13 +189,13 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Override BQR mask to enable LE Audio Choppy report, remove BTRT logging
 ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_PRODUCT_PROPERTIES += \
-    persist.bluetooth.bqr.event_mask=295006 \
+    persist.bluetooth.bqr.event_mask=295262 \
     persist.bluetooth.bqr.vnd_quality_mask=29 \
     persist.bluetooth.bqr.vnd_trace_mask=0 \
     persist.bluetooth.vendor.btsnoop=true
 else
 PRODUCT_PRODUCT_PROPERTIES += \
-    persist.bluetooth.bqr.event_mask=295006 \
+    persist.bluetooth.bqr.event_mask=295262 \
     persist.bluetooth.bqr.vnd_quality_mask=16 \
     persist.bluetooth.bqr.vnd_trace_mask=0 \
     persist.bluetooth.vendor.btsnoop=false
@@ -215,8 +222,8 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # Bluetooth LE Audio Broadcast
 PRODUCT_PRODUCT_PROPERTIES += \
-	bluetooth.profile.bap.broadcast.assist.enabled=true \
-	bluetooth.profile.bap.broadcast.source.enabled=true
+	bluetooth.profile.bap.broadcast.assist.enabled?=true \
+	bluetooth.profile.bap.broadcast.source.enabled?=true
 
 # Bluetooth LE Audio enable hardware offloading
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -239,6 +246,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Support LE Audio dual mic SWB call
 PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.leaudio.dual_bidirection_swb.supported=true
+
+# Disable Bluetooth HAP by default
+PRODUCT_PRODUCT_PROPERTIES += \
+    bluetooth.profile.hap.enabled_by_default=false
 
 # Support LE & Classic concurrent encryption (b/330704060)
 PRODUCT_PRODUCT_PROPERTIES += \
