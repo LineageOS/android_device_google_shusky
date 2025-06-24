@@ -16,31 +16,8 @@
 
 AUDIO_TABLE_FOLDER := husky
 
-# Choose AIDL config by build flag.
-ifeq ($(USE_AUDIO_HAL_AIDL),true)
 PRODUCT_SOONG_NAMESPACES += device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/aidl_config
 PRODUCT_PACKAGES += audio_aidl_configs
-
-else
-# Platform Configuration for AudioHAL / SoundTriggerHAL
-PRODUCT_COPY_FILES += \
-    device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/config/audio_policy_configuration_bluetooth_legacy_hal.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration_bluetooth_legacy_hal.xml \
-    device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/config/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
-    device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/config/audio_policy_configuration_a2dp_offload_disabled.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration_a2dp_offload_disabled.xml \
-    device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/config/audio_platform_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_configuration.xml \
-    device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/config/sound_trigger_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_configuration.xml \
-    device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
-    device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/config/audio_policy_configuration_le_offload_disabled.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration_le_offload_disabled.xml \
-    device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/config/bluetooth_with_le_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration_7_0.xml
-
-# AudioEffectHAL Configuration
-PRODUCT_COPY_FILES += \
-    device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/config/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
-
-# Mixer Path Configuration for AudioHAL
-PRODUCT_COPY_FILES += \
-    device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/config/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml
-endif
 
 # Speaker firmware files
 SPK_FIRMWARE_PATH := $(AUDIO_TABLE_FOLDER)/cs35l41/fw
@@ -60,12 +37,9 @@ PRODUCT_COPY_FILES += \
     device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/tuning/waves/waves_config.ini:$(TARGET_COPY_OUT_VENDOR)/etc/waves_config.ini \
     device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/tuning/waves/waves_preset.mps:$(TARGET_COPY_OUT_VENDOR)/etc/waves_preset.mps
 
-ifeq ($(USE_AUDIO_HAL_AIDL),true)
 # Offload spatializer config
 PRODUCT_COPY_FILES += \
     device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/tuning/spatializer/base:$(TARGET_COPY_OUT_VENDOR)/etc/spatializer/base \
     device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/tuning/spatializer/mode_2_ch:$(TARGET_COPY_OUT_VENDOR)/etc/spatializer/mode_2_ch \
     device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/tuning/spatializer/mode_6_ch:$(TARGET_COPY_OUT_VENDOR)/etc/spatializer/mode_6_ch \
-    device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/tuning/spatializer/mode_xaural:$(TARGET_COPY_OUT_VENDOR)/etc/spatializer/mode_xaural \
-
-endif
+    device/google/shusky/audio/$(AUDIO_TABLE_FOLDER)/tuning/spatializer/mode_xaural:$(TARGET_COPY_OUT_VENDOR)/etc/spatializer/mode_xaural

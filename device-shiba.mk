@@ -39,9 +39,7 @@ endif
 DEVICE_PACKAGE_OVERLAYS += device/google/shusky/shiba/overlay
 CAMERA_PRODUCT ?= shiba
 
-ifeq ($(RELEASE_PIXEL_AIDL_AUDIO_HAL_ZUMA),true)
 USE_AUDIO_HAL_AIDL := true
-endif
 
 include device/google/shusky/camera/camera.mk
 include device/google/shusky/audio/shiba/audio-tables.mk
@@ -118,23 +116,6 @@ PRODUCT_COPY_FILES += \
 # POF
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.bluetooth.finder.supported=true
-
-ifeq ($(USE_AUDIO_HAL_AIDL),true)
-# AIDL
-
-else
-# HIDL
-
-# Spatial Audio
-PRODUCT_PACKAGES += \
-	libspatialaudio
-
-# Sound Dose
-PRODUCT_PACKAGES += \
-	android.hardware.audio.sounddose-vendor-impl \
-	audio_sounddose_aoc
-
-endif
 
 # declare use of spatial audio
 PRODUCT_PROPERTY_OVERRIDES += \
