@@ -35,7 +35,7 @@ LOCAL_PATH := device/google/shusky
 include device/google/shusky/uwb/uwb_calibration.mk
 
 ifneq ($(TARGET_BOOTS_16K),true)
-PRODUCT_16K_DEVELOPER_OPTION := $(RELEASE_GOOGLE_HUSKY_16K_DEVELOPER_OPTION)
+PRODUCT_16K_DEVELOPER_OPTION := true
 endif
 
 # display
