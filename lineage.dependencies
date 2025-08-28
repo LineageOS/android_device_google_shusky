@@ -2,10 +2,5 @@
   {
     "repository": "android_device_google_zuma",
     "target_path": "device/google/zuma"
-  },
-  {
-    "repository": "device/google/shusky-kernels/6.1",
-    "target_path": "device/google/shusky-kernels/6.1",
-    "remote": "aosp-shusky"
   }
 ]
