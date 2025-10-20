@@ -1033,6 +1033,9 @@ lib64/libui.so
 framework/oat/arm64/com.google.android.camera.experimental2023.odex
 framework/oat/arm64/com.google.android.camera.experimental2023.vdex
 
+# Rust
+lib64/libregex_automata.dylib.so
+
 # Completely skip files that are not required
 
 # Flood control
