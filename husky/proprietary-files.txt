@@ -4,7 +4,7 @@
 
 # AiAi
 product/priv-app/AICorePrebuilt-aicore_20250130.00_RC01/AICorePrebuilt-aicore_20250130.00_RC01.apk;PRESIGNED
-product/priv-app/DeviceIntelligenceNetworkPrebuilt-astrea_20240329.00_RC02/DeviceIntelligenceNetworkPrebuilt-astrea_20240329.00_RC02.apk;PRESIGNED
+product/priv-app/DeviceIntelligenceNetworkPrebuilt-bfinal_astrea_20250217.00_RC00/DeviceIntelligenceNetworkPrebuilt-bfinal_astrea_20250217.00_RC00.apk;PRESIGNED
 product/priv-app/DevicePersonalizationPrebuiltPixel2023-bfinal_aiai_20250217.00_RC08/DevicePersonalizationPrebuiltPixel2023-bfinal_aiai_20250217.00_RC08.apk;PRESIGNED
 
 # Audio
@@ -64,7 +64,7 @@ product/etc/permissions/com.android.sdm.plugins.dcmo.xml
 product/etc/permissions/com.android.sdm.plugins.diagmon.xml
 product/lib64/libdmengine.so;SYMLINK=product/priv-app/DMService/lib/arm64/libdmengine.so
 product/lib64/libdmjavaplugin.so;SYMLINK=product/priv-app/DMService/lib/arm64/libdmjavaplugin.so
-product/priv-app/CarrierSettings_signed_53.0.733201674/CarrierSettings_signed_53.0.733201674.apk;PRESIGNED
+product/priv-app/CarrierSettings_signed_55.0.755436886/CarrierSettings_signed_55.0.755436886.apk;PRESIGNED
 product/priv-app/CarrierWifi/CarrierWifi.apk;PRESIGNED
 product/priv-app/ConnMO/ConnMO.apk
 product/priv-app/DCMO/DCMO.apk
@@ -134,7 +134,7 @@ system_ext/etc/permissions/com.shannon.rcsservice.xml
 system_ext/lib64/libmediaadaptor.so
 system_ext/lib64/libpixelimsmedia.so
 system_ext/lib64/vendor.google.whitechapel.audio.audioext@4.0.so
-system_ext/lib64/vendor.google.whitechapel.audio.extension-V5-ndk.so
+system_ext/lib64/vendor.google.whitechapel.audio.extension-V6-ndk.so
 system_ext/priv-app/PixelImsMediaService/PixelImsMediaService.apk
 system_ext/priv-app/PixelQualifiedNetworksService/PixelQualifiedNetworksService.apk
 system_ext/priv-app/ShannonIms/ShannonIms.apk;PRESIGNED
