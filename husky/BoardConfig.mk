@@ -30,8 +30,6 @@ TARGET_SCREEN_DENSITY := 480
 BOARD_KERNEL_CMDLINE += swiotlb=noforce
 BOARD_KERNEL_CMDLINE += disable_dma32=on
 
-include device/google/shusky/device-shusky-common.mk
-
 include device/google/zuma/BoardConfig-common.mk
 include device/google/shusky/sepolicy/husky-sepolicy.mk
 include device/google/shusky/wifi/BoardConfig-wifi.mk

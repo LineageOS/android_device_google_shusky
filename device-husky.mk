@@ -21,42 +21,26 @@ TARGET_KERNEL_PLATFORM_SOURCE := google/gs-$(TARGET_LINUX_KERNEL_VERSION)
 
 LOCAL_PATH := device/google/shusky
 
-include device/google/shusky/uwb/uwb_calibration.mk
-
 ifneq ($(TARGET_BOOTS_16K),true)
 PRODUCT_16K_DEVELOPER_OPTION := true
 endif
 
-# display
 DEVICE_PACKAGE_OVERLAYS += device/google/shusky/husky/overlay
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.ignore_hdr_camera_layers=true
 
+# Audio
 PRODUCT_COPY_FILES += \
-	device/google/shusky/husky/display_colordata_dev_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_colordata_dev_cal0.pb \
-    device/google/shusky/husky/display_golden_google-hk3_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_golden_google-hk3_cal0.pb \
-    device/google/shusky/display_golden_external_display_cal2.pb:$(TARGET_COPY_OUT_VENDOR)/etc/display_golden_external_display_cal2.pb
+    frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml
 
-include device/google/shusky/audio/husky/audio-tables.mk
 include device/google/zuma/device-shipping-common.mk
 include device/google/gs-common/bcmbt/bluetooth.mk
 include device/google/gs-common/touch/stm/predump_stm20.mk
 include device/google/gs-common/touch/gti/predump_gti.mk
 include device/google/gs-common/touch/touchinspector/touchinspector.mk
 
-# Init files
-PRODUCT_COPY_FILES += \
-	device/google/shusky/conf/init.husky.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.husky.rc
-
 # Recovery files
 PRODUCT_COPY_FILES += \
         device/google/shusky/conf/init.recovery.device.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.husky.rc
-
-# MIPI Coex Configs
-PRODUCT_COPY_FILES += \
-        device/google/shusky/husky/radio/husky_camera_front_dbr_coex_table.csv:$(TARGET_COPY_OUT_VENDOR)/etc/modem/camera_front_dbr_coex_table.csv \
-        device/google/shusky/husky/radio/husky_camera_front_mipi_coex_table.csv:$(TARGET_COPY_OUT_VENDOR)/etc/modem/camera_front_mipi_coex_table.csv \
-        device/google/shusky/husky/radio/husky_camera_rear_tele_mipi_coex_table.csv:$(TARGET_COPY_OUT_VENDOR)/etc/modem/camera_rear_tele_mipi_coex_table.csv \
-        device/google/shusky/husky/radio/husky_display_primary_mipi_coex_table.csv:$(TARGET_COPY_OUT_VENDOR)/etc/modem/display_primary_mipi_coex_table.csv
 
 # NFC
 PRODUCT_COPY_FILES += \
@@ -64,9 +48,7 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.nfc.hce.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hce.xml \
 	frameworks/native/data/etc/android.hardware.nfc.hcef.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hcef.xml \
 	frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.mifare.xml \
-	frameworks/native/data/etc/android.hardware.nfc.ese.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.ese.xml \
-	device/google/shusky/nfc/libnfc-hal-st.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-hal-st.conf \
-	device/google/shusky/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_PRODUCT)/etc/libnfc-nci.conf
+	frameworks/native/data/etc/android.hardware.nfc.ese.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.ese.xml
 
 PRODUCT_PACKAGES += \
 	Tag \
@@ -78,12 +60,9 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.se.omapi.ese.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.se.omapi.ese.xml \
-	frameworks/native/data/etc/android.hardware.se.omapi.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.se.omapi.uicc.xml \
-	device/google/shusky/nfc/libse-gto-hal.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libse-gto-hal.conf
+	frameworks/native/data/etc/android.hardware.se.omapi.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.se.omapi.uicc.xml
 
 # Bluetooth HAL
-PRODUCT_COPY_FILES += \
-	device/google/shusky/bluetooth/bt_vendor_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth/bt_vendor_overlay.conf
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.bluetooth.a2dp_offload.supported=true \
     persist.bluetooth.a2dp_offload.disabled=false \
@@ -92,15 +71,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Enable Bluetooth AutoOn feature
 PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.server.automatic_turn_on=true
-
-# Bluetooth Tx power caps
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/bluetooth/bluetooth_power_limits_husky.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits.csv \
-    $(LOCAL_PATH)/bluetooth/bluetooth_power_limits_husky_CA.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_CA.csv \
-    $(LOCAL_PATH)/bluetooth/bluetooth_power_limits_husky_EU.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_EU.csv \
-    $(LOCAL_PATH)/bluetooth/bluetooth_power_limits_husky_JP.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_JP.csv \
-    $(LOCAL_PATH)/bluetooth/bluetooth_power_limits_husky_US.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_US.csv \
-    $(LOCAL_PATH)/bluetooth/bluetooth_power_limits_husky_GC3VE_EU.csv:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_power_limits_GC3VE_EU.csv
 
 # POF
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -167,10 +137,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 	ro.bluetooth.leaudio_offload.supported=true \
 	persist.bluetooth.leaudio_offload.disabled=false
 
-# Bluetooth LE Auido offload capabilities setting
-PRODUCT_COPY_FILES += \
-	device/google/shusky/bluetooth/le_audio_codec_capabilities.xml:$(TARGET_COPY_OUT_VENDOR)/etc/le_audio_codec_capabilities.xml
-
 # LE Audio Unicast Allowlist
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.leaudio.allow_list=SM-R510,WF-1000XM5,SM-R630
@@ -208,28 +174,9 @@ PRODUCT_PACKAGES += \
 	WifiOverlay2023 \
 	PixelWifiOverlay2023
 
-# UWB
-PRODUCT_SOONG_NAMESPACES += \
-    device/google/shusky/uwb
-
 # Location
 # SDK build system
 include device/google/gs-common/gps/brcm/device.mk
-
-PRODUCT_COPY_FILES += \
-       device/google/shusky/location/gps.cer:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.cer
-
-# Location
-PRODUCT_COPY_FILES += \
-    device/google/shusky/location/lhd_user.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/lhd.conf \
-    device/google/shusky/location/scd_user.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/scd.conf
-ifneq (,$(filter 6.1, $(TARGET_LINUX_KERNEL_VERSION)))
-    PRODUCT_COPY_FILES += \
-        device/google/shusky/location/gps_user.6.1.xml.hk3:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
-else
-    PRODUCT_COPY_FILES += \
-        device/google/shusky/location/gps_user.xml.hk3:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
-endif
 
 # Set zram size
 PRODUCT_VENDOR_PROPERTIES += \
@@ -274,10 +221,6 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # Display ACL
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.0.brightness.acl.default=0
-
-# display color data
-PRODUCT_COPY_FILES += \
-	device/google/shusky/husky/panel_config_google-hk3_cal0.pb:$(TARGET_COPY_OUT_VENDOR)/etc/panel_config_google-hk3_cal0.pb
 
 # Vibrator HAL
 PRODUCT_VENDOR_PROPERTIES += \
@@ -371,13 +314,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Set support for LEA multicodec
 PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.core.le_audio.codec_extension_aidl.enabled=true
-
-# LE Audio configuration scenarios
-PRODUCT_COPY_FILES += \
-    device/google/shusky/bluetooth/audio_set_scenarios.json:$(TARGET_COPY_OUT_VENDOR)/etc/aidl/le_audio/aidl_audio_set_scenarios.json
-
-PRODUCT_COPY_FILES += \
-    device/google/shusky/bluetooth/audio_set_configurations.json:$(TARGET_COPY_OUT_VENDOR)/etc/aidl/le_audio/aidl_audio_set_configurations.json
 
 # Enable APF by default
 PRODUCT_VENDOR_PROPERTIES += \
