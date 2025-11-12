@@ -25,26 +25,14 @@ BOARD_KERNEL_CMDLINE += samsung_iommu_v9.load_sequential=1
 
 TARGET_BOARD_INFO_FILE := device/google/shusky/board-info.txt
 TARGET_BOOTLOADER_BOARD_NAME := husky
+TARGET_SCREEN_DENSITY := 480
 
-ifdef PHONE_CAR_BOARD_PRODUCT
-    include device/google_car/$(PHONE_CAR_BOARD_PRODUCT)/BoardConfig.mk
-else
-    TARGET_SCREEN_DENSITY := 480
-endif
-
-BOARD_USES_GENERIC_AUDIO := true
-USES_DEVICE_GOOGLE_SHUSKY := true
 BOARD_KERNEL_CMDLINE += swiotlb=noforce
 BOARD_KERNEL_CMDLINE += disable_dma32=on
-
-# Wifi
-WIFI_FEATURE_REAR_CAMERA_SAR := true
-$(call soong_config_set,wifi,feature_rear_camera_sar,$(WIFI_FEATURE_REAR_CAMERA_SAR))
 
 include device/google/shusky/device-shusky-common.mk
 
 include device/google/zuma/BoardConfig-common.mk
-include device/google/gs-common/check_current_prebuilt/check_current_prebuilt.mk
 include device/google/shusky/sepolicy/husky-sepolicy.mk
 include device/google/shusky/wifi/BoardConfig-wifi.mk
 
