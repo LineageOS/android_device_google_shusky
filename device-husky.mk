@@ -14,18 +14,7 @@
 # limitations under the License.
 #
 
-ifdef RELEASE_GOOGLE_HUSKY_RADIO_DIR
-RELEASE_GOOGLE_PRODUCT_RADIO_DIR := $(RELEASE_GOOGLE_HUSKY_RADIO_DIR)
-endif
-ifdef RELEASE_GOOGLE_HUSKY_RADIOCFG_DIR
-RELEASE_GOOGLE_PRODUCT_RADIOCFG_DIR := $(RELEASE_GOOGLE_HUSKY_RADIOCFG_DIR)
-endif
-RELEASE_GOOGLE_BOOTLOADER_HUSKY_DIR ?= pdk# Keep this for pdk TODO: b/327119000
-RELEASE_GOOGLE_PRODUCT_BOOTLOADER_DIR := bootloader/$(RELEASE_GOOGLE_BOOTLOADER_HUSKY_DIR)
-$(call soong_config_set,shusky_bootloader,prebuilt_dir,$(RELEASE_GOOGLE_BOOTLOADER_HUSKY_DIR))
-
-
-TARGET_LINUX_KERNEL_VERSION := $(RELEASE_KERNEL_HUSKY_VERSION)
+TARGET_LINUX_KERNEL_VERSION := 6.1
 TARGET_KERNEL_DEVICE := shusky
 TARGET_KERNEL_DIR := device/google/$(TARGET_KERNEL_DEVICE)-kernels/$(TARGET_LINUX_KERNEL_VERSION)
 TARGET_KERNEL_PLATFORM_SOURCE := google/gs-$(TARGET_LINUX_KERNEL_VERSION)
@@ -85,7 +74,6 @@ PRODUCT_COPY_FILES += \
 	device/google/shusky/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_PRODUCT)/etc/libnfc-nci.conf
 
 PRODUCT_PACKAGES += \
-	$(RELEASE_PACKAGE_NFC_STACK) \
 	Tag \
 	android.hardware.nfc-service.st
 
@@ -345,34 +333,12 @@ PRODUCT_VENDOR_PROPERTIES += \
     vendor.audio.hapticgenerator.distortion.output.gain=0.38
 
 # Increment the SVN for any official public releases
-ifdef RELEASE_SVN_HUSKY
-TARGET_SVN ?= $(RELEASE_SVN_HUSKY)
-else
-# Set this for older releases that don't use build flag
-TARGET_SVN ?= 38
-endif
-
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.build.svn=$(TARGET_SVN)
+    ro.vendor.build.svn=61
 
 # Set device family property for SMR
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.device_family=HK3SB3AK3
-
-# Set build properties for SMR builds
-ifeq ($(RELEASE_IS_SMR), true)
-    ifneq (,$(RELEASE_BASE_OS_HUSKY))
-        PRODUCT_BASE_OS := $(RELEASE_BASE_OS_HUSKY)
-    endif
-endif
-
-# Set build properties for EMR builds
-ifeq ($(RELEASE_IS_EMR), true)
-    ifneq (,$(RELEASE_BASE_OS_HUSKY))
-        PRODUCT_PROPERTY_OVERRIDES += \
-        ro.build.version.emergency_base_os=$(RELEASE_BASE_OS_HUSKY)
-    endif
-endif
 
 # Setup Wizard device-specific settings
 PRODUCT_PRODUCT_PROPERTIES += \
