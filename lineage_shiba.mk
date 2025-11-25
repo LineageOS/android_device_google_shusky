@@ -1,6 +1,6 @@
 #
-# SPDX-FileCopyrightText: 2021-2024 The LineageOS Project
-# SPDX-FileCopyrightText: 2021-2024 The Calyx Institute
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-FileCopyrightText: The Calyx Institute
 # SPDX-License-Identifier: Apache-2.0
 #
 
@@ -13,8 +13,6 @@ DEVICE_CODENAME := shiba
 DEVICE_PATH := device/google/shusky
 VENDOR_PATH := vendor/google/shiba
 $(call inherit-product, $(DEVICE_PATH)/aosp_$(DEVICE_CODENAME).mk)
-$(call inherit-product, device/google/zuma/lineage_common.mk)
-$(call inherit-product, $(DEVICE_PATH)/$(DEVICE_CODENAME)/device-lineage.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_BRAND := google
