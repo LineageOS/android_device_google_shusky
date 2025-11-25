@@ -49,7 +49,7 @@ PRODUCT_VENDOR_PROPERTIES += ro.vendor.touch.dump.proc=/proc/fts/driver_test
 
 # Recovery files
 PRODUCT_COPY_FILES += \
-        device/google/shusky/conf/init.recovery.device.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.husky.rc
+    device/google/shusky/recovery/init.recovery.device.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.husky.rc
 
 # NFC
 PRODUCT_COPY_FILES += \
