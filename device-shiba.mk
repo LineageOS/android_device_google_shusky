@@ -25,8 +25,21 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml
 
 include device/google/zuma/device-shipping-common.mk
-include device/google/gs-common/bcmbt/bluetooth.mk
-include device/google/gs-common/touch/gti/predump_gti.mk
+
+# Bluetooth
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth.prebuilt.xml \
+    android.hardware.bluetooth_le.prebuilt.xml
+
+DEVICE_MANIFEST_FILE += device/google/gs-common/bcmbt/manifest_bluetooth.xml
+DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE += device/google/gs-common/bcmbt/compatibility_matrix.xml
+
+# Touch
+PRODUCT_PACKAGES += \
+    dump_touch.sh \
+    predump_gti0.sh \
+    predump_touch.sh \
+    touch_gti_ical
 
 # Recovery files
 PRODUCT_COPY_FILES += \
@@ -160,8 +173,8 @@ PRODUCT_PACKAGES += \
 	WifiOverlay2023
 
 # Location
-# SDK build system
-include device/google/gs-common/gps/brcm/device.mk
+PRODUCT_PACKAGES += \
+    android.hardware.location.gps.prebuilt.xml
 
 # Set zram size
 PRODUCT_VENDOR_PROPERTIES += \
@@ -322,4 +335,4 @@ PRODUCT_PACKAGES += \
     sensors.dynamic_sensor_hal
 
 # Wireless charging
-include device/google/gs-common/wireless_charger/wireless_charger.mk
+DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE += device/google/gs-common/wireless_charger/compatibility_matrix.xml
