@@ -43,7 +43,7 @@ PRODUCT_PACKAGES += \
 
 # Recovery files
 PRODUCT_COPY_FILES += \
-        device/google/shusky/conf/init.recovery.device.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.shiba.rc
+    device/google/shusky/recovery/init.recovery.device.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.shiba.rc
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
