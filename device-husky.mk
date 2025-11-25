@@ -51,7 +51,6 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.nfc.ese.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.ese.xml
 
 PRODUCT_PACKAGES += \
-	Tag \
 	android.hardware.nfc-service.st
 
 # SecureElement
@@ -107,11 +106,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.bqr.vnd_quality_mask=16 \
     persist.bluetooth.bqr.vnd_trace_mask=0 \
     persist.bluetooth.vendor.btsnoop=false
-
-# Spatial Audio
-PRODUCT_PACKAGES += \
-	libspatialaudio \
-	librondo
 
 # Bluetooth Super Wide Band
 PRODUCT_PRODUCT_PROPERTIES += \
