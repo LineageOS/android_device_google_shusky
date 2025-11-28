@@ -34,13 +34,6 @@ PRODUCT_PACKAGES += \
 DEVICE_MANIFEST_FILE += device/google/gs-common/bcmbt/manifest_bluetooth.xml
 DEVICE_PRODUCT_COMPATIBILITY_MATRIX_FILE += device/google/gs-common/bcmbt/compatibility_matrix.xml
 
-# Touch
-PRODUCT_PACKAGES += \
-    dump_touch.sh \
-    predump_gti0.sh \
-    predump_touch.sh \
-    touch_gti_ical
-
 # Recovery files
 PRODUCT_COPY_FILES += \
     device/google/shusky/recovery/init.recovery.device.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.shiba.rc
@@ -162,11 +155,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Support One-Handed mode
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.support_one_handed_mode=true
-
-# PowerStats HAL
-PRODUCT_SOONG_NAMESPACES += \
-    device/google/shusky/powerstats/shiba \
-    device/google/shusky
 
 # WiFi Overlay
 PRODUCT_PACKAGES += \
@@ -302,10 +290,6 @@ PRODUCT_PACKAGES += \
     libEGL_angle \
     libGLESv1_CM_angle \
     libGLESv2_angle
-
-# Dumpstate
-PRODUCT_PACKAGES += \
-    dump_gsc.sh
 
 # EUICC
 PRODUCT_COPY_FILES += \
