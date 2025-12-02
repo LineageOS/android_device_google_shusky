@@ -22,7 +22,6 @@ BOARD_KERNEL_CMDLINE += swiotlb=noforce
 BOARD_KERNEL_CMDLINE += disable_dma32=on
 
 include device/google/zuma/BoardConfig-common.mk
-include device/google/shusky/sepolicy/husky-sepolicy.mk
 include device/google/shusky/wifi/BoardConfig-wifi.mk
 
 # Kernel modules
@@ -30,5 +29,12 @@ BOARD_VENDOR_KERNEL_RAMDISK_KERNEL_MODULES_BLOCKLIST_FILE := $(DEVICE_PATH)/reco
 BOARD_VENDOR_KERNEL_RAMDISK_KERNEL_MODULES_LOAD_RAW := $(strip $(shell cat $(DEVICE_PATH)/recovery/modules.load.vendor_kernel_boot))
 BOARD_VENDOR_KERNEL_RAMDISK_KERNEL_MODULES_LOAD += $(BOARD_VENDOR_KERNEL_RAMDISK_KERNEL_MODULES_LOAD_RAW)
 BOARD_VENDOR_KERNEL_RAMDISK_KERNEL_MODULES += $(addprefix $(KERNEL_MODULE_DIR)/, $(notdir $(BOARD_VENDOR_KERNEL_RAMDISK_KERNEL_MODULES_LOAD_RAW)))
+
+# SEPolicy
+BOARD_VENDOR_SEPOLICY_DIRS += \
+    device/google/shusky/sepolicy/husky/vendor \
+    device/google/shusky/sepolicy/vendor \
+    hardware/google/pixel-sepolicy/vibrator/common \
+    hardware/google/pixel-sepolicy/vibrator/cs40l26
 
 include $(VENDOR_PATH)/BoardConfigVendor.mk

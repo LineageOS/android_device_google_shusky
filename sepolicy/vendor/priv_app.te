@@ -1,0 +1,2 @@
+allow priv_app sysfs_touch_gti:file { getattr open read write };
+allow priv_app sysfs_touch_gti:file rw_file_perms;
