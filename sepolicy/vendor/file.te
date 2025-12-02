@@ -1,0 +1,2 @@
+type sysfs_gps_assert, fs_type, sysfs_type;
+type sysfs_touch_gti, fs_type, mlstrustedobject, sysfs_type;

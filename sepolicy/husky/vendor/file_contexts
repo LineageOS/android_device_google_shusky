@@ -1,0 +1,4 @@
+/(vendor|system/vendor)/bin/hw/android\.hardware\.qorvo\.uwb-service u:object_r:hal_uwb_default_exec:s0
+/(vendor|system/vendor)/bin/hw/qorvo\.uci-bridge u:object_r:qorvo-uci-daemon_exec:s0
+/(vendor|system/vendor)/bin/hw/qorvo\.uci-daemon u:object_r:qorvo-uci-daemon_exec:s0
+/vendor/bin/dump_touch/predump_stm\.sh u:object_r:predump_touch_exec:s0

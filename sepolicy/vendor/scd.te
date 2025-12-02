@@ -1,0 +1,9 @@
+type scd, domain;
+type scd_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(scd)
+
+net_domain(scd)
+
+allow scd vendor_gps_file:dir create_dir_perms;
+allow scd vendor_gps_file:{ fifo_file file } create_file_perms;

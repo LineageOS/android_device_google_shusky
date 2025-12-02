@@ -1,4 +1,0 @@
-# b/301300623
-allow priv_app app_api_service:service_manager find;
-allow priv_app sysfs_touch_gti:file rw_file_perms;
-allow priv_app sysfs_touch_gti:file { getattr open read write };

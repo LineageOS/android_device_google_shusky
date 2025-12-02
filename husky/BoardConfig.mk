@@ -10,7 +10,8 @@ TARGET_BOOTLOADER_BOARD_NAME := $(DEVICE_CODENAME)
 TARGET_SCREEN_DENSITY := 480
 
 # SEPolicy
-include device/google/shusky/sepolicy/husky-sepolicy.mk
+BOARD_VENDOR_SEPOLICY_DIRS += \
+    $(DEVICE_PATH)/sepolicy/$(DEVICE_CODENAME)/vendor
 
 include $(DEVICE_PATH)/BoardConfigCommon.mk
 

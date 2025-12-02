@@ -1,0 +1,5 @@
+get_prop(predump_touch, vendor_touch_dump_path_prop)
+
+allow predump_touch proc_touch:file rw_file_perms;
+allow predump_touch sysfs_touch:dir search;
+allow predump_touch sysfs_touch:file rw_file_perms;
