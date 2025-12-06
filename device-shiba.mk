@@ -35,10 +35,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/google/shusky/recovery/init.recovery.device.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.shiba.rc
 
-# Camera
-PRODUCT_PROPERTY_OVERRIDES += \
-        persist.vendor.camera.rls_range_supported=false
-
 # NFC
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.nfc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.xml \
@@ -58,12 +54,6 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.se.omapi.ese.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.se.omapi.ese.xml \
 	frameworks/native/data/etc/android.hardware.se.omapi.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.se.omapi.uicc.xml
 
-# Bluetooth HAL
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.bluetooth.a2dp_offload.supported=true \
-    persist.bluetooth.a2dp_offload.disabled=false \
-    persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac-opus
-
 # Enable Bluetooth AutoOn feature
 PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.server.automatic_turn_on=true
@@ -71,23 +61,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # POF
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.bluetooth.finder.supported=true
-
-# declare use of spatial audio
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.audio.spatializer_enabled=true
-
-# HdMic Audio
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.app.audio.gsenet.version=1
-
-# Audio CCA property
-PRODUCT_PROPERTY_OVERRIDES += \
-	persist.vendor.audio.cca.enabled=false
-
-# DCK properties based on target
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.gms.dck.eligible_wcc=2 \
-    ro.gms.dck.se_capability=1
 
 # Bluetooth OPUS codec
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -161,63 +134,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.location.gps.prebuilt.xml
 
-# Set zram size
-PRODUCT_VENDOR_PROPERTIES += \
-	vendor.zram.size=50p \
-	persist.device_config.configuration.disable_rescue_party=true
-
-# Fingerprint exposure compensation
-PRODUCT_VENDOR_PROPERTIES += \
-    persist.vendor.udfps.auto_exposure_compensation_supported=true
-
-# Display
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.set_idle_timer_ms=1000
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.ignore_hdr_camera_layers=true
-# lhbm peak brightness delay: decided by kernel
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.primarydisplay.lhbm.frames_to_reach_peak_brightness=0
-
-PRODUCT_VENDOR_PROPERTIES += \
-    persist.vendor.udfps.als_feed_forward_supported=true \
-    persist.vendor.udfps.fps_touch_handler_supported=false \
-    persist.vendor.udfps.lhbm_controlled_in_hal_supported=true
-
-# Camera Vendor property
-PRODUCT_VENDOR_PROPERTIES += \
-    persist.vendor.camera.front_720P_always_binning=true
-
-# Media Performance Class 14
-PRODUCT_PRODUCT_PROPERTIES += ro.odm.build.media_performance_class=34
-
-# Display LBE
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += vendor.display.lbe.supported=1
-
-# Vibrator HAL
-PRODUCT_VENDOR_PROPERTIES += \
-    persist.vendor.vibrator.hal.chirp.enabled=0 \
-    ro.vendor.vibrator.hal.device.mass=0.187 \
-    ro.vendor.vibrator.hal.loc.coeff=2.75 \
-    persist.vendor.vibrator.hal.context.enable=false \
-    persist.vendor.vibrator.hal.context.scale=60 \
-    persist.vendor.vibrator.hal.context.fade=true \
-    persist.vendor.vibrator.hal.context.cooldowntime=1600 \
-    persist.vendor.vibrator.hal.context.settlingtime=5000
-
-# Override Output Distortion Gain
-PRODUCT_VENDOR_PROPERTIES += \
-    vendor.audio.hapticgenerator.distortion.output.gain=0.38
-
-# Increment the SVN for any official public releases
-PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.build.svn=61
-
-# Set device family property for SMR
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.build.device_family=HK3SB3AK3
-
-# P23 Devices no longer need rlsservice
-PRODUCT_VENDOR_PROPERTIES += \
-    persist.vendor.camera.rls_supported=false
-
 # Setup Wizard device-specific settings
 PRODUCT_PRODUCT_PROPERTIES += \
     setupwizard.feature.enable_quick_start_flow=true \
@@ -226,10 +142,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.quick_start.oem_id=00e0 \
     ro.quick_start.device_id=shiba
-
-# PKVM Memory Reclaim
-PRODUCT_VENDOR_PROPERTIES += \
-    hypervisor.memory_reclaim.supported=1
 
 # Settings Overlay
 PRODUCT_PACKAGES += \
@@ -245,14 +157,6 @@ PRODUCT_SYSTEM_PROPERTIES += \
 # Keyboard bottom padding in dp for portrait mode
 PRODUCT_PRODUCT_PROPERTIES += \
      ro.com.google.ime.kb_pad_port_b=8
-
-# Enable camera exif model/make reporting
-PRODUCT_VENDOR_PROPERTIES += \
-    persist.vendor.camera.exif_reveal_make_model=true
-
-# Enable DeviceAsWebcam support
-PRODUCT_VENDOR_PROPERTIES += \
-    ro.usb.uvc.enabled=true
 
 PRODUCT_PACKAGES += \
     NfcOverlayShiba
@@ -275,11 +179,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Set support for LEA multicodec
 PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.core.le_audio.codec_extension_aidl.enabled=true
-
-# Enable APF by default
-PRODUCT_VENDOR_PROPERTIES += \
-    vendor.powerhal.apf_disabled=false \
-    vendor.powerhal.apf_enabled=true
 
 # ANGLE - Almost Native Graphics Layer Engine
 PRODUCT_PACKAGES += \
