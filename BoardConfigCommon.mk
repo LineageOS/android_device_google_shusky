@@ -5,7 +5,7 @@
 #
 
 # Security - must be defined before including BoardConfig-common.mk
-BOOT_SECURITY_PATCH := 2025-11-05
+BOOT_SECURITY_PATCH := 2025-12-05
 VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 
 include device/google/zuma/BoardConfig-common.mk
