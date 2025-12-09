@@ -459,6 +459,7 @@ lib64/android.hardware.boot@1.1.so
 lib64/android.hardware.common-V2-ndk.so
 lib64/android.hardware.common.fmq-V1-ndk.so
 lib64/android.hardware.drm-V1-ndk.so
+lib64/android.hardware.drm-V2-ndk.so
 lib64/android.hardware.drm.common-V1-ndk.so
 lib64/android.hardware.gatekeeper-V1-ndk.so
 lib64/android.hardware.health-V4-ndk.so
@@ -490,7 +491,7 @@ lib64/android.hardware.usb.gadget@1.0.so
 lib64/android.hardware.wifi-V3-ndk.so
 lib64/android.hardware.wifi.common-V2-ndk.so
 lib64/android.hardware.wifi.hostapd-V3-ndk.so
-lib64/android.hardware.wifi.supplicant-V4-ndk.so
+lib64/android.hardware.wifi.supplicant-V5-ndk.so
 lib64/android.hidl.memory@1.0.so
 lib64/android.media.audio.common.types-V4-ndk.so
 lib64/android.media.audio.eraser.types-V1-ndk.so
@@ -542,8 +543,8 @@ lib64/libpixelhealth.so
 lib64/libpng.so
 lib64/libpower.so
 lib64/libprocessgroup.so
-lib64/libprotobuf-cpp-full-21.12.so
-lib64/libprotobuf-cpp-lite-21.12.so
+lib64/libprotobuf-cpp-full-4.25.8.so
+lib64/libprotobuf-cpp-lite-4.25.8.so
 lib64/libreference-ril.so
 lib64/libregex.dylib.so
 lib64/libregex_syntax.dylib.so
@@ -629,6 +630,7 @@ vendor_dlkm/etc/kasan/init.insmod.shiba.cfg
 overlay/DMService__shiba__auto_generated_rro_vendor.apk
 overlay/DeviceDiagnostics__shiba__auto_generated_rro_vendor.apk
 overlay/Flipendo__shiba__auto_generated_rro_vendor.apk
+overlay/PixelNfcOverlayCommon.apk
 overlay/SettingsGoogle__shiba__auto_generated_rro_vendor.apk
 overlay/StorageManagerGoogle__shiba__auto_generated_rro_vendor.apk
 overlay/SystemUIGoogle__shiba__auto_generated_rro_vendor.apk
@@ -680,7 +682,7 @@ lib64/libtinyalsa.so
 lib64/libtinyalsav2.so
 
 # Audio
-lib64/android.hardware.audio.core-V3-ndk.so
+lib64/android.hardware.audio.core-V4-ndk.so
 lib64/android.hardware.audio.core.sounddose-V3-ndk.so
 lib64/android.hardware.soundtrigger3-V3-ndk.so
 lib64/android.media.soundtrigger.types-V3-ndk.so
@@ -869,7 +871,7 @@ lib64/android.hidl.token@1.0.so
 lib64/com.google.hardware.pixel.display-V4-ndk.so
 lib64/com.google.hardware.pixel.display-V9-ndk.so
 lib64/com.google.hardware.pixel.display-V15-ndk.so
-lib64/com.google.hardware.pixel.display-V16-ndk.so
+lib64/com.google.hardware.pixel.display-V17-ndk.so
 lib64/hardware.google.ril_ext-V1-ndk.so
 
 # Misc

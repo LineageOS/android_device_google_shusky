@@ -4,8 +4,8 @@
 
 # AiAi
 product/priv-app/AICorePrebuilt-aicore_20250130.00_RC01/AICorePrebuilt-aicore_20250130.00_RC01.apk;PRESIGNED
-product/priv-app/DeviceIntelligenceNetworkPrebuilt-bfinal_astrea_20250217.00_RC00/DeviceIntelligenceNetworkPrebuilt-bfinal_astrea_20250217.00_RC00.apk;PRESIGNED
-product/priv-app/DevicePersonalizationPrebuiltPixel2023-bfinal_aiai_20250217.00_RC08/DevicePersonalizationPrebuiltPixel2023-bfinal_aiai_20250217.00_RC08.apk;PRESIGNED
+product/priv-app/DeviceIntelligenceNetworkPrebuilt-astrea_20240329.00_RC02/DeviceIntelligenceNetworkPrebuilt-astrea_20240329.00_RC02.apk;PRESIGNED
+product/priv-app/DevicePersonalizationPrebuiltPixel2023-playstore_aiai_20250306.00_RC10/DevicePersonalizationPrebuiltPixel2023-playstore_aiai_20250306.00_RC10.apk;PRESIGNED
 
 # Audio
 product/etc/ambient/matcher_tah.leveldb
@@ -16,7 +16,7 @@ product/etc/firmware/music_detector.sound_model_tflite
 
 # Camera extensions
 product/etc/permissions/androidx.camera.extensions.impl.xml
-product/priv-app/PixelCameraServices/PixelCameraServices.apk;PRESIGNED
+product/priv-app/PixelCameraServicesConnectivityClient/PixelCameraServicesConnectivityClient.apk;PRESIGNED
 
 # Camera services
 product/etc/permissions/com.google.pixel.camera.connectivity.impl.xml
@@ -29,9 +29,7 @@ product/etc/felica/mfm.cfg
 product/etc/felica/mfs.cfg
 
 # Hardware info
-product/etc/permissions/com.google.android.hardwareinfo.xml
 product/framework/libhwinfo.jar
-product/priv-app/HardwareInfo/HardwareInfo.apk;PRESIGNED
 
 # Hotword
 product/priv-app/HotwordEnrollmentOKGoogleFUSIONPro/HotwordEnrollmentOKGoogleFUSIONPro.apk;PRESIGNED
@@ -67,7 +65,7 @@ product/etc/permissions/com.android.sdm.plugins.dcmo.xml
 product/etc/permissions/com.android.sdm.plugins.diagmon.xml
 product/lib64/libdmengine.so;SYMLINK=product/priv-app/DMService/lib/arm64/libdmengine.so
 product/lib64/libdmjavaplugin.so;SYMLINK=product/priv-app/DMService/lib/arm64/libdmjavaplugin.so
-product/priv-app/CarrierSettings_signed_55.0.755436886/CarrierSettings_signed_55.0.755436886.apk;PRESIGNED
+product/priv-app/CarrierSettings/CarrierSettings.apk;PRESIGNED
 product/priv-app/CarrierWifi/CarrierWifi.apk;PRESIGNED
 product/priv-app/ConnMO/ConnMO.apk
 product/priv-app/DCMO/DCMO.apk
@@ -123,7 +121,7 @@ system_ext/bin/hw/vendor.google.edgetpu_app_service@1.0-service
 system_ext/etc/init/vendor.google.edgetpu_app_service@1.0-service.rc
 system_ext/etc/public.libraries-google.txt
 system_ext/etc/vintf/manifest/vendor.google.edgetpu_app_service@1.0-service.xml
-system_ext/lib64/com.google.edgetpu_app_service-V4-ndk.so
+system_ext/lib64/com.google.edgetpu_app_service-V6-ndk.so
 system_ext/lib64/com.google.edgetpu_vendor_service-V2-ndk.so
 
 # Hotword
@@ -137,16 +135,11 @@ system_ext/etc/permissions/com.shannon.rcsservice.xml
 system_ext/lib64/libmediaadaptor.so
 system_ext/lib64/libpixelimsmedia.so
 system_ext/lib64/vendor.google.whitechapel.audio.audioext@4.0.so
-system_ext/lib64/vendor.google.whitechapel.audio.extension-V6-ndk.so
+system_ext/lib64/vendor.google.whitechapel.audio.extension-V7-ndk.so
 system_ext/priv-app/PixelImsMediaService/PixelImsMediaService.apk
 system_ext/priv-app/PixelQualifiedNetworksService/PixelQualifiedNetworksService.apk
 system_ext/priv-app/ShannonIms/ShannonIms.apk;PRESIGNED
 system_ext/priv-app/ShannonRcs/ShannonRcs.apk;PRESIGNED
-
-# IWLAN
-system_ext/etc/permissions/privapp-permlist_com.google.pixel.iwlan.xml
-system_ext/etc/sysconfig/sysconfig_com.google.pixel.iwlan.xml
-system_ext/priv-app/PixelIwlan/PixelIwlan.apk
 
 # Permissions
 system_ext/etc/permissions/privapp-permissions-google-se.xml:system_ext/etc/permissions/privapp-permissions-google-se-lineage.xml
@@ -180,10 +173,14 @@ system_ext/etc/permissions/oemrilhook.xml
 system_ext/framework/oemrilhook.jar
 system_ext/priv-app/OemRilService/OemRilService.apk;PRESIGNED
 
-# Watchdog
-system_ext/bin/gs_watchdogd
-system_ext/etc/init/init.gs_watchdogd.rc
+# VINTF
+system_ext/etc/vintf/aocx_framework_compatibility_matrix_system_ext
+system_ext/etc/vintf/imageprocessing_hal_framework_compatibility_matrix_system_ext
 
 # VZW
 system_ext/etc/permissions/vzw_mvs_permissions.xml
 system_ext/priv-app/MyVerizonServices/MyVerizonServices.apk;PRESIGNED
+
+# Watchdog
+system_ext/bin/gs_watchdogd
+system_ext/etc/init/init.gs_watchdogd.rc
