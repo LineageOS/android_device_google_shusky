@@ -23,8 +23,8 @@ TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="shiba-user 16 BP3A.251105.015 14339231 release-keys" \
-    BuildFingerprint=google/shiba/shiba:16/BP3A.251105.015/14339231:user/release-keys \
+    BuildDesc="shiba-user 16 BP4A.251205.006 14401865 release-keys" \
+    BuildFingerprint=google/shiba/shiba:16/BP4A.251205.006/14401865:user/release-keys \
     DeviceProduct=$(DEVICE_CODENAME)
 
 $(call inherit-product, $(VENDOR_PATH)/$(DEVICE_CODENAME)-vendor.mk)
