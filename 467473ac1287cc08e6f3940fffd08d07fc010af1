@@ -16,6 +16,23 @@
       "message": "Comment removed by: Michael Bestas; Reason: Spam",
       "revId": "467473ac1287cc08e6f3940fffd08d07fc010af1",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "db885021_3c8cdc39",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34504
+      },
+      "writtenOn": "2025-12-11T12:24:44Z",
+      "side": 1,
+      "message": "Comment removed by: Michael Bestas; Reason: Spam",
+      "revId": "467473ac1287cc08e6f3940fffd08d07fc010af1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
