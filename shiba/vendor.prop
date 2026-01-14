@@ -62,7 +62,7 @@ vendor.rild.libpath=libsitril.so
 persist.device_config.configuration.disable_rescue_party=true
 
 # SVN
-ro.vendor.build.svn=62
+ro.vendor.build.svn=65
 
 # USB
 ro.usb.uvc.enabled=true
