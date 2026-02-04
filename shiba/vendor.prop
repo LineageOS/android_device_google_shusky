@@ -18,9 +18,6 @@ persist.vendor.camera.rls_supported=false
 ro.gms.dck.eligible_wcc=2
 ro.gms.dck.se_capability=1
 
-# Device family
-ro.build.device_family=HK3SB3AK3
-
 # Display
 ro.surface_flinger.ignore_hdr_camera_layers=true
 ro.surface_flinger.set_idle_timer_ms=1000
@@ -62,7 +59,7 @@ vendor.rild.libpath=libsitril.so
 persist.device_config.configuration.disable_rescue_party=true
 
 # SVN
-ro.vendor.build.svn=65
+ro.vendor.build.svn=66
 
 # USB
 ro.usb.uvc.enabled=true
