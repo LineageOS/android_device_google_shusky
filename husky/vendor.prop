@@ -17,9 +17,6 @@ persist.vendor.camera.rls_supported=false
 ro.gms.dck.eligible_wcc=3
 ro.gms.dck.se_capability=1
 
-# Device family
-ro.build.device_family=HK3SB3AK3
-
 # Display
 persist.vendor.display.primary.boot_config=1008x2244@120
 ro.surface_flinger.ignore_hdr_camera_layers=true

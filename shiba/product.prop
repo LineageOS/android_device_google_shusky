@@ -30,6 +30,9 @@ ro.bluetooth.leaudio_switcher.supported?=true
 # Cutout
 ro.support_hide_display_cutout=true
 
+# Device family
+ro.build.device_family=HK3SB3AK3
+
 # Google keyboard
 ro.com.google.ime.kb_pad_port_b=8
 
