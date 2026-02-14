@@ -3,6 +3,9 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
+soong_namespace {
+}
+
 package {
     default_applicable_licenses: ["device_google_shusky_license"],
 }
