@@ -24,7 +24,6 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    device/google/shusky/shiba/overlay-lineage \
     device/google/shusky/overlay-lineage
 
 PRODUCT_PACKAGES += \
@@ -42,6 +41,9 @@ PRODUCT_PACKAGES += \
     SettingsGoogleShibaOverlay \
     SettingsShibaOverlay \
     SystemUIGoogleOverlayVendorShiba
+
+PRODUCT_PACKAGES += \
+    ApertureOverlayShiba
 
 # PowerShare
 include hardware/google/pixel/powershare/device.mk
