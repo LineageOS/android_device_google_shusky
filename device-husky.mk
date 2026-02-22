@@ -24,7 +24,6 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    device/google/shusky/husky/overlay-lineage \
     device/google/shusky/overlay-lineage
 
 PRODUCT_PACKAGES += \
@@ -43,6 +42,9 @@ PRODUCT_PACKAGES += \
     SettingsGoogleHuskyOverlay \
     SettingsHuskyOverlay \
     SystemUIGoogleOverlayVendorHusky
+
+PRODUCT_PACKAGES += \
+    ApertureOverlayHusky
 
 # PowerShare
 include hardware/google/pixel/powershare/device.mk
