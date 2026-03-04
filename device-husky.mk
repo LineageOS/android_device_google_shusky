@@ -23,9 +23,6 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors-V2-ndk.vendor:64
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    device/google/shusky/overlay-lineage
-
 PRODUCT_PACKAGES += \
     FrameworkResOverlayVendorShusky \
     PixelNfcOverlayShusky \
