@@ -16,10 +16,6 @@ ifneq ($(TARGET_BOOTS_16K),true)
 PRODUCT_16K_DEVELOPER_OPTION := true
 endif
 
-DEVICE_PACKAGE_OVERLAYS += device/google/shusky/shiba/overlay
-DEVICE_PACKAGE_OVERLAYS += device/google/shusky/shiba/overlay-lineage
-DEVICE_PACKAGE_OVERLAYS += device/google/shusky/overlay-lineage
-
 # Audio
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml
@@ -54,27 +50,12 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.se.omapi.ese.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.se.omapi.ese.xml \
 	frameworks/native/data/etc/android.hardware.se.omapi.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.se.omapi.uicc.xml
 
-# WiFi Overlay
-PRODUCT_PACKAGES += \
-	WifiOverlay2023
-
 # Location
 PRODUCT_PACKAGES += \
     android.hardware.location.gps.prebuilt.xml
 
-# Settings Overlay
-PRODUCT_PACKAGES += \
-    SettingsShibaOverlay
-
 # Window Extensions
 $(call inherit-product, $(SRC_TARGET_DIR)/product/window_extensions.mk)
-
-PRODUCT_PACKAGES += \
-    NfcOverlayShiba
-
-PRODUCT_PACKAGES += \
-    NoCutoutOverlay \
-    AvoidAppsInCutoutOverlay
 
 PRODUCT_NO_BIONIC_PAGE_SIZE_MACRO := true
 
@@ -96,8 +77,25 @@ PRODUCT_PACKAGES += \
     init.recovery.shiba.touch.rc
 
 # Overlays
+DEVICE_PACKAGE_OVERLAYS += \
+    device/google/shusky/shiba/overlay-lineage \
+    device/google/shusky/overlay-lineage
+
 PRODUCT_PACKAGES += \
-    PixelDisplayServiceOverlayShiba
+    FrameworkResOverlayVendorShusky \
+    PixelNfcOverlayShusky \
+    PixelWifiOverlay2023Shusky \
+    SafetyRegulatoryInfoOverlayProductShusky
+
+PRODUCT_PACKAGES += \
+    DMServiceOverlayVendorShiba \
+    FrameworkResOverlayProductShiba \
+    FrameworkResOverlayVendorShiba \
+    PixelDisplayServiceOverlayProductShiba \
+    PixelNfcOverlayShiba \
+    SettingsGoogleShibaOverlay \
+    SettingsShibaOverlay \
+    SystemUIGoogleOverlayVendorShiba
 
 # PowerShare
 include hardware/google/pixel/powershare/device.mk
