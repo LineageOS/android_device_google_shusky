@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <!-- Padding for the lock icon on the keyguard. In pixels - should not scale with display size. -->
+    <dimen name="lock_icon_padding">50px</dimen>
+
+    <!-- The maximum offset for the under-display fingerprint sensor (UDFPS) icon in either
+         direction that elements are moved to prevent burn-in on AOD-->
+    <dimen name="udfps_burn_in_offset_x">6px</dimen>
+    <dimen name="udfps_burn_in_offset_y">17px</dimen>
+
+    <!-- Location on the screen of the center of the physical power button. This is a reasonable
+    default that should be overridden by device-specific overlays. -->
+    <dimen name="physical_power_button_center_screen_location_y">698px</dimen>
+
+    <!-- Microns/ums (1000 um = 1mm) per pixel for the given device. If unspecified, UI that
+         relies on this value will not be sized correctly. -->
+    <item name="pixel_pitch" format="float" type="dimen">59.5</item>
+
+    <!-- Weather clock smartspace scaling to apply for the weather clock -->
+    <dimen name="weather_clock_smartspace_translateY">10dp</dimen>
+</resources>

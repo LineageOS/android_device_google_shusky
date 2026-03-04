@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <item name="config_za_compensation_brightness_enter_threshold" format="float" type="dimen">0.5714286</item>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <!-- Maximum number of active tasks on a given Desktop Windowing session. Set to 0 for unlimited. -->
+    <integer name="config_maxDesktopWindowingActiveTasks">4</integer>
+</resources>
