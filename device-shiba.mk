@@ -16,7 +16,7 @@ PRODUCT_16K_DEVELOPER_OPTION := true
 endif
 
 # Inherit from zuma
-include device/google/zuma/device-shipping-common.mk
+include device/google/zuma/common.mk
 
 # GPS
 PRODUCT_PACKAGES += \
