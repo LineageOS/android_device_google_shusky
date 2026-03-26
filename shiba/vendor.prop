@@ -1,41 +1,21 @@
 # Audio
-persist.vendor.app.audio.gsenet.version=1
-persist.vendor.audio.cca.enabled=false
 ro.audio.spatializer_enabled=true
 
 # Bluetooth
 persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac-opus
-persist.bluetooth.a2dp_offload.disabled=false
-ro.bluetooth.a2dp_offload.supported=true
 
 # Camera
-persist.vendor.camera.exif_reveal_make_model=true
-persist.vendor.camera.front_720P_always_binning=true
 persist.vendor.camera.rls_range_supported=false
 persist.vendor.camera.rls_supported=false
 
 # DCK
 ro.gms.dck.eligible_wcc=2
-ro.gms.dck.se_capability=1
 
 # Display
 ro.surface_flinger.ignore_hdr_camera_layers=true
 ro.surface_flinger.set_idle_timer_ms=1000
-vendor.display.lbe.supported=1
-vendor.primarydisplay.lhbm.frames_to_reach_peak_brightness=0
-
-# DRM
-drm.service.enabled=true
-media.mediadrmservice.enable=true
-
-# Edge TPU
-vendor.google.silicon.enable_iif_for_priv_app=1
 
 # Fingerprint
-persist.vendor.udfps.als_feed_forward_supported=true
-persist.vendor.udfps.auto_exposure_compensation_supported=true
-persist.vendor.udfps.fps_touch_handler_supported=false
-persist.vendor.udfps.lhbm_controlled_in_hal_supported=true
 ro.vendor.fingerprint.ta.name=g7.app
 
 # Media
@@ -48,32 +28,12 @@ hypervisor.memory_reclaim.supported=1
 vendor.powerhal.apf_disabled=false
 vendor.powerhal.apf_enabled=true
 
-# Radio
-persist.vendor.ril.ecc.use.xml=1
-persist.vendor.ril.support_nr_ds=1
-persist.vendor.ril.use_radio_hal=2.1
-ro.vendor.config.build_carrier=europen
-vendor.rild.libpath=libsitril.so
-
-# Rescue party
-persist.device_config.configuration.disable_rescue_party=true
-
 # SVN
 ro.vendor.build.svn=66
 
-# USB
-ro.usb.uvc.enabled=true
-
 # Vibrator
 persist.vendor.vibrator.hal.chirp.enabled=0
-persist.vendor.vibrator.hal.context.cooldowntime=1600
-persist.vendor.vibrator.hal.context.enable=false
-persist.vendor.vibrator.hal.context.fade=true
 persist.vendor.vibrator.hal.context.scale=60
-persist.vendor.vibrator.hal.context.settlingtime=5000
 ro.vendor.vibrator.hal.device.mass=0.187
 ro.vendor.vibrator.hal.loc.coeff=2.75
 vendor.audio.hapticgenerator.distortion.output.gain=0.38
-
-# ZRAM
-vendor.zram.size=50p
