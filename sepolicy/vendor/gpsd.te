@@ -1,4 +1,4 @@
-type gpsd_exec, exec_type, file_type, vendor_file_type;
+type sysfs_gps_assert, fs_type, sysfs_type;
 
 binder_call(gpsd, rild)
 binder_call(gpsd, system_server)

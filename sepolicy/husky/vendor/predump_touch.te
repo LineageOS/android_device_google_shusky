@@ -1,3 +1,6 @@
+type proc_touch, fs_type, proc_type;
+type sysfs_touch, fs_type, sysfs_type;
+
 get_prop(predump_touch, vendor_touch_dump_path_prop)
 
 allow predump_touch proc_touch:file rw_file_perms;
