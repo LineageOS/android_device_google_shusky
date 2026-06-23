@@ -37,7 +37,6 @@ bin/dmesg
 bin/dos2unix
 bin/du
 bin/dump.f2fs
-bin/dump/dump_modem
 bin/dumpsys
 bin/echo
 bin/egrep
@@ -71,20 +70,14 @@ bin/gunzip
 bin/gzip
 bin/head
 bin/hostname
-bin/hw/android.hardware.boot-service.default-pixel
 bin/hw/android.hardware.drm-service.clearkey
 bin/hw/android.hardware.gatekeeper-service.trusty
-bin/hw/android.hardware.health-service.zuma
 bin/hw/android.hardware.health.storage-service.default
 bin/hw/android.hardware.nfc-service.st
-bin/hw/android.hardware.power-service.pixel-libperfmgr
 bin/hw/android.hardware.secure_element-service.thales
 bin/hw/android.hardware.security.keymint-service.rust.trusty
 bin/hw/android.hardware.security.secretkeeper.trusty
 bin/hw/android.hardware.sensors-service.multihal
-bin/hw/android.hardware.thermal-service.pixel
-bin/hw/android.hardware.usb-service
-bin/hw/android.hardware.usb.gadget-service
 bin/hw/hostapd
 bin/hw/wpa_supplicant
 bin/hwclock
@@ -164,7 +157,6 @@ bin/rtcwake
 bin/runcon
 bin/sed
 bin/sendevent
-bin/sendhint
 bin/seq
 bin/setenforce
 bin/setfattr
@@ -195,7 +187,6 @@ bin/tar
 bin/taskset
 bin/tee
 bin/test
-bin/thermal_symlinks
 bin/time
 bin/timeout
 bin/toolbox
@@ -264,18 +255,12 @@ etc/fstab.zram.6g
 etc/fstab.zuma
 etc/fstab.zuma-fips
 etc/group
-etc/init/android.hardware.boot-service.default-pixel.rc
 etc/init/android.hardware.drm-service.clearkey.rc
 etc/init/android.hardware.gatekeeper-service.trusty.rc
-etc/init/android.hardware.health-service.zuma.rc
-etc/init/android.hardware.power-service.pixel-libperfmgr.rc
 etc/init/android.hardware.secure_element_gto.rc
 etc/init/android.hardware.security.keymint-service.rust.trusty.rc
 etc/init/android.hardware.security.secretkeeper.trusty.rc
 etc/init/android.hardware.sensors-service-multihal.rc
-etc/init/android.hardware.thermal-service.pixel.rc
-etc/init/android.hardware.usb-service.rc
-etc/init/android.hardware.usb.gadget-service.rc
 etc/init/android.hardware.wifi.supplicant-service.rc
 etc/init/atrace_categories.rc
 etc/init/boringssl_self_test.rc
@@ -285,7 +270,6 @@ etc/init/init.efs.rc
 etc/init/init.pixel.rc
 etc/init/nfc-service-default.rc
 etc/init/pixel-mm-gki.rc
-etc/init/pixel-thermal-symlinks.rc
 etc/init/rebalance_interrupts-vendor.gs101.rc
 etc/init/vndservicemanager.rc
 etc/linker.config.pb
@@ -367,15 +351,10 @@ etc/vintf/compatibility_matrix.xml
 etc/vintf/manifest.xml
 etc/vintf/manifest/android.hardware.drm-service.clearkey.xml
 etc/vintf/manifest/android.hardware.gatekeeper-service.trusty.xml
-etc/vintf/manifest/android.hardware.health-service.zuma.xml
-etc/vintf/manifest/android.hardware.power-service.pixel.xml
 etc/vintf/manifest/android.hardware.secure_element_gto.xml
 etc/vintf/manifest/android.hardware.security.keymint-service.rust.trusty.xml
 etc/vintf/manifest/android.hardware.security.secretkeeper.trusty.xml
 etc/vintf/manifest/android.hardware.sensors-multihal.xml
-etc/vintf/manifest/android.hardware.thermal-service.pixel.xml
-etc/vintf/manifest/android.hardware.usb-service.xml
-etc/vintf/manifest/android.hardware.usb.gadget-service.xml
 etc/vintf/manifest/android.hardware.wifi.hostapd.xml
 etc/vintf/manifest/android.hardware.wifi.supplicant.xml
 etc/vintf/manifest/health-storage-default.xml
@@ -397,7 +376,6 @@ lib64/android.hardware.health.storage-V1-ndk.so
 lib64/android.hardware.nfc-V1-ndk.so
 lib64/android.hardware.power-V1-ndk.so
 lib64/android.hardware.power.stats-V2-ndk.so
-lib64/android.hardware.power.stats-impl.pixel.so
 lib64/android.hardware.radio@1.0.so
 lib64/android.hardware.radio@1.1.so
 lib64/android.hardware.secure_element-V1-ndk.so
@@ -442,7 +420,6 @@ lib64/libc++.so
 lib64/libcfg_if.dylib.so
 lib64/libcrypto.so
 lib64/libcutils.so
-lib64/libdisppower-pixel.so
 lib64/libdmabufheap.so
 lib64/libeffects.so
 lib64/libeffectsconfig.so
@@ -460,9 +437,6 @@ lib64/libmedia_helper.so
 lib64/libmemchr.dylib.so
 lib64/libnl.so
 lib64/libonce_cell.dylib.so
-lib64/libperfmgr.so
-lib64/libpixelatoms_defs.so
-lib64/libpixelhealth.so
 lib64/libpng.so
 lib64/libpower.so
 lib64/libprocessgroup.so
@@ -489,8 +463,6 @@ lib64/mediacas/libclearkeycasplugin.so
 lib64/mediadrm/libdrmclearkeyplugin.so
 lib64/nfc_nci.st21nfc.default.so
 lib64/pixel-power-ext-V1-ndk.so
-lib64/pixel_stateresidency_provider_aidl_interface-ndk.so
-lib64/pixelatoms-cpp.so
 lib64/server_configurable_flags.so
 lib64/soundfx/libaudiopreprocessing.so
 lib64/soundfx/libbundleaidl.so
@@ -662,9 +634,6 @@ lib64/libnosprotos.so
 lib64/nos_app_avb.so
 lib64/nos_app_keymaster.so
 lib64/nos_app_weaver.so
-
-# Powerstats
-etc/vintf/manifest/android.hardware.power.stats-service.pixel.xml
 
 # Radio
 lib64/libnetutils.so
