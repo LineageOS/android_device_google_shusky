@@ -1,8 +1,11 @@
 # Bluetooth
 bluetooth.core.le.dsa_transport_preference=iso-sw,le-acl
 bluetooth.device_id.product_id=16653
+bluetooth.hci.timeout_milliseconds=5000
 bluetooth.profile.hap.enabled_by_default=true
+persist.bluetooth.extended_dump_on_fail.enabled=true
 persist.bluetooth.opus.enabled=true
+persist.vendor.bluetooth.bluetooth_hal.enabled=false
 
 # Cutout
 ro.support_hide_display_cutout=true
