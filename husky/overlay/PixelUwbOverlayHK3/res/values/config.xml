@@ -18,4 +18,12 @@
     <!-- Whether multicast list update response v2 is supported or not.
      If enabled, the response will be parsed into version 2 if uci major version is 2.0. -->
     <bool name="is_multicast_list_update_rsp_v2_supported">true</bool>
+
+    <!-- Whether when hopmode doesn't set, the hopmodekey shall be set randomly.
+    If false, never sets hopmodekey randomly-->
+    <bool name="enable_random_hopmodekey">true</bool>
+
+    <!-- Whether hopmodekey should be 4-byte or 16-byte. Random hopmodekey must also
+    be enabled. If true, 16-byte. -->
+    <bool name="enable_16_byte_hopmodekey">true</bool>
 </resources>

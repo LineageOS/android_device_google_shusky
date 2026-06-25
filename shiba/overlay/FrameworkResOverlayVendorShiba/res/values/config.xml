@@ -13,12 +13,12 @@
          If the string contains a '%s' format string then that substring will be replaced
          with the value of Build.MODEL , ie
          <string name="config_mms_user_agent">OemName%s</string> -->
-    <string name="config_mms_user_agent">gkws6</string>
+    <string name="config_mms_user_agent" translatable="false">gkws6</string>
 
     <!-- MMS user agent prolfile url, for example https://uaprof.oem_name.com/DeviceName.xml
          if the string contains a '%s' format string then that substring will be replaced
          with the value of Build.MODEL , ie https://uaprof.oem_name.com/%s.xml -->
-    <string name="config_mms_user_agent_profile_url">http://www.gstatic.com/android/sms/GKWS6.xml</string>
+    <string name="config_mms_user_agent_profile_url" translatable="false">http://www.gstatic.com/android/sms/GKWS6.xml</string>
 
     <!-- The bounding path of the cutout region of the main built-in display.
          Must either be empty if there is no cutout region, or a string that is parsable by
@@ -44,7 +44,7 @@
 
          @see https://www.w3.org/TR/SVG/paths.html#PathData
          -->
-    <string name="config_mainBuiltInDisplayCutout">m 576,65.75 a 36.25,36.25 0 0 0 -72.5,0 36.25,36.25 0 0 0 72.5,0 z @left</string>
+    <string name="config_mainBuiltInDisplayCutout" translatable="false">m 576,65.75 a 36.25,36.25 0 0 0 -72.5,0 36.25,36.25 0 0 0 72.5,0 z @left</string>
 
     <!-- Like config_mainBuiltInDisplayCutout, but this path is used to report the
          one single bounding rect per device edge to the app via
@@ -52,7 +52,7 @@
          appearance of the cutout as much as possible, and may be smaller than
          config_mainBuiltInDisplayCutout
          -->
-    <string name="config_mainBuiltInDisplayCutoutRectApproximation">M 478.5,0 h 122 v 132 h -122 Z @left</string>
+    <string name="config_mainBuiltInDisplayCutoutRectApproximation" translatable="false">M 478.5,0 h 122 v 132 h -122 Z @left</string>
 
     <!-- The stable device width and height in pixels. If these aren't set to a positive number
          then the device will use the width and height of the default display the first time it's
@@ -77,5 +77,5 @@
 
          Note: If the display supports multiple resolutions, please define the path config based on
          the highest resolution so that it can be scaled correctly in each resolution. -->
-    <string name="config_mainDisplayShape">M 96.4985,0.08523 C 91.1348,0.36051 82.70432,1.62526 79.38136,2.33639 59.52531,6.58116 50.34989,10.96631 39.9404,18.20101 27.73281,26.68534 16.59688,39.8618 10.50012,52.78766 6.40513,61.46939 2.3679,75.03133 1.2197,83.76495 0.13826,91.99294 0.31461,92.13538 0.08515,96.33507 V 2307.6753 l 1.5912,11.4829 c 4.89079,22.9627 11.89155,37.013 25.5533,51.2879 13.94576,14.5714 29.80105,22.7951 53.74919,27.8786 l 11.50244,1.59 H 987.5185 l 11.5025,-1.59 c 23.9482,-5.0835 39.8034,-13.3072 53.7492,-27.8786 13.6616,-14.2749 20.6626,-28.3252 25.5532,-51.2879 l 1.5913,-11.4829 V 96.33507 c -0.2295,-4.19969 -0.053,-4.34213 -1.1346,-12.57012 -1.1482,-8.73362 -5.1854,-22.29556 -9.2804,-30.97729 C 1063.4029,39.8618 1052.267,26.68534 1040.0594,18.20101 1029.65,10.96631 1020.4745,6.58116 1000.6184,2.33639 997.2955,1.62526 988.865,0.36051 983.5013,0.08523 Z</string>
+    <string name="config_mainDisplayShape" translatable="false">"M 96,0C 91,0 83,2 79,2 60,7 50,11 40,18 28,27 17,40 11,53 6,61 2,75 1,84 0,92 0,92 0,96v 2212l 2,11c 5,23 12,37 26,51 14,15 30,23 54,28l 12,2H 986l 12,-2c 24,-5 40,-13 54,-28 14,-14 21,-28 26,-51L 1080,2308V 96c 0,-4 0,-4 -1,-13 -1,-9 -5,-22 -9,-31 -9,-12 -20,-25 -32,-34 -10,-7 -20,-11 -39,-16 -4,0 -12,-2 -17,-2z"</string>
 </resources>

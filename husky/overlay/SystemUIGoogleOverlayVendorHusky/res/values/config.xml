@@ -24,5 +24,5 @@
       This path will only be drawn when the front-facing camera turns on, otherwise the main
       DisplayCutout path will be rendered
        -->
-    <string name="config_frontBuiltInDisplayCutoutProtection">M 613.5,75.5 a 58,58 0 0 1 116,0 a 58,58 0 0 1 -116,0 Z</string>
+    <string name="config_frontBuiltInDisplayCutoutProtection" translatable="false">M 613.5,75.5 a 58,58 0 0 1 116,0 a 58,58 0 0 1 -116,0 Z</string>
 </resources>
