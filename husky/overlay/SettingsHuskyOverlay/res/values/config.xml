@@ -6,5 +6,5 @@
 <resources>
     <!-- Package name of regulatory information overlay which provides mapping and contents.
          Fetch resource from overlay package directly if this is set. -->
-    <string name="config_regulatory_info_overlay_package_name">com.android.settings.husky</string>
+    <string name="config_regulatory_info_overlay_package_name" translatable="false">com.android.settings.husky</string>
 </resources>
