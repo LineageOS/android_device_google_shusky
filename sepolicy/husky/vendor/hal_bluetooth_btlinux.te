@@ -1,0 +1,1 @@
+binder_call(hal_bluetooth_btlinux, cccdktimesync_app)

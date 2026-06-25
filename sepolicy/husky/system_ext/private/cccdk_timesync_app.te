@@ -1,0 +1,7 @@
+app_domain(cccdktimesync_app)
+
+allow cccdktimesync_app activity_service:service_manager find;
+allow cccdktimesync_app content_capture_service:service_manager find;
+allow cccdktimesync_app gpu_service:service_manager find;
+allow cccdktimesync_app netstats_service:service_manager find;
+allow cccdktimesync_app uwb_service:service_manager find;

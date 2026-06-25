@@ -6,4 +6,5 @@ net_domain(scd)
 init_daemon_domain(scd)
 
 allow scd vendor_gps_file:dir create_dir_perms;
-allow scd vendor_gps_file:{ fifo_file file } create_file_perms;
+allow scd vendor_gps_file:fifo_file create_file_perms;
+allow scd vendor_gps_file:file create_file_perms;
