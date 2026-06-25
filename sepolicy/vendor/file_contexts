@@ -4,4 +4,4 @@
 /vendor/bin/hw/gpsd u:object_r:gpsd_exec:s0
 /vendor/bin/hw/lhd u:object_r:lhd_exec:s0
 /vendor/bin/hw/scd u:object_r:scd_exec:s0
-/vendor/bin/hw/vendor\.dolby\.media\.c2@1\.0-service u:object_r:mediacodec_exec:s0
+/vendor/bin/hw/vendor\.dolby\.media\.c2-default-service u:object_r:mediacodec_exec:s0
