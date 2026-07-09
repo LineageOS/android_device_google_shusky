@@ -32,7 +32,7 @@ ro.odm.build.media_performance_class=34
 hypervisor.memory_reclaim.supported=1
 
 # SVN
-ro.vendor.build.svn=74
+ro.vendor.build.svn=75
 
 # Touch
 ro.vendor.touch.dump.proc=/proc/fts/driver_test

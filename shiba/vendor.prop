@@ -29,7 +29,7 @@ vendor.powerhal.apf_disabled=false
 vendor.powerhal.apf_enabled=true
 
 # SVN
-ro.vendor.build.svn=74
+ro.vendor.build.svn=75
 
 # Vibrator
 persist.vendor.vibrator.hal.chirp.enabled=0
