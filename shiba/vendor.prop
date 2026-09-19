@@ -31,6 +31,9 @@ vendor.powerhal.apf_enabled=true
 # SVN
 ro.vendor.build.svn=77
 
+# USB
+vendor.usb.device=11210000.usb
+
 # Vibrator
 persist.vendor.vibrator.hal.chirp.enabled=0
 persist.vendor.vibrator.hal.context.scale=60

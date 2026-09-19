@@ -38,6 +38,9 @@ ro.vendor.build.svn=77
 ro.vendor.touch.dump.proc=/proc/fts/driver_test
 ro.vendor.touch.dump.sys=/sys/class/spi_master/spi20/spi20.0
 
+# USB
+vendor.usb.device=11210000.usb
+
 # Vibrator
 persist.vendor.vibrator.hal.chirp.enabled=0
 persist.vendor.vibrator.hal.context.scale=60
