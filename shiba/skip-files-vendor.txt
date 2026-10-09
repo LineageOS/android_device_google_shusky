@@ -362,6 +362,7 @@ etc/vintf/manifest/nfc-service-default.xml
 etc/wifi/wpa_supplicant.conf
 lib64/android.frameworks.stats-V1-ndk.so
 lib64/android.frameworks.stats-V2-ndk.so
+lib64/android.frameworks.stats-V3-ndk.so
 lib64/android.hardware.boot-V1-ndk.so
 lib64/android.hardware.boot@1.0.so
 lib64/android.hardware.boot@1.1.so
@@ -730,7 +731,7 @@ lib64/android.hidl.token@1.0-utils.so
 lib64/android.hidl.token@1.0.so
 lib64/com.google.hardware.pixel.display-V4-ndk.so
 lib64/com.google.hardware.pixel.display-V15-ndk.so
-lib64/com.google.hardware.pixel.display-V21-ndk.so
+lib64/com.google.hardware.pixel.display-V23-ndk.so
 lib64/hardware.google.ril_ext-V1-ndk.so
 lib64/pixel-power-ext-V2-ndk.so
 
@@ -758,6 +759,7 @@ lib64/libbytes.dylib.so
 lib64/libclap.dylib.so
 lib64/libclap_builder.dylib.so
 lib64/libclap_lex.dylib.so
+lib64/libcommand_fds.dylib.so
 lib64/libcutils_bindgen.dylib.so
 lib64/libcxx.dylib.so
 lib64/libenv_logger.dylib.so
