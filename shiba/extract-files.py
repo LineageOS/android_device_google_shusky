@@ -58,8 +58,6 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/etc/init/init.storage.rc',
     ) : blob_fixup()
         .regex_replace('ro.build.type=userdebug', 'ro.debuggable=1'),
-    'vendor/lib64/libedgetpu_litert.so': blob_fixup()
-        .clear_symbol_version('AHardwareBuffer_describe'),
     'vendor/lib64/libspeechenhancer.so': blob_fixup()
         .clear_symbol_version('AHardwareBuffer_allocate')
         .clear_symbol_version('AHardwareBuffer_describe')
