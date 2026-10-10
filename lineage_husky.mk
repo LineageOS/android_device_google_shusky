@@ -24,9 +24,10 @@ TARGET_SCREEN_HEIGHT := 2992
 TARGET_SCREEN_WIDTH := 1344
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="husky-user 17 CP2A.260805.005 15828068 release-keys" \
-    BuildFingerprint=google/husky/husky:17/CP2A.260805.005/15828068:user/release-keys \
-    BuildSystemFingerprint=google/generic_system_google/generic:17/CP2A.260805.005/15828068:user/release-keys \
+    BuildDesc="husky-user 17 CP3A.260905.009 16091614 release-keys" \
+    BuildSystemDesc="generic_system_google-user 17 CP3A.260905.009 16091614 release-keys" \
+    BuildFingerprint=google/husky/husky:17/CP3A.260905.009/16091614:user/release-keys \
+    BuildSystemFingerprint=google/generic_system_google/generic:17/CP3A.260905.009/16091614:user/release-keys \
     DeviceProduct=$(DEVICE_CODENAME)
 
 $(call inherit-product, $(VENDOR_PATH)/$(DEVICE_CODENAME)-vendor.mk)
