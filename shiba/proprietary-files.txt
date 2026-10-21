@@ -204,3 +204,7 @@ recovery/system/etc/vintf/manifest/android.hardware.boot-service.default_recover
 recovery/system/bin/hw/android.hardware.health-service.zuma_recovery
 recovery/system/etc/init/android.hardware.health-service.zuma_recovery.rc
 vendor/etc/vintf/manifest/android.hardware.health-service.zuma.xml:recovery/system/etc/vintf/manifest/android.hardware.health-service.zuma_recovery.xml
+
+# Rust - from CP2A.260805.005
+vendor/bin/dump/dump_modem|126ba65ea84c3fee868611f527aaed2312e4b2ad
+vendor/bin/gpuflag|7f1689f909dbc423b49f56b4192c5b2bb5501851

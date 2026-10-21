@@ -18,7 +18,6 @@ vendor/bin/dump/dump_display_logbuffer
 vendor/bin/dump/dump_exynos_display
 vendor/bin/dump/dump_fingerprint
 vendor/bin/dump/dump_gsc.sh
-vendor/bin/dump/dump_modem
 vendor/bin/dump/dump_modemlog
 vendor/bin/dump/dump_pcie.sh
 vendor/bin/dump/dump_perf
@@ -35,7 +34,6 @@ vendor/bin/dump/dump_wlan.sh
 vendor/bin/dump_touch/predump_gti0.sh
 vendor/bin/dump_touch/predump_stm.sh
 vendor/bin/factory/qm35_poll
-vendor/bin/gpuflag
 vendor/bin/hw/android.hardware.audio.service-aidl.aoc
 vendor/bin/hw/android.hardware.authsecret-service.citadel
 vendor/bin/hw/android.hardware.biometrics.fingerprint-service.goodix
